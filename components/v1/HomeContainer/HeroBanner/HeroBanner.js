@@ -19,7 +19,7 @@ const HeroBanner = () => {
         {/* Right */}
         <div className='basis-1/2 flex justify-center items-center'>
           <Image
-            src="/images/home/heroBannerBg.png"
+            src="/images/home/heroBanner.png"
             alt="Hero Banner"
             width={1000}
             height={500}
