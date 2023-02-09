@@ -1,7 +1,7 @@
 
 const Brand = () => {
   return (
-    <div>Brand</div>
+    <div>New branch check </div>
   )
 }
 
