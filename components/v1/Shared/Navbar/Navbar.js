@@ -15,7 +15,7 @@ const Navbar = () => {
           <p className='text-lg font-semibold px-5'><Link href='/'>FAQ</Link></p>
           <p className='text-lg font-semibold px-5'><Link href='/'>Team</Link></p>
           <p className='text-lg font-semibold '>
-            <Link href='/' className='bg-[#0070F4] rounded-[37px] py-[18px] px-[24px]'>
+            <Link href='/' className='bg-[#0070F4] rounded-[37px] py-[18px] px-6'>
               <button className=' text-white'>Get Free Ebook</button>
             </Link>
           </p>
