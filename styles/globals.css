@@ -30,8 +30,18 @@ a {
 }
 
 .customTitle {
-  @apply pt-5 text-center pb-8 text-3xl lg:text-[40px] leading-10 font-semibold
+  @apply pt-5 text-center pb-8 text-2xl lg:text-[40px] leading-10 font-semibold
 }
+
+
+.section__padding {
+  padding: 4rem 6rem;
+}
+
+.section__margin {
+  margin: 4rem 6rem;
+}
+
 
 .courseCard {
   display: flex;
@@ -42,13 +52,13 @@ a {
   border-radius: 10px;
 }
 
-.section__padding {
-  padding: 4rem 6rem;
+.blog{
+  box-shadow: 0px 4px 50px rgba(134, 134, 134, 0.04), 0px 3px 40px rgba(0, 0, 0, 0.08);
 }
 
-.section__margin {
-  margin: 4rem 6rem;
-}
+
+
+/************************************ Media Query **************************************** */
 
 @media screen and (max-width: 700px) {
   .section__padding {
