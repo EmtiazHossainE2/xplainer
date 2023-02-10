@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className="container mx-auto text-center section__padding">2023 Xplainerr. All right reserved.</div>
   )
 }
 
