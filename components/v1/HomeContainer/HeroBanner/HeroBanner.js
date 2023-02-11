@@ -7,7 +7,7 @@ const HeroBanner = () => {
       <div className='flex flex-col lg:flex-row justify-between items-center gap-5'>
         {/* Left  */}
         <div className='basis-1/2 text-center lg:text-start'>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl 2xl:text-[80px] font-bold pb-5 md:py-5">Accelerate your tech career</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl font-bold pb-5 md:py-5">Accelerate your <br /> tech career</h2>
           <p className='text-[#1F1F1F] text-[26px] '>We provide niche up skilling courses to help your accelerate and succeed in tech career</p>
           <div className="pt-20">
             <Link href='/courses' className="bg-[#0070F4] rounded-[37px] py-[18px] px-6">
@@ -21,7 +21,7 @@ const HeroBanner = () => {
           <Image
             src="/images/home/heroBanner.png"
             alt="Hero Banner"
-            width={1000}
+            width={400}
             height={500}
             priority
           />

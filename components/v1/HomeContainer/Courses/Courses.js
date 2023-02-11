@@ -21,7 +21,7 @@ const Courses = () => {
                   <h4 className="lg:text-2xl 2xl:text-3xl font-semibold py-2 2xl:py-5">{course.title}</h4>
                   <p className="lg:text-lg 2xl:text-xl text-justify text-[#515151]">{course.des}</p>
                   <div className="flex justify-end items-end  pt-8 2xl:pt-16">
-                    <Link href='/' className="flex gap-x-2 justify-between items-center text-[#0070F4] hover:bg-[#0070F4] hover:text-white hover:px-2 hover:rounded-xl">
+                    <Link href='/' className="flex gap-x-2 justify-between items-center text-[#0070F4]">
                       <p className=" text-[17px] font-[500] pb-1">Explore Now</p>
                       <ImArrowUpRight2  className="font-bold " />
                     </Link>
