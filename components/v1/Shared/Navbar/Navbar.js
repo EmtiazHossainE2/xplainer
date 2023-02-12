@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
+  const [couponModal, setCouponModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +61,17 @@ const Navbar = () => {
         </div>
       </header>
 
-      <LeadModal isVisible={showModal} onClose={() => setShowModal(false)}/>
+      <LeadModal
+        isVisible={showModal}
+        setShowModal={setShowModal}
+        onClose={() => setShowModal(false)}
+        setCouponModal={setCouponModal}
+      />
+
+      <CouponModal
+        isVisible={couponModal}
+        onClose={() => setCouponModal(false)}
+      />
 
     </>
   )
