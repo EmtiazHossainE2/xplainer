@@ -1,4 +1,5 @@
 import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/components/v1/ApiForPm'
+import { pmInterviewKeyChapters } from '@/config/constants'
 import PageLayout from '@/layout/PageLayout'
 import Head from 'next/head'
 import React from 'react'
@@ -16,7 +17,10 @@ const ApiForPm = () => {
         <PageLayout>
           <HeroHome />
           <HeroBanner />
-          <FeaturesBlocks />
+          <FeaturesBlocks
+            featureBlockData={pmInterviewKeyChapters}
+            heading={"What will you learn?"}
+          />
           <TestimonialsCarousel />
           <Authors />
           <Faqs />

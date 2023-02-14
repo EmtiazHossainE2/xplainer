@@ -36,3 +36,22 @@ export const pmInterviewKeyChapters = [
     slug : "guess-estimate",
   },
 ];
+
+export const apiForPmFaq = [
+  {
+    question:"How long can I access this e-book?",
+    answer:"You will have lifetime access to ebook."
+  },
+  {
+    question:"I am paying for this e-book on Gumroad? Is it expected?",
+    answer:"Yes, you need to purchase license key of this course on Gumroad. Once the payment is successful, you will receive license key on your email id."
+  },
+  {
+    question:"How can I purchase the ebook?",
+    answer:"To purchase this ebook, click on Start Learning API button, submit your email, you will be redirected to complete payment on gumroad.Once done with the payment, click on Login button on top and enter the license key."
+  },
+  {
+    question:"I am facing payment issues on Gumroad?",
+    answer:"Please contact us using the chat support available on bottom right.You can also write to us at dipakkr.co@gmail.com. We will send you an alternate payment link within 24 working hours."
+  },
+]
