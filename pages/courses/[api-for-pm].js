@@ -1,0 +1,30 @@
+import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/components/v1/ApiForPm'
+import PageLayout from '@/layout/PageLayout'
+import Head from 'next/head'
+import React from 'react'
+
+const ApiForPm = () => {
+  return (
+    <>
+      <Head>
+        <title>XPlainerr | Api For Pm </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <PageLayout>
+          <HeroHome />
+          <HeroBanner />
+          <FeaturesBlocks />
+          <TestimonialsCarousel />
+          <Authors />
+          <Faqs />
+          <CtaAlternative />
+        </PageLayout>
+      </main>
+    </>
+  )
+}
+
+export default ApiForPm

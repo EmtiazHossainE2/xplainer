@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0' : ''}`}>
+      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
         <div className='flex justify-center p-4 bg-[#0070F4] '>
@@ -52,8 +52,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className={`${styles.navbar__container}`}>
-            <p className='text-lg font-semibold px-5'><Link href='blog'>Blog</Link></p>
-            <p className='text-lg font-semibold px-5'><Link href='/'>API for PM</Link></p>
+            <p className='text-lg font-semibold px-5'><Link href='/blog'>Blog</Link></p>
+            <p className='text-lg font-semibold px-5'><Link href='/courses/api-for-pm'>API for PM</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/'>Pricing</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/'>FAQ</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/'>Team</Link></p>
@@ -74,7 +74,7 @@ const Navbar = () => {
               <div className={`scale-up-center ${styles.navbar__menuContainer} `}>
                 <div >
                   <p className='text-lg font-semibold px-5'><Link href='blog'>Blog</Link></p>
-                  <p className='text-lg font-semibold px-5'><Link href='/'>API for PM</Link></p>
+                  <p className='text-lg font-semibold px-5'><Link href='/courses/api-for-pm'>API for PM</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/'>Pricing</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/'>FAQ</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/'>Team</Link></p>
