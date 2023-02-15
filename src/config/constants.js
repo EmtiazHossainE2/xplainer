@@ -37,6 +37,27 @@ export const pmInterviewKeyChapters = [
   },
 ];
 
+export const pricingCardText = [
+  {
+    des:"Why is the biggest competition of Grammarly isn't anyone else but Grammarly itself?"
+  },
+  {
+    des:"How did LinkedIn and e-bay monetise themselves by using the power of data?"
+  },
+  {
+    des:"How does booking.com create a scarcity effect?"
+  },
+  {
+    des:"Why is freemium Spotify's biggest leverage?"
+  },
+  {
+    des:"Why did Swiggy launch Super at a low price?"
+  },
+  {
+    des:"Why did Netflix premium pricing fail in India?"
+  }
+]
+
 export const apiForPmFaq = [
   {
     question:"How long can I access this e-book?",

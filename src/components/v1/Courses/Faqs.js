@@ -1,4 +1,4 @@
-import { apiForPmFaq } from "@/config/constants";
+import { apiForPmFaq } from "@/src/config/constants";
 import { useState } from "react";
 import { AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai'
 

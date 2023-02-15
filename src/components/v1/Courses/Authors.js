@@ -19,7 +19,7 @@ const Authors = ({
 
         <div className="sm:flex">
           <figure className="flex shrink-0 max-w-none sm:max-w-xs lg:max-w-none mb-8 sm:mb-0">
-            <Image className="grow self-start rounded" src='/images/apiForPm/deepak.jpeg' width="250" height="250" alt="About us 02" />
+            <Image className="grow self-start rounded" src='/images/courses/deepak.jpeg' width="250" height="250" alt="About us 02" />
           </figure>
           <div className="sm:ml-8 lg:ml-16">
             <h4 className="h4 mb-2">{name1} </h4>
@@ -32,7 +32,7 @@ const Authors = ({
 
         <div className="sm:flex mt-4">
           <figure className="flex shrink-0 max-w-none sm:max-w-xs lg:max-w-none mb-8 sm:mb-0">
-            <Image className="grow self-start rounded" src='/images/apiForPm/venky.jpeg' width="250" height="250" alt="About us 02" />
+            <Image className="grow self-start rounded" src='/images/courses/venky.jpeg' width="250" height="250" alt="About us 02" />
           </figure>
           <div className="sm:ml-8 lg:ml-16">
             <h4 className="h4 mb-2">{name2} </h4>

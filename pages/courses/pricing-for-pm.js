@@ -1,6 +1,6 @@
-import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/components/v1/Courses'
-import { pmInterviewKeyChapters } from '@/config/constants'
-import PageLayout from '@/layout/PageLayout'
+import { Authors, CtaAlternative, Faqs, FeaturesBlocks,  HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { pricingCardText } from '@/src/config/constants'
+import PageLayout from '@/src/layout/PageLayout'
 import Head from 'next/head'
 import React from 'react'
 
@@ -15,15 +15,19 @@ const ApiForPm = () => {
       </Head>
       <main>
         <PageLayout>
-          <HeroHome />
-          <HeroBanner />
+          <HeroHome
+            heading={"A to Z of Pricing and Monetisation"}
+            ctaText="Start Learning Pricing"
+            pricing={true}
+          />
           <FeaturesBlocks
-            featureBlockData={pmInterviewKeyChapters}
-            heading={"What will you learn?"}
+            pricingCardText={pricingCardText}
+            heading={"Things you'll learn"}
+            pricing={true}
           />
           <TestimonialsCarousel />
           <Authors
-            name1={"Deep"}
+            name1={"Deepak "}
             name2={"Venky"}
           />
           <Faqs />
