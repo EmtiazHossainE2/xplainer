@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className={`${styles.navbar__container}`}>
             <p className='text-lg font-semibold px-5'><Link href='/blog'>Blog</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/courses/api-for-pm'>API for PM</Link></p>
-            <p className='text-lg font-semibold px-5'><Link href='/'>Pricing</Link></p>
+            <p className='text-lg font-semibold px-5'><Link href='/courses/pricing-for-pm'>Pricing</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/'>FAQ</Link></p>
             <p className='text-lg font-semibold px-5'><Link href='/'>Team</Link></p>
           </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <div >
                   <p className='text-lg font-semibold px-5'><Link href='blog'>Blog</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/courses/api-for-pm'>API for PM</Link></p>
-                  <p className='text-lg font-semibold px-5'><Link href='/'>Pricing</Link></p>
+                  <p className='text-lg font-semibold px-5'><Link href='/courses/pricing-for-pm'>Pricing</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/'>FAQ</Link></p>
                   <p className='text-lg font-semibold px-5'><Link href='/'>Team</Link></p>
                 </div>

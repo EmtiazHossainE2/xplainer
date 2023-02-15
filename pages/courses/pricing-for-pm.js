@@ -1,4 +1,4 @@
-import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/components/v1/ApiForPm'
+import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/components/v1/Courses'
 import { pmInterviewKeyChapters } from '@/config/constants'
 import PageLayout from '@/layout/PageLayout'
 import Head from 'next/head'
@@ -8,7 +8,7 @@ const ApiForPm = () => {
   return (
     <>
       <Head>
-        <title>XPlainerr | Api For Pm </title>
+        <title>XPlainerr | Pricing For Pm </title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +22,10 @@ const ApiForPm = () => {
             heading={"What will you learn?"}
           />
           <TestimonialsCarousel />
-          <Authors />
+          <Authors
+            name1={"Deep"}
+            name2={"Venky"}
+          />
           <Faqs />
           <CtaAlternative />
         </PageLayout>
