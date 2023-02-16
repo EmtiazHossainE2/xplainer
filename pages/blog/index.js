@@ -1,8 +1,13 @@
-// import BlogList from '@/components/v1/Blog/BlogList'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 import PageLayout from '@/src/layout/PageLayout'
 import Head from 'next/head'
+import { sortByDate } from '@/src/utils/date'
+import BlogList from '@/src/components/v1/Blog/BlogList'
 
-const Blog = () => {
+const Blog = ({ posts }) => {
+  console.log(posts)
   return (
     <>
       <Head>
@@ -14,16 +19,10 @@ const Blog = () => {
       <main>
         <PageLayout>
           <div className="flex flex-col min-h-screen overflow-hidden">
-            {/*  Site header */}
 
-            {/*  Page content */}
-            <main className="grow">
-              {/*  Page sections */}
-              <h1>Hello blog</h1>
-              {/* <BlogList allPosts={allPosts} /> */}
-            </main>
-
-            {/*  Site footer */}
+            <div className="grow">
+              <BlogList posts={posts} />
+            </div>
           </div>
         </PageLayout>
       </main>
@@ -34,11 +33,27 @@ const Blog = () => {
 export default Blog
 
 
-// export const getStaticProps = async () => {
-//   const allPosts = getAllPosts(["title", "slug", "excerpt", "author"], null, '_blog');
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(path.join('_blog'))
 
-//   return {
-//     props: { allPosts },
-//   };
-// };
+  const posts = files.map((filename) => {
+    const slug = filename.replace('.md', '')
+    const markdownWithMeta = fs.readFileSync(
+      path.join('_blog', filename),
+      'utf-8'
+    )
+    const { data: frontmatter } = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter,
+    }
+  })
+
+  return {
+    props: {
+      posts: posts.sort(sortByDate),
+    },
+  }
+}
 
