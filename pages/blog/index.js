@@ -7,7 +7,7 @@ import { sortByDate } from '@/src/utils/date'
 import BlogList from '@/src/components/v1/Blog/BlogList'
 
 const Blog = ({ posts }) => {
-  console.log(posts)
+  // console.log(posts)
   return (
     <>
       <Head>
