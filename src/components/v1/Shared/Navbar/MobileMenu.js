@@ -16,7 +16,14 @@ const MobileMenu = () => {
       <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggleMenu(true)} />
 
       {toggleMenu && (
-        <div className={`pt-2 pb-6 w-9/12 md:w-1/2 h-screen bg-white z-20 fixed top-0 -left-0 lg:left-0 lg:hidden  peer-focus:left-0 transition ease-out delay-150 duration-300 `}>
+        <div 
+        className={`pt-2 pb-6 w-9/12 md:w-1/2 h-screen bg-white z-20 fixed top-0 -left-0 lg:left-0 lg:hidden  peer-focus:left-0 transition ease-out delay-150 duration-300 `} 
+        data-aos="fade-right"
+        data-aos-offset="100"
+        data-aos-duration="200"
+        data-aos-easing="ease-in-sine"
+
+        >
           <div className="flex flex-col justify-start item-center">
             <div className="flex justify-between shadow-sm p-2">
               <h3 className="font-bold text-2xl">Xplainerr</h3>
