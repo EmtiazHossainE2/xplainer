@@ -10,7 +10,7 @@ const Faqs = () => {
   };
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 ">
         <div className="py-12 md:py-20 border-t border-gray-200">
 
           {/* Faq header */}
@@ -18,9 +18,9 @@ const Faqs = () => {
             <h2 className="h3">Frequently asked questions </h2>
           </div>
 
-          <div className="p-5 lg:px-32">
+          <div className="md:p-5 lg:px-32">
             {apiForPmFaq.map((faq, index) => (
-              <div key={index} className="mb-3 border-b border-t py-4 px-3 rounded-md">
+              <div key={index} className="mb-3 border-t py-4 px-3 last:border-b">
                 <div
                   className="text-lg cursor-pointer flex gap-x-4 items-center"
                   onClick={() => onTitleClick(index)}
@@ -34,7 +34,7 @@ const Faqs = () => {
                   </div>
                   <p className="text-lg font-medium">{faq.question}</p>
                 </div>
-                <div className={`mt-3 rounded ${activeIndex === index ? "block pl-10 text-gray-600" : "hidden"}`}>
+                <div className={`mt-3  ${activeIndex === index ? "block pl-10 text-gray-600" : "hidden"}`}>
                   {faq.answer}
                 </div>
               </div>
