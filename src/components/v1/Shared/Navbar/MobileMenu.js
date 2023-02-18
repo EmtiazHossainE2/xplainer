@@ -4,6 +4,12 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Image from "next/image";
+import apiForPmSvg from '/public/images/shared/apiForPm.svg'
+import pricing from '/public/images/shared/pricing.svg'
+import users from '/public/images/shared/users.svg'
+import noCode from '/public/images/shared/noCode.svg'
+import productHunt from '/public/images/shared/productHunt.svg'
+import personalBrand from '/public/images/shared/personalBrand.svg'
 
 const MobileMenu = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -84,7 +90,7 @@ const MobileMenu = () => {
 
                     <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/apiForPm.png' alt='api for pm icon' width={30} height={27} />
+                        <Image src={apiForPmSvg} alt='api for pm icon' width={30} height={27} />
                         <div className=''>
                           <h4 className='font-semibold text-sm'>API for Product Manager</h4>
                           <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -94,7 +100,7 @@ const MobileMenu = () => {
 
                     <Link href='/courses/pricing-for-pm' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/pricing.png' alt='pricing icon' width={30} height={27} />
+                        <Image src={pricing} alt='pricing icon' width={30} height={27} />
                         <div className=''>
                           <h4 className='font-semibold text-sm'>A to Z of Pricing & Monetization</h4>
                           <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -104,7 +110,7 @@ const MobileMenu = () => {
 
                     <Link href='/courses/user-interview' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/users.png' alt='user icon' width={30} height={27} />
+                        <Image src={users} alt='user icon' width={30} height={27} />
                         <div className=''>
                           <div className="flex gap-x-3 items-center ">
                             <h4 className='font-medium text-sm'>  How to user interviews  </h4>
@@ -122,7 +128,7 @@ const MobileMenu = () => {
 
                     <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/noCode.png' alt='icon' width={30} height={27} />
+                        <Image src={noCode} alt='icon' width={30} height={27} />
                         <div className=''>
                           <h4 className='font-semibold'>No Code </h4>
                           <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -132,7 +138,7 @@ const MobileMenu = () => {
 
                     <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/productHunt.png' alt='product hunt icon' width={30} height={27} />
+                        <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                         <div className=''>
                           <h4 className='font-semibold'>Product Hunt Launch</h4>
                           <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -142,7 +148,7 @@ const MobileMenu = () => {
 
                     <Link href='/workshops/build-brand' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-3 imgIcon'>
-                        <Image src='/images/shared/personalBrand.png' alt='personal brand icon' width={30} height={27} />
+                        <Image src={personalBrand} alt='personal brand icon' width={30} height={27} />
                         <div className=''>
                           <div className="flex gap-x-2 items-center">
                             <h4 className='font-semibold'>  Build Your Personal Brand  </h4>

@@ -6,6 +6,12 @@ import styles from '@/styles/Navbar.module.css'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
+import apiForPmSvg from '/public/images/shared/apiForPm.svg'
+import pricing from '/public/images/shared/pricing.svg'
+import users from '/public/images/shared/users.svg'
+import noCode from '/public/images/shared/noCode.svg'
+import productHunt from '/public/images/shared/productHunt.svg'
+import personalBrand from '/public/images/shared/personalBrand.svg'
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -58,12 +64,12 @@ const Navbar = () => {
 
           {/* Courses */}
             <div className='text-lg font-semibold px-3 '>
-              <Link href='/'
+              <div
                 onMouseOver={() => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={`flex justify-between items-center gap-x-2 ${courseOpen ? "border-b-2 border-[#0070F4] " : ""}`}
+                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 border-[#0070F4] " : ""}`}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
@@ -74,17 +80,17 @@ const Navbar = () => {
                     <FiChevronDown size={22} className="font-bold" />
                   )}
                 </div>
-              </Link>
+              </div>
             </div>
 
             {/* Workshops */}
             <div className='text-lg font-semibold px-3 '>
-              <Link href='/'
+              <div
                 onMouseOver={() => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`flex justify-between items-center gap-x-2 ${workShopsOpen ? "border-b-2 border-[#0070F4] " : ""}`}
+                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 border-[#0070F4] " : ""}`}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
@@ -98,7 +104,7 @@ const Navbar = () => {
 
                 </div>
 
-              </Link>
+              </div>
             </div>
             {/* Dropdown  */}
             {courseOpen && (
@@ -106,7 +112,7 @@ const Navbar = () => {
 
                 <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/apiForPm.png' alt='api for pm icon' width={40} height={10} />
+                    <Image src={apiForPmSvg} alt='api for pm icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>API for Product Manager</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -116,7 +122,7 @@ const Navbar = () => {
 
                 <Link href='/courses/pricing-for-pm' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/pricing.png' alt='pricing icon' width={40} height={10} />
+                    <Image src={pricing} alt='pricing icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>A to Z of Pricing & Monetization</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -126,7 +132,7 @@ const Navbar = () => {
 
                 <Link href='/courses/user-interview' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/users.png' alt='user icon' width={40} height={10} />
+                    <Image src={users} alt='user icon' width={30} height={27} />
                     <div className=''>
                       <div className="flex gap-x-2 items-center">
                         <h4 className='font-semibold'>  How to do user interviews  </h4>
@@ -141,11 +147,11 @@ const Navbar = () => {
             )}
 
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-6 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-10 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/noCode.png' alt='icon' width={40} height={10} />
+                    <Image src={noCode} alt='icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>No Code </h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -155,7 +161,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/productHunt.png' alt='product hunt icon' width={40} height={10} />
+                    <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -165,7 +171,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/build-brand' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src='/images/shared/personalBrand.png' alt='personal brand icon' width={40} height={10} />
+                    <Image src={personalBrand} alt='personal brand icon' width={30} height={27} />
                     <div className=''>
                       <div className="flex gap-x-2 items-center">
                         <h4 className='font-semibold'>  Build Your Personal Brand  </h4>
