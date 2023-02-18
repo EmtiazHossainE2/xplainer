@@ -1,21 +1,20 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { RiCloseLine } from 'react-icons/ri';
 import styles from '@/styles/Navbar.module.css'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Image from 'next/image';
+import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
   const [couponModal, setCouponModal] = useState(false)
-  const [toggleMenu, setToggleMenu] = useState(false)
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
 
+  // Handle Sticky 
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
@@ -57,7 +56,8 @@ const Navbar = () => {
           </div>
           <div className={`relative ${styles.navbar__container}`}>
 
-            <p className='text-lg font-semibold px-3 '>
+          {/* Courses */}
+            <div className='text-lg font-semibold px-3 '>
               <Link href='/'
                 onMouseOver={() => {
                   setCourseOpen(true)
@@ -68,19 +68,17 @@ const Navbar = () => {
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
                   <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[40px] h-[16px] px-[2px]'>50% OFF</button>
-
                   {courseOpen ? (
                     <FiChevronUp size={22} className="font-bold" />
                   ) : (
                     <FiChevronDown size={22} className="font-bold" />
                   )}
-
                 </div>
-
               </Link>
-            </p>
+            </div>
 
-            <p className='text-lg font-semibold px-3 '>
+            {/* Workshops */}
+            <div className='text-lg font-semibold px-3 '>
               <Link href='/'
                 onMouseOver={() => {
                   setWorkShopsOpen(true)
@@ -101,7 +99,7 @@ const Navbar = () => {
                 </div>
 
               </Link>
-            </p>
+            </div>
             {/* Dropdown  */}
             {courseOpen && (
               <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
@@ -190,15 +188,19 @@ const Navbar = () => {
             >
               <Link href='/mock-interview' className='hover:border-b-2 hover:border-[#0070F4]'>Mock Interviews</Link>
             </p>
-            <p className='text-lg font-semibold px-5' ><Link href='/blog'className='hover:border-b-2 hover:border-[#0070F4]'>Blog</Link></p>
+            <p className='text-lg font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:border-[#0070F4]'>Blog</Link></p>
+
           </div>
-          <div className={`px-3`}>
-            <Link href='/' className='bg-[#0070F4] rounded-md py-[10px] px-[51px]'>
+
+          <div className={`px-3 ${styles.navbar__sign}`}>
+            <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[51px]'>
               <button className=' text-white text-lg font-semibold'>Login</button>
             </Link>
           </div>
 
           {/********************** * For Mobile ********************* */}
+          {/* <MobileNav/> */}
+          <MobileMenu/>
 
         </div>
       </header>
