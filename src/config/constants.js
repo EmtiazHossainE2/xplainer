@@ -83,21 +83,24 @@ export const allCourses = [
     category : 'Product Managment',
     slug : 'api-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'active'
+    status : 'active',
+    icon : 'apiForPm.svg'
   },
   {
     title : 'A to Z of Pricing & Monetization',
     category : 'Product Managment',
     slug : 'pricing-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'active'
+    status : 'active',
+    icon : 'pricing.svg'
   },
   {
     title : 'How to do user interviews',
     category : 'UX Research',
     slug : 'pricing-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'upcoming'
+    status : 'upcoming',
+    icon : 'users.svg'
   }
 ];
 
@@ -107,20 +110,25 @@ export const allWorkshop = [
     category : 'Product Managment',
     slug : 'api-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'upcoming'
+    status : 'upcoming',
+    icon : 'noCode.svg'
   },
   {
     title : 'Product Hunt Launch',
     category : 'Product Managment',
     slug : 'pricing-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'upcoming'
+    status : 'upcoming',
+    icon : 'productHunt.svg'
   },
   {
     title : 'Build Your Personal Brand',
     category : 'UX Research',
     slug : 'pricing-for-pm',
     description : 'Top rated, beginner friendly',
-    status : 'upcoming'
+    status : 'upcoming',
+    icon : 'personalBrand.svg'
   }
 ];
+
+export const BASE_URL = 'https://xplainerr-com.vercel.app/';

@@ -44,7 +44,7 @@ const Navbar = () => {
       <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <div className='flex justify-center p-2 bg-[#f8a941] '>
+        <div className='flex justify-center p-2 bg-[#CB542F] '>
           <p
             className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
             onClick={() => setShowModal(true)}
