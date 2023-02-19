@@ -44,7 +44,7 @@ const Navbar = () => {
       <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <div className='flex justify-center p-2 bg-[#CB542F] '>
+        <div className='flex justify-center p-2 bg-[#ff6900] '>
           <p
             className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
             onClick={() => setShowModal(true)}
@@ -161,7 +161,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
+                  <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
