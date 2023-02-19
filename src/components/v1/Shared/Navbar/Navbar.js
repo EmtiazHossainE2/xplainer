@@ -108,7 +108,7 @@ const Navbar = () => {
             </div>
             {/* Dropdown  */}
             {courseOpen && (
-              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -147,7 +147,7 @@ const Navbar = () => {
             )}
 
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-10 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
