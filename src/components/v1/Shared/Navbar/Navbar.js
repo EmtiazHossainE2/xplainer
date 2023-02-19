@@ -41,10 +41,10 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
+      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <div className='flex justify-center p-2 bg-[#f8a941] '>
+        <div className='flex justify-center p-2 bg-[#ff6900] '>
           <p
             className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
             onClick={() => setShowModal(true)}
@@ -108,7 +108,7 @@ const Navbar = () => {
             </div>
             {/* Dropdown  */}
             {courseOpen && (
-              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -147,7 +147,7 @@ const Navbar = () => {
             )}
 
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-10 top-7 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -161,7 +161,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                    <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
+                  <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>

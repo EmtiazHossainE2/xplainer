@@ -75,4 +75,60 @@ export const apiForPmFaq = [
     question:"I am facing payment issues on Gumroad?",
     answer:"Please contact us using the chat support available on bottom right.You can also write to us at dipakkr.co@gmail.com. We will send you an alternate payment link within 24 working hours."
   },
-]
+];
+
+export const allCourses = [
+  {
+    title : 'API for Product Manager',
+    category : 'Product Managment',
+    slug : 'api-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'active',
+    icon : 'apiForPm.svg'
+  },
+  {
+    title : 'A to Z of Pricing & Monetization',
+    category : 'Product Managment',
+    slug : 'pricing-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'active',
+    icon : 'pricing.svg'
+  },
+  {
+    title : 'How to do user interviews',
+    category : 'UX Research',
+    slug : 'pricing-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'upcoming',
+    icon : 'users.svg'
+  }
+];
+
+export const allWorkshop = [
+  {
+    title : 'No Code',
+    category : 'Product Managment',
+    slug : 'api-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'upcoming',
+    icon : 'noCode.svg'
+  },
+  {
+    title : 'Product Hunt Launch',
+    category : 'Product Managment',
+    slug : 'pricing-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'upcoming',
+    icon : 'productHunt.svg'
+  },
+  {
+    title : 'Build Your Personal Brand',
+    category : 'UX Research',
+    slug : 'pricing-for-pm',
+    description : 'Top rated, beginner friendly',
+    status : 'upcoming',
+    icon : 'personalBrand.svg'
+  }
+];
+
+export const BASE_URL = 'https://xplainerr-com.vercel.app/';

@@ -30,7 +30,7 @@ a {
 }
 
 .customTitle {
-  @apply pt-5 text-center pb-8 text-2xl lg:text-[40px] leading-10 font-semibold
+  @apply pt-5 text-center pb-8 text-2xl lg:text-[34px] leading-10 font-bold
 }
 .h3 {
   @apply text-4xl font-bold leading-tight;
@@ -71,6 +71,20 @@ a {
   border-radius: 10px;
 }
 
+/* Header  */
+.navdrawer {
+  position: fixed;
+  width: 75%;
+  height: 100%;
+  z-index: 999;
+  box-shadow: 300px 0 0px 0px rgba(0 0 0 / 50%), 300px 0 2px 6px rgba(0 0 0 / 50%);
+  transform: translate3d(-105%,0,0);
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  overflow-y: auto;
+  display: block;
+}
+
 
 /* Blog  */
 .blog{
@@ -82,8 +96,6 @@ a {
 .footer a {
   color: #515151;
 }
-
-
 
 
 /************************************ Media Query **************************************** */
@@ -105,5 +117,10 @@ a {
 
   .section__margin {
     margin: 4rem 2rem;
+  }
+}
+@media screen and (max-width: 391px) {
+  .navdrawer {
+    box-shadow: 200px 0 0px 0px rgb(0 0 0 / 50%), 200px 0 2px 6px rgb(0 0 0 / 50%);
   }
 }

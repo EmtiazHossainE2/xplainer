@@ -4,7 +4,6 @@ const Brand = () => {
   return (
     <div className='container mx-auto py-4 px-6 md:px-20'>
       <div className="flex flex-col justify-center items-center">
-        <button className="customBtn">Top Companies</button>
         <h2 className="customTitle">Learners From Top Companies </h2>
         <div className='py-8 flex flex-wrap justify-center items-center gap-10'>
           <div>
