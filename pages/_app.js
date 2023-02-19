@@ -1,5 +1,19 @@
 import '@/styles/globals.css'
+import { useEffect } from "react";
+import AOS from "aos";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import "aos/dist/aos.css";
+
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;
