@@ -73,7 +73,7 @@ const Navbar = () => {
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
-                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[40px] h-[16px] px-[2px]'>50% OFF</button>
+                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button>
                   {courseOpen ? (
                     <FiChevronUp size={22} className="font-bold" />
                   ) : (
