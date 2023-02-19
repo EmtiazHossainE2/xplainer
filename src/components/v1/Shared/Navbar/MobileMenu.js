@@ -10,6 +10,7 @@ import users from '/public/images/shared/users.svg'
 import noCode from '/public/images/shared/noCode.svg'
 import productHunt from '/public/images/shared/productHunt.svg'
 import personalBrand from '/public/images/shared/personalBrand.svg'
+import { allCourses, allWorkshop } from '@/src/config/constants';
 
 const MobileMenu = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -88,15 +89,20 @@ const MobileMenu = () => {
                 {courseOpen && (
                   <div onClick={() => setCourseOpen(false)} className="absolute left-0 top-10 z-10 bg-white py-2 mt-2 shadow-lg w-full">
 
-                    <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                      <div className='flex items-center gap-x-2 imgIcon'>
-                        <Image src={apiForPmSvg} alt='api for pm icon' width={20} height={20} />
-                        <div className=''>
-                          <h4 className='font-medium text-[12px]'>API for Product Manager</h4>
-
+                    {allCourses.map((item, index)=> {
+                      return(
+                        <Link key={`course-${index}`} href={`/courses/${item.slug}`} className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                        <div className='flex items-center gap-x-2 imgIcon'>
+                          <Image src={apiForPmSvg} alt='api for pm icon' width={20} height={20} />
+                          <div className=''>
+                            <h4 className='font-medium text-[12px]'>{item.title}</h4>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
+                      </Link>
+                      )
+                    })}
+
+                   
 
                     <Link href='/courses/pricing-for-pm' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-2 imgIcon'>
@@ -113,7 +119,7 @@ const MobileMenu = () => {
                         <Image src={users} alt='user icon' width={20} height={20} />
                         <div className=''>
                           <div className="flex gap-x-2 items-center ">
-                            <h4 className='font-medium text-[12px]'>  How to user interviews  </h4>
+                            <h4 className='font-medium text-[12px]'>  How to do user interviews  </h4>
                           </div>
                         </div>
                       </div>
@@ -125,35 +131,18 @@ const MobileMenu = () => {
                 {workShopsOpen && (
                   <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute left-0 top-20 z-10 bg-white py-2 mt-2 shadow-lg w-full">
 
-                    <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                      <div className='flex items-center gap-x-2 imgIcon'>
-                        <Image src={noCode} alt='icon' width={20} height={20} />
-                        <div className=''>
-                          <h4 className='font-medium text-[12px]'>No Code </h4>
-                        </div>
-                      </div>
-                    </Link>
-
-                    <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                      <div className='flex items-center gap-x-2 imgIcon'>
-                        <Image src={productHunt} alt='product hunt icon' width={20} height={20} />
-                        <div className=''>
-                          <h4 className='font-medium text-[12px]'>Product Hunt Launch</h4>
-                        </div>
-                      </div>
-                    </Link>
-
-                    <Link href='/workshops/build-brand' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                      <div className='flex items-center gap-x-2 imgIcon'>
-                        <Image src={personalBrand} alt='personal brand icon' width={20} height={20} />
-                        <div className=''>
-                          <div className="flex gap-x-2 items-center">
-                            <h4 className='font-medium text-[12px]'>  Build Your Personal Brand  </h4>
+                    {allWorkshop.map((item, index)=> {
+                      return(
+                        <Link key={index} href={`/workshops/${item.slug}`} className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                        <div className='flex items-center gap-x-2 imgIcon'>
+                          <Image src={noCode} alt='icon' width={20} height={20} />
+                          <div className=''>
+                            <h4 className='font-medium text-[12px]'> {item.title} </h4>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-
+                      </Link>
+                      )
+                    })}
                   </div>
                 )}
 
