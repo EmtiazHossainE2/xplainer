@@ -15,7 +15,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-[#EAF3FF]">
+        <div className="bg-[#fff]">
           <Navbar />
           <HeroBanner />
           <Brand />

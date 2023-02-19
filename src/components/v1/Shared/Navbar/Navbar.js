@@ -44,9 +44,9 @@ const Navbar = () => {
       <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <div className='flex justify-center p-4 bg-[#0070F4] '>
+        <div className='flex justify-center p-2 bg-[#f8a941] '>
           <p
-            className="text-center text-[16px] md:text-xl font-bold text-white hover:cursor-pointer"
+            className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
             onClick={() => setShowModal(true)}
           >
             🎉 Click here to unlock upto 50% discount offer 🎉{" "}
@@ -57,13 +57,13 @@ const Navbar = () => {
         <div className={`${styles.navbar} container mx-auto  px-20 ${isSticky ? 'py-4' : 'pt-4 pb-8'}`}>
           <div className={`${styles.navbar__links}`}>
             <div className={`${styles.navbar__logo}`}>
-              <Link href='/'><h2 className='font-bold text-[30px]'>Xplainerr</h2></Link>
+              <Link href='/'><h2 className='font-bold text-[26px]'>Xplainerr</h2></Link>
             </div>
           </div>
           <div className={`relative ${styles.navbar__container}`}>
 
           {/* Courses */}
-            <div className='text-lg font-semibold px-3 '>
+            <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
                   setCourseOpen(true)
@@ -73,7 +73,7 @@ const Navbar = () => {
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
-                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[40px] h-[16px] px-[2px]'>50% OFF</button>
+                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button>
                   {courseOpen ? (
                     <FiChevronUp size={22} className="font-bold" />
                   ) : (
@@ -84,7 +84,7 @@ const Navbar = () => {
             </div>
 
             {/* Workshops */}
-            <div className='text-lg font-semibold px-3 '>
+            <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
                   setWorkShopsOpen(true)
@@ -186,7 +186,7 @@ const Navbar = () => {
             )}
 
             <p
-              className='text-lg font-semibold px-3 '
+              className='text-md font-semibold px-3 '
               onMouseOver={() => {
                 setWorkShopsOpen(false)
                 setCourseOpen(false)
@@ -194,13 +194,13 @@ const Navbar = () => {
             >
               <Link href='/mock-interview' className='hover:border-b-2 hover:border-[#0070F4]'>Mock Interviews</Link>
             </p>
-            <p className='text-lg font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:border-[#0070F4]'>Blog</Link></p>
+            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:border-[#0070F4]'>Blog</Link></p>
 
           </div>
 
           <div className={`px-3 ${styles.navbar__sign}`}>
-            <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[51px]'>
-              <button className=' text-white text-lg font-semibold'>Login</button>
+            <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[25px]'>
+              <button className=' text-white text-md font-semibold'>Login</button>
             </Link>
           </div>
 
