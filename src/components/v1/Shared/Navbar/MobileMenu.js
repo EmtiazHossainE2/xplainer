@@ -14,7 +14,7 @@ import personalBrand from '/public/images/shared/personalBrand.svg'
 const MobileMenu = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [courseOpen, setCourseOpen] = useState(true);
-  const [workShopsOpen, setWorkShopsOpen] = useState(false);
+  const [workShopsOpen, setWorkShopsOpen] = useState(true);
 
   return (
     <div className={`block lg:hidden `}>
@@ -44,7 +44,6 @@ const MobileMenu = () => {
                   <div
                     onClick={() => {
                       setCourseOpen(!courseOpen)
-                      setWorkShopsOpen(false)
                     }}
                     className={`flex items-center gap-x-2 cursor-pointer `}
                   >
@@ -66,7 +65,6 @@ const MobileMenu = () => {
                   <div
                     onClick={() => {
                       setWorkShopsOpen(!workShopsOpen)
-                      setCourseOpen(false)
                     }}
                     className={`flex items-center cursor-pointer gap-x-2 `}
                   >
@@ -123,7 +121,7 @@ const MobileMenu = () => {
                 )}
 
                 {workShopsOpen && (
-                  <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute left-0 top-20 z-10 bg-white py-2 mt-2 shadow-lg w-full">
+                  <div onClick={() => setWorkShopsOpen(false)} className={`absolute left-0  z-10 bg-white py-2 mt-2 shadow-lg w-full ${courseOpen && workShopsOpen ? 'top-60' : 'top-20'}`}>
 
                     <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                       <div className='flex items-center gap-x-2 imgIcon'>
