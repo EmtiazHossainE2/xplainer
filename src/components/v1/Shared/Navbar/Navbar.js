@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
+      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
 
         {/******************* Header Top Banner  ***************************/}
         <div className='flex justify-center p-2 bg-[#CB542F] '>
