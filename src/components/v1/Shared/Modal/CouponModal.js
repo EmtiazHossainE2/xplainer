@@ -2,7 +2,7 @@ const CouponModal = ({ isVisible, onClose }) => {
   if (!isVisible) return null
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-10 backdrop-blur-sm flex pt-[40%] md:pt-0 justify-center md:items-center z-[9999]'>
+    <div className='fixed inset-0 bg-black bg-opacity-80 flex pt-[40%] md:pt-0 justify-center md:items-center z-[9999]'>
       <div className='w-[98%] md:w-[60%] lg:w-[35%] 2xl:w-[500px] flex flex-col'>
         <button className='text-black bg-white text-lg place-self-end border rounded-full px-2 py-.5 mb-2' onClick={() => onClose()}>X</button>
         <div className='bg-white p-6 2xl:p-12 rounded-lg '>
