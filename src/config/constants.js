@@ -107,7 +107,7 @@ export const allCourses = [
 export const allWorkshop = [
   {
     title : 'No Code',
-    category : 'Product Managment',
+    category : 'Product Management',
     slug : 'api-for-pm',
     description : 'Top rated, beginner friendly',
     status : 'upcoming',
@@ -115,7 +115,7 @@ export const allWorkshop = [
   },
   {
     title : 'Product Hunt Launch',
-    category : 'Product Managment',
+    category : 'Product Management',
     slug : 'pricing-for-pm',
     description : 'Top rated, beginner friendly',
     status : 'upcoming',
