@@ -1,30 +1,54 @@
+import { allCourses, BASE_URL } from "@/src/config/constants"
+// import Image from "next/image"
+// import Link from "next/link"
+import { RxDividerVertical } from 'react-icons/rx'
+import { AiFillStar } from 'react-icons/ai'
 import Image from "next/image"
-import Link from "next/link"
-import { coursesData } from "./coursesData"
-import { ImArrowUpRight2 } from 'react-icons/im'
+
+const PUBLIC_IMAGE_PATH = BASE_URL + 'images/courses';
 
 
 const Courses = () => {
   return (
-    <div className="bg-[#F5F5F7]">
+    <div className="bg-[#FDFDFD]">
       <div className="xl:container xl:mx-auto section__padding">
         <div className="flex flex-col justify-center items-center">
-          <button className="customBtn">Courses</button>
-          <h2 className="customTitle">Our Courses </h2>
-          <div className=" lg:px-32 flex flex-col gap-5">
-            {coursesData.map((course, index) => (
-              <div key={index} className=" courseCard hover:shadow-xl hover:delay-100">
-                <div className="basis-4/12 flex justify-center items-center ">
-                  <Image src={course.courseImg} alt="course.title" />
+          <h2 className="text-center text-2xl lg:text-[34px] font-bold">Our Courses </h2>
+          <p className="pt-[10px] pb-5 text-[#515151] text-xl font-medium">Get better at your job every single day!</p>
+          <div className=" lg:px-32 flex flex-col md:flex-row gap-5">
+            {allCourses.slice(0, 2).map((course, index) => (
+              <div key={index} className="course__box">
+
+                {/* course header */}
+                <div className={`flex items-start py-3 ${course.courseHeaderColor} `}>
+                  <div className="pl-5 basis-10/12">
+                    <h3 className="text-2xl pb-2 font-semibold ">{course.title}</h3>
+                    <div className="flex items-center">
+                      <p className="flex items-center"><AiFillStar /> {course.ratings}/5 </p>
+                      <RxDividerVertical />
+                      <p className="flex items-center">
+                        <Image src='/images/courses/usersIcon.svg' alt="users" width={24} height={14} />
+                        {course.learners}k+ learners
+                      </p>
+                    </div>
+                  </div>
+                  <div className="basis-2/12 text-end">
+                    <span>{course.discount}</span>
+                  </div>
                 </div>
-                <div className="basis-8/12">
-                  <h4 className="lg:text-2xl 2xl:text-3xl font-semibold py-2 2xl:py-5">{course.title}</h4>
-                  <p className="lg:text-lg 2xl:text-xl text-justify text-[#515151]">{course.des}</p>
-                  <div className="flex justify-end items-end  pt-8 2xl:pt-16">
-                    <Link href='/' className="flex gap-x-2 justify-between items-center text-[#0070F4]">
-                      <p className=" text-[17px] font-[500] pb-1">Explore Now</p>
-                      <ImArrowUpRight2  className="font-bold " />
-                    </Link>
+                {/* Course Body  */}
+                <div className={`pl-5 py-3`}>
+                  {course.subCategory.slice(0, 3).map((c, index) => (
+                    <button key={index} className='bg-[#F3F3F3] text-[#515151] font-medium rounded-[24px] px-[10px] py-2 mx-2'>{c}</button>
+                  ))}
+                  <div>
+                    <h3>Why choose this course?</h3>
+                    {course.whyThisCourse.slice(0, 4).map((item, index) => (
+                      <div key={index} className="flex items-center">
+                        <Image src={`images/courses/${item.icon}`} alt="icon" width={24} height={22} />
+                        <p>{item.text}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
