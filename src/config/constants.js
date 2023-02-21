@@ -81,7 +81,7 @@ export const allCourses = [
   {
     title: 'API for Product Manager',
     category: 'Product Management',
-    subCategory: ["Top rated"," Beginner friendly ","10+ chapters"],
+    subCategory: ["Top rated", " Beginner friendly ", "10+ chapters"],
     slug: 'api-for-pm',
     description: 'Top rated, beginner friendly',
     status: 'active',
@@ -89,7 +89,7 @@ export const allCourses = [
     discount: '40% Off',
     ratings: "4.8",
     learners: "7.5",
-    courseHeaderColor:"bg-[#EEFBFF]",
+    courseHeaderColor: "bg-[#EEFBFF]",
     whyThisCourse: [
       {
         icon: "icon1.svg",
@@ -113,7 +113,7 @@ export const allCourses = [
   {
     title: 'A to Z of Pricing & Monetization',
     category: 'Product Management',
-    subCategory: ["Trending"," Beginner friendly ","13+ chapters"],
+    subCategory: ["Trending", " Beginner friendly ", "13+ chapters"],
     slug: 'pricing-for-pm',
     description: 'Top rated, beginner friendly',
     status: 'active',
@@ -121,7 +121,7 @@ export const allCourses = [
     discount: '50% Off',
     ratings: "4.6",
     learners: "1.5",
-    courseHeaderColor:"bg-[#FFEBE0]",
+    courseHeaderColor: "bg-[#FFEBE0]",
     whyThisCourse: [
       {
         icon: "icon1.svg",
@@ -144,7 +144,7 @@ export const allCourses = [
   {
     title: 'How to do user interviews',
     category: 'UX Research',
-    subCategory: ["","",""],
+    subCategory: ["", "", ""],
     slug: 'pricing-for-pm',
     description: 'Top rated, beginner friendly',
     status: 'upcoming',
@@ -152,7 +152,7 @@ export const allCourses = [
     discount: "",
     ratings: "",
     learners: "",
-    courseHeaderColor:"",
+    courseHeaderColor: "",
     whyThisCourse: [
       {
         icon: "",
@@ -200,5 +200,26 @@ export const allWorkshop = [
     icon: 'personalBrand.svg'
   }
 ];
+
+export const mentors = [
+  {
+    name: "Venkatesh Gupta",
+    image: "venky.png",
+    job1: "Product Manager at Razorpay ",
+    job2: "Ex-Internshala | Ex- Frontbench"
+  },
+  {
+    name: "Naman Goyal",
+    image: "naman.png",
+    job1: "Product Manager at Internshala ",
+    job2: "Ed-tech enthusiast"
+  },
+  {
+    name: "Deepak Kumar",
+    image: "deepak.png",
+    job1: "SDE -2 @ Airmeet",
+    job2: "Ex - 91 wheels | Flux Auto (YC 18)"
+  },
+]
 
 export const BASE_URL = 'https://xplainerr.vercel.app/';

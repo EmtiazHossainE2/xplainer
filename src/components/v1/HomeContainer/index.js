@@ -4,11 +4,13 @@ import Courses from "./Courses/Courses";
 import Blogs from "./Blogs/Blogs";
 import Faqs from "./Faqs/Faqs";
 import CTA from "./CTA/CTA";
+import Mentors from "./Mentors/Mentors";
 
 export {
   HeroBanner,
   Brand,
   Courses,
+  Mentors,
   Blogs,
   Faqs,
   CTA

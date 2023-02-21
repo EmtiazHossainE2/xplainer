@@ -1,4 +1,4 @@
-import { Blogs, Brand, Courses, CTA, Faqs, HeroBanner } from '@/src/components/v1/HomeContainer'
+import { Blogs, Brand, Courses, CTA, Faqs, HeroBanner, Mentors } from '@/src/components/v1/HomeContainer'
 import Footer from '@/src/components/v1/Shared/Footer/Footer'
 import Navbar from '@/src/components/v1/Shared/Navbar/Navbar'
 import Head from 'next/head'
@@ -21,6 +21,7 @@ const Home = () => {
           <Brand />
         </div>
         <Courses />
+        <Mentors/>
         <Blogs />
         <Faqs />
         <CTA />
