@@ -85,6 +85,96 @@ a {
   box-shadow: 0px 32px 64px -12px rgba(45, 54, 67, 0.14);
 }
 
+/* Mentors  */
+/* the slides */
+.mentor {
+  padding: 15px;
+  gap: 12px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 50px rgba(134, 134, 134, 0.04), 0px 3px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+
+/* Job Road Map Start */
+.box {
+  position: relative;
+}
+.singleData-box {
+  padding-left: 19.8px;
+  border-left: 2px solid #B6B6B6;
+  display: grid;
+  width: 100%;
+  gap: 8px 0px;
+  height: 100%;
+}
+.singleData-box p {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 1 !important;
+}
+.singleData-box p.list::before {
+  position: absolute;
+  left: -25.2px;
+  bottom: 10px;
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #606060;
+  border-radius: 50%;
+}
+/* Job Road Map  End */
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: -12px var(--swiper-pagination-bullet-horizontal-gap,4px) !important; 
+}
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  display: inline-block !important;
+  background: #D9D9D9 !important;
+  opacity:  .8 !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  width: 25px !important;
+  background: #0070F4 !important;
+}
+
 
 /* Blog  */
 .blog {
@@ -131,6 +221,18 @@ a {
   .section__margin {
     margin: 4rem 2rem;
   }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 391px) {
@@ -155,6 +257,7 @@ a {
   .subCat {
     font-size: 10px;
   }
+
   .discount {
     font-size: 8px;
   }
