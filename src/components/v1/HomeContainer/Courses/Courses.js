@@ -27,7 +27,7 @@ const Courses = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="basis-2/12 text-end bg-[#FF9500] text-white rounded-l-xl py-1 md:py-[6px] 2xl:py-2 pr-1 md:pr-4 2xl:pr-6 text-[10px] md:text-[12px] font-bold mt-1 discount">
+                  <div className="basis-2/12 text-end bg-[#FF9500] text-white rounded-l-xl py-1 md:py-[6px] 2xl:py-2 pr-[10px] md:pr-4 2xl:pr-6 text-[10px] md:text-[12px] font-bold mt-1 discount">
                     <span>{course.discount}</span>
                   </div>
                 </div>
