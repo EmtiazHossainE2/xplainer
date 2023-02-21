@@ -23,19 +23,20 @@ const Courses = () => {
                 <div className={`flex items-start py-3 ${course.courseHeaderColor} `}>
                   <div className="pl-5 basis-10/12">
                     <h3 className="text-2xl pb-2 font-semibold ">{course.title}</h3>
-                    <div className="flex items-center">
-                      <p className="flex items-center"><AiFillStar /> {course.ratings}/5 </p>
-                      <RxDividerVertical />
-                      <p className="flex items-center">
+                    <div className="flex items-center gap-3">
+                      <p className="flex items-center gap-2"><AiFillStar className="text-[#FFCA0F]" size={20}/> {course.ratings}/5 </p>
+                      <Image src='/images/courses/Line.svg' alt="Line" width={2} height={20} />
+                      <p className="flex items-center gap-2">
                         <Image src='/images/courses/usersIcon.svg' alt="users" width={24} height={14} />
-                        {course.learners}k+ learners
+                        <span>{course.learners}k+ learners</span>
                       </p>
                     </div>
                   </div>
-                  <div className="basis-2/12 text-end">
+                  <div className="basis-2/12 text-end bg-[#FF9500] text-white rounded-l-xl py-[3px] pr-3 font-bold">
                     <span>{course.discount}</span>
                   </div>
                 </div>
+
                 {/* Course Body  */}
                 <div className={`pl-5 py-3`}>
                   {course.subCategory.slice(0, 3).map((c, index) => (
