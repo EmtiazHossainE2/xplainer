@@ -17,7 +17,7 @@ const Faqs = () => {
         <h2 className="customTitle">Frequently Asked Questions </h2>
       </div>
 
-      <div className="p-5 lg:px-32">
+      <div className="p-2 lg:px-32">
         {faqData.map((faq, index) => (
           <div key={index} className="mb-3 border p-2 rounded-md">
             <div

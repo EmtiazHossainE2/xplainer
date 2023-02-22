@@ -222,4 +222,86 @@ export const mentors = [
   },
 ]
 
+export const footerColOne = [
+  {
+    slug:'/1',
+    text : "Link One",
+  },
+  {
+    slug:'/2',
+    text : "Link Two",
+  },
+  {
+    slug:'/3',
+    text : "Link Three",
+  },
+  {
+    slug:'/4',
+    text : "Link Four",
+  },
+  {
+    slug:'/5',
+    text : "Link Five",
+  },
+]
+export const footerColTwo = [
+  {
+    slug:'/6',
+    text : "Link Six",
+  },
+  {
+    slug:'/7',
+    text : "Link Seven",
+  },
+  {
+    slug:'/8',
+    text : "Link Eight",
+  },
+  {
+    slug:'/9',
+    text : "Link Nine",
+  },
+  {
+    slug:'/10',
+    text : "Link Ten",
+  },
+]
+export const footerColThree = [
+  {
+    slug:'/11',
+    text : "Link Eleven",
+  },
+  {
+    slug:'/12',
+    text : "Link Twelve",
+  },
+  {
+    slug:'/13',
+    text : "Link Thirteen",
+  },
+  {
+    slug:'/13',
+    text : "Link Fourteen",
+  },
+  {
+    slug:'/15',
+    text : "Link Fifteen",
+  },
+]
+
+export const policy = [
+  {
+    slug :'/',
+    text:"Privacy Policy"
+  },
+  {
+    slug :'/',
+    text:"Terms of Service "
+  },
+  {
+    slug :'/',
+    text:"Cookies Settings"
+  },
+]
+
 export const BASE_URL = 'https://xplainerr.vercel.app/';
