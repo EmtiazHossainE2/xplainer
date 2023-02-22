@@ -1,3 +1,30 @@
+export const topCompanies = [
+  {
+    logo : '/1.svg',
+  },
+  {
+    logo : '/2.svg',
+  },
+  {
+    logo : '/3.svg',
+  },
+  {
+    logo : '/4.svg',
+  },
+  {
+    logo : '/5.svg',
+  },
+  {
+    logo : '/6.svg',
+  },
+  {
+    logo : '/7.svg',
+  },
+  {
+    logo : '/8.svg',
+  },
+]
+
 export const pmInterviewKeyChapters = [
   {
     title: "Introduction to APIs",
@@ -204,19 +231,19 @@ export const allWorkshop = [
 export const mentors = [
   {
     name: "Venkatesh Gupta",
-    image: "venky.png",
+    image: "venky.svg",
     job1: "Product Manager at Razorpay ",
     job2: "Ex-Internshala | Ex- Frontbench"
   },
   {
     name: "Naman Goyal",
-    image: "naman.png",
+    image: "naman.svg",
     job1: "Product Manager at Internshala ",
     job2: "Ed-tech enthusiast"
   },
   {
     name: "Deepak Kumar",
-    image: "deepak.png",
+    image: "deepak.svg",
     job1: "SDE -2 @ Airmeet",
     job2: "Ex - 91 wheels | Flux Auto (YC 18)"
   },
