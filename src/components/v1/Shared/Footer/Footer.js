@@ -2,12 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { ImFacebook, ImLinkedin2, ImTwitter } from 'react-icons/im'
 import { BsInstagram } from 'react-icons/bs'
+import MobileFooter from "./MobileFooter"
+import { footerColOne, footerColThree, footerColTwo } from "@/src/config/constants"
 
 const Footer = () => {
   const getYear = new Date().getFullYear()
   return (
     <div className="bg-[#F5F5F7]">
-      <div className="xl:container xl:mx-auto section__padding">
+      <div className="hidden lg:block xl:container xl:mx-auto section__padding">
         {/*********************** Footer Top For Large Device  ***************/}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-5">
           {/* Left  */}
@@ -15,27 +17,21 @@ const Footer = () => {
             <h3 className="text-3xl font-bold">Xplainerr</h3>
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column One</h3>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
+              {footerColOne.map((item, index) => (
+                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+              ))}
             </div>
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column Two</h3>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
+              {footerColTwo.map((item, index) => (
+                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+              ))}
             </div>
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column Three</h3>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
-              <Link href='/'>Link One</Link>
+              {footerColThree.map((item, index) => (
+                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+              ))}
             </div>
           </div>
           {/* Right  */}
@@ -61,9 +57,9 @@ const Footer = () => {
         <div className="flex justify-between items-center gap-5 pt-20">
           <div className="flex gap-5 ">
             <p className="border-black border-b ">{getYear} Xplainerr. All right reserved.</p>
-            <Link href='/'  className="border-black border-b">Privacy Policy</Link>
-            <Link href='/'  className="border-black border-b">Terms of Service</Link>
-            <Link href='/'  className="border-black border-b">Cookies Settings</Link>
+            <Link href='/' className="border-black border-b">Privacy Policy</Link>
+            <Link href='/' className="border-black border-b">Terms of Service</Link>
+            <Link href='/' className="border-black border-b">Cookies Settings</Link>
           </div>
           {/* Social Icon  */}
           <div className="flex justify-between gap-5 items-center">
@@ -74,6 +70,11 @@ const Footer = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* Mobile Footer  */}
+      <div className="block lg:hidden py-10 container mx-auto section__padding">
+        <MobileFooter />
       </div>
     </div>
   )
