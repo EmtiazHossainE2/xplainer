@@ -18,19 +18,19 @@ const Footer = () => {
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column One</h3>
               {footerColOne.map((item, index) => (
-                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
               ))}
             </div>
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column Two</h3>
               {footerColTwo.map((item, index) => (
-                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
               ))}
             </div>
             <div className="flex flex-col footer gap-y-1">
               <h3 className="text-lg font-semibold mt-1">Column Three</h3>
               {footerColThree.map((item, index) => (
-                <Link key={index} href={`/${item.slug}`}>{item.text}</Link>
+                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
               ))}
             </div>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
         {/*************** Footer Bottom For Large Device **********************/}
         <div className="flex justify-between items-center gap-5 pt-20">
           <div className="flex gap-5 ">
-            <p className="border-black border-b ">{getYear} Xplainerr. All right reserved.</p>
+            <p className="border-black ">{getYear} Xplainerr. All right reserved.</p>
             <Link href='/' className="border-black border-b">Privacy Policy</Link>
             <Link href='/' className="border-black border-b">Terms of Service</Link>
             <Link href='/' className="border-black border-b">Cookies Settings</Link>

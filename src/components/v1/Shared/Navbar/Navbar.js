@@ -69,7 +69,7 @@ const Navbar = () => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[6px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[4px] border-[#0070F4] " : ""}`}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
@@ -90,7 +90,7 @@ const Navbar = () => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2  pb-[6px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2  pb-[4px] border-[#0070F4] " : ""}`}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
@@ -192,9 +192,9 @@ const Navbar = () => {
                 setCourseOpen(false)
               }}
             >
-              <Link href='/mock-interview' className='hover:border-b-2 hover:border-[#0070F4]'>Mock Interviews</Link>
+              <Link href='/mock-interview' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Mock Interviews</Link>
             </p>
-            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:border-[#0070F4]'>Blog</Link></p>
+            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Blog</Link></p>
 
           </div>
 

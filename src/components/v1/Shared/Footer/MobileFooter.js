@@ -16,7 +16,7 @@ const MobileFooter = () => {
           <h3 className='font-medium pb-6'>Column One</h3>
           <div>
             {footerColOne.map((item, index) => (
-              <Link key={index} href={`/${item.slug}`}><p className='text-[#515151] text-sm font-medium pb-4'>{item.text}</p></Link>
+              <Link key={index} href={`${item.slug}`}><p className='text-[#515151] text-sm font-medium pb-4'>{item.text}</p></Link>
             ))}
           </div>
         </div>
@@ -24,7 +24,7 @@ const MobileFooter = () => {
           <h3 className='font-medium pb-6'>Column Two</h3>
           <div>
             {footerColTwo.map((item, index) => (
-              <Link key={index} href={`/${item.slug}`}><p className='text-[#515151] text-sm font-medium pb-4'>{item.text}</p></Link>
+              <Link key={index} href={`${item.slug}`}><p className='text-[#515151] text-sm font-medium pb-4'>{item.text}</p></Link>
             ))}
           </div>
         </div>
@@ -44,12 +44,11 @@ const MobileFooter = () => {
       {/* Policy Links  */}
       <div className='flex flex-col space-y-2 py-4'>
         {policy.map((item, index) => (
-          <Link key={index} href={`/${item.slug}`}><span className='border-black border-b'>{item.text}</span></Link>
+          <Link key={index} href={`${item.slug}`}><span className='border-black border-b'>{item.text}</span></Link>
         ))}
-        <Link href='/'><span className="border-black border-b">{getYear} Xplainerr. All right reserved. </span></Link>
       </div>
       {/* Copyright  */}
-      {/* <p className="border-black border-b">{getYear} Xplainerr. All right reserved.</p> */}
+      <p className="border-black">{getYear} Xplainerr. All right reserved.</p>
     </div>
   )
 }

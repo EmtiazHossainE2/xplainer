@@ -10,9 +10,9 @@ const Mentor = ({ mentor }) => {
       
       {/* Job Timeline  */}
       <ul>
-        <li class="relative flex items-baseline gap-3 pb-3">
-          <div class="before:absolute before:left-[3.2px] before:h-full before:w-[1px] before:bg-[#B6B6B6]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" class="bi bi-circle-fill fill-[#B6B6B6]" viewBox="0 0 16 16">
+        <li className="relative flex items-baseline gap-3 pb-3">
+          <div className="before:absolute before:left-[3.2px] before:h-full before:w-[1px] before:bg-[#B6B6B6]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" className="bi bi-circle-fill fill-[#B6B6B6]" viewBox="0 0 16 16">
               <circle cx="8" cy="8" r="8" />
             </svg>
           </div>
@@ -20,9 +20,9 @@ const Mentor = ({ mentor }) => {
             <p className="text-sm">{mentor.job1}</p>
           </div>
         </li>
-        <li class="relative flex items-baseline gap-3 pb-5">
-          <div class="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" class="bi bi-circle-fill fill-[#B6B6B6]" viewBox="0 0 16 16">
+        <li className="relative flex items-baseline gap-3 pb-5">
+          <div className="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" className="bi bi-circle-fill fill-[#B6B6B6]" viewBox="0 0 16 16">
               <circle cx="8" cy="8" r="8" />
             </svg>
           </div>

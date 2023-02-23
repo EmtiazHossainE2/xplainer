@@ -1,7 +1,7 @@
 ---
 title: 'Types of APIs - REST vs SOAP'
 metaTitle: "Design an ATM For Blind "
-metaDescription: 'REST, SOAP and GraphQL APIs'
+metaDescription: 'Fear pricing and monetisation strategies in product interviews?'
 cover_image: '/images/blog/blog2.png'
 author : 'M Sri '
 author_image: '/images/blog/news-author-01.jpg'

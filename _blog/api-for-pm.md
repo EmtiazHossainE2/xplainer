@@ -1,11 +1,11 @@
 ---
-title: 'Web Hooks'
-metaTitle: "API security "
+title: 'Api For pm'
+metaTitle: "API for pm "
 metaDescription: 'Fear pricing and monetisation strategies in product interviews?  '
 cover_image: '/images/blog/blog3.png'
 author : 'M Shahara'
 author_image: '/images/blog/news-author-03.jpg'
-date: 'February 12, 2023'
+date: 'February 1, 2023'
 ---
 
 <div class="card-1-container">
