@@ -138,7 +138,7 @@ export const allCourses = [
 
   },
   {
-    title: 'A to Z of Pricing & Monetization',
+    title: 'Pricing & Monetization',
     category: 'Product Management',
     subCategory: ["Trending", " Beginner friendly ", "13+ chapters"],
     slug: 'pricing-for-pm',
