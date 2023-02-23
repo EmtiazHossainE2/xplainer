@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import styles from '@/styles/Navbar.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
-import styles from '@/styles/Navbar.module.css'
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import Image from 'next/image';
 import MobileMenu from './MobileMenu';
-import apiForPmSvg from '/public/images/shared/apiForPm.svg'
-import pricing from '/public/images/shared/pricing.svg'
-import users from '/public/images/shared/users.svg'
-import noCode from '/public/images/shared/noCode.svg'
-import productHunt from '/public/images/shared/productHunt.svg'
-import personalBrand from '/public/images/shared/personalBrand.svg'
+import apiForPmSvg from '/public/images/shared/apiForPm.svg';
+import noCode from '/public/images/shared/noCode.svg';
+import personalBrand from '/public/images/shared/personalBrand.svg';
+import pricing from '/public/images/shared/pricing.svg';
+import productHunt from '/public/images/shared/productHunt.svg';
+import users from '/public/images/shared/users.svg';
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -69,7 +69,7 @@ const Navbar = () => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[4px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[]  border-[#0070F4] " : ""}`}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
@@ -90,7 +90,7 @@ const Navbar = () => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2  pb-[4px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 pb-[]   border-[#0070F4] " : ""}`}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
@@ -108,7 +108,7 @@ const Navbar = () => {
             </div>
             {/* Dropdown  */}
             {courseOpen && (
-              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-8 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -147,7 +147,7 @@ const Navbar = () => {
             )}
 
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-8 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -192,9 +192,9 @@ const Navbar = () => {
                 setCourseOpen(false)
               }}
             >
-              <Link href='/mock-interview' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Mock Interviews</Link>
+              <Link href='/mock-interview' className='hover:border-b-2  hover:border-[#0070F4]'>Mock Interviews</Link>
             </p>
-            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Blog</Link></p>
+            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2  hover:border-[#0070F4]'>Blog</Link></p>
 
           </div>
 

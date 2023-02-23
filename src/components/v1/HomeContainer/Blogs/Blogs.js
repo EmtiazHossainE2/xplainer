@@ -1,8 +1,7 @@
 import Link from "next/link"
 import Blog from "./Blog"
-import { blogsData } from "./blogsData"
 
-const Blogs = () => {
+const Blogs = ({posts}) => {
   return (
     <div className="xl:container xl:mx-auto section__padding">
       <div className="text-center">
@@ -16,7 +15,7 @@ const Blogs = () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {blogsData.map((blog, index) => (
+        {posts.slice(0,6)?.map((blog, index) => (
           <Blog blog={blog} index={index} key={index} />
         ))}
       </div>

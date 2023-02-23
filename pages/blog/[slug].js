@@ -1,10 +1,10 @@
 import PageLayout from "@/src/layout/PageLayout"
-import Head from "next/head"
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Image from "next/image"
 import { marked } from "marked"
+import CommonHead from "@/src/components/v1/Shared/CommonHead"
 
 const PostDetails = ({ frontmatter, content, }) => {
 
@@ -13,12 +13,11 @@ const PostDetails = ({ frontmatter, content, }) => {
 
   return (
     <>
-      <Head>
-        <title>{`X Plainer | Blog | ${frontmatter?.title}`}</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CommonHead
+        title={`X Plainer | Blog | ${frontmatter?.title}`}
+        metaDes={'description'}
+        favIcon={'/favicon.ico'}
+      />
       <main>
         <PageLayout>
           <div className="max-w-3xl container mx-auto px-5 my-2 shadow-md">
