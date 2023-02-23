@@ -1,6 +1,4 @@
 import { Blogs, Brand, Courses, CTA, Faqs, HeroBanner, Mentors } from '@/src/components/v1/HomeContainer'
-import Footer from '@/src/components/v1/Shared/Footer/Footer'
-import Navbar from '@/src/components/v1/Shared/Navbar/Navbar'
 import PageLayout from '@/src/layout/PageLayout'
 import Head from 'next/head'
 import React from 'react'
