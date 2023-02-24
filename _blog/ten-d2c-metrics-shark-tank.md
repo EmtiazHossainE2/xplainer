@@ -10,10 +10,6 @@ date: 'February 7, 2023'
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
 
-
-# 10 D2C metrics that Shark Peeyush Bansal of Lenskart loves
-
-
 ## 🦈 What is D2C and Shark Tank India connection?
 
 ---
