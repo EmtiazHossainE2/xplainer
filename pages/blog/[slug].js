@@ -20,25 +20,26 @@ const PostDetails = ({ frontmatter, content, }) => {
       />
       <main>
         <PageLayout>
-          <div className="max-w-3xl container mx-auto px-5 my-2 shadow-md">
-            <div className="pt-12 pb-12 md:pt-10 md:pb-20 prose prose-base prose-slate parsedown">
+          <div className="max-w-4xl container mx-auto px-5 my-2 ">
+            <div className="pt-12 pb-12 md:pt-10 md:pb-20 ">
 
-              <div className=''>Posted on {frontmatter?.date}</div>
-              <h1 className='m-0'>{frontmatter?.title}</h1>
+              <div className='pb-2'>Posted on {frontmatter?.date}</div>
+              <h1 className='post-heading '>{frontmatter?.title}</h1>
+              <hr />
 
-              <div className="flex items-center gap-5 ">
-                <Image className="m-0" src={frontmatter.author_image} width="40" height="40" alt={frontmatter.author} />
+              <div className="flex items-center gap-2 pt-5 ">
+                <Image className="m-0 rounded-full" src={frontmatter.author_image} width="40" height="40" alt={frontmatter.author} />
                 <p className="text-gray-600 font-semibold">{frontmatter.author}</p>
               </div>
 
-              <Image className="m-0" src={frontmatter?.cover_image} alt={frontmatter?.title} width={500} height={400} style={{ height: '100%', width: '100%' }} />
 
-              <div className=' '>
+              <div className='blog__content '>
                 <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
               </div>
 
             </div>
           </div>
+          
         </PageLayout>
       </main>
     </>
