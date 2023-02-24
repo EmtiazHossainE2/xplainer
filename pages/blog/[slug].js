@@ -14,8 +14,8 @@ const PostDetails = ({ frontmatter, content, }) => {
   return (
     <>
       <CommonHead
-        title={`X Plainer | Blog | ${frontmatter?.title}`}
-        metaDes={'description'}
+        title={`${frontmatter?.title} - Blog | Xplainerr.com`}
+        description={'description'}
         favIcon={'/favicon.ico'}
       />
       <main>
@@ -25,17 +25,17 @@ const PostDetails = ({ frontmatter, content, }) => {
 
               <h1 className='post-heading '>{frontmatter?.title}</h1>
               <hr />
-              <div className='pb-4 pt-4 italic text-gray-500'>Posted on {frontmatter?.date}</div>
+              <div className='pb-4 pt-4 italic text-gray-500'>{frontmatter?.date} * 7</div>
 
 
-              <div className="flex items-center gap-2 pt-5 ">
+              {/* <div className="flex items-center gap-2 pt-5 ">
                 <Image className="m-0 rounded-full" src={frontmatter.author_image} width="40" height="40" alt={frontmatter.author} />
                 <p className="text-gray-600 font-semibold">{frontmatter.author}</p>
-              </div>
+              </div> */}
 
 
               <div className='blog__content '>
-                <div dangerouslySetInnerHTML={{ __html: marked(content) }} ></div>
+                <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
               </div>
 
             </div>

@@ -6,7 +6,7 @@ const Error = () => {
     <>
       <CommonHead
         title={'XPlainerr | Coming Soon'}
-        metaDes={'description'}
+        description={'description'}
         favIcon={'/favicon.ico'}
       />
       <PageLayout>

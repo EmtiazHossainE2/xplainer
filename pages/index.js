@@ -13,7 +13,7 @@ const Home = ({posts}) => {
     <>
       <CommonHead
         title={'Upskilling & Interview prep courses on product managment, engineering, design & more - Xplainerr'}
-        metaDes={'Upskill and prepare for your interviews by learning all the concepts which are highly useful in your daily professional job. '}
+        description={'Upskill and prepare for your interviews by learning all the concepts which are highly useful in your daily professional job. '}
         favIcon={'/favicon.ico'}
       />
       <main>

@@ -12,7 +12,7 @@ const Blog = ({ posts }) => {
     <>
       <CommonHead
         title={'X Plainer | Blog'}
-        metaDes={'description'}
+        description={'description'}
         favIcon={'/favicon.ico'}
       />
       <main>

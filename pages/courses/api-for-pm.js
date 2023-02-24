@@ -9,7 +9,7 @@ const ApiForPm = () => {
     <>
       <CommonHead
         title={'Master APIs for Product Management: Drive Growth and Improve User Experience'}
-        metaDes={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
+        description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
         favIcon={'/favicon.ico'}
       />
       <main>
