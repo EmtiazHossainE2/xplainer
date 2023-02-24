@@ -35,7 +35,7 @@ const PostDetails = ({ frontmatter, content, }) => {
 
 
               <div className='blog__content '>
-                <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+                <div dangerouslySetInnerHTML={{ __html: marked(content) }} ></div>
               </div>
 
             </div>
