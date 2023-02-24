@@ -20,7 +20,7 @@ const Navbar = () => {
   const [couponModal, setCouponModal] = useState(false)
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
-  const [open,setToggle] = useState(false)
+  const [open, setToggle] = useState(false)
 
   // Handle Sticky 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
           <div className={`relative ${styles.navbar__container}`}>
 
-          {/* Courses */}
+            {/* Courses */}
             <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
@@ -175,7 +175,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                  <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
+                    <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -221,8 +221,11 @@ const Navbar = () => {
           {/********************** * For Mobile ********************* */}
           {/* <MobileNav/> */}
           {/* <MobileMenu/> */}
-          <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
-          <MobileMenu2 open={open} setToggle={setToggle}/>
+          <div className={`block lg:hidden `}>
+            <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
+          </div>
+
+          <MobileMenu2 open={open} setToggle={setToggle} />
 
         </div>
       </header>
