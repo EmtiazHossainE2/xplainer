@@ -5,7 +5,7 @@ metaDescription: 'Learn how to become a Product Manager?'
 cover_image: '/images/blog/blog1.png'
 author : 'Venkatesh Gupta'
 author_image: '/images/blog/news-author-02.jpg'
-date: 'February 5, 2023'
+date: 'Feb 5,2023'
 ---
 
 ![https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png](https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png)
@@ -143,3 +143,9 @@ Many companies do have preferences like an MBA or a degree from a premier instit
 Product industry is full of marvellous examples where people from operations, technology, marketing, psychology have transitioned into product role and achieved stunning feet.
 
 > Remember: Product Managers are also a product. As an aspiring PM, make your digital presence. Read, write & talk a lot. And yeah: do ask questions, no matter how silly they are.
+
+
+### Related posts 
+
+- [10 D2C metrics that Shark Peeyush Bansal of Lenskart loves](ten-d2c-metrics-shark-tank)
+- [5 lessons for Indian start-up founders in Funding Winter from Sahil Lavangia](5-lessons-for-start-founders-by-gumroad-ceo)
