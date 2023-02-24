@@ -5,7 +5,7 @@ metaDescription: 'Peevish Bansal, a successful D2C entrepreneur, swears by these
 cover_image: '/images/blog/blog2.png'
 author : 'M Sri '
 author_image: '/images/blog/news-author-01.jpg'
-date: 'February 7, 2023'
+date: 'Feb 5,2023'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
