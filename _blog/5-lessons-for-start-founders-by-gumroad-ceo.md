@@ -10,9 +10,6 @@ date: 'February 7, 2023'
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
 
-
-# 5 lessons for Indian start-up founders in Funding Winter from Sahil Lavangia
-
 Sahil Lavingia is an entrepreneur and the founder of Gumroad, a platform that allows creators to sell their work directly to consumers. 
 
 He is also the author of the book "The Minimalist Entrepreneur", which provides insights into building a business that is both profitable and sustainable. Here are the top 5 learnings from the book:
