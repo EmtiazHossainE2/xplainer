@@ -155,8 +155,8 @@ a {
   font-size: 30px;
   line-height: 1.5;
   font-weight: 500;
-  border-left: 2px solid #5281db;
-  padding: 0 16px;
+  /* border-left: 2px solid #5281db; */
+  /* padding: 0 16px; */
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
