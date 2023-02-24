@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Blog = ({ blog, index }) => {
-  console.log(blog)
+  // console.log(blog)
   return (
     <div className=' p-4 rounded-[10px] blog '>
       <div className='w-full'>
