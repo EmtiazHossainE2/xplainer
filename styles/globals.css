@@ -30,7 +30,7 @@ a {
 }
 
 .customTitle {
-  @apply pt-5 text-center pb-8 text-2xl lg: text-[34px] leading-10 font-bold
+  @apply pt-5 text-center pb-8 text-2xl lg:text-[34px] leading-10 font-bold
 }
 
 .h3 {
