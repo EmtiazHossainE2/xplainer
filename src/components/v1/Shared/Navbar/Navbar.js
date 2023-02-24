@@ -2,10 +2,11 @@ import styles from '@/styles/Navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
-import MobileMenu from './MobileMenu';
+import MobileMenu2 from './MobileMenu2';
 import apiForPmSvg from '/public/images/shared/apiForPm.svg';
 import noCode from '/public/images/shared/noCode.svg';
 import personalBrand from '/public/images/shared/personalBrand.svg';
@@ -19,9 +20,22 @@ const Navbar = () => {
   const [couponModal, setCouponModal] = useState(false)
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
+  const [open,setToggle] = useState(false)
 
   // Handle Sticky 
   useEffect(() => {
+
+    const body = document.querySelector('body')
+    console.log(body)
+    if (!body) return
+
+    if (open) {
+      body.style.overflowY = "hidden"
+    } else {
+      body.style.overflowY = "auto"
+    }
+
+
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
         setSticky(true);
@@ -36,7 +50,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [open]);
 
 
   return (
@@ -206,7 +220,9 @@ const Navbar = () => {
 
           {/********************** * For Mobile ********************* */}
           {/* <MobileNav/> */}
-          <MobileMenu/>
+          {/* <MobileMenu/> */}
+          <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
+          <MobileMenu2 open={open} setToggle={setToggle}/>
 
         </div>
       </header>
