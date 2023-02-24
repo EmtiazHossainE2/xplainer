@@ -56,10 +56,8 @@ A PM should have an understanding of system like —
 
 - What is an API? How does API works?
 - What is cloud? How servers work?
-- How large scale system that caters to millions of users works? (System design)?
-    
-    What is load balancing? What is horizontal & vertical scaling?
-    
+- How large scale system that caters to millions of users works? (System design)?  
+- What is load balancing? What is horizontal & vertical scaling?
 - HTML, CSS & Javascript
 - Familiarity with tools like Google analytics, Postman & Google developer tools.
 - RDBMS & No SQL databases

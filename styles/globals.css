@@ -174,6 +174,7 @@ a {
 
 .blog__content p {
   font-size: 16px;
+  color: #3B454E;
 }
 
 .blog__content pre {
@@ -185,6 +186,18 @@ a {
 .blog__content p {
   margin: 12px 0px 22px;
   line-height: 1.625;
+}
+
+.blog__content strong {
+  font-weight: bold;
+}
+
+
+.blog__content ul {
+  padding-inline-start: 40px;
+  margin: 24px 0px;
+  padding: 0px 0px 0px 2em;
+  list-style: disc;
 }
 
 .blog__content ol {
@@ -202,17 +215,25 @@ a {
 
 .blog__content ul li {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 2.0;
   font-weight: 400;
 }
 
 .blog__content h1 {
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.5;
   margin-bottom: 16px;
   margin-top: 32px;
 }
+
+.blog__content ul{
+  margin: 24px 0px;
+    padding: 0px 0px 0px 2em;
+
+
+}
+
 
 .blog__content h2 {
   font-size: 24px;
