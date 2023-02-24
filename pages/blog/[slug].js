@@ -23,9 +23,10 @@ const PostDetails = ({ frontmatter, content, }) => {
           <div className="max-w-4xl container mx-auto px-5 my-2 ">
             <div className="pt-12 pb-12 md:pt-10 md:pb-20 ">
 
-              <div className='pb-2'>Posted on {frontmatter?.date}</div>
               <h1 className='post-heading '>{frontmatter?.title}</h1>
               <hr />
+              <div className='pb-4 pt-4 italic text-gray-500'>Posted on {frontmatter?.date}</div>
+
 
               <div className="flex items-center gap-2 pt-5 ">
                 <Image className="m-0 rounded-full" src={frontmatter.author_image} width="40" height="40" alt={frontmatter.author} />

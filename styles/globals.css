@@ -253,7 +253,13 @@ a {
 
 .blog__content a {
   transition: color 0.15s;
-  color: #1000EE;
+  color: #2213f3;
+}
+
+.blog__content img{
+  max-height: 450px;
+  margin: 0 auto;
+  border: 1px solid #e1e1e1;
 }
 
 pre code {
@@ -314,6 +320,11 @@ pre code {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .blog__content{
+    display: block;
+    text-align: start;
   }
 }
 

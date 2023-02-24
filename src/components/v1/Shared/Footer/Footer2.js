@@ -83,7 +83,8 @@ const Footer2 = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="mt-12 md:mt-8">
+
+                  {/* <div className="mt-12 md:mt-8">
                     <div className="flex flex-col gap-y-4">
                       <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Legal</h3>
                       <ul className="flex flex-col gap-y-3" role="list">
@@ -92,7 +93,8 @@ const Footer2 = () => {
                         <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/legal/terms">Terms of Service</Link></span></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
+
                 </div>
               </div>
             </div>
