@@ -94,3 +94,11 @@ Here are some examples of how different types of D2C companies could use these m
 - A subscription service could track churn rate to see how many customers are cancelling each month.
 - A beauty brand could track customer retention rate to see how many customers are returning to make repeat purchases.
 - A food delivery service could track conversion rate to see how many website visitors are placing orders.
+
+------
+
+### Related posts 
+
+- [5 lessons for Indian start-up founders in Funding Winter from Sahil Lavangia](5-lessons-for-start-founders-by-gumroad-ceo)
+- [So you want to be a Product Manager?](so-you-want-to-be-product-manager)
+
