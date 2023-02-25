@@ -1,17 +1,18 @@
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import styles from '@/styles/Navbar.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
-import styles from '@/styles/Navbar.module.css'
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import Image from 'next/image';
-import MobileMenu from './MobileMenu';
-import apiForPmSvg from '/public/images/shared/apiForPm.svg'
-import pricing from '/public/images/shared/pricing.svg'
-import users from '/public/images/shared/users.svg'
-import noCode from '/public/images/shared/noCode.svg'
-import productHunt from '/public/images/shared/productHunt.svg'
-import personalBrand from '/public/images/shared/personalBrand.svg'
+import MobileMenu2 from './MobileMenu2';
+import apiForPmSvg from '/public/images/shared/apiForPm.svg';
+import noCode from '/public/images/shared/noCode.svg';
+import personalBrand from '/public/images/shared/personalBrand.svg';
+import pricing from '/public/images/shared/pricing.svg';
+import productHunt from '/public/images/shared/productHunt.svg';
+import users from '/public/images/shared/users.svg';
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -19,9 +20,22 @@ const Navbar = () => {
   const [couponModal, setCouponModal] = useState(false)
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
+  const [open, setToggle] = useState(false)
 
   // Handle Sticky 
   useEffect(() => {
+
+    const body = document.querySelector('body')
+    console.log(body)
+    if (!body) return
+
+    if (open) {
+      body.style.overflowY = "hidden"
+    } else {
+      body.style.overflowY = "auto"
+    }
+
+
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
         setSticky(true);
@@ -36,7 +50,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [open]);
 
 
   return (
@@ -62,14 +76,14 @@ const Navbar = () => {
           </div>
           <div className={`relative ${styles.navbar__container}`}>
 
-          {/* Courses */}
+            {/* Courses */}
             <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[4px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[]  border-[#0070F4] " : ""}`}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
@@ -90,7 +104,7 @@ const Navbar = () => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2  pb-[4px] border-[#0070F4] " : ""}`}
+                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 pb-[]   border-[#0070F4] " : ""}`}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
@@ -108,7 +122,7 @@ const Navbar = () => {
             </div>
             {/* Dropdown  */}
             {courseOpen && (
-              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-8 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -147,7 +161,7 @@ const Navbar = () => {
             )}
 
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-8 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
@@ -161,7 +175,7 @@ const Navbar = () => {
 
                 <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
-                  <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
+                    <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
@@ -192,9 +206,9 @@ const Navbar = () => {
                 setCourseOpen(false)
               }}
             >
-              <Link href='/mock-interview' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Mock Interviews</Link>
+              <Link href='/mock-interview' className='hover:border-b-2  hover:border-[#0070F4]'>Mock Interviews</Link>
             </p>
-            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2 hover:pb-[4px] hover:border-[#0070F4]'>Blog</Link></p>
+            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2  hover:border-[#0070F4]'>Blog</Link></p>
 
           </div>
 
@@ -206,7 +220,12 @@ const Navbar = () => {
 
           {/********************** * For Mobile ********************* */}
           {/* <MobileNav/> */}
-          <MobileMenu/>
+          {/* <MobileMenu/> */}
+          <div className={`block lg:hidden `}>
+            <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
+          </div>
+
+          <MobileMenu2 open={open} setToggle={setToggle} />
 
         </div>
       </header>

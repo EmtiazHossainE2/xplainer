@@ -1,18 +1,16 @@
-import { Authors, CtaAlternative, Faqs, FeaturesBlocks,  HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import { pricingCardText } from '@/src/config/constants'
 import PageLayout from '@/src/layout/PageLayout'
-import Head from 'next/head'
-import React from 'react'
 
 const ApiForPm = () => {
   return (
     <>
-      <Head>
-        <title>XPlainerr | Pricing For Pm </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CommonHead
+        title={'Pricing and Monetization: Unlock Business Success with in-depth strategies to master for Product Managers, Marketers, and Growth Managers'}
+        description={`Unlock the power of pricing and monetization with our in-depth course designed for Product Managers, Marketers, and Growth Managers. Learn the latest strategies, techniques, and tools to drive business success and revenue growth`}
+        favIcon={'/favicon.ico'}
+      />
       <main>
         <PageLayout>
           <HeroHome

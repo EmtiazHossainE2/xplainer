@@ -1,9 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ImFacebook, ImLinkedin2, ImTwitter } from 'react-icons/im'
-import { BsInstagram } from 'react-icons/bs'
-import MobileFooter from "./MobileFooter"
 import { footerColOne, footerColThree, footerColTwo } from "@/src/config/constants"
+import Link from "next/link"
+import { BsInstagram } from 'react-icons/bs'
+import { ImFacebook, ImLinkedin2, ImTwitter } from 'react-icons/im'
+import MobileFooter from "./MobileFooter"
 
 const Footer = () => {
   const getYear = new Date().getFullYear()

@@ -2,20 +2,19 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import PageLayout from '@/src/layout/PageLayout'
-import Head from 'next/head'
 import { sortByDate } from '@/src/utils/date'
 import BlogList from '@/src/components/v1/Blog/BlogList'
+import CommonHead from '@/src/components/v1/Shared/CommonHead'
 
 const Blog = ({ posts }) => {
   // console.log(posts)
   return (
     <>
-      <Head>
-        <title>X Plainer | Blog </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CommonHead
+        title={'X Plainer | Blog'}
+        description={'description'}
+        favIcon={'/favicon.ico'}
+      />
       <main>
         <PageLayout>
           <div className="flex flex-col min-h-screen overflow-hidden">

@@ -1,7 +1,7 @@
 import { allCourses, allWorkshop, BASE_URL } from '@/src/config/constants';
 import Image from "next/image";
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineCloseCircle, AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
@@ -20,6 +20,7 @@ const MobileMenu = () => {
       {toggleMenu && (
         <div
           className={`pt-2 pb-6 w-9/12  h-screen bg-white z-20 fixed top-0 -left-0 lg:left-0 lg:hidden  peer-focus:left-0 transition ease-out delay-150 duration-300 border-r border-[#a9a6a6] navdrawer `}
+          id='box1'
           data-aos="fade-right"
           data-aos-offset="100"
           data-aos-duration="200"
@@ -82,16 +83,16 @@ const MobileMenu = () => {
                 {courseOpen && (
                   <div onClick={() => setCourseOpen(false)} className="absolute ml-1 left-0 top-10 z-10 bg-white border-b border-gray-200 py-2 mt-2  w-full">
 
-                    {allCourses.map((item, index)=> {
-                      return(
+                    {allCourses.map((item, index) => {
+                      return (
                         <Link key={`course-${index}`} href={`/courses/${item.slug}`} className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                        <div className='flex items-center gap-x-2 imgIcon'>
-                          <Image src={`${PUBLIC_IMAGE_PATH}/${item.icon}`} alt='icon' width={20} height={20} />
-                          <div className=''>
-                            <h4 className='font-medium text-[12px]'>{item.title}</h4>
+                          <div className='flex items-center gap-x-2 imgIcon'>
+                            <Image src={`${PUBLIC_IMAGE_PATH}/${item.icon}`} alt='icon' width={20} height={20} />
+                            <div className=''>
+                              <h4 className='font-medium text-[12px]'>{item.title}</h4>
+                            </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
                       )
                     })}
                   </div>
@@ -100,16 +101,16 @@ const MobileMenu = () => {
                 {workShopsOpen && (
                   <div onClick={() => setWorkShopsOpen(false)} className={`absolute left-0   z-10 bg-white py-2 mt-2 border-b border-gray-200 w-full ml-1 ${courseOpen && workShopsOpen ? 'top-52' : 'top-20'}`}>
 
-                    {allWorkshop.map((item, index)=> {
-                      return(
+                    {allWorkshop.map((item, index) => {
+                      return (
                         <Link key={index} href={`/workshops/${item.slug}`} className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
-                        <div className='flex items-center gap-x-2 imgIcon'>
-                          <Image src={`${PUBLIC_IMAGE_PATH}/${item.icon}`} alt='icon' width={20} height={20} />
-                          <div className=''>
-                            <h4 className='font-medium text-[12px]'> {item.title} </h4>
+                          <div className='flex items-center gap-x-2 imgIcon'>
+                            <Image src={`${PUBLIC_IMAGE_PATH}/${item.icon}`} alt='icon' width={20} height={20} />
+                            <div className=''>
+                              <h4 className='font-medium text-[12px]'> {item.title} </h4>
+                            </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
                       )
                     })}
                   </div>

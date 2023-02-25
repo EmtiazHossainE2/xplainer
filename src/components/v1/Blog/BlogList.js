@@ -21,11 +21,11 @@ const BlogList = ({ posts }) => {
 
               {/* Article */}
               {posts && posts.map((post, index) => (
-                <div key={index}>
+                <div key={index} className=''>
                   <article className="flex flex-col h-full" data-aos="zoom-y-out">
                     <header>
                       <Link href={`/blog/${post.slug}`} className="block mb-6">
-                        <Image className=" inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src={post?.frontmatter?.cover_image} width="352" height="198"  alt={post.frontmatter.title} />
+                        <Image className=" inset-0 w-full h-full object-cover transform  hover:-translate-y-1 transition duration-700 " src={post?.frontmatter?.cover_image} width="352" height="198"  alt={post.frontmatter.title} />
                       </Link>
                       <div className="mb-3">
                         <ul className="flex flex-wrap text-xs font-medium -m-1">
