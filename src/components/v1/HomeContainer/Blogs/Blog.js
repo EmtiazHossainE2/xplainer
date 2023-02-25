@@ -24,7 +24,7 @@ const Blog = ({ blog, index }) => {
         </ul>
       </div>
       <Link href={`/blog/${blog.slug}`}><h3 className='text-lg xl:text-xl font-semibold pb-3'>{index + 1} . {" "} {blog.frontmatter.title}</h3></Link>
-      <p className='text-sm text-[#202020BF]'>{blog.frontmatter.metaDescription}</p>
+      <p className='text-sm text-[#202020BF]'>{blog.frontmatter.metaDescription.slice(0,80) + '...'}</p>
     </div>
   )
 }
