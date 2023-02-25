@@ -19,7 +19,7 @@ const HeroBanner = () => {
         {/* Right */}
         <div className='basis-1/2 hidden md:block lg:flex justify-center items-center'>
           <Image
-            src="/images/shared/hero1.jpg"
+            src="/images/home/hero1.jpeg"
             alt="Hero Banner"
             width={450}
             height={600}

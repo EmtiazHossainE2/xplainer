@@ -11,7 +11,7 @@ const Blog = ({ posts }) => {
   return (
     <>
       <CommonHead
-        title={'X Plainer | Blog'}
+        title={'Xplainerr - Blog'}
         description={'description'}
         favIcon={'/favicon.ico'}
       />
