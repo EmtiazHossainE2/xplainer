@@ -24,7 +24,7 @@ const Home = ({posts}) => {
           <Mentors />
           <Blogs posts={posts}/>
           <Faqs />
-          <CTA />
+          {/* <CTA /> */}
         </PageLayout>
 
       </main>

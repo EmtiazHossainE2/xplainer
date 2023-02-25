@@ -2,7 +2,7 @@
 title: 'So you want to be a Product Manager?'
 metaTitle: "Introduction to API "
 metaDescription: 'Learn how to become a Product Manager?'
-cover_image: '/images/blog/blog1.png'
+cover_image: 'https://ik.imagekit.io/zwxa4kttt/Screenshot_2023-02-26_at_1.59.35_AM.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677357016254'
 author : 'Venkatesh Gupta'
 author_image: '/images/blog/news-author-02.jpg'
 date: 'February 24, 2023 2:51 AM'

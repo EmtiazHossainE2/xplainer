@@ -231,19 +231,19 @@ export const allWorkshop = [
 export const mentors = [
   {
     name: "Venkatesh Gupta",
-    image: "venky.svg",
+    image: "https://ik.imagekit.io/zwxa4kttt/1621098083610.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357898740",
     job1: "Product Manager at Razorpay ",
     job2: "Ex-Internshala | Ex- Frontbench"
   },
   {
     name: "Naman Goyal",
-    image: "naman.svg",
+    image: "https://ik.imagekit.io/zwxa4kttt/naman.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357952363",
     job1: "Product Manager at Internshala ",
     job2: "Ed-tech enthusiast"
   },
   {
     name: "Deepak Kumar",
-    image: "deepak.svg",
+    image: "https://ik.imagekit.io/zwxa4kttt/1661931118137.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357864998",
     job1: "SDE -2 @ Airmeet",
     job2: "Ex - 91 wheels | Flux Auto (YC 18)"
   },

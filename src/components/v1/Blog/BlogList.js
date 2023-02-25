@@ -25,7 +25,7 @@ const BlogList = ({ posts }) => {
                   <article className="flex flex-col h-full" data-aos="zoom-y-out">
                     <header>
                       <Link href={`/blog/${post.slug}`} className="block mb-6">
-                        <Image className=" inset-0 w-full h-full object-cover transform  hover:-translate-y-1 transition duration-700 " src={post?.frontmatter?.cover_image} width="352" height="198"  alt={post.frontmatter.title} />
+                        <Image className=" inset-0 blog-cover-image object-cover transform  hover:-translate-y-1 transition duration-700 " src={post?.frontmatter?.cover_image} width="352" height="180"  alt={post.frontmatter.title} />
                       </Link>
                       <div className="mb-3">
                         <ul className="flex flex-wrap text-xs font-medium -m-1">
@@ -35,9 +35,9 @@ const BlogList = ({ posts }) => {
                           <li className="m-1">
                             <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
                           </li>
-                          <li className="m-1">
+                          {/* <li className="m-1">
                             <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">4 min read</span>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                       <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">

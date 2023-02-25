@@ -2,7 +2,7 @@
 title: '1 year as a Product Manager : Reflections and key learnings'
 metaTitle: "Design an ATM For Blind "
 metaDescription: 'A sneak peak into Product Manager career written by Venkatesh Gupta after completing 1 year at Internshala.'
-cover_image: '/images/blog/blog2.png'
+cover_image: 'https://ik.imagekit.io/zwxa4kttt/year-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677356300623'
 author : 'Venkatesh Gupta '
 author_image: '/images/blog/news-author-02.jpg'
 date: 'February 25, 2023 12:50 AM'
@@ -10,12 +10,6 @@ date: 'February 25, 2023 12:50 AM'
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
 
-# 1 year as a Product Manager : Reflections and key learnings
-
-Created by: Venkatesh Gupta
-Created time: February 24, 2023 2:44 AM
-Last edited by: Venkatesh Gupta
-Last edited time: February 25, 2023 12:50 AM
 
 ![https://miro.medium.com/max/1400/1*uwDwa8gEIolCkWTo26BuFA.png](https://miro.medium.com/max/1400/1*uwDwa8gEIolCkWTo26BuFA.png)
 

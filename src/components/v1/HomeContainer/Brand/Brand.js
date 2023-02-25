@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Brand = () => {
   return (
-    <div className='container mx-auto py-4 px-6 md:px-32'>
+    <div className='container mx-auto py-6 px-6 md:px-32'>
       <div className="flex flex-col justify-center items-center">
         <h2 className="customTitle xl:pt-16">Learners From Top Companies </h2>
         <Swiper

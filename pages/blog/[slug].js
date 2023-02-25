@@ -25,7 +25,7 @@ const PostDetails = ({ frontmatter, content, }) => {
 
               <h1 className='post-heading '>{frontmatter?.title}</h1>
               <hr />
-              <div className='pb-4 pt-4 italic text-gray-500'>{frontmatter?.date} * 7</div>
+              <div className='pb-4 pt-4 italic text-gray-500'> Posted on {frontmatter?.date} </div>
 
 
               {/* <div className="flex items-center gap-2 pt-5 ">

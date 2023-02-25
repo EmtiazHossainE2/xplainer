@@ -30,7 +30,7 @@ const Footer2 = () => {
                   <ul className="flex flex-col gap-y-3" role="list">
                     <li>
                       <span className="font-normal text-sm">
-                        <Link className="transition-colors text-slate-500 hover:text-blue-600" href="/1">Get Started</Link>
+                        <Link className="transition-colors text-slate-500 hover:text-blue-600" href="/">Get Started</Link>
                       </span>
                     </li>
                     <li>

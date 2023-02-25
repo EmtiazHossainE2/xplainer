@@ -6,6 +6,7 @@ cover_image: '/images/blog/blog2.png'
 author : 'Venkatesh Gupta '
 author_image: '/images/blog/news-author-02.jpg'
 date: 'February 25, 2023 12:42 AM'
+tag: 'product-management'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
