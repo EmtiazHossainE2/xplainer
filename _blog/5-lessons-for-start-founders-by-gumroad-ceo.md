@@ -59,3 +59,11 @@ Sahil Lavingia is an amazing entrepreneur who started his company Gumroad at the
 He has also been very open and transparent about the challenges he faced in building Gumroad, including his struggles with burnout and his decision to downsize the company. 
 
 Lavingia is a strong advocate for building businesses that are both profitable and sustainable, and his insights have been valuable for entrepreneurs looking to build successful businesses without sacrificing their personal well-being.
+
+------
+
+### Related posts 
+
+- [10 D2C metrics that Shark Peeyush Bansal of Lenskart loves](ten-d2c-metrics-shark-tank)
+- [So you want to be a Product Manager?](so-you-want-to-be-product-manager)
+

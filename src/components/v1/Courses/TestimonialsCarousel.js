@@ -14,9 +14,7 @@ const TestimonialsCarousel = () => {
 
       <IframeResizer src="https://embed.testimonial.to/w/api-for-pm?theme=light&card=base" style={{ width: "1px", minWidth: "100%" }} />
 
-
     </section>
-
     </div>
   )
 }
