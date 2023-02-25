@@ -3,9 +3,9 @@ title: '5 lessons for Indian start-up founders in Funding Winter from Sahil Lava
 metaTitle: "5 key lessons for founders from Sahil Lavangia's Minimalist Entrepreneur "
 metaDescription: 'Sahil Lavangia is an entrepreneur who founded Gumroad, a platform that allows creators to sell their products directly to consumers.'
 cover_image: '/images/blog/blog2.png'
-author : 'M Sri '
-author_image: '/images/blog/news-author-01.jpg'
-date: 'Feb 7,2023'
+author : 'Venkatesh Gupta '
+author_image: '/images/blog/news-author-02.jpg'
+date: 'February 25, 2023 12:42 AM'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />

@@ -5,7 +5,7 @@ metaDescription: 'Learn how to become a Product Manager?'
 cover_image: '/images/blog/blog1.png'
 author : 'Venkatesh Gupta'
 author_image: '/images/blog/news-author-02.jpg'
-date: 'Feb 5,2023'
+date: 'February 24, 2023 2:51 AM'
 ---
 
 ![https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png](https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png)

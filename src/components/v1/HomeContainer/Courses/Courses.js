@@ -13,12 +13,12 @@ const Courses = () => {
           <div className=" lg:px-32 flex flex-col lg:flex-row gap-10 lg:gap-5">
             {allCourses.slice(0, 2).map((course, index) => (
               // <div key={index} className="course__box flex flex-col justify-around ">
-              <div key={index} className="course__box 2xl:relative 2xl:min-h-[560px]">
+              <div key={index} className="course__box 2xl:relative 2xl:min-h-[540px]">
 
                 {/* Course header */}
                 <div className={`flex items-start  gap-5 py-3 rounded-t-xl ${course.courseHeaderColor} `}>
                   {/* Title  */}
-                  <div className="pl-3 md:pl-5 basis-10/12 2xl:basis-9/12">
+                  <div className="pl-3 md:pl-5 basis-10/12 ">
                     <h3 className="text-lg md:text-2xl pb-2 font-semibold ">{course.title}</h3>
                     <div className="flex items-center gap-2 md:gap-3">
                       <p className="flex items-center gap-1 md:gap-2 "><AiFillStar className="text-[#FFCA0F]" size={20} /> {course.ratings}/5 </p>
@@ -30,7 +30,7 @@ const Courses = () => {
                     </div>
                   </div>
                   {/* Discount  */}
-                  <div className="basis-2/12 2xl:basis-3/12 bg-[#FF9500] text-end text-white text-[10px] md:text-[12px] font-bold  rounded-l-xl py-1 md:py-[6px] 2xl:py-2 pr-[10px] md:pr-4 2xl:pr-6  mt-1 discount">
+                  <div className="basis-2/12  bg-[#FF9500] text-end text-white text-[10px] md:text-[12px] font-bold  rounded-l-xl py-1 md:py-[6px] 2xl:py-2 pr-[10px]  md:pr-4 2xl:pr-4  mt-1 discount">
                     <span>{course.discount}</span>
                   </div>
                 </div>

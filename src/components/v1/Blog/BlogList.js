@@ -44,7 +44,7 @@ const BlogList = ({ posts }) => {
                         <Link href={`/blog/${post.slug}`} className="hover:underline"> {post.frontmatter.title}</Link>
                       </h3>
                     </header>
-                    <p className="text-gray-600 grow">  {post.frontmatter.metaDescription}</p>
+                    <p className="text-gray-600 grow">  {post.frontmatter.metaDescription.slice(0,80) + '...'}</p>
                     <footer className="text-sm flex items-center mt-4">
                       <div className="flex shrink-0 mr-3">
                         <a className="relative" href="#0">
