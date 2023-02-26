@@ -12,11 +12,6 @@ const Faqs = () => {
 
   return (
     <div className='container mx-auto section__padding '>
-      <div className="text-center">
-        <button className="customBtn">FAQ</button>
-        <h2 className="customTitle">Frequently Asked Questions </h2>
-      </div>
-
       <div className="p-2 lg:px-32">
         {faqData.map((faq, index) => (
           <div key={index} className="mb-3 border-b  pt-2 pb-4 px-2 rounded-md">
@@ -33,7 +28,7 @@ const Faqs = () => {
                 }
               </div>
             </div>
-            <div className={`mt-3 rounded ${activeIndex === index ? "block" : "hidden"}`}>
+            <div className={`mt-3 text-gray-600 rounded ${activeIndex === index ? "block" : "hidden"}`}>
               {faq.answer}
             </div>
           </div>

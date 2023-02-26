@@ -10,7 +10,8 @@ const Brand = () => {
   return (
     <div className='container mx-auto py-6 px-6 md:px-32'>
       <div className="flex flex-col justify-center items-center">
-        <h2 className="customTitle xl:pt-16">Learners From Top Companies </h2>
+        <h2 className="customTitle xl:pt-16 ">Learners From Top Companies </h2>
+        <div className="mt-4"> </div>
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
@@ -47,8 +48,8 @@ const Brand = () => {
               <Image
                 src={`/images/brand/${item.logo}`}
                 alt="Top companies logo"
-                style={{ width: "70px", height: '70px' }}
-                width={70}
+                style={{ width: "80px", height: '70px' }}
+                width={80}
                 height={70}
                 priority
               />

@@ -19,7 +19,7 @@ const HeroBanner = () => {
         {/* Right */}
         <div className='basis-1/2 hidden scale-125 md:block lg:flex justify-center items-center'>
           <Image
-            src="/images/home/hero1.jpeg"
+            src="https://ik.imagekit.io/zwxa4kttt/hero-v2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677394708916"
             alt="Hero Banner"
             width={450}
             height={600}

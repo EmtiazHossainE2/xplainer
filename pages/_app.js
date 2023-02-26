@@ -1,8 +1,9 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 import { useEffect } from "react";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -13,7 +14,17 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script id="show-banner" strategy="afterInteractive">
+        {`
+  window.$crisp=[];window.CRISP_WEBSITE_ID="37b92c03-a81a-49e0-9f23-a4c3701f13f5";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+  `}
+      </Script>
+
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
