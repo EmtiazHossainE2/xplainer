@@ -169,6 +169,7 @@ const Navbar = () => {
                     <div className=''>
                       <h4 className='font-semibold'>No Code </h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
+                      <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                     </div>
                   </div>
                 </Link>
@@ -179,6 +180,7 @@ const Navbar = () => {
                     <div className=''>
                       <h4 className='font-semibold'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
+                      <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                     </div>
                   </div>
                 </Link>

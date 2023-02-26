@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const CouponModal = ({ isVisible, onClose }) => {
   if (!isVisible) return null
 
@@ -10,11 +12,11 @@ const CouponModal = ({ isVisible, onClose }) => {
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-center pb-3">Your coupon code is</h2>
             <h1 className='text-lg md:text-xl text-center font-semibold text-red-500'>NY2023</h1>
             <div>
-              <a href="https://dipakkr.gumroad.com/l/api-for-pm" target="_blank" rel="noopener noreferrer" onClick={() => onClose()}>
+              <Link href="/courses?coupon=NY2023"  onClick={() => onClose()}>
                 <button className="text-white bg-blue-500 hover:bg-blue-600 py-2 w-full mt-4 rounded-md">
                   Apply Coupon
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

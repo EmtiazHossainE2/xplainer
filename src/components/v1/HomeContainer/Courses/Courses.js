@@ -3,12 +3,12 @@ import { AiFillStar } from 'react-icons/ai'
 import Image from "next/image"
 import Link from "next/link";
 
-const Courses = () => {
+const Courses = ({heading}) => {
   return (
     <div className="bg-[#FDFDFD]">
       <div className="xl:container xl:mx-auto section__padding">
         <div className="flex flex-col justify-center items-center ">
-          <h2 className="text-center text-3xl lg:text-[34px] font-bold">Our Courses </h2>
+          <h2 className="text-center text-3xl lg:text-[34px] font-bold"> {heading || "Our Courses " }</h2>
           <p className="text-[#515151] text-center text-[16px] md:text-xl font-medium pt-[10px] pb-8 ">Get better at your job every single day!</p>
           <div className=" lg:px-32 flex flex-col lg:flex-row gap-10 lg:gap-5">
             {allCourses.slice(0, 2).map((course, index) => (

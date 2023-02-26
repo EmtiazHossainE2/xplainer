@@ -22,7 +22,7 @@ const BlogList = ({ posts }) => {
               {/* Article */}
               {posts && posts.map((post, index) => (
                 <div key={index} className=''>
-                  <article className="flex flex-col h-full" data-aos="zoom-y-out">
+                  <article className="flex border border-solid border-gray-100 p-2 flex-col h-full" data-aos="zoom-y-out">
                     <header>
                       <Link href={`/blog/${post.slug}`} className="block mb-6">
                         <Image className=" inset-0 blog-cover-image object-cover transform  hover:-translate-y-1 transition duration-700 " src={post?.frontmatter?.cover_image} width="352" height="180"  alt={post.frontmatter.title} />
@@ -30,21 +30,21 @@ const BlogList = ({ posts }) => {
                       <div className="mb-3">
                         <ul className="flex flex-wrap text-xs font-medium -m-1">
                           <li className="m-1">
-                            <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
+                            <a className="inline-flex text-center text-xs text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
                           </li>
                           <li className="m-1">
-                            <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
+                            <a className="inline-flex text-center text-xs text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
                           </li>
                           {/* <li className="m-1">
                             <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">4 min read</span>
                           </li> */}
                         </ul>
                       </div>
-                      <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
+                      <h3 className="text-md font-bold leading-snug tracking-tight mb-2">
                         <Link href={`/blog/${post.slug}`} className="hover:underline"> {post.frontmatter.title}</Link>
                       </h3>
                     </header>
-                    <p className="text-gray-600 grow">  {post.frontmatter.metaDescription.slice(0,80) + '...'}</p>
+                    <p className="text-gray-600 text-sm grow">  {post.frontmatter.metaDescription.slice(0,80) + '...'}</p>
                     <footer className="text-sm flex items-center mt-4">
                       <div className="flex shrink-0 mr-3">
                         <a className="relative" href="#0">

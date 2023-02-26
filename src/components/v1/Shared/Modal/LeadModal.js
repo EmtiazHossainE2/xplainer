@@ -23,7 +23,7 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
         <button className='text-black bg-white text-lg place-self-end border rounded-full px-2 py-.5 mb-2' onClick={() => onClose()}>X</button>
         <div className='bg-white p-6 2xl:p-12 rounded-md '>
           <form onSubmit={handleSubmit}>
-            <h4 className="text-lg md:text-xl lg:text-2xl font-semibold md:font-bold">Claim up to 50% off on the program !</h4>
+            <h4 className="text-lg md:text-xl lg:text-2xl font-semibold md:font-bold">Claim up to 50% off on courses !</h4>
             <div className="flex flex-col gap-5">
               <input
                 type="email"
@@ -34,7 +34,7 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
                 className="py-2 pl-4 pr-5 mt-5 border border-black rounded-xl bg-[#FFFFFF] placeholder:[#505050] "
 
               />
-              <button className="text-white bg-blue-500 hover:bg-blue-600 py-2 w-full">Show me coupon code </button>
+              <button className="text-white bg-blue-500 hover:bg-blue-600 py-2 w-full">  Check Offers </button>
             </div>
           </form>
         </div>
