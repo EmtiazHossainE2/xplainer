@@ -5,6 +5,11 @@ import { pmInterviewKeyChapters } from '@/src/config/constants'
 import PageLayout from '@/src/layout/PageLayout'
 
 const ApiForPm = () => {
+
+  const handleCTAClick = () => {
+    window.open('https://dipakkr.gumroad.com/l/api-for-pm')
+  }
+
   return (
     <>
       <CommonHead
@@ -19,6 +24,7 @@ const ApiForPm = () => {
             headingColorText="#1"
             ctaText="Buy now"
             apiForPm={true}
+            handleCTAClick={handleCTAClick}
           />
           <HeroBanner />
           <FeaturesBlocks

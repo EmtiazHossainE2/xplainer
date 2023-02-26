@@ -9,6 +9,7 @@ const HeroHome = ({
   ctaText,
   apiForPm,
   pricing,
+  handleCTAClick
 }) => {
   return (
     <div>
@@ -93,7 +94,7 @@ const HeroHome = ({
                 </div>
               }
 
-              <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0 cursor-pointer">{ctaText}</button>
+              <button onClick={handleCTAClick} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0 cursor-pointer">{ctaText}</button>
               <div>
                 <p className="pt-3">Interested in a free chapter? <Link href='/' className="text-blue-500">Get it now</Link></p>
               </div>

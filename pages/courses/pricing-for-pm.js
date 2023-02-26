@@ -3,7 +3,12 @@ import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import { pricingCardText } from '@/src/config/constants'
 import PageLayout from '@/src/layout/PageLayout'
 
-const ApiForPm = () => {
+const PricingForPM = () => {
+
+  const handleCTAClick = () => {
+    window.open('https://dipakkr.gumroad.com/l/pricingforpm')
+  }
+
   return (
     <>
       <CommonHead
@@ -17,6 +22,7 @@ const ApiForPm = () => {
             heading={"A to Z of Pricing and Monetisation"}
             ctaText="Start Learning Pricing"
             pricing={true}
+            handleCTAClick={handleCTAClick}
           />
           <FeaturesBlocks
             pricingCardText={pricingCardText}
@@ -36,4 +42,4 @@ const ApiForPm = () => {
   )
 }
 
-export default ApiForPm
+export default PricingForPM
