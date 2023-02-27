@@ -221,8 +221,6 @@ const Navbar = () => {
           </div>
 
           {/********************** * For Mobile ********************* */}
-          {/* <MobileNav/> */}
-          {/* <MobileMenu/> */}
           <div className={`block lg:hidden `}>
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
