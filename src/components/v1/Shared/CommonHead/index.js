@@ -1,7 +1,9 @@
+import { GA_MEASUREMENT_ID } from "@/src/config/analytics";
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 
-const CommonHead = ({ title,favIcon,description }) => {
+const CommonHead = ({ title, favIcon, description }) => {
   return (
     <>
       <Head>
@@ -20,7 +22,7 @@ const CommonHead = ({ title,favIcon,description }) => {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          itemprop="image"
+          itemProp="image"
           content="https://yourimagepath.jpg"
         />
 
@@ -36,6 +38,21 @@ const CommonHead = ({ title,favIcon,description }) => {
 
         <meta name="twitter:site" content="@twitter-username" />
       </Head>
+
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
     </>
   );
 };

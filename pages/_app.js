@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
-import { useEffect } from "react";
 import AOS from "aos";
+import { useEffect } from "react";
 
 import "aos/dist/aos.css";
 import Script from "next/script";
