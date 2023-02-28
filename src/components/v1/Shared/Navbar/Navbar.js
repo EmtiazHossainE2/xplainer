@@ -1,9 +1,11 @@
 import styles from '@/styles/Navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import HeaderTopBanner from '../Banner/HeaderBanner';
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
 import MobileMenu2 from './MobileMenu2';
@@ -14,6 +16,7 @@ import pricing from '/public/images/shared/pricing.svg';
 import productHunt from '/public/images/shared/productHunt.svg';
 import users from '/public/images/shared/users.svg';
 
+
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
@@ -21,6 +24,8 @@ const Navbar = () => {
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
   const [open, setToggle] = useState(false)
+
+  const router = useRouter()
 
   // Handle Sticky 
   useEffect(() => {
@@ -52,20 +57,20 @@ const Navbar = () => {
     };
   }, [open]);
 
+  const handleBannerClick = (hasLead) => {
+    if(hasLead){
+      router.push('/courses');
+      return;
+    }
+    setShowModal((state) => !state) 
+  }
 
   return (
     <>
       <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <div className='flex justify-center p-2 bg-[#ff6900] '>
-          <p
-            className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
-            onClick={() => setShowModal(true)}
-          >
-            🎉 Click here to unlock upto 50% discount offer 🎉{" "}
-          </p>
-        </div>
+        <HeaderTopBanner handleBannerClick={handleBannerClick} />
 
         {/********************** * For Desktop  ********************* */}
         <div className={`${styles.navbar} container mx-auto  px-20 ${isSticky ? 'py-4' : 'pt-4 pb-8'}`}>
@@ -221,8 +226,6 @@ const Navbar = () => {
           </div>
 
           {/********************** * For Mobile ********************* */}
-          {/* <MobileNav/> */}
-          {/* <MobileMenu/> */}
           <div className={`block lg:hidden `}>
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
