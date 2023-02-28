@@ -3,7 +3,7 @@ import { AiFillStar } from 'react-icons/ai'
 import Image from "next/image"
 import Link from "next/link";
 
-const Courses = ({heading}) => {
+const Courses = ({heading, ctaText}) => {
   return (
     <div className="bg-[#FDFDFD]">
       <div className="xl:container xl:mx-auto section__padding">
@@ -53,7 +53,7 @@ const Courses = ({heading}) => {
                     ))}
                   </div>
                   <Link href={`/courses/${course.slug}`}>
-                    <button className="bg-[#0070F4] text-white w-full py-[10px] rounded-md 2xl:rounded-t-none mt-2 text-lg font-semibold 2xl:absolute 2xl:bottom-1 2xl:right-0">Know more</button>
+                    <button className="bg-[#0070F4] text-white w-full py-[10px] rounded-md 2xl:rounded-t-none mt-2 text-lg font-semibold 2xl:absolute 2xl:bottom-1 2xl:right-0"> {ctaText || 'View Course '} </button>
                   </Link>
                 </div>
               </div>
