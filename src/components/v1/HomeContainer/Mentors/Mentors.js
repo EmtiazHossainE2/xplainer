@@ -17,7 +17,7 @@ const Mentors = () => {
 
   return (
     <div className="">
-      <div className="xl:container xl:mx-auto section__padding">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="">
 
           <SectionHeading heading={"Our Mentors"}/>
@@ -53,7 +53,7 @@ const Mentors = () => {
             modules={[FreeMode,Pagination]}
             className="mySwiper"
           >
-            <div className="">
+            <div className="max-w-sm mx-auto md:max-w-none">
               {mentors.map((mentor, index) => (
                 <SwiperSlide key={index}>
                   <Mentor key={index} mentor={mentor} />
