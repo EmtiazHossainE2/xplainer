@@ -232,7 +232,7 @@ const Navbar = () => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <MobileMenu2 open={open} setToggle={setToggle} />
+          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} />
           {/********************** * For Mobile ********************* */}
 
         </div>

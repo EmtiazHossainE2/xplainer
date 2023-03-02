@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 const PUBLIC_IMAGE_PATH = BASE_URL + 'images/shared';
 
-const MobileMenu2 = ({ open, setToggle }) => {
+const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
   const router = useRouter()
   useEffect(() => {
     setToggle(false)
@@ -24,13 +24,11 @@ const MobileMenu2 = ({ open, setToggle }) => {
           setToggle(!open);
         }
       }}
-      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${
-        open ? "bg-black/75" : "bg-transparent pointer-events-none"
-      }`}
+      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${open ? "bg-black/75" : "bg-transparent pointer-events-none"
+        }`}
     >
       {/* <div className="grid h-screen w-[75%] max-w-[350px] lg:w-full bg-white"> */}
-      <div className={`absolute transition-[left] bg-white  h-screen w-[75%] max-w-[375px] pb-20 ${
-          open ? "left-0" : "-left-full"
+      <div className={`absolute transition-[left] bg-white  h-screen w-[75%] max-w-[375px] pb-20 ${open ? "left-0" : "-left-full"
         }`}>
         <div className="flex flex-col justify-start item-center">
           <div className="flex justify-between shadow-sm p-2">
@@ -133,9 +131,7 @@ const MobileMenu2 = ({ open, setToggle }) => {
               <p className='text-md font-semibold px-3 mb-5' ><Link href='/blog' className=''>Blog</Link></p>
             </div>
             <div className={`px-3 `}>
-              <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[51px]'>
-                <button className=' text-white text-md font-semibold'>Login</button>
-              </Link>
+              <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'>Login</button>
             </div>
           </div>
 
