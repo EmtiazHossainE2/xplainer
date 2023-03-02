@@ -7,7 +7,7 @@ import path from 'path'
 const ModuleDetails = ({ posts,frontmatter, content, }) => {
   return (
     <div>
-      <SidebarLayout posts={posts}>
+      <SidebarLayout posts={posts} course='api-for-pm'>
         <div >
           <h1 className='post-heading pb-3'>{frontmatter?.title}</h1>
           <hr className='pb-3'/>
