@@ -131,7 +131,14 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
               <p className='text-md font-semibold px-3 mb-5' ><Link href='/blog' className=''>Blog</Link></p>
             </div>
             <div className={`px-3 `}>
-              <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'>Login</button>
+              <button onClick={() => {
+                setLoginModal(true)
+                setToggle(false)
+              }}
+                className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'
+              >
+                Login
+              </button>
             </div>
           </div>
 

@@ -26,7 +26,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
             </div>
 
             {/* ******************************Right Section*******************************/}
-            <div class="pt-12 px-10 pb-10 text-center w-[29.375rem] relative flex flex-col justify-center items-center">
+            <div class="pt-12 px-5 lg:px-10 pb-10 text-center w-full lg:w-[29.375rem] relative flex flex-col justify-center items-center">
               <button className='text-black  text-lg font-semibold absolute top-4 right-4 border rounded-full border-[#e6e5e5] px-2 py-.5 mb-2' onClick={() => onClose()}>X</button>
               <div class="w-full">
                 <div class=" text-[1.75rem] font-extrabold text-[#171421] mb-6">
