@@ -92,7 +92,7 @@ const SidebarLayout = ({ posts,course, children }) => {
 
 
       {/********************** Content Mobile **********************/}
-      <div className="px-3 py-16 md:px-12">
+      <div className="px-3 py-16 md:px-12 block lg:hidden">
         {children}
       </div>
 
