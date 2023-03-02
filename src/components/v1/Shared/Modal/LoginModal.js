@@ -5,14 +5,14 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   if (!isVisible) return null
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center md:items-center z-[9999] pt-[40%] md:pt-5 '>
+    <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center md:items-center z-[9999] pt-[20%] md:pt-5 px-5 lg:px-0'>
       <div className='w-[99%] md:w-[50%] lg:w-[70%] xl:w-[60%] 2xl:w-[900px] flex flex-col '>
 
         <div className=''>
 
           <div class="bg-white rounded-2xl flex shadow-[0_10px_20px_5px_rgb(0 0 0 / 5%)]">
           {/******************************* left-section ******************************/}
-            <div class=" bg-[url('/images/shared/login_bg.webp')] bg-cover bg-[50%] pt-[18.75rem] px-[2.5rem] pb-[5.5rem] w-[28rem] rounded-l-[0.92rem]">
+            <div class="hidden lg:block bg-[url('/images/shared/login_bg.webp')] bg-cover bg-[50%] pt-[18.75rem] px-[2.5rem] pb-[5.5rem] w-[28rem] rounded-l-[0.92rem]">
               <div class="text-2xl font-extrabold text-white">
                 Welcome back ✨
               </div>

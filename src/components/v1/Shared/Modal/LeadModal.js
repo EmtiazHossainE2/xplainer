@@ -19,7 +19,7 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
   }
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-80  flex pt-[40%] md:pt-0 justify-center md:items-center z-[9999]'>
+    <div className='fixed inset-0 bg-black bg-opacity-80  flex pt-[20%] md:pt-0 justify-center md:items-center z-[9999]'>
       <div className='w-[99%] md:w-[50%] lg:w-[30%] 2xl:w-[450px] flex flex-col'>
         
         <div className='bg-white px-6 py-12  2xl:p-12 rounded-md relative '>
