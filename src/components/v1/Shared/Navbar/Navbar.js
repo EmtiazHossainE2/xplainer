@@ -6,6 +6,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import CouponModal from '../Modal/CouponModal';
 import LeadModal from '../Modal/LeadModal';
+import LoginModal from '../Modal/LoginModal';
 import MobileMenu2 from './MobileMenu2';
 import apiForPmSvg from '/public/images/shared/apiForPm.svg';
 import noCode from '/public/images/shared/noCode.svg';
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
   const [couponModal, setCouponModal] = useState(false)
+  const [loginModal, setLoginModal] = useState(false)
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
   const [open, setToggle] = useState(false)
@@ -120,7 +122,8 @@ const Navbar = () => {
 
               </div>
             </div>
-            {/* Dropdown  */}
+
+            {/********************** * Course submenu ********************* */}
             {courseOpen && (
               <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
@@ -160,6 +163,7 @@ const Navbar = () => {
               </div>
             )}
 
+            {/********************** * Workshop submenu ********************* */}
             {workShopsOpen && (
               <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
@@ -215,9 +219,7 @@ const Navbar = () => {
           </div>
 
           <div className={`px-3 ${styles.navbar__sign}`}>
-            <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[25px]'>
-              <button className=' text-white text-md font-semibold'>Login</button>
-            </Link>
+            <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
           </div>
 
           {/********************** * For Mobile ********************* */}
@@ -226,6 +228,7 @@ const Navbar = () => {
           </div>
 
           <MobileMenu2 open={open} setToggle={setToggle} />
+          {/********************** * For Mobile ********************* */}
 
         </div>
       </header>
@@ -237,9 +240,17 @@ const Navbar = () => {
         setCouponModal={setCouponModal}
       />
 
+
       <CouponModal
         isVisible={couponModal}
         onClose={() => setCouponModal(false)}
+      />
+
+      {/* Login Modal  */}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
       />
 
     </>
