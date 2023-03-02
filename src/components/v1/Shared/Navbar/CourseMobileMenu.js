@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FaLock } from 'react-icons/fa';
 
 
-const CourseMobileMenu = ({ open, setToggle, posts, course }) => {
+const CourseMobileMenu = ({ open, setToggle, posts, course, setLoginModal }) => {
   const router = useRouter()
   useEffect(() => {
     setToggle(false)
@@ -37,11 +37,15 @@ const CourseMobileMenu = ({ open, setToggle, posts, course }) => {
                 posts.map((post, index) => (
                   <ul key={index} className='px-3'>
                     <Link href={`/courses/${course}/${post.slug}`} className="flex justify-between items-center text-sm text-[#3B454E]">
-                      <li className="py-2">{post.frontmatter.title}</li>
+                      <li className="py-2.5">{post.frontmatter.title}</li>
                       <FaLock />
                     </Link>
                   </ul>
                 ))}
+            </div>
+            <div className="flex gap-5 items-center px-3 mt-5">
+              <h4 onClick={() => setLoginModal(true)} className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md ">Login</h4>
+              <Link href='/buy-now'><button className="px-3 py-1.5 bg-[#B80C07] text-white rounded-md ">Buy Now</button></Link>
             </div>
           </div>
 
