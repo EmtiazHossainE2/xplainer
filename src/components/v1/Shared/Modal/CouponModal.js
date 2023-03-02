@@ -11,9 +11,7 @@ const CouponModal = ({ isVisible, onClose }) => {
         <div className='bg-white px-6 py-12  2xl:p-12 rounded-md relative '>
           <button className='text-black bg-white text-lg font-semibold absolute top-4 right-4 border rounded-full border-[#e6e5e5] px-2 py-.5 mb-2' onClick={() => onClose()}>X</button>
           <div>
-            <div className="flex justify-center items-center pb-5">
-              {/* <Image src='/images/shared/popupLogo.svg' width={48} height={40} alt='popup logo' /> */}
-            </div>
+            
 
             <div className="text-center">
               <h3 className="my-1 text-lg font-bold lg:text-2xl inline-block whitespace-nowrap bg-gradient-to-l from-[#4f46e5] to-pink-500 bg-clip-text text-transparent animate-pulse">CONGRATULATIONS</h3>
