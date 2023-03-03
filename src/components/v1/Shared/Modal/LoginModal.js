@@ -1,7 +1,26 @@
+import auth from "@/pages/auth/firebase/Firebase.init";
 import Image from "next/image"
+import { useEffect } from "react";
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
 
 
 const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
+  const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
+
+  useEffect(() => {
+    if (user) {
+      setLoginModal(false)
+      window.location.href = "/dashboard";
+    }
+  }, [user, setLoginModal])
+
+  //loading
+  if (loading) {
+    return <p className="flex justify-center  items-center h-screen font-bold text-2xl">Loading...</p>
+  }
+  
+
   if (!isVisible) return null
 
   return (
@@ -11,7 +30,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         <div className=''>
 
           <div class="bg-white rounded-2xl flex shadow-[0_10px_20px_5px_rgb(0 0 0 / 5%)]">
-          {/******************************* left-section ******************************/}
+            {/******************************* left-section ******************************/}
             <div class="hidden lg:block bg-[url('/images/shared/login_bg.webp')] bg-cover bg-[50%] pt-[18.75rem] px-[2.5rem] pb-[5.5rem] w-[28rem] rounded-l-[0.92rem]">
               <div class="text-2xl font-extrabold text-white">
                 Welcome back ✨
@@ -50,7 +69,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                     <div class="flex-grow border-t border-[#bdbdbd]"></div>
                   </div>
                   <button class="w-full flex justify-center items-center border border-[#e5e7eb] py-4  text-sm font-bold text-[#171421] rounded-lg">
-                    <div className="flex gap-1">
+                    <div className="flex items-center gap-1" onClick={() => signInWithGoogle()}>
                       <Image src="/images/brand/1.svg" width={25} height={25} alt="google" />
                       Continue with Google
                     </div>
