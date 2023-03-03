@@ -1,14 +1,15 @@
+import auth from '@/pages/auth/firebase/Firebase.init';
 import styles from '@/styles/Navbar.module.css';
+import { signOut } from 'firebase/auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import HeaderTopBanner from '../Banner/HeaderBanner';
-import CouponModal from '../Modal/CouponModal';
-import LeadModal from '../Modal/LeadModal';
-import LoginModal from '../Modal/LoginModal';
+import { CouponModal, LeadModal, LoginModal } from '../Modal';
 import MobileMenu2 from './MobileMenu2';
 import apiForPmSvg from '/public/images/shared/apiForPm.svg';
 import noCode from '/public/images/shared/noCode.svg';
@@ -26,14 +27,17 @@ const Navbar = () => {
   const [courseOpen, setCourseOpen] = useState(false);
   const [workShopsOpen, setWorkShopsOpen] = useState(false);
   const [open, setToggle] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
 
   const router = useRouter()
+  const [user] = useAuthState(auth)
+  console.log(user)
 
-  // Handle Sticky 
+  //********************** Handle Sticky 
   useEffect(() => {
 
     const body = document.querySelector('body')
-    console.log(body)
+    // console.log(body)
     if (!body) return
 
     if (open) {
@@ -60,12 +64,18 @@ const Navbar = () => {
   }, [open]);
 
   const handleBannerClick = (hasLead) => {
-    if(hasLead){
+    if (hasLead) {
       router.push('/courses');
       return;
     }
-    setShowModal((state) => !state) 
+    setShowModal((state) => !state)
   }
+
+  const logOut = () => {
+    signOut(auth)
+    window.location.href = "/";
+}
+  const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
 
   return (
     <>
@@ -75,7 +85,7 @@ const Navbar = () => {
         <HeaderTopBanner handleBannerClick={handleBannerClick} />
 
         {/********************** * For Desktop  ********************* */}
-        <div className={`${styles.navbar} container mx-auto  px-20 ${isSticky ? 'py-4' : 'pt-4 pb-8'}`}>
+        <div className={`relative ${styles.navbar} container mx-auto  px-20 ${isSticky ? 'py-4' : 'pt-4 pb-8'}`}>
           <div className={`${styles.navbar__links}`}>
             <div className={`${styles.navbar__logo}`}>
               <Link href='/'><h2 className='font-bold text-[26px]'>Xplainerr</h2></Link>
@@ -83,7 +93,7 @@ const Navbar = () => {
           </div>
           <div className={`relative ${styles.navbar__container}`}>
 
-            {/* Courses */}
+            {/*********************** Courses ***********************/}
             <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
@@ -104,7 +114,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Workshops */}
+            {/*********************** Workshops ***********************/}
             <div className='text-md font-semibold px-3 '>
               <div
                 onMouseOver={() => {
@@ -132,7 +142,7 @@ const Navbar = () => {
             {courseOpen && (
               <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
-                <Link href='/courses/api-for-pm' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                <Link href='/courses/api-for-pm' className={linkStyle}>
                   <div className='flex gap-x-3 '>
                     <Image src={apiForPmSvg} alt='api for pm icon' width={30} height={27} />
                     <div className=''>
@@ -152,7 +162,7 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <Link href='/courses/user-interview' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                <Link href='/courses/user-interview' className={linkStyle}>
                   <div className='flex gap-x-3 '>
                     <Image src={users} alt='user icon' width={30} height={27} />
                     <div className=''>
@@ -172,7 +182,7 @@ const Navbar = () => {
             {workShopsOpen && (
               <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
 
-                <Link href='/workshops/no-code' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                <Link href='/workshops/no-code' className={linkStyle}>
                   <div className='flex gap-x-3 '>
                     <Image src={noCode} alt='icon' width={30} height={27} />
                     <div className=''>
@@ -194,7 +204,7 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <Link href='/workshops/build-brand' className="block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                <Link href='/workshops/build-brand' className={linkStyle}>
                   <div className='flex gap-x-3 '>
                     <Image src={personalBrand} alt='personal brand icon' width={30} height={27} />
                     <div className=''>
@@ -209,6 +219,7 @@ const Navbar = () => {
 
               </div>
             )}
+            {/************************ Workshop submenu end   ************************/}
 
             <p
               className='text-md font-semibold px-3 '
@@ -224,20 +235,59 @@ const Navbar = () => {
           </div>
 
           <div className={`px-3 ${styles.navbar__sign}`}>
-            <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
+            {user?.email ? (
+              <>
+              {/************************ If user   ************************/}
+                <div
+                  className='cursor-pointer'
+                  onMouseOver={() => {
+                    setProfileOpen(true)
+                  }}
+                >
+                  {user?.photoURL ? (
+                    <Image className='rounded-full' src={user?.photoURL} width={38} height={38} alt="user photo" />
+                  ) : (
+                    <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
+                  )}
+                </div>
+
+                {/* Profile Submenu  */}
+                {profileOpen && (
+                  <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-20 top-12 z-10 bg-white py-2 shadow-xl rounded-b-lg">
+
+                    <Link href='/dashboard/' className={linkStyle}>
+                      Dashboard
+                    </Link>
+
+                    <Link href='/dashboard/my-courses' className={linkStyle}>
+                      My Courses
+                    </Link>
+
+                    <span className={`cursor-pointer ${linkStyle}`} onClick={logOut}>
+                      Log Out
+                    </span>
+
+                  </div>
+                )}
+              </>
+            ) : (
+              <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
+            )}
+
           </div>
 
-          {/********************** * For Mobile ********************* */}
+          {/*********************** For Mobile ********************* */}
           <div className={`block lg:hidden `}>
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
           <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} />
-          {/********************** * For Mobile ********************* */}
+          {/*********************** For Mobile ********************* */}
 
         </div>
       </header>
 
+      {/************************ Lead Modal  ************************/}
       <LeadModal
         isVisible={showModal}
         setShowModal={setShowModal}
@@ -245,13 +295,13 @@ const Navbar = () => {
         setCouponModal={setCouponModal}
       />
 
-
+      {/************************ Coupon Modal  ************************/}
       <CouponModal
         isVisible={couponModal}
         onClose={() => setCouponModal(false)}
       />
 
-      {/* Login Modal  */}
+      {/************************ Login Modal  ************************/}
       <LoginModal
         isVisible={loginModal}
         setLoginModal={setLoginModal}

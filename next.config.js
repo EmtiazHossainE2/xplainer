@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["img.freepik.com",'i.ytimg.com']
+    domains: ["img.freepik.com",'i.ytimg.com',"lh3.googleusercontent.com",]
   },
   images: {
     remotePatterns: [
@@ -17,6 +17,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'ik.imagekit.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
       },
     ],
   },
