@@ -1,13 +1,15 @@
 import RequireAuth from '@/pages/auth/RequireAuth'
-import React from 'react'
 import DashNav from '../components/v1/Shared/Navbar/DashNav'
 
-const DashboardLayout = ({children}) => {
+const DashboardLayout = ({user,children}) => {
   return (
     <div>
       <RequireAuth>
-        <DashNav />
+        
+        <DashNav user={user}/>
+
         {children}
+
       </RequireAuth>
     </div>
   )

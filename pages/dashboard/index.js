@@ -1,10 +1,20 @@
-
 import DashboardLayout from '@/src/layout/DashboardLayout'
+import Image from 'next/image'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../auth/firebase/Firebase.init'
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth)
+  // console.log(user)
   return (
-    <DashboardLayout>
-      <h2>My i Dashboard Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, eaque quod sit fugit amet molestias expedita veniam fuga aut eligendi iste quia quisquam asperiores ipsum accusantium ut delectus recusandae. Dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea vitae architecto perferendis enim dolor autem consequatur iusto rem placeat modi sit corporis, laudantium reprehenderit eum voluptatem velit? Illum quas quaerat provident. Ad quibusdam, earum perferendis voluptates fugit fugiat iste nisi, corrupti dicta corporis aut placeat? Quisquam nihil eveniet aut velit nobis quod quam debitis iste porro itaque quo sequi numquam accusamus assumenda, dolorem qui. Doloribus eum itaque eaque exercitationem fugiat incidunt ratione delectus explicabo qui quod dolor, dolores autem sed harum temporibus suscipit iste, fugit magnam natus. Ab nisi sunt corrupti dolorem totam praesentium consectetur illum perferendis deleniti a, dolorum, quibusdam quis architecto voluptas ex at similique saepe, corporis nobis? Libero omnis nesciunt officiis, velit architecto quibusdam repudiandae enim neque esse. Iure eaque sed, consequatur soluta repellat velit dolor voluptatem voluptatum modi ducimus provident maiores a dignissimos veniam minus? Nostrum dolor iure facere numquam blanditiis ex, nesciunt corporis vel, sunt sit repudiandae nemo? Ullam commodi incidunt possimus sunt cum, nostrum placeat in. Modi architecto adipisci aut voluptate cum quis accusantium similique commodi. Eligendi consectetur quidem quam quas quod ab minus, voluptas ex quisquam consequatur corrupti at dolorem non quae repellat sit ratione sequi voluptatibus laborum animi tempora dolor labore. Optio quia maiores mollitia deserunt voluptates velit, soluta architecto est porro, officia in ipsum at iste cum doloremque iure. Voluptate, modi omnis, unde eum cum veniam reiciendis quas, distinctio quis delectus labore quia ut velit explicabo in officia consequuntur quaerat! Error fugiat aliquam dignissimos quidem magnam debitis, unde excepturi consequuntur voluptas nobis ipsam dolorum eius ad accusantium sed nemo obcaecati ex. Perferendis, non, natus dolor labore at repudiandae facilis est illo rerum quisquam soluta, possimus a culpa reiciendis odit amet placeat quod voluptate nulla id dolorem fugit alias. Impedit, ex laudantium? Mollitia, dolorem! Aut minima illo ipsa repudiandae, voluptatem unde magni quos. Quos, eligendi accusantium ea, quasi eveniet eius error recusandae dolor repellat earum eum explicabo iusto voluptatem quas dolore, unde quis dolorum? Id, a? Eaque fuga maiores nisi nihil! Beatae quisquam deleniti quaerat delectus similique enim nihil ipsa, hic earum consectetur facilis placeat cumque, voluptate sapiente dolorum unde autem animi esse nemo ad. Odit quas vitae, doloribus, non nam qui voluptatum consequatur dolores atque, pariatur perspiciatis fuga veniam nihil nobis quaerat quod blanditiis aliquid accusamus quam cum aliquam. Accusamus modi sunt aliquam dolorem, iste vitae sequi voluptates fuga quos fugiat commodi distinctio beatae dicta quibusdam voluptas. Repellendus odio, quos vero officia omnis fuga, delectus cumque, voluptate doloremque quas porro eaque iure eum rerum nam. Ab deserunt corrupti repellendus accusantium mollitia culpa, esse non deleniti illo perspiciatis aspernatur molestiae cumque numquam voluptas amet harum facilis consectetur perferendis nemo quo minima nam. Aliquid mollitia quae, architecto laboriosam velit molestias in expedita! Nobis minus quibusdam, repellat ex hic possimus cumque, saepe voluptates eum, suscipit voluptate optio nesciunt! Illo accusantium est nisi esse magni dolore voluptatum tenetur dolorem quis repellendus. Aperiam nesciunt dignissimos natus amet vel expedita neque, iste porro voluptatum dolorum qui, minima quidem, ducimus sequi assumenda cupiditate? Consequuntur molestias eligendi rerum odit. </h2>
+    <DashboardLayout user={user}>
+      <div className='container mx-auto section__padding'>
+        <h2 className='lg:text-3xl xl:text-4xl  font-semibold py-3'>Welcome Back , {user?.displayName}</h2>
+        <p className='text-gray-500'>Continue learning with our recommendations based on your career goals and recent activity</p>
+        <div className='pt-5'>
+          <Image className='rounded' src={user?.photoURL} width={300} height={300} alt="user photo" />
+        </div>
+      </div>
     </DashboardLayout>
   )
 }

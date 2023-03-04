@@ -2,16 +2,12 @@ import auth from "@/pages/auth/firebase/Firebase.init"
 import { signOut } from "firebase/auth"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/router"
 import { useState } from "react"
-import { useAuthState } from "react-firebase-hooks/auth"
 
-const DashNav = () => {
+const DashNav = ({user}) => {
 
   const [profileOpen, setProfileOpen] = useState(false)
-  const router = useRouter()
-  const [user] = useAuthState(auth)
-  console.log(user)
+  
 
   const logOut = () => {
     signOut(auth)
@@ -21,9 +17,9 @@ const DashNav = () => {
 
   return (
     <div>
-      <div className="container mx-auto lg:py-2 lg:px-20">
+      <div className="container mx-auto lg:py-2 lg:px-16">
         <div className="relative flex justify-between items-center">
-          <Link href='/dashboard'><h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold">Xplainerr</h3></Link>
+          <Link href='/dashboard'><h3 className="font-bold text-[26px]">Xplainerr</h3></Link>
           <div>
             {user?.email && (
               <>
