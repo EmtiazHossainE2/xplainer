@@ -1,4 +1,5 @@
-import auth from "@/pages/auth/firebase/Firebase.init"
+
+import auth from "@/src/auth/firebase/Firebase.init";
 import { signOut } from "firebase/auth"
 import Image from "next/image"
 import Link from "next/link"
@@ -6,7 +7,7 @@ import { useEffect, useState } from "react"
 import { AiOutlineMenu } from 'react-icons/ai';
 import DashMobileNav from "./DashMobileNav"
 
-const DashNav = ({user}) => {
+const DashNav = ({ user }) => {
 
   const [isSticky, setSticky] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false)
@@ -40,7 +41,7 @@ const DashNav = ({user}) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [open]);
-  
+
 
   const logOut = () => {
     signOut(auth)
@@ -104,7 +105,7 @@ const DashNav = ({user}) => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <DashMobileNav open={open} setToggle={setToggle}  user={user} logOut={logOut} />
+          <DashMobileNav open={open} setToggle={setToggle} user={user} logOut={logOut} />
 
 
         </div>

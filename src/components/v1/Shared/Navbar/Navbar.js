@@ -1,4 +1,5 @@
-import auth from '@/pages/auth/firebase/Firebase.init';
+
+import auth from '@/src/auth/firebase/Firebase.init';
 import styles from '@/styles/Navbar.module.css';
 import { signOut } from 'firebase/auth';
 import Image from 'next/image';

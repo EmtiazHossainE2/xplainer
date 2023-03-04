@@ -1,4 +1,5 @@
-import auth from "@/pages/auth/firebase/Firebase.init";
+
+import auth from "@/src/auth/firebase/Firebase.init";
 import Image from "next/image"
 import { useEffect } from "react";
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -19,7 +20,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   if (loading) {
     return <p className="flex justify-center  items-center h-screen font-bold text-2xl">Loading...</p>
   }
-  
+
 
   if (!isVisible) return null
 

@@ -1,4 +1,5 @@
-import auth from '@/pages/auth/firebase/Firebase.init'
+
+import auth from '@/src/auth/firebase/Firebase.init'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import DashboardLayout from '@/src/layout/DashboardLayout'
 import { useAuthState } from 'react-firebase-hooks/auth'
