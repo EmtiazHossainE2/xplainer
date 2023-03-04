@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const router = useRouter()
   const [user] = useAuthState(auth)
-  console.log(user)
+  // console.log(user)
 
   //********************** Handle Sticky 
   useEffect(() => {
@@ -74,7 +74,7 @@ const Navbar = () => {
   const logOut = () => {
     signOut(auth)
     window.location.href = "/";
-}
+  }
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
 
   return (
@@ -237,7 +237,7 @@ const Navbar = () => {
           <div className={`px-3 ${styles.navbar__sign}`}>
             {user?.email ? (
               <>
-              {/************************ If user   ************************/}
+                {/************************ If user   ************************/}
                 <div
                   className='cursor-pointer'
                   onMouseOver={() => {
@@ -281,7 +281,7 @@ const Navbar = () => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={user} logOut={logOut}/>
+          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={user} logOut={logOut} />
           {/*********************** For Mobile ********************* */}
 
         </div>
