@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 const PUBLIC_IMAGE_PATH = BASE_URL + 'images/shared';
 
-const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
+const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
   const router = useRouter()
   useEffect(() => {
     setToggle(false)
@@ -36,7 +36,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
             <button onClick={() => setToggle(false)}><AiOutlineCloseCircle size={28} /></button>
           </div>
 
-          {/* Nav Items  */}
+          {/***************************** Nav Items  *****************************/}
           <div>
             <div className={`relative flex flex-col gap-5 pt-4`}>
 
@@ -82,7 +82,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
 
                 </div>
               </div>
-              {/* Dropdown  */}
+              {/* ****************************courseOpen****************************** */}
               {courseOpen && (
                 <div onClick={() => setCourseOpen(false)} className="absolute  left-0 top-10 z-10 bg-white border-b border-gray-200 py-2 mt-2  w-full">
 
@@ -100,7 +100,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
                   })}
                 </div>
               )}
-
+              {/* ****************************workShopsOpen****************************** */}
               {workShopsOpen && (
                 <div onClick={() => setWorkShopsOpen(false)} className={`absolute left-0   z-10 bg-white py-2 mt-2 border-b border-gray-200 w-full  ${courseOpen && workShopsOpen ? 'top-52' : 'top-20'}`}>
 
@@ -130,15 +130,28 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal }) => {
               </p>
               <p className='text-md font-semibold px-3 mb-5' ><Link href='/blog' className=''>Blog</Link></p>
             </div>
+            {/* ****************************Check login user ****************************** */}
             <div className={`px-3 `}>
-              <button onClick={() => {
-                setLoginModal(true)
-                setToggle(false)
-              }}
-                className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'
-              >
-                Login
-              </button>
+              {/* ****************************If user ****************************** */}
+              {user?.email ? (
+                <div>
+                  <hr className='border-t-[1.5px] mb-2' />
+                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
+                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard/my-courses' className=''>My Courses</Link></p>
+                  <p className='text-md font-semibold mb-5' onClick={logOut}><span className=''>Logout</span></p>
+                </div>
+              ) : (
+                //********************************** No user ********************************/  
+                <button onClick={() => {
+                  setLoginModal(true)
+                  setToggle(false)
+                }}
+                  className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'
+                >
+                  Login
+                </button>
+              )}
+
             </div>
           </div>
 

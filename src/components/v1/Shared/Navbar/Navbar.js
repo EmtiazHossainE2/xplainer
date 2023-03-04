@@ -281,7 +281,7 @@ const Navbar = () => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} />
+          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={user} logOut={logOut}/>
           {/*********************** For Mobile ********************* */}
 
         </div>
