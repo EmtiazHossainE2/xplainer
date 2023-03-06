@@ -16,6 +16,7 @@ const ModuleDetails = ({ posts,frontmatter, content, }) => {
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </SidebarLayout>
+      
     </div>
   )
 }

@@ -7,7 +7,7 @@ const Footer2 = () => {
     <>
       <footer aria-labelledby="footer-heading" className=" border-t border-slate-200 bg-white">
         <h2 className="sr-only" id="footer-heading">Footer</h2>
-        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:pt-24 lg:pb-16">
+        <div className="mx-auto max-w-7xl pt-12 pb-8 px-4 sm:px-6 lg:px-8 lg:pt-24 ">
           <div className="xl:grid xl:grid-cols-4 xl:gap-8">
             <div className="space-y-4 xl:col-span-1">
               <div>

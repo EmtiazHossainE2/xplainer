@@ -6,6 +6,7 @@ import topBadge from "/public/images/courses/top-post-badge.svg";
 import { AiOutlineMenu } from "react-icons/ai";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
+import Navbar from "../components/v1/Shared/Navbar/Navbar";
 
 const SidebarLayout = ({ posts, course, children }) => {
   const [open, setToggle] = useState(false);
@@ -26,52 +27,7 @@ const SidebarLayout = ({ posts, course, children }) => {
   return (
     <>
       {/********************** Header Top  **********************/}
-      <header className="bg-[#001934] text-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200 px-3 md:px-12 lg:px-16">
-        <div className="flex justify-between items-center">
-          <Link href="/">
-            <h2 className="font-bold text-[26px] py-2">Xplainerr</h2>
-          </Link>
-
-          {/*********************** For Desktop ********************* */}
-          <div className="hidden lg:block">
-            <div className="flex justify-center items-center gap-x-6 ">
-              <Link href="/pm-question">
-                <h4 className="font-semibold hover:border-b-2">
-                  PM Interview Questions
-                </h4>
-              </Link>
-              <h4
-                onClick={() => setLoginModal(true)}
-                className="cursor-pointer font-semibold hover:border-b-2"
-              >
-                Login
-              </h4>
-              <Link href="/buy-now">
-                <button className="px-3 py-1.5 bg-[#B80C07] rounded-md ">
-                  Buy Now
-                </button>
-              </Link>
-            </div>
-          </div>
-          {/*********************** For Mobile Menu ********************* */}
-          <div className={`block lg:hidden `}>
-            <AiOutlineMenu
-              className="cursor-pointer"
-              size={27}
-              onClick={() => setToggle(true)}
-            />
-          </div>
-          <CourseMobileMenu
-            open={open}
-            setToggle={setToggle}
-            setLoginModal={setLoginModal}
-            posts={posts}
-            course={course}
-          />
-
-          {/*********************** For Mobile Menu ********************* */}
-        </div>
-      </header>
+      <Navbar pageName={`courseDetail`}/>
 
       {/********************** Main Body **********************/}
       <div className="relative hidden lg:block">
