@@ -25,6 +25,7 @@ const ApiForPm = () => {
             ctaText="Buy now"
             apiForPm={true}
             handleCTAClick={handleCTAClick}
+            coursePreviewSlug={'api-for-pm/module-1'}
           />
           <HeroBanner />
           <FeaturesBlocks

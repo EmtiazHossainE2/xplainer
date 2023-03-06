@@ -1,4 +1,5 @@
 import SidebarLayout from '@/src/layout/SidebarLayout'
+import { getCourseNavigation } from '@/src/utils/helper'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from "marked"
@@ -7,7 +8,7 @@ import path from 'path'
 const ModuleDetails = ({ posts,frontmatter, content, }) => {
   return (
     <div>
-      <SidebarLayout posts={posts} course='api-for-pm'>
+      <SidebarLayout posts={posts} course='pricing-for-pm'>
         <div >
           <h1 className='post-heading pb-3'>{frontmatter?.title}</h1>
           <hr className='pb-3'/>
@@ -25,7 +26,7 @@ export default ModuleDetails
 
 
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('_api-for-pm'))
+  const files = fs.readdirSync(path.join('_pricing-for-pm'))
 
   const paths = files.map((filename) => ({
     params: {
@@ -41,40 +42,25 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
 
-  const filterChapters = ['index.md', 'assets'];
-  const courseNav = fs.readdirSync(path.join('_api-for-pm'));
-  const courseNavigationData = courseNav.filter(item => !filterChapters.includes(item));
+  const courseName = '_pricing-for-pm';
+  const courseNavItems = getCourseNavigation({courseName : courseName})
 
+  // Step 1 - Check if slug is a folder 
   const markdownWithMeta = fs.readFileSync(
-    path.join('_api-for-pm', slug + '.md'),
+    path.join('_pricing-for-pm', slug + '.md'),
     'utf-8'
   )
 
   const { data: frontmatter, content } = matter(markdownWithMeta)
 
-  const files = fs.readdirSync(path.join('_api-for-pm'))
-  const posts = files.map((filename) => {
-    const slug = filename.replace('.md', '')
-    const markdownWithMeta2 = fs.readFileSync(
-      path.join('_api-for-pm', filename),
-      'utf-8'
-    )
-    const { data: frontmatter } = matter(markdownWithMeta2)
-
-    return {
-      slug,
-      frontmatter,
-    }
-  })
-  // console.log(posts)
 
   return {
     props: {
       frontmatter,
       slug,
-      posts: posts,
+      posts: courseNavItems,
       content,
-      courseNavigationData
-    },
+      courseNavigationData : courseNavItems,
+      },
   }
 }

@@ -23,6 +23,7 @@ const PricingForPM = () => {
             ctaText="Start Learning Pricing"
             pricing={true}
             handleCTAClick={handleCTAClick}
+            coursePreviewSlug={'pricing-for-pm/introduction'}
           />
           <FeaturesBlocks
             pricingCardText={pricingCardText}
