@@ -85,6 +85,7 @@ const CourseMobileMenu = ({
                   </ul>
                 );
               })}
+              <hr className="mt-2"/>
             <div className="flex gap-5 items-center px-3 mt-5">
               <h4
                 onClick={() => setLoginModal(true)}

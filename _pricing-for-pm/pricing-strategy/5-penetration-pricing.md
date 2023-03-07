@@ -4,21 +4,7 @@ metaTitle: "Penetration pricing | Pricing for product manager"
 metaDescription: ""
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div>
 
 ---
 
@@ -71,19 +57,4 @@ Swiggy launched its subscription service - *Super* at a *throw-away* price. The 
 
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span> Getting rejected in technical round in product interviews?
- </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. Read by 1200+ PMs</div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now  </a>
-</div>    
-</div>
-</div>

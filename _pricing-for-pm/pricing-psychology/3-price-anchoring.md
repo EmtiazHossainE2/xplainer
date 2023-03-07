@@ -4,24 +4,9 @@ metaTitle: "Price anchoring | Pricing for product manager"
 metaDescription: ""
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Learn API For Product Managers </span> </div>
-  <div class="h3-meta"> Read by 1200+ PMs and crack your dream product job!</div>
-</div>
+Have you ever bargained in Sarojini Nagar? *(Well! that depends* 😭*)* 
 
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now </a>
-</div>    
-</div>
-</div>
-
-# 3. Price anchoring
-
-Have you ever bargained in Sarojini Nagar? *(Well! that depends* 😭*)* If shopkeeper A tries to sell you a T-shirt at ₹ 450 and the other shop is willing to sell the same T-shirt at ₹300; you are instantly compelled into buying the T-shirt immediately! *(without even thinking what the original price of the T-shirt is)*
+If shopkeeper A tries to sell you a T-shirt at ₹ 450 and the other shop is willing to sell the same T-shirt at ₹300; you are instantly compelled into buying the T-shirt immediately! *(without even thinking what the original price of the T-shirt is)*
 
 Thanks to our brain! Empirical evidence has shown that every decision our mind makes is based on the **first piece of information**.
 
@@ -41,18 +26,4 @@ Our mind is so used to anchoring bias; that many popular sites *(Mailchimp, Tind
 > Pro-tip: On your pricing page, draw special attention to your most expensive package,  even if most people don’t buy it. Your top tier package becomes the visitor’s price “anchor”, making your other packages look more affordable in comparison.
 
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div> 
+ 

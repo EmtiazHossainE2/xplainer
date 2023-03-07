@@ -5,21 +5,7 @@ metaDescription: ""
 
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Fear pricing and monetisation strategies in product interviews? </span> </div>
-  <div class="h3-meta">Find pricing case studies of 10+ unicorns at one place!</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>
 
 # 1. How to work with an API?
 
@@ -92,18 +78,4 @@ Here are a few examples of the best API documentation you can read and play arou
 3. SendGrid - [https://sendgrid.com/solutions/email-api/](https://sendgrid.com/solutions/email-api/)
 4. Github - [https://docs.github.com/en/rest](https://docs.github.com/en/rest)
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Why can't great products like Twitter & Whatsapp monetise?</span> </div>
-  <div class="h3-meta">Deep dive into the exciting world of product monetisation</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>

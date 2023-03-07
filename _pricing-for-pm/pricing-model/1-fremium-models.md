@@ -4,21 +4,6 @@ metaTitle: "Freemium model"
 metaDescription: ""
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Learn API For Product Managers </span> </div>
-  <div class="h3-meta"> Read by 1200+ PMs and crack your dream product job!</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now </a>
-</div>    
-</div>
-</div>
-
 ---
 
 # 1. Freemium model
@@ -87,24 +72,6 @@ Freemium also shifts the pressure of growth and monetization on the product team
 
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div>
-
----
-
 ## Freemium & its type ⚽
 
 ---
@@ -168,20 +135,3 @@ It also takes a lot of bandwidth for the product team to decide which features w
 > Pro-tip: Always launch the feature free for a certain time frame & then move it to the paywall if a lot of users are using it.
 
 ---
-
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span> Getting rejected in technical round in product interviews?
- </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. Read by 1200+ PMs</div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now  </a>
-</div>    
-</div>
-</div>

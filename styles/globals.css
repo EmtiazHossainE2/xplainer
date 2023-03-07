@@ -177,7 +177,6 @@ a {
   text-align: justify;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .blog__content p {
@@ -192,7 +191,7 @@ a {
 }
 
 .blog__content p {
-  margin: 12px 0px 22px;
+  margin: 8px 0px 10px;
   line-height: 1.625;
 }
 
@@ -275,6 +274,51 @@ pre code {
   font-size: medium;
 }
 
+/** Card container */
+
+.card-1-container{
+  background: #fff;
+  padding: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #EEE;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+  border-radius: 6px;
+  background:#eeffed;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  position: relative;
+}
+
+.left-info .h3{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.h3-meta{
+  color:grey;
+  font-size:14px;
+  margin-top: 5px;
+}
+
+.right-side{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-embed-desktop{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.youtube-embed-mobile{
+  display: none;
+}
+
+
 /* h1, h2, h3, p, ul, li, code, pre a  */
 
 
@@ -285,6 +329,36 @@ pre code {
 
 
 /************************************ Media Query **************************************** */
+
+@media (min-width: 320px) and (max-width: 520px) {
+
+ 
+  .youtube-embed-desktop{
+    display:none;
+  }
+
+  .youtube-embed-mobile{
+    display:block;
+  }
+
+  .card-1-container{
+    flex-direction:column;
+  }
+
+  .left-info .h3 {
+      font-size: 16px;
+      font-weight: 600;
+  }
+
+  .card-1-container .right-side{
+    margin-top:20px;
+  }
+
+  .parsedown h1{
+    font-size: 20px;
+  }
+
+}
 
 @media screen and (max-width: 1280px) {
   .course__box {

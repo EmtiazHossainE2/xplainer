@@ -4,21 +4,7 @@ metaTitle: "API error handling | Status codes"
 metaDescription: "Learn API error handling. What does 2xx, 3xx, 4xx and 5xx error code mean?"
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Want to be growth & monetisation Product Manager at FAANG?</span> </div>
-  <div class="h3-meta">Learn pricing case studies of LinkedIn, Bumble, Tinder, Unacademy & many more</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://pricingforpm.in?utm_source=apiforpm"> Get free e-book now </a>
-</div>    
-</div>
-</div>
 
 # Error handling
 
@@ -48,18 +34,4 @@ Within each group, there are specific numbers too, that give us more details abo
 
 > You can refer to this website and check the most common status codes -  [https://http.cat/](https://http.cat/)
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Why can't great products like Twitter & Whatsapp monetise?</span> </div>
-  <div class="h3-meta">Deep dive into the exciting world of product monetisation</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>

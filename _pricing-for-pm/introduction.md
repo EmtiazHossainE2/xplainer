@@ -4,24 +4,10 @@ metaTitle: "Introduction | Pricing for product manager "
 metaDescription: ""
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span> Getting rejected in technical round in product interviews?
- </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. Read by 1200+ PMs</div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now  </a>
-</div>    
-</div>
-</div>
-
 # 1. Introduction
+
+<NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
+
 
 Whenever I see India’s consumer internet space, I get more & more convinced that pricing is like an infinite jigsaw puzzle - *extremely difficult to crack*.
 
@@ -75,23 +61,6 @@ In the [use case podcast](https://turnaround.substack.com/p/pricing-strategies-f
 </div>
 
 
----
-
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div>
 
 
 
@@ -108,23 +77,3 @@ Standard textbooks mention 5 common pricing strategies. Knowing these strategies
 PS:- I haven’t covered classical microeconomics theory like **supply, demand, elasticity curves, etc**. It hardly comes in handy in real-life scenarios.
 
 Let's deep dive into the course.
-
----
-
-
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span> Getting rejected in technical round in product interviews?
- </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. Read by 1200+ PMs</div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now  </a>
-</div>    
-</div>
-</div>

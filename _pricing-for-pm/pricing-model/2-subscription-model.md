@@ -3,24 +3,6 @@ title: "2. Subscription model"
 metaTitle: "Subscription model"
 metaDescription: ""
 ---
-
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Learn API For Product Managers </span> </div>
-  <div class="h3-meta"> Read by 1200+ PMs and crack your dream product job!</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now </a>
-</div>    
-</div>
-</div>
-
----
-
 # 2. Subscription model
 
 As descriptive by name; in the subscription model, you make our users pay & commit for a longer time duration.
@@ -129,20 +111,3 @@ Considering the lifecycle of government exams *(which is typically 2-5 years for
 
 ---
 
-
-
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div>

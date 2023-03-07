@@ -113,33 +113,29 @@ const SidebarLayout = ({ posts, course, children }) => {
 
                   return (
                     <ul key={index} className="">
-                      <li className="py-2 flex justify-between items-center">
-                        <Link
+                       <Link
                           href={`/courses/${course}/${slug}`}
-                          className="flex justify-between items-center text-sm text-[#3B454E]"
-                        >
-                          {frontmatter.title}
-                        </Link>
+                          className="flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E]">
+                          <li className="py-2 flex justify-between items-center ">
+                              {frontmatter.title}
+                          </li>
+                          <FaLock />
+                      </Link>
 
-                        <FaLock />
-
-
-                      </li>
                       {chapterData?.subChapters && (
                         <ul key={index} className="">
-
                           {chapterData?.subChapters.map((subChapter, index) => {
                             return (
-                              <li className="py-2 pl-2 flex justify-between items-center border-l-2 ml-3" key={`subchapter-${index}`}>
-                                <Link
-                                  href={`/courses/${course}/${slug}/${subChapter.slug}`}
-                                  className=" text-sm text-[#3B454E]"
-                                >
+                              <Link
+                              key={`subchapter-${index}`}
+                              href={`/courses/${course}/${slug}/${subChapter.slug}`}
+                              className=" text-sm flex justify-between items-center text-[#3B454E] hover:bg-blue-400"
+                            >
+                              <li className="py-2 pl-2  border-l-2 ml-3 " >
                                   {subChapter.frontmatter.title}
-                                </Link>
-
-                                <FaLock />
                               </li>
+                              <FaLock />
+                              </Link>
                             )
                           })}
 

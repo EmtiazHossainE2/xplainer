@@ -20,17 +20,17 @@ export const getCourseNavigation = ({courseName}) => {
       const nestedCourseNav = fs.readdirSync(path.join(courseName, folderName));
 
       // create subChapter folder for Higher order chapter
-      const {slug : folderIndexSlug, frontmatter : folderIndexData} = readFileData(`${folderName}.md`);
+      const {slug : folderIndexSlug, frontmatter : folderIndexData} = readFileData(`${folderName}.md`, {courseName});
       courseNavItems[folderIndexSlug] = {slug : folderIndexSlug, frontmatter : folderIndexData, subChapters : []};
 
       // get data of subchapter and push in the chapter node of subChapter
       nestedCourseNav.map((nestedChapterFileName) => {
-         const {slug, frontmatter} = readFileData(nestedChapterFileName, {hasChild: true, folderName});
+         const {slug, frontmatter} = readFileData(nestedChapterFileName, {hasChild: true, folderName, courseName});
          courseNavItems[folderIndexSlug]['subChapters'].push({slug, frontmatter});
       })
       
     }else{
-      const {slug, frontmatter} = readFileData(filename);
+      const {slug, frontmatter} = readFileData(filename, {courseName});
       if(!courseNavItems[slug]){
         courseNavItems[slug] = {slug, frontmatter};
       }
@@ -43,9 +43,10 @@ export const getCourseNavigation = ({courseName}) => {
 
 const readFileData = (filename, metaData) => {
     const childfolderName = metaData?.folderName || ''; 
+    const courseName = metaData?.courseName;
     const slug = filename.replace('.md', '')
     const markDownMetaData = fs.readFileSync(
-     path.join('_pricing-for-pm', childfolderName, filename),
+     path.join(courseName, childfolderName, filename),
      'utf-8'
    )
    const { data: frontmatter } = matter(markDownMetaData);

@@ -4,26 +4,6 @@ metaTitle: "Cost-based pricing | Pricing for product manager"
 metaDescription: ""
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>  Fear technology as a product manager? </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. </div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-primary">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Start Learning </a>
-</div>    
-</div>
-</div>
-
----
-
-# 1. Cost-based pricing
-
 I come from a Baniya family. The rules of traditional businesses are simple - *Lagat (total cost) + Labh (profit).*
 
 ![https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf897573-e35f-418f-867f-c01adbb532db_380x238.png](https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf897573-e35f-418f-867f-c01adbb532db_380x238.png)
@@ -69,19 +49,4 @@ The story is altogether different if you chasing growth *(trying to grab a large
 
 Let’s see the next pricing strategy - **value-based pricing**.
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span> Getting rejected in technical round in product interviews?
- </span> </div>
-  <div class="h3-meta"> Learn everything about APIs. Read by 1200+ PMs</div>
-    <div class="h4-meta mt-4"> 👉 Use Promo code - PRICE40 and get 40% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://apiforpm.tech?utm_source=pricingebook"> Get free e-book now  </a>
-</div>    
-</div>
-</div>

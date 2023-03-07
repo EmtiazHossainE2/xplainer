@@ -68,25 +68,8 @@ Cut short, Oauth is only one authorization but not authentication.
 
 ![/images/api-for-pm/works.png](/images/api-for-pm/works.png)
 
-<div style="display:flex; justify-content:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PfvSD6MmEmQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<YoutubeView id="PfvSD6MmEmQ" />
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Why can't great products like Twitter & Whatsapp monetise?</span> </div>
-  <div class="h3-meta">Deep dive into the exciting world of product monetisation</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>
 
 # 2. Rate Limiting of API
 
@@ -133,18 +116,4 @@ To access the web API method, we have to pass the user credentials in the reques
 
 For example - [api.github.com](https://api.github.com), [api.razorpay.com](https://api.razorpay.com)
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Fear pricing and monetisation strategies in product interviews? </span> </div>
-  <div class="h3-meta">Find pricing case studies of 10+ unicorns at one place!</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
 
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>

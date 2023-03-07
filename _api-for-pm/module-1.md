@@ -138,22 +138,6 @@ Let's take a few use cases from LinkedIn and understand the analogy *(better)*
 
 > What if you made a PUT request to add a new piece of data on the server instead of POST? Will the data be added or throw an error?
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>5671 Product Managers have already bought this e-book. What's stopping you?</span> </div>
-  <div class="h3-meta">Crack product interviews of Stripe, Uber, Amazon, Twitter, MAANG etc. </div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - page1 and get 25% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://dipakkr.gumroad.com/l/api-for-pm">Let me buy</a>
-</div>    
-</div>
-</div>
-
 
 
 # 4. What is JSON?
@@ -227,19 +211,4 @@ Example :
 - If the value is a string, it is mentioned in double-quotes.
 - A JSON value can be an object, array, number, string, true, false, or null, and JSON structure can be nested up to any level.
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>This was a free chapter. Liked it? Why don't you buy the e-book then?</span> </div>
-  <div class="h3-meta">APIs can 10x your product management career</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - page1 and get 25% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://dipakkr.gumroad.com/l/api-for-pm">Let me buy</a>
-</div>    
-</div>
-</div>
 

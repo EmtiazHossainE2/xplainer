@@ -4,25 +4,6 @@ metaTitle: "Introduction to API | Tech for product managers"
 metaDescription: "REST, SOAP and GraphQL APIs"
 ---
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Fear pricing and monetisation strategies in product interviews? </span> </div>
-  <div class="h3-meta">Find pricing case studies of 10+ unicorns at one place!</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>
-
-# 1. Different types of APIs
-
----
 
 # 1.1 REST APIs
 
@@ -88,22 +69,6 @@ Response:
 
 > In order to consume HTTP service you don't need any additional framework. Its simple and clean and hence REST is preferred over SOAP for its simplicity.
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Why can't great products like Twitter & Whatsapp monetise?</span> </div>
-  <div class="h3-meta">Deep dive into the exciting world of product monetisation</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm">Read free chapter</a>
-</div>    
-</div>
-</div>
-
 
 # 1.4 GraphQL APIs
 
@@ -118,7 +83,7 @@ Let me tell you in comparison to REST APIs.
 REST APIs follow the structure:
 
 - /users/
-- /users/{id}
+- /users/`{id}`
 - /users/edit
 - /users/delete
 
@@ -158,19 +123,4 @@ Advantages:
 
 ![excited-minions-gif.gif](/images/api-for-pm/excited-minions-gif.gif)
 
-<div class="card-1-container">
-<div class="left-side"> 
-<div class="left-info">
-  <div class="h3"> <span>Want to be growth & monetisation Product Manager at FAANG?</span> </div>
-  <div class="h3-meta">Learn pricing case studies of LinkedIn, Bumble, Tinder, Unacademy & many more</div>
-  <div class="h4-meta mt-4"> 👉 Use Promo code - API10 and get 50% off</div>
-</div>
-
-</div>
-<div class="right-side">
-<div class="btn btn-danger">
-   <a class="link" href="https://pricingforpm.in?utm_source=apiforpm"> Get free e-book now </a>
-</div>    
-</div>
-</div>
 

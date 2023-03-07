@@ -1,71 +1,70 @@
-import Footer2 from '@/src/components/v1/Shared/Footer/Footer2'
-import SidebarLayout from '@/src/layout/SidebarLayout'
-import { getCourseNavigation } from '@/src/utils/helper'
-import fs from 'fs'
-import matter from 'gray-matter'
-import { marked } from "marked"
-import path from 'path'
+import ContentLayout from "@/src/components/v1/Shared/ContentView/ContentLayout";
+import Footer2 from "@/src/components/v1/Shared/Footer/Footer2";
+import SidebarLayout from "@/src/layout/SidebarLayout";
+import { getCourseNavigation } from "@/src/utils/helper";
+import fs from "fs";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
 
-const ModuleDetails = ({ posts,frontmatter, content, }) => {
+const ModuleDetails = ({ posts, frontmatter, content }) => {
   return (
     <div>
-      <SidebarLayout posts={posts} course='pricing-for-pm'>
-        <div >
-          <h1 className='post-heading pb-3'>{frontmatter?.title}</h1>
-          <hr className='pb-3'/>
+      <SidebarLayout posts={posts} course="pricing-for-pm">
+        <div>
+          <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
+          <hr className="pb-3" />
         </div>
-        <div className='blog__content text-align-justify mb-5'>
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+        <div className="blog__content text-align-justify mb-5">
+          <ContentLayout content={content} />
         </div>
+
         <Footer2 />
       </SidebarLayout>
     </div>
-  )
-}
+  );
+};
 
-export default ModuleDetails
-
-
+export default ModuleDetails;
 
 export const getStaticPaths = async () => {
-  let files = fs.readdirSync(path.join('_pricing-for-pm'))
-  const unsupportedFileList = ['assets', '.DS_Store'];
-  files = files.filter(item => !unsupportedFileList.includes(item))
-
+  let files = fs.readdirSync(path.join("_pricing-for-pm"));
+  const unsupportedFileList = ["assets", ".DS_Store"];
+  files = files.filter((item) => !unsupportedFileList.includes(item));
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace(".md", ""),
     },
-  }))
+  }));
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async ({ params: { slug } }) => {
+  const courseName = "_pricing-for-pm";
+  const courseNavItems = getCourseNavigation({ courseName: courseName });
 
-  const courseName = '_pricing-for-pm';
-  const courseNavItems = getCourseNavigation({courseName : courseName})
-
-  // Step 1 - Check if slug is a folder 
+  // Step 1 - Check if slug is a folder
   const markdownWithMeta = fs.readFileSync(
-    path.join('_pricing-for-pm', slug + '.md'),
-    'utf-8'
-  )
+    path.join("_pricing-for-pm", slug + ".md"),
+    "utf-8"
+  );
 
-  const { data: frontmatter, content } = matter(markdownWithMeta)
+  const { data: frontmatter, content } = matter(markdownWithMeta);
 
+  const result = await serialize(content);
 
   return {
     props: {
       frontmatter,
       slug,
       posts: courseNavItems,
-      content,
-      courseNavigationData : courseNavItems,
-      },
-  }
-}
+      content: result,
+      courseNavigationData: courseNavItems,
+    },
+  };
+};

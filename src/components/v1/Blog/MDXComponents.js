@@ -14,9 +14,9 @@ const NativeAds = (props) => {
           </div>
         </div>
         <div className="right-side">
-          <div className="btn btn-danger">
+          <div className="">
             <a
-              className="link"
+              className="bg-[#0070F4] rounded-[4px] py-[18px] px-6 text-white"
               href="https://learn.pricingforpm.in/pricing-model/1-fremium-models?utm_source=apiforpm"
             >
               Read free chapter
