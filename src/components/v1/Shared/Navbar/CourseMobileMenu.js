@@ -24,14 +24,12 @@ const CourseMobileMenu = ({
           setToggle(!open);
         }
       }}
-      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${
-        open ? "bg-black/75" : "bg-transparent pointer-events-none"
-      }`}
+      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${open ? "bg-black/75" : "bg-transparent pointer-events-none"
+        }`}
     >
       <div
-        className={`absolute transition-[left] bg-white text-black h-screen w-[75%] max-w-[375px] pb-20 ${
-          open ? "left-0 overflow-y-auto" : "-left-full"
-        }`}
+        className={`absolute transition-[left] bg-white text-black h-screen w-[75%] max-w-[375px] pb-20 ${open ? "left-0 overflow-y-auto" : "-left-full"
+          }`}
       >
         <div className="flex flex-col justify-start item-center">
           <div className="flex justify-between shadow-sm p-2">
@@ -43,49 +41,50 @@ const CourseMobileMenu = ({
 
           {/*Course Nav Items  */}
           <div>
-            <div>
-              {posts &&
-                Object.keys(posts).map((chapter, index) => {
-                  const chapterData = posts[chapter];
-                  const frontmatter = posts[chapter].frontmatter;
-                  const slug = posts[chapter].slug;
-                  
-                  return (
-                    <ul key={index} className="">
-                      <li className="py-2">
-                        <Link
-                          href={`/courses/${course}/${slug}`}
-                          className="flex justify-between items-center text-sm text-[#3B454E]"
-                        >
-                          {frontmatter.title}
-                        </Link>
+            {posts &&
+              Object.keys(posts).map((chapter, index) => {
+                const chapterData = posts[chapter];
+                const frontmatter = posts[chapter].frontmatter;
+                const slug = posts[chapter].slug;
 
-                        {chapterData?.subChapters && (
-                            <ul key={index} className="">
-
-                              {chapterData?.subChapters.map((subChapter,index) => {
-                                return(
-                                  <li className="py-2" key={`subchapter-${index}`}>
-                                  <Link
-                                    href={`/courses/${course}/${subChapter.slug}`}
-                                    className="flex justify-between items-center text-sm text-[#3B454E]"
-                                  >
-                                    {subChapter.frontmatter.title}
-                                  </Link>
-                                </li>
-                                )
-                              })}
-
-                             
-                            </ul>
-                          )}
-                      </li>
+                return (
+                  <ul key={index} className="">
+                    <li className="py-2 flex justify-between items-center px-3">
+                      <Link
+                        href={`/courses/${course}/${slug}`}
+                        className="flex justify-between items-center text-sm text-[#3B454E]"
+                      >
+                        {frontmatter.title}
+                      </Link>
 
                       <FaLock />
-                    </ul>
-                  );
-                })}
-            </div>
+
+
+                    </li>
+                    {chapterData?.subChapters && (
+                      <ul key={index} className="">
+
+                        {chapterData?.subChapters.map((subChapter, index) => {
+                          return (
+                            <li className="py-2 pl-2 px-3 flex justify-between items-center border-l-2 ml-5" key={`subchapter-${index}`}>
+                              <Link
+                                href={`/courses/${course}/${slug}/${subChapter.slug}`}
+                                className=" text-sm text-[#3B454E]"
+                              >
+                                {subChapter.frontmatter.title}
+                              </Link>
+
+                              <FaLock />
+                            </li>
+                          )
+                        })}
+
+                      </ul>
+                    )}
+
+                  </ul>
+                );
+              })}
             <div className="flex gap-5 items-center px-3 mt-5">
               <h4
                 onClick={() => setLoginModal(true)}

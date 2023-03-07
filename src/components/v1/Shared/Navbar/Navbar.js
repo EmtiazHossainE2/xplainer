@@ -1,4 +1,3 @@
-
 import auth from '@/src/auth/firebase/Firebase.init';
 import styles from '@/styles/Navbar.module.css';
 import { signOut } from 'firebase/auth';
@@ -20,7 +19,7 @@ import productHunt from '/public/images/shared/productHunt.svg';
 import users from '/public/images/shared/users.svg';
 
 
-const Navbar = ({ pageName }) => {
+const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
   const [couponModal, setCouponModal] = useState(false)
@@ -72,6 +71,7 @@ const Navbar = ({ pageName }) => {
     setShowModal((state) => !state)
   }
 
+  // Logout 
   const logOut = () => {
     signOut(auth)
     window.location.href = "/";
@@ -83,9 +83,7 @@ const Navbar = ({ pageName }) => {
       <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        {pageName !== 'courseDetail' &&
-          <HeaderTopBanner handleBannerClick={handleBannerClick} />
-        }
+        <HeaderTopBanner handleBannerClick={handleBannerClick} />
 
 
         {/********************** * For Desktop  ********************* */}
@@ -98,54 +96,50 @@ const Navbar = ({ pageName }) => {
           <div className={`relative ${styles.navbar__container}`}>
 
             {/*********************** Courses ***********************/}
-            {pageName !== 'courseDetail' &&
-              <div className='text-md font-semibold px-3 '>
-                <div
-                  onMouseOver={() => {
-                    setCourseOpen(true)
-                    setWorkShopsOpen(false)
-                  }}
-                  className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[]  border-[#0070F4] " : ""}`}
-                >
-                  Courses
-                  <div className="flex justify-between items-center  gap-x-1">
-                    <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button>
-                    {courseOpen ? (
-                      <FiChevronUp size={22} className="font-bold" />
-                    ) : (
-                      <FiChevronDown size={22} className="font-bold" />
-                    )}
-                  </div>
+            <div className='text-md font-semibold px-3 '>
+              <div
+                onMouseOver={() => {
+                  setCourseOpen(true)
+                  setWorkShopsOpen(false)
+                }}
+                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[]  border-[#0070F4] " : ""}`}
+              >
+                Courses
+                <div className="flex justify-between items-center  gap-x-1">
+                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button>
+                  {courseOpen ? (
+                    <FiChevronUp size={22} className="font-bold" />
+                  ) : (
+                    <FiChevronDown size={22} className="font-bold" />
+                  )}
                 </div>
               </div>
-            }
+            </div>
 
 
             {/*********************** Workshops ***********************/}
-            {pageName !== 'courseDetail' &&
-              <div className='text-md font-semibold px-3 '>
-                <div
-                  onMouseOver={() => {
-                    setWorkShopsOpen(true)
-                    setCourseOpen(false)
-                  }}
-                  className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 pb-[]   border-[#0070F4] " : ""}`}
-                >
-                  Workshops
-                  <div className="flex justify-between items-center  gap-x-1">
-                    <button className='bg-[#E7E1FF] rounded-sm flex items-center justify-center text-[8px] text-[#9868FF] font-bold w-[40px] h-[16px] px-[2px]'>New</button>
+            <div className='text-md font-semibold px-3 '>
+              <div
+                onMouseOver={() => {
+                  setWorkShopsOpen(true)
+                  setCourseOpen(false)
+                }}
+                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 pb-[]   border-[#0070F4] " : ""}`}
+              >
+                Workshops
+                <div className="flex justify-between items-center  gap-x-1">
+                  <button className='bg-[#E7E1FF] rounded-sm flex items-center justify-center text-[8px] text-[#9868FF] font-bold w-[40px] h-[16px] px-[2px]'>New</button>
 
-                    {workShopsOpen ? (
-                      <FiChevronUp size={22} className="font-bold" />
-                    ) : (
-                      <FiChevronDown size={22} className="font-bold" />
-                    )}
-
-                  </div>
+                  {workShopsOpen ? (
+                    <FiChevronUp size={22} className="font-bold" />
+                  ) : (
+                    <FiChevronDown size={22} className="font-bold" />
+                  )}
 
                 </div>
+
               </div>
-            }
+            </div>
 
 
             {/********************** * Course submenu ********************* */}
@@ -230,21 +224,17 @@ const Navbar = ({ pageName }) => {
               </div>
             )}
             {/************************ Workshop submenu end   ************************/}
-            {pageName !== 'courseDetail' &&
-              <p
-                className='text-md font-semibold px-3 '
-                onMouseOver={() => {
-                  setWorkShopsOpen(false)
-                  setCourseOpen(false)
-                }}
-              >
-                <Link href='/mock-interview' className='hover:border-b-2  hover:border-[#0070F4]'>Mock Interviews</Link>
-              </p>
-            }
+            <p
+              className='text-md font-semibold px-3 '
+              onMouseOver={() => {
+                setWorkShopsOpen(false)
+                setCourseOpen(false)
+              }}
+            >
+              <Link href='/mock-interview' className='hover:border-b-2  hover:border-[#0070F4]'>Mock Interviews</Link>
+            </p>
 
-            {pageName !== 'courseDetail' &&
-              <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2  hover:border-[#0070F4]'>Blog</Link></p>
-            }
+            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2  hover:border-[#0070F4]'>Blog</Link></p>
 
 
           </div>

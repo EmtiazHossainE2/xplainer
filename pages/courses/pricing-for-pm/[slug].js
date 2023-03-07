@@ -1,3 +1,4 @@
+import Footer2 from '@/src/components/v1/Shared/Footer/Footer2'
 import SidebarLayout from '@/src/layout/SidebarLayout'
 import { getCourseNavigation } from '@/src/utils/helper'
 import fs from 'fs'
@@ -13,9 +14,10 @@ const ModuleDetails = ({ posts,frontmatter, content, }) => {
           <h1 className='post-heading pb-3'>{frontmatter?.title}</h1>
           <hr className='pb-3'/>
         </div>
-        <div className='blog__content text-align-justify'>
+        <div className='blog__content text-align-justify mb-5'>
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
+        <Footer2 />
       </SidebarLayout>
     </div>
   )
