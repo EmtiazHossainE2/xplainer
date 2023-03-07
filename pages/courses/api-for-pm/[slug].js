@@ -4,7 +4,6 @@ import SidebarLayout from '@/src/layout/SidebarLayout'
 import { getCourseNavigation } from '@/src/utils/helper'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { marked } from "marked"
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 
