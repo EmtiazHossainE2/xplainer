@@ -26,7 +26,10 @@ export default ModuleDetails
 
 
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('_api-for-pm'))
+  let files = fs.readdirSync(path.join('_api-for-pm'))
+
+  const unsupportedFileList = ['assets', '.DS_Store'];
+  files = files.filter(item => !unsupportedFileList.includes(item))
 
   const paths = files.map((filename) => ({
     params: {
