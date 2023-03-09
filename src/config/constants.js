@@ -331,4 +331,23 @@ export const policy = [
   },
 ]
 
+export const upgradeItem = [
+  {
+    title:"Entire course library",
+    des:"Get full access to our course library, with hours of lessons and example answers."
+  },
+  {
+    title:"Mock interview videos",
+    des:"Watch experts answer real interview questions in hundreds of videos."
+  },
+  {
+    title:"Private Slack access",
+    des:"Join our daily discussions with 10,000 other Exponent members on Slack."
+  },
+  {
+    title:"Live daily practice",
+    des:"With our new peer practice tool, you can practice with other members every day."
+  }
+]
+
 export const BASE_URL = 'https://xplainerr.vercel.app/';

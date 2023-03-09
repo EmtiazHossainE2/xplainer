@@ -35,6 +35,7 @@ const SidebarLayout = ({ posts, course, children }) => {
   }
 
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
+  const courseLink = "flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E] px-1 2xl:px-3"
 
   return (
     <>
@@ -47,6 +48,9 @@ const SidebarLayout = ({ posts, course, children }) => {
           {/*********************** For Desktop ********************* */}
           <div className="hidden lg:block">
             <div className="flex justify-center items-center gap-x-6 ">
+              <Link href='/dashboard/my-courses' className='hover:border-b-2 border-b-blue-500'>
+                My Courses
+              </Link>
               {user?.email ? (
                 <>
                   {/************************ If user   ************************/}
@@ -103,57 +107,77 @@ const SidebarLayout = ({ posts, course, children }) => {
       <div className="relative hidden lg:block">
         <div className="flex">
           {/********************* Left Side  **********************/}
-          <div className="flex flex-col text-left fixed overflow-y-auto top-16 left-0 w-[18%] h-screen px-2 shadow-2xl mb-12 ">
-            
-              {posts &&
-                Object.keys(posts).map((chapter, index) => {
-                  const chapterData = posts[chapter];
-                  const frontmatter = posts[chapter].frontmatter;
-                  const slug = posts[chapter].slug;
+          <div className="flex flex-col text-left fixed overflow-y-auto top-16 left-0 w-[18%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
 
-                  return (
-                    <ul key={index} className="">
-                       <Link
-                          href={`/courses/${course}/${slug}`}
-                          className="flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E]">
-                          <li className="py-2 flex justify-between items-center ">
-                              {frontmatter.title}
-                          </li>
-                          <FaLock />
-                      </Link>
+            {/********************************** Free Chapter  ***************************************/}
+            {posts &&
+              Object.keys(posts).slice(0, 1).map((chapter, index) => {
+                const frontmatter = posts[chapter].frontmatter;
+                const slug = posts[chapter].slug;
 
-                      {chapterData?.subChapters && (
-                        <ul key={index} className="">
-                          {chapterData?.subChapters.map((subChapter, index) => {
-                            return (
-                              <Link
+                return (
+                  <ul key={index}>
+                    <Link
+                      href={`/courses/${course}/${slug}`}
+                      className={courseLink}>
+                      <li className="py-2 flex justify-between items-center ">
+                        {frontmatter.title}
+                      </li>
+                    </Link>
+                  </ul>
+                );
+              })}
+
+            {/********************************** Paid Chapter  **********************************/}
+            {posts &&
+              Object.keys(posts).slice(1).map((chapter, index) => {
+                const chapterData = posts[chapter];
+                const frontmatter = posts[chapter].frontmatter;
+                const slug = posts[chapter].slug;
+
+                return (
+                  <ul key={index}>
+                    <Link
+                      href={`/courses/${course}/${slug}`}
+                      className={courseLink}>
+                      <li className="py-2 flex justify-between items-center ">
+                        {frontmatter.title}
+                      </li>
+                      {!user?.email && (<FaLock />)}
+                    </Link>
+
+                    {chapterData?.subChapters && (
+                      <ul key={index}>
+                        {chapterData?.subChapters.map((subChapter, index) => {
+                          return (
+                            <Link
                               key={`subchapter-${index}`}
                               href={`/courses/${course}/${slug}/${subChapter.slug}`}
-                              className=" text-sm flex justify-between items-center text-[#3B454E] hover:bg-blue-400"
+                              className=" text-sm flex justify-between items-center text-[#3B454E] hover:bg-blue-400 px-1 2xl:px-3"
                             >
-                              <li className="py-2 pl-2  border-l-2 ml-3 " >
-                                  {subChapter.frontmatter.title}
+                              <li className="py-2 pl-2 ml-2.5 " >
+                                {subChapter.frontmatter.title}
                               </li>
-                              <FaLock />
-                              </Link>
-                            )
-                          })}
+                              {!user?.email && (<FaLock />)}
+                            </Link>
+                          )
+                        })}
 
-                        </ul>
-                      )}
+                      </ul>
+                    )}
 
-                    </ul>
-                  );
-                })}
-              <div className="mt-6">
-                <Image
-                  src={topBadge}
-                  width={350}
-                  height={400}
-                  alt="api for pm review jpeg"
-                />
-              </div>
-            
+                  </ul>
+                );
+              })}
+            <div className="mt-6">
+              <Image
+                src={topBadge}
+                width={350}
+                height={400}
+                alt="api for pm review jpeg"
+              />
+            </div>
+
 
           </div>
 
