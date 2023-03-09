@@ -1,6 +1,9 @@
+import auth from "@/src/auth/firebase/Firebase.init";
+import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
 
@@ -15,8 +18,15 @@ const CourseMobileMenu = ({
   useEffect(() => {
     setToggle(false);
   }, [router, setToggle]);
+  const [user] = useAuthState(auth)
 
-  const courseLink = "flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E] px-1 2xl:px-3"
+  // Logout 
+  const logOut = () => {
+    signOut(auth)
+    window.location.href = "/";
+  }
+
+  const courseLink = "flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E] px-3 "
 
   return (
     <div
@@ -70,34 +80,30 @@ const CourseMobileMenu = ({
                 const slug = posts[chapter].slug;
 
                 return (
-                  <ul key={index} className="">
-                    <li className="py-2 flex justify-between items-center px-3">
-                      <Link
-                        href={`/courses/${course}/${slug}`}
-                        className="flex justify-between items-center text-sm text-[#3B454E]"
-                      >
+                  <ul key={index}>
+                    <Link
+                      href={`/courses/${course}/${slug}`}
+                      className={courseLink}>
+                      <li className="py-2 flex justify-between items-center ">
                         {frontmatter.title}
-                      </Link>
+                      </li>
+                      {!user?.email && (<FaLock />)}
+                    </Link>
 
-                      <FaLock />
-
-
-                    </li>
                     {chapterData?.subChapters && (
-                      <ul key={index} className="">
-
+                      <ul key={index}>
                         {chapterData?.subChapters.map((subChapter, index) => {
                           return (
-                            <li className="py-2 pl-2 px-3 flex justify-between items-center border-l-2 ml-5" key={`subchapter-${index}`}>
-                              <Link
-                                href={`/courses/${course}/${slug}/${subChapter.slug}`}
-                                className=" text-sm text-[#3B454E]"
-                              >
+                            <Link
+                              key={`subchapter-${index}`}
+                              href={`/courses/${course}/${slug}/${subChapter.slug}`}
+                              className=" text-sm flex justify-between items-center text-[#3B454E] hover:bg-blue-400 px-3"
+                            >
+                              <li className="py-2 pl-1 ml-2 " >
                                 {subChapter.frontmatter.title}
-                              </Link>
-
-                              <FaLock />
-                            </li>
+                              </li>
+                              {!user?.email && (<FaLock />)}
+                            </Link>
                           )
                         })}
 
@@ -109,17 +115,27 @@ const CourseMobileMenu = ({
               })}
             <hr className="mt-2" />
             <div className="flex gap-5 items-center px-3 mt-5">
-              <h4
-                onClick={() => setLoginModal(true)}
-                className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
-              >
-                Login
-              </h4>
-              <Link href="/buy-now">
-                <button className="px-3 py-1.5 bg-[#B80C07] text-white rounded-md ">
-                  Buy Now
-                </button>
-              </Link>
+              {user?.email ? (
+                <h4
+                  onClick={logOut}
+                  className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
+                >
+                  Log out
+                </h4>
+              ) : (
+                <h4
+                  onClick={() => setLoginModal(true)}
+                  className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
+                >
+                  Login
+                </h4>
+              )}
+              {!user?.email &&
+                <Link href="/buy-now">
+                  <button className="px-3 py-1.5 bg-[#B80C07] text-white rounded-md ">
+                    Buy Now
+                  </button>
+                </Link>}
             </div>
           </div>
         </div>
