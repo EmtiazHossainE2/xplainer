@@ -16,6 +16,8 @@ const CourseMobileMenu = ({
     setToggle(false);
   }, [router, setToggle]);
 
+  const courseLink = "flex justify-between items-center text-sm hover:bg-blue-400 text-[#3B454E] px-1 2xl:px-3"
+
   return (
     <div
       onClick={(e) => {
@@ -41,8 +43,28 @@ const CourseMobileMenu = ({
 
           {/*Course Nav Items  */}
           <div>
+            {/********************************** Free Chapter  ***************************************/}
             {posts &&
-              Object.keys(posts).map((chapter, index) => {
+              Object.keys(posts).slice(0, 1).map((chapter, index) => {
+                const frontmatter = posts[chapter].frontmatter;
+                const slug = posts[chapter].slug;
+
+                return (
+                  <ul key={index}>
+                    <Link
+                      href={`/courses/${course}/${slug}`}
+                      className={courseLink}>
+                      <li className="py-2 flex justify-between items-center ">
+                        {frontmatter.title}
+                      </li>
+                    </Link>
+                  </ul>
+                );
+              })}
+
+            {/********************************** Paid Chapter  **********************************/}
+            {posts &&
+              Object.keys(posts).slice(1).map((chapter, index) => {
                 const chapterData = posts[chapter];
                 const frontmatter = posts[chapter].frontmatter;
                 const slug = posts[chapter].slug;
@@ -85,7 +107,7 @@ const CourseMobileMenu = ({
                   </ul>
                 );
               })}
-              <hr className="mt-2"/>
+            <hr className="mt-2" />
             <div className="flex gap-5 items-center px-3 mt-5">
               <h4
                 onClick={() => setLoginModal(true)}
