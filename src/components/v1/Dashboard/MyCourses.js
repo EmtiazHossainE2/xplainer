@@ -5,7 +5,7 @@ import Link from "next/link"
 const MyCourses = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:mb-56 2xl:mb-72">
         {myCourses &&
           myCourses.map((course, index) => (
             <div key={index}>
