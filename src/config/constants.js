@@ -350,4 +350,43 @@ export const upgradeItem = [
   }
 ]
 
+export const myCourses = [
+  {
+    title: 'API for Product Manager',
+    coverImage: 'blog1.png',
+    ratings: "",
+    instructor:"Deepak Kumar",
+    company:"Xplainerr"
+  },
+  {
+    title: 'Pricing & Monetization',
+    coverImage: 'blog2.png',
+    ratings: "",
+    instructor: "Deepak Kumar",
+    company: "Xplainerr"
+  },
+  {
+    title: 'How to do user interviews',
+    coverImage: 'blog3.png',
+    ratings: "",
+    instructor: "Abul Hasan",
+    company: "Abc Tech"
+  },
+  {
+    title: 'JavaScript : The Advanced  ',
+    coverImage: 'blog4.png',
+    ratings: "",
+    instructor: "Andrei Neagoie",
+    company: "Mastery"
+  },
+  {
+    title: 'Data Structures And Algorithms  ',
+    coverImage: 'blog5.png',
+    ratings: "",
+    instructor: "Prateek Narang",
+    company: "Coding"
+  }
+];
+
+
 export const BASE_URL = 'https://xplainerr.vercel.app/';

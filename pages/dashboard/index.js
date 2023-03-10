@@ -36,19 +36,19 @@ const Dashboard = () => {
       />
       <DashboardLayout user={user}>
         <div className="bg-black">
-          <div className='container mx-auto px-3 lg:px-16 pt-5 pb-.5'>
-            <h2 className='text-2xl  text-white font-semibold py-3 lg:pt-5'>Welcome Back , {" "}
+          <div className='container mx-auto  px-5 md:px-12 lg:px-40 2xl:px-48 pt-5 pb-.5'>
+            <h2 className='text-[16px] text-white font-semibold py-3 lg:pt-3'>Welcome Back , {" "}
               <span className='lg:hidden pb-1'><br /></span>
               {user?.displayName}</h2>
 
-            <h2 className='text-2xl  lg:text-3xl text-white font-semibold py-3 lg:py-10'>My Learning </h2>
+            <h2 className='text-xl  lg:text-2xl text-white font-semibold py-3 pb-5 lg:pb-10'>My Learning </h2>
             {/* Menus  */}
             <nav className="flex items-center gap-5 border-gray-200 ">
               {menus.map((menu, index) => (
                 <p
                   key={index}
                   onClick={() => handleActive(index)}
-                  className={`text-xl cursor-pointer pb-2 px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
+                  className={`lg:text-lg cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
                     }`}
                 >
                   {menu.name}
@@ -60,7 +60,7 @@ const Dashboard = () => {
         </div>
 
         {/* Child  */}
-        <div className="container mx-auto px-3 lg:px-16 my-5">
+        <div className="container mx-auto px-5 md:px-12 lg:px-40 2xl:px-48 my-5">
           {active === 0 && <MyCourses />}
           {active === 1 && <WishList />}
           {active === 2 && <Settings />}
