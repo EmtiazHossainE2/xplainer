@@ -1,24 +1,38 @@
+import auth from "@/src/auth/firebase/Firebase.init";
 import ContentLayout from "@/src/components/v1/Shared/ContentView/ContentLayout";
 import Footer2 from "@/src/components/v1/Shared/Footer/Footer2";
+import UpgradeToPremium from "@/src/components/v1/Shared/UpgradeToPremium";
 import SidebarLayout from "@/src/layout/SidebarLayout";
 import { getCourseNavigation } from "@/src/utils/helper";
 import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const ModuleDetails = ({ posts, frontmatter, content }) => {
+  const [user] = useAuthState(auth)
+  const course = "pricing-for-pm"
   return (
     <div>
-      <SidebarLayout posts={posts} course="pricing-for-pm">
-        <div>
-          <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
-          <hr className="pb-3" />
-        </div>
-        <div className="blog__content text-align-justify mb-5">
-          <ContentLayout content={content} />
-        </div>
-        <Footer2 />
+      <SidebarLayout posts={posts} course={course}>
+        {user?.email ? (
+          <>
+            <div>
+              <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
+              <hr className="pb-3" />
+            </div>
+            <div className="blog__content text-align-justify mb-5">
+              <ContentLayout content={content} />
+            </div>
+            <Footer2 />
+          </>
+        ) : (
+          <>
+              <UpgradeToPremium posts={posts} course={course} />
+          </>
+        )}
+
       </SidebarLayout>
     </div>
   );
@@ -58,7 +72,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug, module } }) => {
 
   const courseName = '_pricing-for-pm';
-  const courseNavItems = getCourseNavigation({courseName : courseName})
+  const courseNavItems = getCourseNavigation({ courseName: courseName })
 
 
   // Step 1 - Check if slug is a folder 
@@ -68,7 +82,7 @@ export const getStaticProps = async ({ params: { slug, module } }) => {
   )
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
-  
+
   const result = await serialize(content);
 
 
@@ -77,8 +91,8 @@ export const getStaticProps = async ({ params: { slug, module } }) => {
       frontmatter,
       slug,
       posts: courseNavItems,
-      content :result,
-      courseNavigationData : courseNavItems,
-      },
+      content: result,
+      courseNavigationData: courseNavItems,
+    },
   }
 }

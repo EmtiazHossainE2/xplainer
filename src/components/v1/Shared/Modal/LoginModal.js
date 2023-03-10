@@ -12,7 +12,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   useEffect(() => {
     if (user) {
       setLoginModal(false)
-      window.location.href = "/dashboard";
+      // window.location.href = "/dashboard";
     }
   }, [user, setLoginModal])
 
