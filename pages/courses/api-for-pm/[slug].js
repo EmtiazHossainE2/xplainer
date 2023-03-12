@@ -10,12 +10,12 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
-const ModuleDetails = ({ posts,frontmatter, content, }) => {
+const ModuleDetails = ({ courseNavigationData,frontmatter, content, }) => {
   const [user] = useAuthState(auth)
   const course = 'api-for-pm'
   return (
     <div>
-      <SidebarLayout posts={posts} course={course}>
+      <SidebarLayout posts={courseNavigationData} course={course}>
         {user?.email ? (
           <>
             <div>
@@ -29,7 +29,7 @@ const ModuleDetails = ({ posts,frontmatter, content, }) => {
           </>
         ) : (
           <>
-            <UpgradeToPremium posts={posts} course={course} />
+            <UpgradeToPremium posts={courseNavigationData} course={course} />
           </>
         )}
       </SidebarLayout>
@@ -78,7 +78,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
     props: {
       frontmatter,
       slug,
-      posts: courseNavItems,
       content : result,
       courseNavigationData : courseNavItems
     },

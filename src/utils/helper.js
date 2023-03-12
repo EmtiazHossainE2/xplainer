@@ -21,18 +21,18 @@ export const getCourseNavigation = ({courseName}) => {
 
       // create subChapter folder for Higher order chapter
       const {slug : folderIndexSlug, frontmatter : folderIndexData} = readFileData(`${folderName}.md`, {courseName});
-      courseNavItems[folderIndexSlug] = {slug : folderIndexSlug, frontmatter : folderIndexData, subChapters : []};
+      courseNavItems[folderIndexSlug] = {slug : folderIndexSlug, frontmatter : folderIndexData, chapterMetaData : {slug : folderIndexSlug, ...folderIndexData}, subChapters : []};
 
       // get data of subchapter and push in the chapter node of subChapter
       nestedCourseNav.map((nestedChapterFileName) => {
          const {slug, frontmatter} = readFileData(nestedChapterFileName, {hasChild: true, folderName, courseName});
-         courseNavItems[folderIndexSlug]['subChapters'].push({slug, frontmatter});
+         courseNavItems[folderIndexSlug]['subChapters'].push({slug, frontmatter, chapterMetaData : {slug, ...frontmatter}});
       })
       
     }else{
       const {slug, frontmatter} = readFileData(filename, {courseName});
       if(!courseNavItems[slug]){
-        courseNavItems[slug] = {slug, frontmatter};
+        courseNavItems[slug] = {slug, frontmatter, chapterMetaData : {slug, ...frontmatter}};
       }
     }
   })

@@ -3,8 +3,7 @@ import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import PageLayout from '@/src/layout/PageLayout'
 import { withRouter } from 'next/router'
 
-const AllCourses = ({ posts }) => {
-  // console.log(posts)
+const AllCourses = () => {
   return (
     <>
       <CommonHead
