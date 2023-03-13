@@ -1,14 +1,33 @@
 import auth from "@/src/auth/firebase/Firebase.init";
+import { LOGIN_FAILURE, LOGIN_SUCCESS } from "@/src/store/actions/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useDispatch } from "react-redux";
 
 const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
 
-  const handleLogin = () => {
+  const dispatch = useDispatch();
 
-  }
+  const handleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await auth.signInWithPopup(provider);
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: {
+          user: result.user,
+        },
+      });
+    } catch (error) {
+      dispatch({
+        type: LOGIN_FAILURE,
+        payload: { error },
+      });
+    }
+  };
 
   useEffect(() => {
     if (user) {
@@ -88,7 +107,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                   <button className="flex w-full items-center justify-center rounded-lg border border-[#e5e7eb]  py-4 text-sm font-bold text-[#171421]">
                     <div
                       className="flex items-center gap-1"
-                      onClick={() => signInWithGoogle()}
+                      onClick={() => handleLogin()}
                     >
                       <Image
                         src="/images/brand/1.svg"
