@@ -6,14 +6,14 @@ import Link from "next/link";
 const Courses = ({heading, ctaText}) => {
   return (
     <div className="bg-[#FDFDFD]">
-      <div className="xl:container xl:mx-auto section__padding">
+      <div className="container mx-auto px-5 lg:pt-20">
         <div className="flex flex-col justify-center items-center ">
-          <h2 className="text-center text-3xl lg:text-[34px] font-bold"> {heading || "Our Courses " }</h2>
-          <p className="text-[#515151] text-center text-[16px] md:text-xl font-medium pt-[10px] pb-8 ">Get better at your job every single day!</p>
-          <div className=" lg:px-32 flex flex-col lg:flex-row gap-10 lg:gap-5">
+          <h2 className="text-center text-3xl lg:text-[36px] font-semibold "> {heading || "Our Courses " }</h2>
+          <p className="text-[#475467] text-center text-base md:text-lg font-medium pt-2.5 pb-8 ">Get better at your job every single day!</p>
+          <div className=" flex flex-col lg:flex-row gap-10 lg:gap-5">
             {allCourses.slice(0, 2).map((course, index) => (
               // <div key={index} className="course__box flex flex-col justify-around ">
-              <div key={index} className="course__box 2xl:relative 2xl:min-h-[540px]">
+              <div key={index} className="course__box 2xl:relative 2xl:min-h-[500px]">
 
                 {/* Course header */}
                 <div className={`flex items-start  gap-5 py-3 rounded-t-xl ${course.courseHeaderColor} `}>
@@ -21,7 +21,7 @@ const Courses = ({heading, ctaText}) => {
                   <div className="pl-3 md:pl-5 basis-10/12 ">
                     <h3 className="text-lg md:text-2xl pb-2 font-semibold ">{course.title}</h3>
                     <div className="flex items-center gap-2 md:gap-3">
-                      <p className="flex items-center gap-1 md:gap-2 "><AiFillStar className="text-[#FFCA0F]" size={20} /> {course.ratings}/5 </p>
+                      <p className="flex items-center gap-1 md:gap-2 text-sm font-semibold"><AiFillStar className="text-[#FFCA0F]" size={20} /> {course.ratings}/5 </p>
                       <Image src='/images/courses/Line.svg' alt="Line" width={2} height={20} />
                       <p className="flex items-center gap-1 md:gap-2">
                         <Image src='/images/courses/usersIcon.svg' alt="users" width={24} height={14} />
@@ -46,15 +46,22 @@ const Courses = ({heading, ctaText}) => {
                   <div>
                     <h3 className="text-lg text-black font-semibold pb-1 md:pb-2">Why choose this course?</h3>
                     {course.whyThisCourse.slice(0, 4).map((item, index) => (
-                      <div key={index} className="flex py-2 md:py-3 gap-x-2">
-                        <Image src={`images/courses/${item.icon}`} alt="icon" width={24} height={22} />
-                        <p className="text-sm md:text-[16px] 2xl:text-lg">{item.text}</p>
+                      <div key={index} className="flex items-center py-2 md:py-3 gap-x-2">
+                        <div className="w-[36px] flex justify-center items-center h-[36px] bg-[#D7E8FF] rounded-[50%]">
+                          <Image src={`images/courses/${item.icon}`} className='' alt="icon" width={16} height={13} />
+                        </div>
+                        <p className="text-sm big:text-base text-[#475467]">{item.text}</p>
                       </div>
                     ))}
                   </div>
-                  <Link href={`/courses/${course.slug}`}>
-                    <button className="bg-[#0070F4] text-white w-full py-[10px] rounded-md 2xl:rounded-t-none mt-2 text-lg font-semibold 2xl:absolute 2xl:bottom-1 2xl:right-0"> {ctaText || 'View Course '} </button>
-                  </Link>
+                  <div className="pt-5">
+                    <hr className="pt-5" />
+                  </div>
+                  <div className="2xl:mx-3">
+                    <Link href={`/courses/${course.slug}`} >
+                      <button className="bg-[#0070F4] text-white w-full 2xl:w-[95%] mx-auto py-[10px] rounded-md  mt-2 font-semibold 2xl:absolute 2xl:bottom-3  2xl:right-4 borderStyle"> {ctaText || 'Know More '} </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

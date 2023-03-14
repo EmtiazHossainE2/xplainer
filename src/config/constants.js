@@ -133,7 +133,7 @@ export const allCourses = [
         text: "Crack your technical rounds in product interviews with ease",
       },
       {
-        icon: "icon3.svg",
+        icon: "icon1.svg",
         text: "Be confident while dealing with engineering stakeholders"
       },
       {
@@ -165,7 +165,7 @@ export const allCourses = [
         text: "Case studies from LinkedIn, Bumble, Swiggy, Mailchimp etc.",
       },
       {
-        icon: "icon3.svg",
+        icon: "icon1.svg",
         text: "Learn concepts like subscriptions, freemium, tier pricing etc."
       },
       {

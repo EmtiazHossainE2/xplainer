@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const HeroBanner = () => {
   return (
-    <div className='container mx-auto py-4 px-5 lg:px-20'>
+    <div className='container mx-auto py-4 px-5 lg:px-36 large:px-96'>
       <div className='flex flex-col lg:flex-row justify-between mt-12 items-center gap-5'>
         {/* Left  */}
         <div className='basis-1/2 text-center lg:text-start'>
