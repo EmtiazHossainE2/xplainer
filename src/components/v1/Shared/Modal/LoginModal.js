@@ -1,42 +1,48 @@
 import auth from "@/src/auth/firebase/Firebase.init";
-import { LOGIN_FAILURE, LOGIN_SUCCESS } from "@/src/store/actions/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import { useEffect } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
-  const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
-
+  const { isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const provider = new GoogleAuthProvider();
 
   const handleLogin = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await auth.signInWithPopup(provider);
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: {
-          user: result.user,
-        },
+
+    dispatch(loginStart())
+
+    await signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // console.log(user)
+        toast.success(`Welcome ${user.displayName}`)
+        const body = {
+          uid: user?.uid,
+          name:user.displayName,
+          email:user?.email,
+          photoURL: user?.photoURL,
+        }
+        dispatch(loginSuccess(body))
+        setLoginModal(false)
+
+      }).catch((error) => {
+        // Handle Errors here.
+        console.log(error)
+        dispatch(loginFailed())
       });
-    } catch (error) {
-      dispatch({
-        type: LOGIN_FAILURE,
-        payload: { error },
-      });
-    }
   };
 
-  useEffect(() => {
-    if (user) {
-      setLoginModal(false);
-    }
-  }, [user, setLoginModal]);
 
   //loading
-  if (loading) {
+  if (isLoading) {
     return (
       <p className="flex h-screen  items-center justify-center text-2xl font-bold">
         Loading...

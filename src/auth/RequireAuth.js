@@ -1,16 +1,15 @@
 import { useRouter } from 'next/router';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from './firebase/Firebase.init';
+import { useSelector } from 'react-redux';
 
 const RequireAuth = ({ children }) => {
-  const [user, loading] = useAuthState(auth);
+  const { currentUser, isLoading } = useSelector((state) => state.user);
   const router = useRouter()
 
-  if (loading) {
+  if (isLoading) {
     return <p className="flex justify-center  items-center h-screen font-bold text-2xl">Loading...</p>
   }
 
-  if (!user) {
+  if (!currentUser.email) {
     return router.back()
   }
   return children;

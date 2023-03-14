@@ -1,17 +1,20 @@
 
 import auth from "@/src/auth/firebase/Firebase.init";
+import { logout } from "@/src/store/features/auth/authSlice";
 import { signOut } from "firebase/auth"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useDispatch, useSelector } from "react-redux";
 import DashMobileNav from "./DashMobileNav"
 
-const DashNav = ({ user }) => {
-
+const DashNav = () => {
+  const { currentUser } = useSelector((state) => state.user);
   const [isSticky, setSticky] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false)
   const [open, setToggle] = useState(false)
+  const dispatch = useDispatch()
 
   //********************** Handle Sticky 
   useEffect(() => {
@@ -43,8 +46,9 @@ const DashNav = ({ user }) => {
   }, [open]);
 
 
-  const logOut = () => {
-    signOut(auth)
+  // Logout 
+  const handleLogout = () => {
+    dispatch(logout())
     window.location.href = "/";
   }
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
@@ -56,7 +60,7 @@ const DashNav = ({ user }) => {
           <Link href='/dashboard'><h3 className="font-bold text-[26px]">Xplainerr</h3></Link>
           {/*********************** For Desktop ********************* */}
           <div className="hidden lg:block">
-            {user?.email && (
+            {currentUser?.email && (
               <>
                 {/************************ Profile   ************************/}
                 <div
@@ -65,8 +69,8 @@ const DashNav = ({ user }) => {
                     setProfileOpen(true)
                   }}
                 >
-                  {user?.photoURL ? (
-                    <Image className='rounded-full' src={user?.photoURL} width={38} height={38} alt="user photo" />
+                  {currentUser?.photoURL ? (
+                    <Image className='rounded-full' src={currentUser?.photoURL} width={38} height={38} alt="user photo" />
                   ) : (
                     <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
                   )}
@@ -77,8 +81,8 @@ const DashNav = ({ user }) => {
                   <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-0 top-12 z-80 bg-white py-2 shadow-xl rounded-b-xl">
 
                     <div className={` ${linkStyle}`}>
-                      <h4 className="font-semibold ">{user?.displayName}</h4>
-                      <span className="text-sm text-gray-400">{user?.email}</span>
+                      <h4 className="font-semibold ">{currentUser?.displayName}</h4>
+                      <span className="text-sm text-gray-400">{currentUser?.email}</span>
                     </div>
                     <hr />
 
@@ -90,7 +94,7 @@ const DashNav = ({ user }) => {
                       My Courses
                     </Link>
 
-                    <span className={`cursor-pointer ${linkStyle}`} onClick={logOut}>
+                    <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
                       Log Out
                     </span>
 
@@ -105,7 +109,7 @@ const DashNav = ({ user }) => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <DashMobileNav open={open} setToggle={setToggle} user={user} logOut={logOut} />
+          <DashMobileNav open={open} setToggle={setToggle} user={currentUser} logOut={handleLogout} />
 
 
         </div>

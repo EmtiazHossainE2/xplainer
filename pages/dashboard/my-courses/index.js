@@ -1,11 +1,9 @@
-
-import auth from '@/src/auth/firebase/Firebase.init'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import DashboardLayout from '@/src/layout/DashboardLayout'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useSelector } from 'react-redux'
 
 const MyCourses = () => {
-  const [user] = useAuthState(auth)
+  const { currentUser } = useSelector((state) => state.user);
   // console.log(user)
   return (
     <>
@@ -14,7 +12,7 @@ const MyCourses = () => {
         description={" "}
         favIcon={"/favicon.ico"}
       />
-      <DashboardLayout user={user}>
+      <DashboardLayout currentUser={currentUser}>
         <div className='container mx-auto px-3 lg:px-16'>
           <h2 className='text-xl lg:text-3xl font-semibold py-3'>My Courses</h2>
           <p className='text-gray-500'>Continue learning with our recommendations based on your career goals and recent activity</p>

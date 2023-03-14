@@ -9,14 +9,15 @@ import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useSelector } from 'react-redux'
 
 const ModuleDetails = ({ courseNavigationData,frontmatter, content, }) => {
-  const [user] = useAuthState(auth)
+  const { currentUser } = useSelector((state) => state.user);
   const course = 'api-for-pm'
   return (
     <div>
       <SidebarLayout posts={courseNavigationData} course={course}>
-        {user?.email ? (
+        {currentUser?.email ? (
           <>
             <div>
               <h1 className="post-heading pb-3">{frontmatter?.title}</h1>

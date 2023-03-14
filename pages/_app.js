@@ -1,30 +1,32 @@
 import "@/styles/globals.css";
 import AOS from "aos";
-import { use, useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Script from "next/script";
-import { Provider } from "react-redux";
+import { useEffect } from "react";
+import { Provider, useSelector } from "react-redux";
 
-import {store} from "src/store";
-import auth from "@/src/auth/firebase/Firebase.init";
+import { Toaster } from "react-hot-toast";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "src/store";
 
 function MyApp({ Component, pageProps }) {
 
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    // handle firebase 
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if(user){
-        setUser(user)
-      }else{
-        setUser(null);
-      }
-    })
+  //   // handle firebase 
+  //   const unsubscribe = auth.onAuthStateChanged((user) => {
+  //     if(user){
+  //       setUser(user)
+  //     }else{
+  //       setUser(null);
+  //     }
+  //   })
 
-    return unsubscribe;
-  }, []);
+  //   return unsubscribe;
+  // }, []);
+  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     // Init AOS 
@@ -44,7 +46,11 @@ function MyApp({ Component, pageProps }) {
       </Script>
 
       <Provider store={store}>
-        <Component {...pageProps} user={user}/>
+        <PersistGate loading={null} persistor={persistor}>
+          <Component {...pageProps}  />
+          <Toaster />
+        </PersistGate>
+        
       </Provider>
     </>
   );

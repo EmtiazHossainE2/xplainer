@@ -1,13 +1,12 @@
-import auth from '@/src/auth/firebase/Firebase.init';
+import { logout } from '@/src/store/features/auth/authSlice';
 import styles from '@/styles/Navbar.module.css';
-import { signOut } from 'firebase/auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
 import HeaderTopBanner from '../Banner/HeaderBanner';
 import { CouponModal, LeadModal, LoginModal } from '../Modal';
 import MobileMenu2 from './MobileMenu2';
@@ -30,8 +29,9 @@ const Navbar = () => {
   const [profileOpen, setProfileOpen] = useState(false)
 
   const router = useRouter()
-  const [user] = useAuthState(auth)
-  // console.log(user)
+  const dispatch = useDispatch()
+  const { currentUser } = useSelector((state) => state.user);
+  // console.log(currentUser)
 
   //********************** Handle Sticky 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Navbar = () => {
       body.style.overflowY = "auto"
     }
 
-
+    // handleScroll
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
         setSticky(true);
@@ -63,6 +63,7 @@ const Navbar = () => {
     };
   }, [open]);
 
+  // handleBannerClick
   const handleBannerClick = (hasLead) => {
     if (hasLead) {
       router.push('/courses');
@@ -72,8 +73,8 @@ const Navbar = () => {
   }
 
   // Logout 
-  const logOut = () => {
-    signOut(auth)
+  const handleLogout = () => {
+    dispatch(logout())
     window.location.href = "/";
   }
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
@@ -240,7 +241,7 @@ const Navbar = () => {
           </div>
 
           <div className={`px-3 ${styles.navbar__sign}`}>
-            {user?.email ? (
+            {currentUser?.email ? (
               <>
                 {/************************ If user   ************************/}
                 <div
@@ -249,8 +250,8 @@ const Navbar = () => {
                     setProfileOpen(true)
                   }}
                 >
-                  {user?.photoURL ? (
-                    <Image className='rounded-full' src={user?.photoURL} width={38} height={38} alt="user photo" />
+                  {currentUser?.photoURL ? (
+                    <Image className='rounded-full' src={currentUser?.photoURL} width={38} height={38} alt="user photo" />
                   ) : (
                     <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
                   )}
@@ -268,7 +269,7 @@ const Navbar = () => {
                       My Courses
                     </Link>
 
-                    <span className={`cursor-pointer ${linkStyle}`} onClick={logOut}>
+                    <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
                       Log Out
                     </span>
 
@@ -286,7 +287,7 @@ const Navbar = () => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={user} logOut={logOut} />
+          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={currentUser} logOut={handleLogout} />
           {/*********************** For Mobile ********************* */}
 
         </div>

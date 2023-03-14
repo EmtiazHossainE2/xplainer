@@ -1,11 +1,10 @@
-import auth from "@/src/auth/firebase/Firebase.init";
-import { signOut } from "firebase/auth";
+import { logout } from "@/src/store/features/auth/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
 const CourseMobileMenu = ({
   open,
@@ -13,16 +12,17 @@ const CourseMobileMenu = ({
   posts,
   course,
   setLoginModal,
+  currentUser
 }) => {
   const router = useRouter();
+  const dispatch = useDispatch()
   useEffect(() => {
     setToggle(false);
   }, [router, setToggle]);
-  const [user] = useAuthState(auth)
 
   // Logout 
-  const logOut = () => {
-    signOut(auth)
+  const handleLogout = () => {
+    dispatch(logout())
     window.location.href = "/";
   }
 
@@ -115,9 +115,9 @@ const CourseMobileMenu = ({
               })}
             <hr className="mt-2" />
             <div className="flex gap-5 items-center px-3 mt-5">
-              {user?.email ? (
+              {currentUser?.email ? (
                 <h4
-                  onClick={logOut}
+                  onClick={handleLogout}
                   className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
                 >
                   Log out
@@ -130,7 +130,7 @@ const CourseMobileMenu = ({
                   Login
                 </h4>
               )}
-              {!user?.email &&
+              {!currentUser?.email &&
                 <Link href="/buy-now">
                   <button className="px-3 py-1.5 bg-[#B80C07] text-white rounded-md ">
                     Buy Now

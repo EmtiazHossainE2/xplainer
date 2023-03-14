@@ -1,15 +1,13 @@
-import auth from '@/src/auth/firebase/Firebase.init'
 import MyCourses from '@/src/components/v1/Dashboard/MyCourses'
 import Settings from '@/src/components/v1/Dashboard/Settings'
 import WishList from '@/src/components/v1/Dashboard/WishList'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import DashboardLayout from '@/src/layout/DashboardLayout'
-import Image from 'next/image'
 import { useState } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
-  const [user] = useAuthState(auth)
+  const { currentUser } = useSelector((state) => state.user);
   // console.log(user)
 
   const [active, setActive] = useState(0);
@@ -34,12 +32,12 @@ const Dashboard = () => {
         description={" "}
         favIcon={"/favicon.ico"}
       />
-      <DashboardLayout user={user}>
+      <DashboardLayout >
         <div className="bg-black">
           <div className='container mx-auto  px-5 md:px-12 lg:px-40 2xl:px-48 pt-5 pb-.5'>
             <h2 className='text-[16px] text-white font-semibold py-3 lg:pt-3'>Welcome Back , {" "}
               <span className='lg:hidden pb-1'><br /></span>
-              {user?.displayName}</h2>
+              {currentUser?.displayName}</h2>
 
             <h2 className='text-xl  lg:text-2xl text-white font-semibold py-3 pb-5 lg:pb-10'>My Learning </h2>
             {/* Menus  */}

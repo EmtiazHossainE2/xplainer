@@ -1,11 +1,9 @@
-import { signOut } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
-import auth from "../auth/firebase/Firebase.init";
+import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
 import topBadge from "/public/images/courses/top-post-badge.svg";
@@ -13,8 +11,9 @@ import topBadge from "/public/images/courses/top-post-badge.svg";
 const SidebarLayout = ({ posts, course, children }) => {
   const [open, setToggle] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
-  const [user] = useAuthState(auth)
   const [profileOpen, setProfileOpen] = useState(false)
+  const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -29,8 +28,8 @@ const SidebarLayout = ({ posts, course, children }) => {
   }, [open]);
 
   // Logout 
-  const logOut = () => {
-    signOut(auth)
+  const handleLogout = () => {
+    dispatch(logout())
     window.location.href = "/";
   }
 
@@ -51,17 +50,17 @@ const SidebarLayout = ({ posts, course, children }) => {
               <Link href='/dashboard/my-courses' className='hover:border-b-2 border-b-blue-500'>
                 My Courses
               </Link>
-              {user?.email ? (
+              {currentUser?.email ? (
                 <>
-                  {/************************ If user   ************************/}
+                  {/************************ If currentUser   ************************/}
                   <div
                     className='cursor-pointer'
                     onMouseOver={() => {
                       setProfileOpen(true)
                     }}
                   >
-                    {user?.photoURL ? (
-                      <Image className='rounded-full' src={user?.photoURL} width={38} height={38} alt="user photo" />
+                    {currentUser?.photoURL ? (
+                      <Image className='rounded-full' src={currentUser?.photoURL} width={38} height={38} alt="user photo" />
                     ) : (
                       <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
                     )}
@@ -79,7 +78,7 @@ const SidebarLayout = ({ posts, course, children }) => {
                         My Courses
                       </Link>
 
-                      <span className={`cursor-pointer ${linkStyle}`} onClick={logOut}>
+                      <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
                         Log Out
                       </span>
 
@@ -96,7 +95,7 @@ const SidebarLayout = ({ posts, course, children }) => {
           <div className={`block lg:hidden `}>
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
-          <CourseMobileMenu open={open} setToggle={setToggle} setLoginModal={setLoginModal} posts={posts} course={course} />
+          <CourseMobileMenu open={open} setToggle={setToggle} setLoginModal={setLoginModal} currentUser={currentUser} posts={posts} course={course} />
 
           {/*********************** For Mobile Menu ********************* */}
 
