@@ -11,8 +11,7 @@ const BlogList = ({ posts, disableHeader }) => {
           {!disableHeader && (
             <div className="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
               <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">
-                {" "}
-                All Blogs{" "}
+                All Blogs
               </h1>
             </div>
           )}
