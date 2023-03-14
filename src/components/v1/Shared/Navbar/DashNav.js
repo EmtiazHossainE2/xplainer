@@ -1,13 +1,11 @@
 
-import auth from "@/src/auth/firebase/Firebase.init";
 import { logout } from "@/src/store/features/auth/authSlice";
-import { signOut } from "firebase/auth"
-import Image from "next/image"
-import Link from "next/link"
-import { useEffect, useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useDispatch, useSelector } from "react-redux";
-import DashMobileNav from "./DashMobileNav"
+import DashMobileNav from "./DashMobileNav";
 
 const DashNav = () => {
   const { currentUser } = useSelector((state) => state.user);

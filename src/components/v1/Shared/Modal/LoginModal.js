@@ -1,8 +1,7 @@
 import auth from "@/src/auth/firebase/Firebase.init";
 import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
-import { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 

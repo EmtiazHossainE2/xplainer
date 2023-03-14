@@ -1,12 +1,9 @@
 import BlogList from "@/src/components/v1/Blog/BlogList";
 import {
-  Blogs,
   Brand,
-  Courses,
-  CTA,
-  Faqs,
+  Courses, Faqs,
   HeroBanner,
-  Mentors,
+  Mentors
 } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import SectionHeading from "@/src/components/v1/Shared/sectionHeading";

@@ -1,4 +1,3 @@
-import auth from '@/src/auth/firebase/Firebase.init'
 import ContentLayout from '@/src/components/v1/Shared/ContentView/ContentLayout'
 import Footer2 from '@/src/components/v1/Shared/Footer/Footer2'
 import UpgradeToPremium from '@/src/components/v1/Shared/UpgradeToPremium'
@@ -8,7 +7,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
-import { useAuthState } from 'react-firebase-hooks/auth'
 import { useSelector } from 'react-redux'
 
 const ModuleDetails = ({ courseNavigationData,frontmatter, content, }) => {
