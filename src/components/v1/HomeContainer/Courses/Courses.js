@@ -16,7 +16,7 @@ const Courses = ({heading, ctaText}) => {
               <div key={index} className="course__box 2xl:relative 2xl:min-h-[500px]">
 
                 {/* Course header */}
-                <div className={`flex items-start  gap-5 py-3 rounded-t-xl ${course.courseHeaderColor} `}>
+                <div className={`flex items-start  gap-5 py-3 rounded-xl ${course.courseHeaderColor} `}>
                   {/* Title  */}
                   <div className="pl-3 md:pl-5 basis-10/12 ">
                     <h3 className="text-lg md:text-2xl pb-2 font-semibold ">{course.title}</h3>

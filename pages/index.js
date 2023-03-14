@@ -32,7 +32,7 @@ const Home = ({ posts }) => {
           <Courses />
           <Mentors />
 
-          <SectionHeading heading={"Trending Articles"} />
+          
           <BlogList posts={posts} disableHeader="true" />
 
           

@@ -90,7 +90,7 @@ const Navbar = () => {
 
 
         {/********************** * For Desktop  ********************* */}
-        <div className={`relative ${styles.navbar} container mx-auto  px-[38px]`}>
+        <div className={`relative ${styles.navbar} container mx-auto  px-[63px]`}>
           <div className={`${styles.navbar__links}`}>
             <div className={`${styles.navbar__logo}`}>
               <Link href='/'><h2 className='font-[900] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>

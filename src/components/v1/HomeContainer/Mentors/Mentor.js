@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Mentor = ({ mentor }) => {
   return (
-    <div className="mentor lg:border rounded-lg hover:-translate-y-1 transition duration-700">
+    <div className="mentor lg:border rounded-xl border-[#EAECF0] hover:-translate-y-1 transition duration-700">
       <div className="flex justify-center">
         <Image src={`${mentor.image}`} width={360} height={180} alt={`${mentor.name}`} />
       </div>

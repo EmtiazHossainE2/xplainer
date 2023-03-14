@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { faqData } from "./faqData";
-import { BsChevronRight, BsChevronDown } from 'react-icons/bs'
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 
 
 const Faqs = () => {
@@ -23,8 +23,8 @@ const Faqs = () => {
               <div className="">
                 {
                   (activeIndex === index)
-                    ? <BsChevronRight className=' text-[#0070F4] font-bold' size={20} />
-                    : <BsChevronDown className=' text-[#0070F4] font-bold' size={20} />
+                    ? <AiOutlineUp className=' text-[#1C68FF] font-extrabold' size={24} />
+                    : <AiOutlineDown className=' text-[#1C68FF] font-extrabold' size={24} />
                 }
               </div>
             </div>
