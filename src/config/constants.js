@@ -15,6 +15,12 @@ export const topCompanies = [
     logo : '/5.svg',
   },
   {
+    logo : '/9.svg',
+  },
+  {
+    logo : '/10.svg',
+  },
+  {
     logo : '/6.svg',
   },
   {

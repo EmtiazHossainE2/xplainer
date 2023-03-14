@@ -8,9 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Brand = () => {
   return (
-    <div className='container mx-auto py-6 px-6 md:px-32'>
-      <div className="flex flex-col justify-center items-center">
-        <h2 className="customTitle xl:pt-16 ">Learners From Top Companies </h2>
+    <div className='container mx-auto py-6 px-5 lg:px-20'>
+      <div className="flex flex-col justify-center items-center pt-12">
+        {/* <h2 className="customTitle xl:pt-16 ">Learners From Top Companies </h2> */}
         <div className="mt-4"> </div>
         <Swiper
           slidesPerView={3}
@@ -34,7 +34,7 @@ const Brand = () => {
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 8,
+              slidesPerView: 10,
               spaceBetween: 50,
             },
           }}
@@ -48,9 +48,9 @@ const Brand = () => {
               <Image
                 src={`/images/brand/${item.logo}`}
                 alt="Top companies logo"
-                style={{ width: "80px", height: '70px' }}
-                width={80}
-                height={70}
+                style={{ width: "48px", height: '47px' }}
+                width={48}
+                height={47}
                 priority
               />
 
