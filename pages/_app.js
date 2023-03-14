@@ -1,13 +1,14 @@
 import "@/styles/globals.css";
 import AOS from "aos";
+import { use, useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Script from "next/script";
-import { useEffect } from "react";
 import { Provider, useSelector } from "react-redux";
 
+import {persistor, store} from "src/store";
+import auth from "@/src/auth/firebase/Firebase.init";
 import { Toaster } from "react-hot-toast";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "src/store";
 
 function MyApp({ Component, pageProps }) {
 
@@ -26,7 +27,6 @@ function MyApp({ Component, pageProps }) {
 
   //   return unsubscribe;
   // }, []);
-  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     // Init AOS 
