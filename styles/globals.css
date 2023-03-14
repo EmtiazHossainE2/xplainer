@@ -24,6 +24,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.topBannerBg {
+  background: linear-gradient(90.04deg, #E25B5B 2.37%, #FEA304 88.3%, #FFB800 100%);
+}
 
 .customBtn {
   @apply bg-[#DCECFF] text-[#0070F4] py-[6px] px-5 rounded-[40px]
