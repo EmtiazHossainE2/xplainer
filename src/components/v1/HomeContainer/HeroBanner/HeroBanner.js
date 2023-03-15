@@ -11,7 +11,7 @@ const HeroBanner = () => {
           <p className='text-[#475467] text-lg lg:text-xl '>We provide niche up skilling courses to help your accelerate and succeed in tech career</p>
           <div className="pt-8 lg:pt-12 ">
             <Link href='/courses' className="bg-[#0070F4] rounded-md lg:rounded-2xl py-3 md:py-5 big:py-6  md:px-[30px] w-full border lg:border-2 border-[#AED3FF]">
-              <button className='w-full text-white font-semibold text-base md:text-xl'>Explore Courses</button>
+              <button className='w-full lg:w-[222px] text-white font-semibold text-base md:text-xl'>Explore Courses</button>
             </Link>
           </div>
         </div>
