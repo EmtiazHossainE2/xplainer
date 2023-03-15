@@ -24,13 +24,19 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.topBannerBg {
+  background: linear-gradient(90.04deg, #E25B5B 2.37%, #FEA304 88.3%, #FFB800 100%);
+}
 
 .customBtn {
   @apply bg-[#DCECFF] text-[#0070F4] py-[6px] px-5 rounded-[40px]
 }
 
 .customTitle {
-  @apply pt-5 text-center text-2xl lg:text-[34px] leading-10 font-bold
+  @apply pt-5 text-center text-2xl lg:text-[36px] leading-10 font-semibold text-[#101828DE]
+}
+.borderStyle {
+  border: 2px solid #ABCEFF;
 }
 
 .h3 {
@@ -81,17 +87,18 @@ a {
 
 /* Courses  */
 .course__box {
-  width: 500px;
+  width: 560px;
   box-shadow: 0px 32px 64px -12px rgba(45, 54, 67, 0.14);
 }
 
 /* Mentors  */
 /* the slides */
 .mentor {
-  padding: 15px;
+  padding: 20px 20px 0;
+  margin-bottom: 48px;
   gap: 12px;
   background: #FFFFFF;
-  border-radius: 10px;
+  box-shadow: 0px 20px 24px -4px rgba(45, 54, 67, 0.04), 0px 8px 11px -4px rgba(45, 54, 67, 0.04);
 }
 
 .swiper {

@@ -78,36 +78,38 @@ const Navbar = () => {
     window.location.href = "/";
   }
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
+  const commonStyle = "flex justify-between items-center cursor-pointer gap-x-2 py-[17px]"
+  const commonBorderB = "hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4]"
 
   return (
     <>
-      <header className={` ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200' : 'border-b border-gray-200'}`}>
+      <header className={`border-b border-[#EAECF0] ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
         <HeaderTopBanner handleBannerClick={handleBannerClick} />
 
 
         {/********************** * For Desktop  ********************* */}
-        <div className={`relative ${styles.navbar} container mx-auto  px-20 ${isSticky ? 'py-4' : 'pt-4 pb-8'}`}>
+        <div className={`relative ${styles.navbar} container mx-auto  px-[63px]`}>
           <div className={`${styles.navbar__links}`}>
             <div className={`${styles.navbar__logo}`}>
-              <Link href='/'><h2 className='font-bold text-[26px]'>Xplainerr</h2></Link>
+              <Link href='/'><h2 className='font-[900] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
             </div>
           </div>
-          <div className={`relative ${styles.navbar__container}`}>
+          <div className={`relative  ${styles.navbar__container}`}>
 
             {/*********************** Courses ***********************/}
-            <div className='text-md font-semibold px-3 '>
+            <div className=' font-semibold px-3 '>
               <div
                 onMouseOver={() => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={`flex justify-between items-center cursor-pointer gap-x-2 ${courseOpen ? "border-b-2 pb-[]  border-[#0070F4] " : ""}`}
+                className={` ${commonStyle} ${courseOpen ? `text-[#0070F4] border-b-2 border-[#0070F4] ${commonBorderB}` : ""}`}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
-                  <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button>
+                  {/* <button className='bg-[#FF9500] rounded-sm flex items-center justify-center text-[8px] text-white font-bold w-[45px] h-[16px] px-[2px]'>50% Off</button> */}
                   {courseOpen ? (
                     <FiChevronUp size={22} className="font-bold" />
                   ) : (
@@ -119,17 +121,17 @@ const Navbar = () => {
 
 
             {/*********************** Workshops ***********************/}
-            <div className='text-md font-semibold px-3 '>
+            <div className=' font-semibold px-3 '>
               <div
                 onMouseOver={() => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`flex justify-between cursor-pointer items-center gap-x-2 ${workShopsOpen ? "border-b-2 pb-[]   border-[#0070F4] " : ""}`}
+                className={`${commonStyle} ${workShopsOpen ? `text-[#0070F4] border-b-2 border-[#0070F4] ${commonBorderB}` : ""}`}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
-                  <button className='bg-[#E7E1FF] rounded-sm flex items-center justify-center text-[8px] text-[#9868FF] font-bold w-[40px] h-[16px] px-[2px]'>New</button>
+                  {/* <button className='bg-[#E7E1FF] rounded-sm flex items-center justify-center text-[8px] text-[#9868FF] font-bold w-[40px] h-[16px] px-[2px]'>New</button> */}
 
                   {workShopsOpen ? (
                     <FiChevronUp size={22} className="font-bold" />
@@ -145,7 +147,7 @@ const Navbar = () => {
 
             {/********************** * Course submenu ********************* */}
             {courseOpen && (
-              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setCourseOpen(false)} className="absolute left-3 top-14 z-10 bg-white pb-2 mt-2 shadow-xl">
 
                 <Link href='/courses/api-for-pm' className={linkStyle}>
                   <div className='flex gap-x-3 '>
@@ -185,7 +187,7 @@ const Navbar = () => {
 
             {/********************** * Workshop submenu ********************* */}
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-2 top-5 z-10 bg-white py-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-16 big:right-14 top-14 z-10 bg-white pb-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className={linkStyle}>
                   <div className='flex gap-x-3 '>
@@ -226,16 +228,16 @@ const Navbar = () => {
             )}
             {/************************ Workshop submenu end   ************************/}
             <p
-              className='text-md font-semibold px-3 '
+              className=' font-semibold px-3 '
               onMouseOver={() => {
                 setWorkShopsOpen(false)
                 setCourseOpen(false)
               }}
             >
-              <Link href='/mock-interview' className='hover:border-b-2  hover:border-[#0070F4]'>Mock Interviews</Link>
+              <Link href='/mock-interview' className={` ${commonStyle} ${commonBorderB}`}>Mock Interviews</Link>
             </p>
 
-            <p className='text-md font-semibold px-5' ><Link href='/blog' className='hover:border-b-2  hover:border-[#0070F4]'>Blog</Link></p>
+            <p className={`mr-24 font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB}`}>Blog</Link></p>
 
 
           </div>
@@ -259,7 +261,7 @@ const Navbar = () => {
 
                 {/* Profile Submenu  */}
                 {profileOpen && (
-                  <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-20 top-12 z-10 bg-white py-2 shadow-xl rounded-b-lg">
+                  <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-12 top-12 z-10 bg-white py-2 shadow-xl rounded-b-lg">
 
                     <Link href='/dashboard/' className={linkStyle}>
                       Dashboard
@@ -277,7 +279,10 @@ const Navbar = () => {
                 )}
               </>
             ) : (
-              <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
+                <div className='space-x-5'>
+                  <button onClick={() => setLoginModal(true)} className={`text-[#0070F4] py-4 font-semibold  ${commonBorderB} `}>Login</button>
+                  <button className='font-semibold bg-[#0070F4] my-1 text-white py-3 px-[30px] rounded-[10px] border-2 border-[#AED3FF]'>Sign Up</button>
+                </div>
             )}
 
           </div>

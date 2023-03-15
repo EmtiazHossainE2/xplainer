@@ -18,7 +18,7 @@ const HeaderTopBanner = ({handleBannerClick, hasLead}) => {
 
 
   return (
-    <div className="flex justify-center p-2 bg-[#ff6900] ">
+    <div className="flex justify-center p-2  topBannerBg">
       <p
         className="text-center text-[12px] md:text-md font-bold text-white hover:cursor-pointer"
         onClick={() => handleBannerClick(hadLead)}
