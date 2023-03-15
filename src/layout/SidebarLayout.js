@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
 import topBadge from "/public/images/courses/top-post-badge.svg";
+import { logout } from '@/src/store/features/auth/authSlice';
 
 const SidebarLayout = ({ posts, course, children }) => {
   const [open, setToggle] = useState(false);
