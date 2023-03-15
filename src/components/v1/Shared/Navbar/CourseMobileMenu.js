@@ -87,7 +87,7 @@ const CourseMobileMenu = ({
                       <li className="py-2 flex justify-between items-center ">
                         {frontmatter.title}
                       </li>
-                      {!user?.email && (<FaLock />)}
+                      {!currentUser?.email && (<FaLock />)}
                     </Link>
 
                     {chapterData?.subChapters && (
@@ -102,7 +102,7 @@ const CourseMobileMenu = ({
                               <li className="py-2 pl-1 ml-2 " >
                                 {subChapter.frontmatter.title}
                               </li>
-                              {!user?.email && (<FaLock />)}
+                              {!currentUser?.email && (<FaLock />)}
                             </Link>
                           )
                         })}

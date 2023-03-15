@@ -142,7 +142,7 @@ const SidebarLayout = ({ posts, course, children }) => {
                       <li className="py-2 flex justify-between items-center ">
                         {frontmatter.title}
                       </li>
-                      {!user?.email && (<FaLock />)}
+                      {!currentUser?.email && (<FaLock />)}
                     </Link>
 
                     {chapterData?.subChapters && (
@@ -157,7 +157,7 @@ const SidebarLayout = ({ posts, course, children }) => {
                               <li className="py-2 pl-2 ml-2.5 " >
                                 {subChapter.frontmatter.title}
                               </li>
-                              {!user?.email && (<FaLock />)}
+                              {!currentUser?.email && (<FaLock />)}
                             </Link>
                           )
                         })}
