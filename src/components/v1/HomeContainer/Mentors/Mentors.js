@@ -16,7 +16,7 @@ const Mentors = () => {
 
 
   return (
-    <div className="bg-[#F9FAFB] mt-12">
+    <div className="bg-[#F9FAFB] my-12 ">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="">
 

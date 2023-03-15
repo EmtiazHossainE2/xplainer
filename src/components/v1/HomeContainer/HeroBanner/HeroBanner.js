@@ -6,12 +6,12 @@ const HeroBanner = () => {
     <div className='container mx-auto py-4 px-5 lg:px-36 large:px-96'>
       <div className='flex flex-col lg:flex-row justify-between mt-12 items-center gap-5'>
         {/* Left  */}
-        <div className='basis-1/2 text-center lg:text-start'>
-          <h2 className="text-[#101828DE] text-4xl lg:text-6xl  font-bold pb-5 md:py-5">Accelerate your <br /> tech career</h2>
-          <p className='text-[#475467] text-lg lg:text-xl  '>We provide niche up skilling courses to help your accelerate and succeed in tech career</p>
-          <div className="pt-12">
-            <Link href='/courses' className="bg-[#0070F4] rounded-2xl py-5 big:py-6 px-[30px] border-2 border-[#AED3FF]">
-              <button className='text-white font-semibold text-xl'>Explore Courses</button>
+        <div className='basis-1/2 '>
+          <h2 className="text-[#101828DE] text-4xl lg:text-6xl font-bold pb-5 md:py-5">Accelerate your <br /> tech career</h2>
+          <p className='text-[#475467] text-lg lg:text-xl '>We provide niche up skilling courses to help your accelerate and succeed in tech career</p>
+          <div className="pt-8 lg:pt-12 ">
+            <Link href='/courses' className="bg-[#0070F4] rounded-md lg:rounded-2xl py-3 md:py-5 big:py-6  md:px-[30px] w-full border lg:border-2 border-[#AED3FF]">
+              <button className='w-full text-white font-semibold text-base md:text-xl'>Explore Courses</button>
             </Link>
           </div>
         </div>

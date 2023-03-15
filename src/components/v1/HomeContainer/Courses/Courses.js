@@ -3,12 +3,12 @@ import { AiFillStar } from 'react-icons/ai'
 import Image from "next/image"
 import Link from "next/link";
 
-const Courses = ({heading, ctaText}) => {
+const Courses = ({ heading, ctaText }) => {
   return (
     <div className="bg-[#FDFDFD]">
-      <div className="container mx-auto px-5 lg:pt-20">
+      <div className="container mx-auto px-5 pt-20">
         <div className="flex flex-col justify-center items-center ">
-          <h2 className="text-center text-3xl lg:text-[36px] font-semibold "> {heading || "Our Courses " }</h2>
+          <h2 className="text-center text-[#101828DE] text-2xl lg:text-[36px] font-semibold "> {heading || "Our Courses "}</h2>
           <p className="text-[#475467] text-center text-base md:text-lg font-medium pt-2.5 pb-8 ">Get better at your job every single day!</p>
           <div className=" flex flex-col lg:flex-row gap-10 lg:gap-5">
             {allCourses.slice(0, 2).map((course, index) => (
@@ -46,11 +46,23 @@ const Courses = ({heading, ctaText}) => {
                   <div>
                     <h3 className="text-lg text-black font-semibold pb-1 md:pb-2">Why choose this course?</h3>
                     {course.whyThisCourse.slice(0, 4).map((item, index) => (
-                      <div key={index} className="flex items-center py-2 md:py-3 gap-x-2">
-                        <div className="w-[36px] flex justify-center items-center h-[36px] bg-[#D7E8FF] rounded-[50%]">
-                          <Image src={`images/courses/${item.icon}`} className='' alt="icon" width={16} height={13} />
+                      <div key={index} className="hidden lg:block">
+                        <div className="flex items-center py-2 md:py-3 gap-x-2">
+                          <div className="w-[36px] flex justify-center items-center h-[36px] bg-[#D7E8FF] rounded-[50%]">
+                            <Image src={`images/courses/${item.icon}`} alt="icon" width={16} height={13} />
+                          </div>
+                          <p className="text-sm big:text-base text-[#475467]">{item.text}</p>
                         </div>
-                        <p className="text-sm big:text-base text-[#475467]">{item.text}</p>
+                      </div>
+                    ))}
+                    {course.whyThisCourse.slice(1, 4).map((item, index) => (
+                      <div key={index} className="block lg:hidden">
+                        <div className=" flex items-center py-2 md:py-3 gap-x-2">
+                          <div className="basis-1/12 w-[39px] h-[25px] flex justify-center items-center bg-[#D7E8FF] rounded-[50%]">
+                            <Image src={`images/courses/${item.icon}`} alt="icon" width={16} height={16} />
+                          </div>
+                          <p className="basis-10/12 text-sm big:text-base text-[#475467]">{item.text}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
