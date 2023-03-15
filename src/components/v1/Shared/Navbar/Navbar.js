@@ -80,6 +80,7 @@ const Navbar = () => {
   const linkStyle = "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
   const commonStyle = "flex justify-between items-center cursor-pointer gap-x-2 py-[17px]"
   const commonBorderB = "hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4]"
+  const activeLink = "text-[#0070F4] border-b-2 border-[#0070F4]"
 
   return (
     <>
@@ -105,7 +106,9 @@ const Navbar = () => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
-                className={` ${commonStyle} ${courseOpen ? `text-[#0070F4] border-b-2 border-[#0070F4] ${commonBorderB}` : ""}`}
+                className={` ${commonStyle} ${courseOpen ? `${activeLink}` : ""} 
+                ${router.pathname.startsWith("/courses") ? `${activeLink}` : ""}
+                 `}
               >
                 Courses
                 <div className="flex justify-between items-center  gap-x-1">
@@ -127,7 +130,9 @@ const Navbar = () => {
                   setWorkShopsOpen(true)
                   setCourseOpen(false)
                 }}
-                className={`${commonStyle} ${workShopsOpen ? `text-[#0070F4] border-b-2 border-[#0070F4] ${commonBorderB}` : ""}`}
+                className={`${commonStyle} ${workShopsOpen ? `${activeLink}` : ""}
+                ${router.pathname.startsWith("/workshops") ? `${activeLink}` : ""} 
+                `}
               >
                 Workshops
                 <div className="flex justify-between items-center  gap-x-1">
@@ -234,10 +239,10 @@ const Navbar = () => {
                 setCourseOpen(false)
               }}
             >
-              <Link href='/mock-interview' className={` ${commonStyle} ${commonBorderB}`}>Mock Interviews</Link>
+              <Link href='/mock-interview' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/mock-interview") ? `${activeLink}` : ""}`}>Mock Interviews</Link>
             </p>
 
-            <p className={`mr-24 font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB}`}>Blog</Link></p>
+            <p className={`mr-24 font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/blog") ? `${activeLink}` : ""}`}>Blog</Link></p>
 
 
           </div>
@@ -279,10 +284,10 @@ const Navbar = () => {
                 )}
               </>
             ) : (
-                <div className='space-x-5'>
-                  <button onClick={() => setLoginModal(true)} className={`text-[#0070F4] py-4 font-semibold  ${commonBorderB} `}>Login</button>
-                  <button className='font-semibold bg-[#0070F4] my-1 text-white py-3 px-[30px] rounded-[10px] border-2 border-[#AED3FF]'>Sign Up</button>
-                </div>
+              <div className='space-x-5'>
+                <button onClick={() => setLoginModal(true)} className={`text-[#0070F4] py-4 font-semibold  ${commonBorderB} `}>Login</button>
+                <button className='font-semibold bg-[#0070F4] my-1 text-white py-3 px-[30px] rounded-[10px] border-2 border-[#AED3FF]'>Sign Up</button>
+              </div>
             )}
 
           </div>
