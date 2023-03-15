@@ -1,6 +1,7 @@
 import ContentLayout from '@/src/components/v1/Shared/ContentView/ContentLayout'
 import Footer2 from '@/src/components/v1/Shared/Footer/Footer2'
 import UpgradeToPremium from '@/src/components/v1/Shared/UpgradeToPremium'
+import { courseConfig } from '@/src/config/course-config'
 import SidebarLayout from '@/src/layout/SidebarLayout'
 import { getCourseNavigation } from '@/src/utils/helper'
 import fs from 'fs'
@@ -9,13 +10,16 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import { useSelector } from 'react-redux'
 
-const ModuleDetails = ({ courseNavigationData,frontmatter, content, }) => {
+const ModuleDetails = ({ courseNavigationData,frontmatter, content, slug }) => {
   const { currentUser } = useSelector((state) => state.user);
   const course = 'api-for-pm'
+
+  const isFreeChapter = courseConfig[course] && courseConfig[course].includes(slug);
+
   return (
     <div>
-      <SidebarLayout posts={courseNavigationData} course={course}>
-        {currentUser?.email ? (
+      <SidebarLayout posts={courseNavigationData} course={course} slug={slug}>
+        {currentUser?.email || isFreeChapter ? (
           <>
             <div>
               <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
@@ -24,13 +28,13 @@ const ModuleDetails = ({ courseNavigationData,frontmatter, content, }) => {
             <div className="blog__content text-align-justify mb-5">
               <ContentLayout content={content} />
             </div>
-            <Footer2 />
           </>
         ) : (
           <>
             <UpgradeToPremium posts={courseNavigationData} course={course} />
           </>
         )}
+         <Footer2 />
       </SidebarLayout>
       
     </div>

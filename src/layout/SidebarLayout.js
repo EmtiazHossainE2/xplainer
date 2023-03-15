@@ -1,3 +1,4 @@
+import { logout } from '@/src/store/features/auth/authSlice';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,9 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
 import topBadge from "/public/images/courses/top-post-badge.svg";
-import { logout } from '@/src/store/features/auth/authSlice';
 
-const SidebarLayout = ({ posts, course, children }) => {
+const SidebarLayout = ({ posts, course, children, slug }) => {
   const [open, setToggle] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false)
@@ -109,31 +109,13 @@ const SidebarLayout = ({ posts, course, children }) => {
           {/********************* Left Side  **********************/}
           <div className="flex flex-col text-left fixed overflow-y-auto top-16 left-0 w-[18%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
 
-            {/********************************** Free Chapter  ***************************************/}
-            {posts &&
-              Object.keys(posts).slice(0, 1).map((chapter, index) => {
-                const frontmatter = posts[chapter].frontmatter;
-                const slug = posts[chapter].slug;
-
-                return (
-                  <ul key={index}>
-                    <Link
-                      href={`/courses/${course}/${slug}`}
-                      className={courseLink}>
-                      <li className="py-2 flex justify-between items-center ">
-                        {frontmatter.title}
-                      </li>
-                    </Link>
-                  </ul>
-                );
-              })}
-
             {/********************************** Paid Chapter  **********************************/}
             {posts &&
-              Object.keys(posts).slice(1).map((chapter, index) => {
+              Object.keys(posts).map((chapter, index) => {
                 const chapterData = posts[chapter];
                 const frontmatter = posts[chapter].frontmatter;
                 const slug = posts[chapter].slug;
+                const isFreeChapter = posts[chapter].isFreeChapter;
 
                 return (
                   <ul key={index}>
@@ -143,7 +125,7 @@ const SidebarLayout = ({ posts, course, children }) => {
                       <li className="py-2 flex justify-between items-center ">
                         {frontmatter.title}
                       </li>
-                      {!currentUser?.email && (<FaLock />)}
+                      {!currentUser?.email && isFreeChapter === false && (<FaLock />)}
                     </Link>
 
                     {chapterData?.subChapters && (
@@ -182,7 +164,7 @@ const SidebarLayout = ({ posts, course, children }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8 py-16 ml-[20%] mr-[18%]">{children}</div>
+          <div className="px-8 py-16 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
           <div className="flex flex-col text-left fixed top-16 right-0 w-[15%] min-h-[100vh] pl-2">
@@ -206,6 +188,8 @@ const SidebarLayout = ({ posts, course, children }) => {
               </div>
             </div>
           </div>
+
+          
         </div>
       </div>
 

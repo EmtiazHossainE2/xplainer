@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path';
 import matter from 'gray-matter'
+import { courseConfig } from '../config/course-config';
 
 
 export const getCourseNavigation = ({courseName}) => {
@@ -31,8 +32,12 @@ export const getCourseNavigation = ({courseName}) => {
       
     }else{
       const {slug, frontmatter} = readFileData(filename, {courseName});
+      let isFreeChapter = true;
+      let courseSlug = courseName.replace(/_/g, "");
+      isFreeChapter = courseConfig[courseSlug] && courseConfig[courseSlug].includes(slug);
+
       if(!courseNavItems[slug]){
-        courseNavItems[slug] = {slug, frontmatter, chapterMetaData : {slug, ...frontmatter}};
+        courseNavItems[slug] = {slug, isFreeChapter, frontmatter, chapterMetaData : {slug, ...frontmatter}};
       }
     }
   })
