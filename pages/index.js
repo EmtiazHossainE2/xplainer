@@ -37,7 +37,7 @@ const Home = ({ posts }) => {
 
 
           <div className="hidden lg:block">
-            <SectionHeading heading={"Frequently Asked Questions"} />
+            
             <Faqs />
           </div>
           {/* <CTA /> */}

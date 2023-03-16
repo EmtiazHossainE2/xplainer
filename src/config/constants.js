@@ -254,6 +254,62 @@ export const mentors = [
     job2: "Ex - 91 wheels | Flux Auto (YC 18)"
   },
 ]
+export const authors = [
+  {
+    name:"Deepak Kumar",
+    profile:"https://ik.imagekit.io/zwxa4kttt/1661931118137.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357864998",
+    job:"Software Engineer - II",
+    description: "This is an awesome resource. I had been interviewing for past 4 years with no luck. I studied the material for"
+  },
+  {
+    name:"Venkatesh Gupta",
+    profile:"https://ik.imagekit.io/zwxa4kttt/1621098083610.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357898740",
+    job:"Product Manager",
+    description: "Xplainerr's course was incredibly helpful in getting me up to speed quickly for product management interviews. Rather..."
+  },
+]
+
+export const offers = [
+  {
+    description:"In-depth understanding of Google Ads, Keyword research & intent mapping to become a better marketer"
+  },
+  {
+    description:"Complete guide and tested hacks to write search ad copies that convert"
+  },
+  {
+    description:"Skills to set up & execute Google Shopping Campaign from scratch to become a better marketer"
+  },
+  {
+    description:"Understanding of multiple types of Google Ads Campaigns to generate high-quality leads"
+  },
+  {
+    description:"Skills & hacks to measure & optimize marketing performance through Google Ads & Analytics"
+  },
+  {
+    description:"Best practices for UTM tags, SKAG, & Structuring Google Ad Account to become a better marketer"
+  },
+  {
+    description:"Increase your service offerings as a freelance marketer"
+  },
+  {
+    description:"Roadmap to shift your career to digital marketing from any industry from scratch"
+  },
+]
+
+export const certificateTexts = [
+  {
+    description: "Receive an instructor signed certificate with the institution’s logo to verify your achievements and increase your job prospects",
+    icon:'Ci1.svg'
+  },
+  {
+    description: "Add the certificate to your CV or your resume or post it directly on LinkedIn. You can even post it on Instagram and Twitter.",
+    icon: 'Ci2.svg'
+  },
+  {
+    description: "Use your certificate to enhance your professional credibility and stand out among your peers!",
+    icon: 'Ci3.svg'
+  },
+]
 
 export const footerColOne = [
   {

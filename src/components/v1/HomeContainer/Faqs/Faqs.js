@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqData } from "./faqData";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
+import SectionHeading from "../../Shared/sectionHeading";
 
 
 const Faqs = () => {
@@ -12,6 +13,9 @@ const Faqs = () => {
 
   return (
     <div className='container mx-auto px-5 lg:px-36 large:px-96 '>
+      <div className="pb-16">
+        <SectionHeading heading={"Frequently Asked Questions"} />
+      </div>
       <div className="p-2 lg:px-32">
         {faqData.map((faq, index) => (
           <div key={index} className="mb-3 border-b  pt-2 pb-4 px-2 rounded-md">

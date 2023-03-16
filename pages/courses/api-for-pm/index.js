@@ -1,7 +1,8 @@
 
-import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { Authors,  TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
+import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import { pmInterviewKeyChapters } from '@/src/config/constants'
 import PageLayout from '@/src/layout/PageLayout'
 
 const ApiForPm = () => {
@@ -19,27 +20,19 @@ const ApiForPm = () => {
       />
       <main>
         <PageLayout>
-          <HeroHome
-            heading={"API Product Manager course"}
-            headingColorText="#1"
-            ctaText="Buy now"
-            apiForPm={true}
-            handleCTAClick={handleCTAClick}
-            coursePreviewSlug={'api-for-pm/module-1'}
-          />
-          <HeroBanner />
+          <HeroHome />
+          <Brand />
+          {/* <HeroBanner /> */}
           <FeaturesBlocks
-            featureBlockData={pmInterviewKeyChapters}
-            heading={"What will you learn?"}
-            apiForPm={true}
+            heading={"Things you'll learn"}
           />
+          <Authors />
+          <Offer/>
           <TestimonialsCarousel />
-          <Authors
-            name1={"Deepak Kumar"}
-            name2={"Venkatesh Gupta"}
-          />
+          <Certificate/>
+
           <Faqs />
-          <CtaAlternative />
+          {/* <CtaAlternative /> */}
         </PageLayout>
       </main>
     </>
