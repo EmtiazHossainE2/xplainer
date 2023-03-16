@@ -12,7 +12,7 @@ const Faqs = () => {
   };
 
   return (
-    <div className='container mx-auto px-5 lg:px-36 large:px-96 '>
+    <div className='container mx-auto px-5 lg:px-12 big:px-36 large:px-96 '>
       <div className="pb-16">
         <SectionHeading heading={"Frequently Asked Questions"} />
       </div>

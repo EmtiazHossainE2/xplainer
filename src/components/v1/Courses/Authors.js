@@ -5,7 +5,7 @@ const Authors = () => {
 
   return (
     <section className='bg-[#CDDAFB]'>
-      <div className="container mx-auto py-20 px-5 lg:px-36 large:px-96">
+      <div className="container mx-auto py-20 px-5 lg:px-12 big:px-36 large:px-96">
         <div className="">
 
           {/* Section header */}
