@@ -450,5 +450,107 @@ export const myCourses = [
   }
 ];
 
+export const courseContent = [
+  {
+    title: 'PM Interviewing Introduction',
+    subModules: [
+      {
+        title: 'Welcome to the Xplainerr PM Course!',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'The Perfect Structure for Every Product Management Interview Question',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How Rubrics Can Help You Ace PM Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'PM Interview Glossary',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+  {
+    title: 'Monitoring Questions',
+    subModules: [
+      {
+        title: 'PM Interviews: Introduction to Analytical & Execution Questions',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How to Answer A/B Test Product Management Questions',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'A Rubric for Analytical Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Pick YouTube's Key Metrics",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Improve Google's Homepage",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+  {
+    title: 'Analytical Questions',
+    subModules: [
+      {
+        title: 'PM Interviews: Introduction to Analytical & Execution Questions',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How to Answer A/B Test Product Management Questions',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'A Rubric for Analytical Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Pick YouTube's Key Metrics",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Improve Google's Homepage",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+]
+
 
 export const BASE_URL = 'https://xplainerr.vercel.app/';

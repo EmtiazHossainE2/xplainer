@@ -6,7 +6,6 @@ import {
   Mentors
 } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
-import SectionHeading from "@/src/components/v1/Shared/sectionHeading";
 import PageLayout from "@/src/layout/PageLayout";
 import { sortByDate } from "@/src/utils/date";
 import fs from "fs";

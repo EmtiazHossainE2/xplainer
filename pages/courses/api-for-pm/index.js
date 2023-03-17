@@ -1,5 +1,5 @@
 
-import { Authors,  TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { Authors, CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import { Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
 import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
@@ -22,17 +22,13 @@ const ApiForPm = () => {
         <PageLayout>
           <HeroHome />
           <Brand />
-          {/* <HeroBanner /> */}
-          <FeaturesBlocks
-            heading={"Things you'll learn"}
-          />
+          <FeaturesBlocks heading={"Things you'll learn"} />
+          <CourseContent/>
           <Authors />
-          <Offer/>
+          <Offer />
           <TestimonialsCarousel />
-          <Certificate/>
-
+          <Certificate />
           <Faqs />
-          {/* <CtaAlternative /> */}
         </PageLayout>
       </main>
     </>

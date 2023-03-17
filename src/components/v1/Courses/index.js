@@ -5,6 +5,7 @@ import TestimonialsCarousel from "./TestimonialsCarousel";
 import Authors from "./Authors";
 import Faqs from "./Faqs";
 import CtaAlternative from "./CtaAlternative";
+import CourseContent from "./CourseContent";
 
 export {
   HeroHome,
@@ -13,5 +14,6 @@ export {
   TestimonialsCarousel,
   Authors,
   Faqs,
-  CtaAlternative
+  CtaAlternative,
+  CourseContent,
 }
