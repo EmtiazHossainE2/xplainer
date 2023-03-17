@@ -442,4 +442,14 @@ pre code {
   .discount {
     font-size: 8px;
   }
+  .apiForPm img {
+    width: 11px;
+    height: 11px;
+  }
+  .apiForPm p {
+    font-size: 10px;
+  }
+  .mobileContent p {
+    font-size: 11px;
+  }
 }

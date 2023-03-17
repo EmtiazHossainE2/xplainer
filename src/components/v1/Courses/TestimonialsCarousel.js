@@ -2,7 +2,7 @@ import IframeResizer from "iframe-resizer-react"
 
 const TestimonialsCarousel = () => {
   return (
-    <div className="container mx-auto px-5 mb-5 big:px-36 large:px-96 pt-20">
+    <div className="container mx-auto px-5 mb-5 big:px-36 large:px-96 pt-12 lg:pt-20">
       {/* Section header */}
       <div className="max-w-3xl  mx-auto text-center pb-9  md:pb-4">
         <h1 className="text-2xl font-extrabold mb-4 ">
