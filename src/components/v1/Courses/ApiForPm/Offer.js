@@ -44,7 +44,7 @@ const Offer = () => {
                 </div>
               </div>
               <p className='text-[#8A8A8A] pt-2 pb-7'>Note: No exceptions would be made beyond the offer expiry date. The prices would go up and no free bonuses</p>
-              <Link href='/' className='py-5 w-full flex items-center justify-center text-white rounded-[18px] bg-[#0054F7]'>
+              <Link href='/' className='py-4 w-full flex items-center justify-center text-white rounded-[18px] bg-[#0054F7]'>
                 <button className='text-center text-xl '>Enroll Now</button>
               </Link>
 

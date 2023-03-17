@@ -18,7 +18,7 @@ const ApiForPm = () => {
         description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
         favIcon={'/favicon.ico'}
       />
-      <main>
+      <main className=''>
         <PageLayout>
           <HeroHome />
           <Brand />
@@ -29,6 +29,14 @@ const ApiForPm = () => {
           <TestimonialsCarousel />
           <Certificate />
           <Faqs />
+
+          {/* Cta For Api For Pm  */}
+          <div className='fixed md:hidden z-10 bottom-[-75px] left-0 w-full mb-[75px]'>
+            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer'>
+              <button>Buy Now @ 999</button>
+            </div>
+          </div>
+
         </PageLayout>
       </main>
     </>
