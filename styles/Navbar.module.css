@@ -1,15 +1,15 @@
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.navbar__links {
+/* .navbar__links {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
+} */
 
 .navbar__logo {
   margin-right: 2rem;

@@ -24,6 +24,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 .topBannerBg {
   background: linear-gradient(90.04deg, #E25B5B 2.37%, #FEA304 88.3%, #FFB800 100%);
 }
@@ -35,6 +36,7 @@ a {
 .customTitle {
   @apply pt-5 text-center text-2xl lg:text-[36px] leading-10 font-semibold text-[#101828DE]
 }
+
 .borderStyle {
   border: 2px solid #ABCEFF;
 }
@@ -283,7 +285,7 @@ pre code {
 
 /** Card container */
 
-.card-1-container{
+.card-1-container {
   background: #fff;
   padding: 20px;
   margin-top: 24px;
@@ -291,37 +293,37 @@ pre code {
   border: 1px solid #EEE;
   box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
   border-radius: 6px;
-  background:#eeffed;
-  display:flex;
-  flex-direction:row;
+  background: #eeffed;
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
   position: relative;
 }
 
-.left-info .h3{
+.left-info .h3 {
   font-size: 20px;
   font-weight: 600;
 }
 
-.h3-meta{
-  color:grey;
-  font-size:14px;
+.h3-meta {
+  color: grey;
+  font-size: 14px;
   margin-top: 5px;
 }
 
-.right-side{
+.right-side {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.youtube-embed-desktop{
+.youtube-embed-desktop {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.youtube-embed-mobile{
+.youtube-embed-mobile {
   display: none;
 }
 
@@ -339,29 +341,29 @@ pre code {
 
 @media (min-width: 320px) and (max-width: 520px) {
 
- 
-  .youtube-embed-desktop{
-    display:none;
+
+  .youtube-embed-desktop {
+    display: none;
   }
 
-  .youtube-embed-mobile{
-    display:block;
+  .youtube-embed-mobile {
+    display: block;
   }
 
-  .card-1-container{
-    flex-direction:column;
+  .card-1-container {
+    flex-direction: column;
   }
 
   .left-info .h3 {
-      font-size: 16px;
-      font-weight: 600;
+    font-size: 16px;
+    font-weight: 600;
   }
 
-  .card-1-container .right-side{
-    margin-top:20px;
+  .card-1-container .right-side {
+    margin-top: 20px;
   }
 
-  .parsedown h1{
+  .parsedown h1 {
     font-size: 20px;
   }
 
@@ -434,6 +436,17 @@ pre code {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .apiForPm img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .apiForPm p {
+    font-size: 10px;
+  }
+}
+
 @media screen and (max-width: 325px) {
   .subCat {
     font-size: 10px;
@@ -441,5 +454,9 @@ pre code {
 
   .discount {
     font-size: 8px;
+  }
+
+  .mobileContent p {
+    font-size: 11px;
   }
 }

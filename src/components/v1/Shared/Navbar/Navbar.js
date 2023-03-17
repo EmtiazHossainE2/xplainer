@@ -91,9 +91,9 @@ const Navbar = () => {
 
 
         {/********************** * For Desktop  ********************* */}
-        <div className={`relative ${styles.navbar} container mx-auto  px-[63px]`}>
+        <div className={`relative ${styles.navbar} flex justify-between items-center container mx-auto  px-[63px]`}>
           <div className={`${styles.navbar__links}`}>
-            <div className={`${styles.navbar__logo}`}>
+            <div className=''>
               <Link href='/'><h2 className='font-[900] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
             </div>
           </div>
@@ -192,7 +192,7 @@ const Navbar = () => {
 
             {/********************** * Workshop submenu ********************* */}
             {workShopsOpen && (
-              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute right-16 big:right-14 top-14 z-10 bg-white pb-2 mt-2 shadow-xl">
+              <div onMouseLeave={() => setWorkShopsOpen(false)} className="absolute left-[120px] big:left-32 top-14 z-10 bg-white pb-2 mt-2 shadow-xl">
 
                 <Link href='/workshops/no-code' className={linkStyle}>
                   <div className='flex gap-x-3 '>
@@ -205,7 +205,7 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
+                <Link href='/workshops/product-hunt' className="block my-2 pl-4 pr-8 py-1 hover:bg-[#EAFCFF]  hover:text-[#006BC2]">
                   <div className='flex gap-x-3 '>
                     <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
@@ -220,11 +220,11 @@ const Navbar = () => {
                   <div className='flex gap-x-3 '>
                     <Image src={personalBrand} alt='personal brand icon' width={30} height={27} />
                     <div className=''>
-                      <div className="flex gap-x-2 items-center">
-                        <h4 className='font-semibold'>  Build Your Personal Brand  </h4>
+                      <div className=''>
+                        <h4 className='font-semibold'>Build Your Personal Brand</h4>
+                        <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
                         <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                       </div>
-                      <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
                     </div>
                   </div>
                 </Link>
@@ -242,7 +242,7 @@ const Navbar = () => {
               <Link href='/mock-interview' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/mock-interview") ? `${activeLink}` : ""}`}>Mock Interviews</Link>
             </p>
 
-            <p className={`mr-24 font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/blog") ? `${activeLink}` : ""}`}>Blog</Link></p>
+            <p className={` font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/blog") ? `${activeLink}` : ""}`}>Blog</Link></p>
 
 
           </div>
