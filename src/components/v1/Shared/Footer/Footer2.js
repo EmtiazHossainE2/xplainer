@@ -102,7 +102,7 @@ const Footer2 = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 border-t border-slate-200 pt-4 mb-5 md:mb-0 md:pt-8"><p className="text-base text-[#94A3B8] xl:text-center">© {getFullYear} Xplainerr, All rights reserved.
+          <div className="mt-12 border-t border-slate-200 pt-4 mb-12 md:mb-0 md:pt-8"><p className="text-base text-[#94A3B8] xl:text-center">© {getFullYear} Xplainerr, All rights reserved.
           </p>
           </div>
         </div>

@@ -32,7 +32,7 @@ const ApiForPm = () => {
 
           {/* Cta For Api For Pm  */}
           <div className='fixed md:hidden z-10 bottom-[-75px] left-0 w-full mb-[75px]'>
-            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer'>
+            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer py-3'>
               <button>Buy Now @ 999</button>
             </div>
           </div>
