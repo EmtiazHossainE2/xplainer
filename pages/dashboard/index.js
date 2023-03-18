@@ -1,6 +1,4 @@
-import MyCourses from '@/src/components/v1/Dashboard/MyCourses'
-import Settings from '@/src/components/v1/Dashboard/Settings'
-import WishList from '@/src/components/v1/Dashboard/WishList'
+import { MyCourses, Settings, WishList } from '@/src/components/v1/Dashboard'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import DashboardLayout from '@/src/layout/DashboardLayout'
 import { useState } from 'react'
@@ -8,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
   const { currentUser } = useSelector((state) => state.user);
-  // console.log(user)
+  // console.log(currentUser)
 
   const [active, setActive] = useState(0);
   const [clicked, setClicked] = useState(0);
@@ -34,19 +32,19 @@ const Dashboard = () => {
       />
       <DashboardLayout >
         <div className="bg-black">
-          <div className='container mx-auto  px-5 md:px-12 lg:px-40 2xl:px-48 pt-5 pb-.5'>
-            <h2 className='text-[16px] text-white font-semibold py-3 lg:pt-3'>Welcome Back , {" "}
+          <div className='container mx-auto px-5 lg:px-16 big:px-[130px]'>
+            <h2 className='text-2xl lg:text-[34px] leading-10 lg:leading-[48px] font-bold lg:font-extrabold text-white pt-9 pb-7 big:pb-16'>Welcome Back , {" "}
               <span className='lg:hidden pb-1'><br /></span>
-              {currentUser?.displayName}</h2>
+              {currentUser?.displayName}
+            </h2>
 
-            <h2 className='text-xl  lg:text-2xl text-white font-semibold py-3 pb-5 lg:pb-10'>My Learning </h2>
             {/* Menus  */}
             <nav className="flex items-center gap-5 border-gray-200 ">
               {menus.map((menu, index) => (
                 <p
                   key={index}
                   onClick={() => handleActive(index)}
-                  className={`lg:text-lg cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
+                  className={`lg:text-lg big:text-2xl cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-bold " : "border-transparent text-white"
                     }`}
                 >
                   {menu.name}
@@ -58,7 +56,7 @@ const Dashboard = () => {
         </div>
 
         {/* Child  */}
-        <div className="container mx-auto px-5 md:px-12 lg:px-40 2xl:px-48 my-5">
+        <div className="container mx-auto px-5 lg:px-16 big:px-[130px] pt-16 big:pt-20">
           {active === 0 && <MyCourses />}
           {active === 1 && <WishList />}
           {active === 2 && <Settings />}
