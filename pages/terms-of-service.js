@@ -23,9 +23,8 @@ const TermsOfService = ({ posts }) => {
             <hr />
 
             <p className="pb-6">
-              Please read these terms of service ("Terms") carefully before
-              using <a href="https://xplainerr.com/">https://xplainerr.com/</a>{" "}
-              ("Site") operated by Xplainerr ("us", "we", or "our").
+            Please read these terms of service {'Terms'} carefully before using <a href="https://xplainerr.com/">https://xplainerr.com/</a>  ({"Site"}) operated by Xplainerr ({'us'}, {'we'}, or {'our'}).
+
             </p>
 
             <h2 className="py-3 text-xl font-semibold lg:text-2xl">
@@ -77,7 +76,7 @@ const TermsOfService = ({ posts }) => {
               Disclaimer of Liability
             </h2>
             <p>
-              The Site is provided on an "as is" and "as available" basis.
+              The Site is provided on an {"as"} {"is"} and {"as available"} basis.
               Xplainerr makes no warranties, express or implied, regarding the
               Site or its contents, including but not limited to the accuracy,
               completeness, or reliability of the information or content
@@ -117,13 +116,13 @@ const TermsOfService = ({ posts }) => {
               Changes to Terms
             </h2>
             <p>
-              {" "}
+              
               We reserve the right to modify or revise these Terms at any time
               without notice. By continuing to use the Site after such
               modifications or revisions, you agree to be bound by the modified
               or revised Terms. We may notify you of any material changes to
               these Terms by posting a notice on the Site or sending you an
-              email or other communication.{" "}
+              email or other communication.
             </p>
 
             <h2 className="py-3 text-xl font-semibold lg:text-2xl">
@@ -137,10 +136,10 @@ const TermsOfService = ({ posts }) => {
               discontinuance of the Site.
               <br />
               <br />
-              Thank you for using{" "}
+              Thank you for using
               <a className="text-blue-500" href="https://xplainerr.com">
-                {" "}
-                xplainerr.com{" "}
+                
+                xplainerr.com
               </a>
             </p>
           </div>
