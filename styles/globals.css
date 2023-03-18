@@ -336,6 +336,10 @@ pre code {
   color: #515151;
 }
 
+/* All Courses  */
+.category{
+  background: linear-gradient(270deg, #F7FAFF 0%, rgba(255, 255, 255, 0) 49.83%);
+}
 
 /************************************ Media Query **************************************** */
 
