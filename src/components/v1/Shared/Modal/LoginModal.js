@@ -25,7 +25,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         toast.success(`Welcome ${user.displayName}`)
         const body = {
           uid: user?.uid,
-          name:user.displayName,
+          displayName:user.displayName,
           email:user?.email,
           photoURL: user?.photoURL,
         }

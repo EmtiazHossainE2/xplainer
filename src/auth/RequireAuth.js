@@ -9,8 +9,8 @@ const RequireAuth = ({ children }) => {
     return <p className="flex justify-center  items-center h-screen font-bold text-2xl">Loading...</p>
   }
 
-  if (!currentUser.email) {
-    return router.back()
+  if (!currentUser?.email) {
+    router.push('/')
   }
   return children;
 }
