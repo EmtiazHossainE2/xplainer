@@ -76,13 +76,13 @@ const Footer2 = () => {
                   <div className="flex flex-col gap-y-4">
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">Company</h3>
                     <ul className="flex flex-col gap-y-3" role="list">
-                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/#">Pricing</Link></span>
+                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/terms-of-service">Terms of service</Link></span>
                       </li>
-                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/#">About</Link></span>
+                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/contact-us">Contact Us</Link></span>
                       </li>
-                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/#">Contact Us</Link></span>
+                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/privacy-policy">Privacy & policy</Link></span>
                       </li>
-                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/#">Become an Affiliate</Link></span>
+                      <li><span className="font-normal text-sm"><Link className="transition-colors text-slate-500 hover:text-blue-600" href="/cancellation">Cancellations</Link></span>
                       </li>
                     </ul>
                   </div>
