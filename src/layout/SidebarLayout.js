@@ -43,20 +43,14 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
     <>
       {/********************** Header Top  **********************/}
       {/* <Navbar pageName={`courseDetail`} /> */}
-      <header className='bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200 px-3 md:px-12 lg:px-6'>
+      <header className='bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200 px-3 md:px-12 lg:px-16'>
         <div className="flex justify-between items-center">
-          <div className='flex justify-center items-center gap-6'>
-            <Link href='/dashboard' className='flex justify-center items-center gap-2 text-sm'>
-              <BsArrowLeft/>
-              <p>Back to course</p>
-            </Link>
-            <Link href='/'><h2 className='font-bold text-2xl py-2'>Xplainerr</h2></Link>
-          </div>
+          <Link href='/'><h2 className='font-bold text-[26px] py-2'>Xplainerr</h2></Link>
 
           {/*********************** For Desktop ********************* */}
           <div className="hidden lg:block">
             <div className="flex justify-center items-center gap-x-6 ">
-              <Link href='/dashboard' className='text-lg font-semibold hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
+              <Link href='/dashboard/my-courses' className='text-lg font-semibold hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
                 My Courses
               </Link>
               {currentUser?.email ? (
@@ -111,7 +105,13 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
       <div className="relative hidden lg:block">
         <div className="flex">
           {/********************* Left Side  **********************/}
-          <div className="flex flex-col text-left fixed overflow-y-auto top-20 left-0 w-[20%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
+          <div className="flex flex-col text-left fixed overflow-y-auto top-[59px] left-0 w-[20%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
+            <div>
+              <button className='bg-[#DADADA] w-full flex  items-center gap-3 px-2 py-3 font-medium'>
+                <BsArrowLeft size={24} />
+                Back to course
+              </button>
+            </div>
 
             {/********************************** Paid Chapter  **********************************/}
             {posts &&
@@ -193,7 +193,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
             </div>
           </div>
 
-          
+
         </div>
       </div>
 
