@@ -1,5 +1,5 @@
 export const courseConfig = {
-    'api-for-pm' : ['/', 'module-1', 'module-10'],
-    'pricing-for-pm' : ['/']
+    'api-for-pm' : ['/', 'introduction', 'module-10'],
+    'pricing-for-pm' : ['/', 'introduction']
 };
 
