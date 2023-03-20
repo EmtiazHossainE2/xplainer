@@ -16,7 +16,7 @@ const Faqs = () => {
       <div className="pb-10 lg:pb-16">
         <SectionHeading heading={"Frequently Asked Questions"} />
       </div>
-      <div className="p-2 lg:px-32">
+      <div className="p-2 lg:px-32 lg:pb-8">
         {faqData.map((faq, index) => (
           <div key={index} className="mb-3 border-b pt-2 pb-4 px-2 rounded-md">
             <div
@@ -37,10 +37,13 @@ const Faqs = () => {
             </div>
           </div>
         ))}
-        <div className="text-center py-10 hidden md:block">
+
+        {/* Cta  */}
+        {/* <div className="text-center py-10 hidden md:block">
           <button className="bg-[#0070F4] py-5 px-16 rounded-[46px] text-white font-semibold">Unleash the Power of Content Creation for just Rs.2999! ₹7,999</button>
           <p className="text-sm text-[#475467] pt-4 ">Reserve a seat before April 5, 2023 to unlock Bonuses worth ₹25,000</p>
-        </div>
+        </div> */}
+
       </div>
     </div>
   )

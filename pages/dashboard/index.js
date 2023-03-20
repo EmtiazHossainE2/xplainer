@@ -44,7 +44,7 @@ const Dashboard = () => {
                 <p
                   key={index}
                   onClick={() => handleActive(index)}
-                  className={`lg:text-lg big:text-2xl cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-bold " : "border-transparent text-white"
+                  className={`lg:text-lg  cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-bold " : "border-transparent text-white"
                     }`}
                 >
                   {menu.name}

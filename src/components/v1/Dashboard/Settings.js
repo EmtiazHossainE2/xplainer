@@ -1,7 +1,7 @@
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <div className="pb-20">Settings</div>
   )
 }
 

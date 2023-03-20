@@ -272,9 +272,9 @@ const Navbar = () => {
                       Dashboard
                     </Link>
 
-                    <Link href='/dashboard/my-courses' className={linkStyle}>
+                    {/* <Link href='/dashboard/my-courses' className={linkStyle}>
                       My Courses
-                    </Link>
+                    </Link> */}
 
                     <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
                       Log Out
