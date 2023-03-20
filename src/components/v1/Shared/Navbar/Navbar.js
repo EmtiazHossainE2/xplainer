@@ -9,6 +9,7 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderTopBanner from '../Banner/HeaderBanner';
 import { CouponModal, LeadModal, LoginModal } from '../Modal';
+import CourseMobileMenu from './CourseMobileMenu';
 import MobileMenu2 from './MobileMenu2';
 import apiForPmSvg from '/public/images/shared/apiForPm.svg';
 import noCode from '/public/images/shared/noCode.svg';
@@ -18,7 +19,7 @@ import productHunt from '/public/images/shared/productHunt.svg';
 import users from '/public/images/shared/users.svg';
 
 
-const Navbar = () => {
+const Navbar = ({ pageName, posts ,course}) => {
   const [isSticky, setSticky] = useState(false);
   const [showModal, setShowModal] = useState(false)
   const [couponModal, setCouponModal] = useState(false)
@@ -87,7 +88,8 @@ const Navbar = () => {
       <header className={`border-b border-[#EAECF0] ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        <HeaderTopBanner handleBannerClick={handleBannerClick} />
+        {pageName !== 'courseDetail' && <HeaderTopBanner handleBannerClick={handleBannerClick} />}
+
 
 
         {/********************** * For Desktop  ********************* */}
@@ -297,7 +299,15 @@ const Navbar = () => {
             <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
           </div>
 
-          <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={currentUser} logOut={handleLogout} />
+          {pageName === 'courseDetail' ?
+            (
+              <CourseMobileMenu open={open} setToggle={setToggle} setLoginModal={setLoginModal} currentUser={currentUser} posts={posts} course={course} />
+            ) : (
+              <MobileMenu2 open={open} setToggle={setToggle} setLoginModal={setLoginModal} user={currentUser} logOut={handleLogout} />
+            )
+          }
+
+
           {/*********************** For Mobile ********************* */}
 
         </div>
