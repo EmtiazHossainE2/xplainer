@@ -7,6 +7,7 @@ import { FaLock } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
+import Navbar from '../components/v1/Shared/Navbar/Navbar';
 import topBadge from "/public/images/courses/top-post-badge.svg";
 
 const SidebarLayout = ({ posts, course, children, slug }) => {
@@ -40,68 +41,8 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
   return (
     <>
       {/********************** Header Top  **********************/}
-      {/* <Navbar pageName={`courseDetail`} /> */}
-      <header className='bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200 px-3 md:px-12 lg:px-16'>
-        <div className="flex justify-between items-center">
-          <Link href='/'><h2 className='font-bold text-[26px] py-2'>Xplainerr</h2></Link>
-
-          {/*********************** For Desktop ********************* */}
-          <div className="hidden lg:block">
-            <div className="flex justify-center items-center gap-x-6 ">
-              <Link href='/dashboard/my-courses' className='hover:border-b-2 border-b-blue-500'>
-                My Courses
-              </Link>
-              {currentUser?.email ? (
-                <>
-                  {/************************ If currentUser   ************************/}
-                  <div
-                    className='cursor-pointer'
-                    onMouseOver={() => {
-                      setProfileOpen(true)
-                    }}
-                  >
-                    {currentUser?.photoURL ? (
-                      <Image className='rounded-full' src={currentUser?.photoURL} width={38} height={38} alt="user photo" />
-                    ) : (
-                      <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
-                    )}
-                  </div>
-
-                  {/* Profile Submenu  */}
-                  {profileOpen && (
-                    <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-20 top-12 z-10 bg-white py-2 shadow-xl rounded-b-lg">
-
-                      <Link href='/dashboard/' className={linkStyle}>
-                        Dashboard
-                      </Link>
-
-                      <Link href='/dashboard/my-courses' className={linkStyle}>
-                        My Courses
-                      </Link>
-
-                      <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
-                        Log Out
-                      </span>
-
-                    </div>
-                  )}
-                </>
-              ) : (
-                <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
-              )}
-
-            </div>
-          </div>
-          {/*********************** For Mobile Menu ********************* */}
-          <div className={`block lg:hidden `}>
-            <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
-          </div>
-          <CourseMobileMenu open={open} setToggle={setToggle} setLoginModal={setLoginModal} currentUser={currentUser} posts={posts} course={course} />
-
-          {/*********************** For Mobile Menu ********************* */}
-
-        </div>
-      </header>
+      <Navbar pageName={`courseDetail`} posts={posts} course={course} />
+      
 
       {/********************** Main Body **********************/}
       <div className="relative hidden lg:block">
@@ -164,7 +105,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8 py-16 ml-[20%] mr-[15%]">{children}</div>
+          <div className="px-8  pt-8 pb-16 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
           <div className="flex flex-col text-left fixed top-16 right-0 w-[15%] min-h-[100vh] pl-2">
