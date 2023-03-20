@@ -105,7 +105,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8 py-16 ml-[20%] mr-[15%]">{children}</div>
+          <div className="px-8  pt-8 pb-16 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
           <div className="flex flex-col text-left fixed top-16 right-0 w-[15%] min-h-[100vh] pl-2">
