@@ -9,6 +9,7 @@ import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
 import Navbar from '../components/v1/Shared/Navbar/Navbar';
 import topBadge from "/public/images/courses/top-post-badge.svg";
+import { BsArrowLeft } from 'react-icons/bs'
 
 const SidebarLayout = ({ posts, course, children, slug }) => {
   const [open, setToggle] = useState(false);
@@ -41,14 +42,78 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
   return (
     <>
       {/********************** Header Top  **********************/}
-      <Navbar pageName={`courseDetail`} posts={posts} course={course} />
-      
+      {/* <Navbar pageName={`courseDetail`} /> */}
+      <header className='bg-white shadow-md fixed w-full z-10 top-0 border-b border-gray-200 px-3 md:px-12 lg:px-16'>
+        <div className="flex justify-between items-center">
+          <Link href='/'><h2 className='font-bold text-[26px] py-2'>Xplainerr</h2></Link>
+
+          {/*********************** For Desktop ********************* */}
+          <div className="hidden lg:block">
+            <div className="flex justify-center items-center gap-x-6 ">
+              <Link href='/dashboard/my-courses' className='text-lg font-semibold hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
+                My Courses
+              </Link>
+              {currentUser?.email ? (
+                <>
+                  {/************************ If currentUser   ************************/}
+                  <div
+                    className='cursor-pointer'
+                    onMouseOver={() => {
+                      setProfileOpen(true)
+                    }}
+                  >
+                    {currentUser?.photoURL ? (
+                      <Image className='rounded-full' src={currentUser?.photoURL} width={38} height={38} alt="user photo" />
+                    ) : (
+                      <Image className='rounded-full' src='/images/shared/demoProfile.png' width={38} height={38} alt="user photo" />
+                    )}
+                  </div>
+
+                  {/* Profile Submenu  */}
+                  {profileOpen && (
+                    <div onMouseLeave={() => setProfileOpen(false)} className="absolute right-20 top-12 z-10 bg-white py-2 shadow-xl rounded-b-lg">
+
+                      <Link href='/dashboard/' className={linkStyle}>
+                        Dashboard
+                      </Link>
+
+                      <span className={`cursor-pointer ${linkStyle}`} onClick={handleLogout}>
+                        Log Out
+                      </span>
+
+                    </div>
+                  )}
+                </>
+              ) : (
+                <button onClick={() => setLoginModal(true)} className='bg-[#0070F4] rounded-md py-[10px] px-[25px] text-white text-md font-semibold'>Login</button>
+              )}
+
+            </div>
+          </div>
+          {/*********************** For Mobile Menu ********************* */}
+          <div className={`block lg:hidden `}>
+            <AiOutlineMenu className='cursor-pointer' size={27} onClick={() => setToggle(true)} />
+          </div>
+          <CourseMobileMenu open={open} setToggle={setToggle} setLoginModal={setLoginModal} currentUser={currentUser} posts={posts} course={course} />
+
+          {/*********************** For Mobile Menu ********************* */}
+
+        </div>
+      </header>
 
       {/********************** Main Body **********************/}
       <div className="relative hidden lg:block">
         <div className="flex">
           {/********************* Left Side  **********************/}
-          <div className="flex flex-col text-left fixed overflow-y-auto top-16 left-0 w-[18%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
+          <div className="flex flex-col text-left fixed overflow-y-auto top-[59px] left-0 w-[20%] h-screen pl-2 pr-1 shadow-2xl mb-12 ">
+            <div>
+              <Link href='/dashboard'>
+                <button className='bg-[#DADADA] w-full flex  items-center gap-3 px-2 py-3 font-medium'>
+                  <BsArrowLeft size={24} />
+                  Back to course
+                </button>
+              </Link>
+            </div>
 
             {/********************************** Paid Chapter  **********************************/}
             {posts &&
@@ -105,10 +170,10 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8  pt-8 pb-16 ml-[20%] mr-[15%]">{children}</div>
+          <div className="px-8 py-16 lg:mt-4 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
-          <div className="flex flex-col text-left fixed top-16 right-0 w-[15%] min-h-[100vh] pl-2">
+          <div className="flex flex-col text-left fixed top-20 right-0 w-[15%] min-h-[100vh] pl-2">
             <div className="border-l pl-3">
               <p className="text-lg pb-3">Content</p>
               <div className="text-sm flex flex-col gap-3">
@@ -130,7 +195,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
             </div>
           </div>
 
-          
+
         </div>
       </div>
 
