@@ -1,7 +1,8 @@
-import auth from "@/src/auth/firebase/Firebase.init";
+import {auth} from "@/src/auth/firebase/Firebase.init";
 import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
+import { useCookies } from "react-cookie";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,6 +10,8 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   const { isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
+  const [cookie, setCookie] = useCookies(["user"])
+
 
   const handleLogin = async () => {
 
@@ -31,7 +34,11 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         }
         dispatch(loginSuccess(body))
         setLoginModal(false)
-
+        setCookie("user", JSON.stringify(body), {
+          path : '/',
+          maxAge: 3600, // Expires after 1hr
+          sameSite: true,
+        })
       }).catch((error) => {
         // Handle Errors here.
         console.log(error)

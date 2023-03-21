@@ -50,7 +50,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           {/*********************** For Desktop ********************* */}
           <div className="hidden lg:block">
             <div className="flex justify-center items-center gap-x-6 ">
-              <Link href='/dashboard/my-courses' className='text-lg font-semibold hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
+              <Link href='/dashboard' className='text-md font-medium hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
                 My Courses
               </Link>
               {currentUser?.email ? (

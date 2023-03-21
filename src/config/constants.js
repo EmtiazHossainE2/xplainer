@@ -415,88 +415,20 @@ export const upgradeItem = [
 export const myCourses = [
   {
     title: 'API for Product Manager',
+    permalink : 'api-for-pm',
     coverImage: 'myCourse.svg',
     ratings: "",
     instructor: "Deepak Kumar",
     progress: 10
   },
   {
-    title: 'API for Product Manager',
+    title: 'Pricing & Monetisation',
+    permalink : 'pricing-for-pm',
     coverImage: 'myCourse.svg',
     ratings: "",
-    instructor: "Deepak Kumar",
+    instructor: "Venkatesh Gupta",
     progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
-  {
-    title: 'API for Product Manager',
-    coverImage: 'myCourse.svg',
-    ratings: "",
-    instructor: "Deepak Kumar",
-    progress: 10
-  },
+  }
 ];
 
 export const courseContent = [
