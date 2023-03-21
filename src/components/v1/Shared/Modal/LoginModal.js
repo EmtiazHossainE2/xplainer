@@ -25,7 +25,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        // console.log(user)
+        console.log(user)
         toast.success(`Welcome ${user.displayName}`);
         Router.push('/dashboard');
         const body = {
@@ -33,6 +33,8 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
           displayName:user.displayName,
           email:user?.email,
           photoURL: user?.photoURL,
+          creationTime: user?.metadata.creationTime,
+          lastSignInTime: user?.metadata.lastSignInTime
         }
         dispatch(loginSuccess(body))
         setLoginModal(false)

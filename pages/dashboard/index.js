@@ -16,8 +16,7 @@ const Dashboard = ({allCourses}) => {
 
   const menus = [
     { id: 0, name: "All Courses" },
-    // { id: 1, name: "Wishlist" },
-    { id: 2, name: "Settings" },
+    { id: 1, name: "Settings" },
   ];
 
   const handleActive = (index) => {
@@ -36,7 +35,7 @@ const Dashboard = ({allCourses}) => {
       <DashboardLayout >
         <div className="bg-black">
           <div className='container mx-auto px-5 lg:px-16 big:px-[130px]'>
-            <h2 className='text-2xl lg:text-[34px] leading-10 lg:leading-[48px] font-bold lg:font-extrabold text-white pt-9 pb-7 big:pb-16'>Welcome Back , {" "}
+            <h2 className='text-xl lg:text-[34px] leading-10 lg:leading-[48px] font-medium lg:font-extrabold text-white pt-9 pb-7 big:pb-16'>Welcome Back , {" "}
               <span className='lg:hidden pb-1'><br /></span>
               {currentUser?.displayName}
             </h2>
@@ -47,7 +46,7 @@ const Dashboard = ({allCourses}) => {
                 <p
                   key={index}
                   onClick={() => handleActive(index)}
-                  className={`lg:text-md  cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
+                  className={`lg:text-base cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
                     }`}
                 >
                   {menu.name}
@@ -61,8 +60,8 @@ const Dashboard = ({allCourses}) => {
         {/* Child  */}
         <div className="container mx-auto px-5 lg:px-16 big:px-[130px] pt-16 big:pt-20">
           {active === 0 && <MyCourses allCourses={allCourses}/>}
-          {active === 1 && <WishList />}
-          {active === 2 && <Settings />}
+          {/* {active === 1 && <WishList />} */}
+          {active === 1 && <Settings currentUser={currentUser}/>}
         </div>
 
       </DashboardLayout>
