@@ -6,12 +6,12 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Brand = () => {
+const Brand = ({disableHeader}) => {
   return (
     <div className='container mx-auto  lg:py-6 px-5 lg:px-12 big:px-36 large:px-96'>
       <div className="flex flex-col justify-center items-center pt-2 lg:pt-12">
-        <h2 className="lg:hidden text-2xl text-[#101828DE] font-bold text-center ">Learners From Top <br /> <span className="text-[#0070F4]">Companies</span> </h2>
-        <div className="mt-4"> </div>
+         {!disableHeader &&  <h2 className="lg:hidden text-2xl text-[#101828DE] font-bold text-center ">Learners From Top <br /> <span className="text-[#0070F4]">Companies</span> </h2> }
+        <div className="mt-6"> </div>
         <Swiper
           slidesPerView={3}
           spaceBetween={30}

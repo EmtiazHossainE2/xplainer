@@ -27,7 +27,7 @@ const Home = ({ posts }) => {
       <main>
         <PageLayout>
           <HeroBanner />
-          <Brand />
+          <Brand disableHeader={true}/>
           <Courses />
           <Mentors />
 

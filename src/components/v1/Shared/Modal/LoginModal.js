@@ -60,23 +60,10 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[9999] flex justify-center bg-black bg-opacity-80 px-3 pt-[10%] md:items-center md:pt-5 lg:px-0">
-      <div className="flex w-[99%] flex-col md:w-[50%] lg:w-[70%] xl:w-[60%] 2xl:w-[900px] ">
+      <div className="flex  flex-col  w-[450px] ">
         <div className="">
-          <div className="shadow-[0_10px_20px_5px_rgb(0 0 0 / 5%)] flex rounded-2xl bg-white">
-            {/******************************* left-section ******************************/}
-            <div className="hidden w-[28rem] rounded-l-[0.92rem] bg-[url('/images/shared/login_bg.webp')] bg-cover bg-[50%] px-[2.5rem] pt-[18.75rem] pb-[5.5rem] lg:block">
-              <div className="text-2xl font-extrabold text-white">
-                Welcome back ✨
-              </div>
-              <div className="mx-0 mt-[1.75rem] mb-[2.75rem] text-sm text-[#e0e0e0]">
-                Expert-led training courses to accelerate your professional
-                development
-              </div>
-              <div className="flex items-center font-medium text-white">
-                Log in to get back
-              </div>
-            </div>
-
+          <div className="shadow-[0_10px_20px_5px_rgb(0 0 0 / 5%)] flex rounded-xl bg-white">
+          
             {/* ******************************Right Section*******************************/}
             <div className="relative flex w-full flex-col items-center justify-center px-5 pt-12 pb-10 text-center lg:w-[29.375rem] lg:px-10">
               <button
@@ -99,7 +86,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                     <input
                       type="text"
                       required="required"
-                      className="w-full rounded-lg border border-[#e5e7eb] py-4 px-5 text-[#171421] outline-[none]"
+                      className="w-full rounded-lg border border-[#e6e5e5] py-4 px-5 text-[#171421] outline-[none]"
                       placeholder="Email"
                     />
                     <button
@@ -116,7 +103,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                     <span className="mx-4 flex-shrink text-[#bdbdbd]">OR</span>
                     <div className="flex-grow border-t border-[#bdbdbd]"></div>
                   </div>
-                  <button className="flex w-full items-center justify-center rounded-lg border border-[#e5e7eb]  py-4 text-sm font-bold text-[#171421]">
+                  <button className="flex w-full items-center justify-center rounded-lg border border-[#e6e5e5]  py-4 text-sm font-bold text-[#171421]">
                     <div
                       className="flex items-center gap-1"
                       onClick={() => handleLogin()}
@@ -131,7 +118,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                     </div>
                   </button>
                   <div className="mt-6 text-sm text-[#828282]">
-                    Don`&apos;`t have an account?
+                    {"Don't"} have an account?
                     <span className="cursor-pointer px-2 font-bold text-[#6334c8]">
                       Sign up
                     </span>
