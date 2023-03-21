@@ -105,6 +105,8 @@ export const getServerSideProps = async ({req, res}) => {
 
   }));
 
+  console.log(unlockedCourses);
+
   return {
     props: {
       user : user,

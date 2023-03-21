@@ -137,7 +137,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
                 <div>
                   <hr className='border-t-[1.5px] mb-2' />
                   <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
-                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard/my-courses' className=''>My Courses</Link></p>
+                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p>
                   <p className='text-md font-semibold mb-5' onClick={logOut}><span className=''>Logout</span></p>
                 </div>
               ) : (
