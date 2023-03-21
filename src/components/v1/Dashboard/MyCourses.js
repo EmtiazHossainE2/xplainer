@@ -33,6 +33,13 @@ const MyCourses = ({allCourses}) => {
             </div>
           ))
         }
+
+        {allCourses && allCourses.length === 0 && (
+           <div className="flex justify-center items-center ">
+            <h2 className="text-2xl  font-medium"> No Courses found </h2>
+         </div>
+        )}
+
       </div>
     </div >
   )

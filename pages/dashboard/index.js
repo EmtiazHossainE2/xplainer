@@ -94,16 +94,17 @@ export const getServerSideProps = async ({req, res}) => {
   const courseData = snapshot.val();
 
   let unlockedCourses = [];
-  
-  await Promise.all(Object.keys(courseData).map( async (item, index) => {
-    const courseChannel = `courses/${item}`;
-     const snap = await get(child(userRef, courseChannel))
-    const courseDetail = snap.val();
-    if(courseDetail){
-      unlockedCourses.push(courseDetail)
-    }
 
-  }));
+  if(courseData){
+    await Promise.all(Object.keys(courseData).map( async (item, index) => {
+      const courseChannel = `courses/${item}`;
+       const snap = await get(child(userRef, courseChannel))
+      const courseDetail = snap.val();
+      if(courseDetail){
+        unlockedCourses.push(courseDetail)
+      }
+    }));
+  }
 
   console.log(unlockedCourses);
 
