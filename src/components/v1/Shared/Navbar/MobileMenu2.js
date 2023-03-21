@@ -140,7 +140,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
                   <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
                   {/* <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p> */}
                   <p className='text-md font-semibold mb-5 ' onClick={logOut}>
-                    <span className='flex items-center gap-2'>
+                    <span className='flex items-center gap-2 cursor-pointer'>
                       <BiLogOut size={20} />
                       Logout
                     </span>
