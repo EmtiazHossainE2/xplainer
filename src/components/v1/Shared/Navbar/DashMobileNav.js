@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { BiLogOut } from 'react-icons/bi'
 
 const DashMobileNav = ({ open, setToggle, user, logOut }) => {
   const router = useRouter()
@@ -34,8 +35,13 @@ const DashMobileNav = ({ open, setToggle, user, logOut }) => {
               <div>
                 <hr className='border-t-[1.5px] mb-2' />
                 <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
-                <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p>
-                <p className='text-md font-semibold mb-5' onClick={logOut}><span className=''>Logout</span></p>
+                {/* <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p> */}
+                <p className='text-md font-semibold mb-5' onClick={logOut}>
+                  <span className='flex items-center gap-2'>
+                    <BiLogOut size={20} />
+                    Logout
+                  </span>
+                </p>
               </div>
             )}
 

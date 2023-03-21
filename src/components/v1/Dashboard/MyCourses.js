@@ -35,7 +35,7 @@ const MyCourses = ({allCourses}) => {
         }
 
         {allCourses && allCourses.length === 0 && (
-           <div className="flex justify-center items-center pb-16">
+           <div className="flex justify-center items-center pb-16 min-h-[50vh]">
             <h2 className="text-2xl  font-medium"> No courses found   </h2>
          </div>
         )}
