@@ -16,7 +16,7 @@ const Dashboard = ({allCourses}) => {
 
   const menus = [
     { id: 0, name: "All Courses" },
-    { id: 1, name: "Wishlist" },
+    // { id: 1, name: "Wishlist" },
     { id: 2, name: "Settings" },
   ];
 

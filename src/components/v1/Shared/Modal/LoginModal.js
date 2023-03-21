@@ -2,6 +2,7 @@ import {auth} from "@/src/auth/firebase/Firebase.init";
 import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
+import Router from "next/router";
 import { useCookies } from "react-cookie";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +26,8 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         // The signed-in user info.
         const user = result.user;
         // console.log(user)
-        toast.success(`Welcome ${user.displayName}`)
+        toast.success(`Welcome ${user.displayName}`);
+        Router.push('/dashboard');
         const body = {
           uid: user?.uid,
           displayName:user.displayName,
