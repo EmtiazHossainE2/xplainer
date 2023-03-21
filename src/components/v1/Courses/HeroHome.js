@@ -72,7 +72,7 @@ const HeroHome = ({
                   </Link>
                 }
               </div>
-              <h1 className="text-4xl font-bold lg:font-extrabold tracking-tighter mt-3 mb-4">
+              <h1 className="text-4xl font-bold lg:font-extrabold  mt-3 mb-4">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                   {headingColorText}
                 </span> {' '}
@@ -82,10 +82,10 @@ const HeroHome = ({
 
               {apiForPm &&
                 <div>
-                  <p className="pb-4 text-lg lg:text-xl font-[500]">✔️ Trusted by 7300+ PMs. Lifelong access. 10+ chapters</p>
-                  <p className="pb-4 text-lg lg:text-xl font-[500]">✔️ Crack your PM interview technical rounds with ease</p>
-                  <p className="pb-4 text-lg lg:text-xl font-[500]">✔️ Transform your product strategy with API skills</p>
-                  <p className="pb-5 text-lg lg:text-xl font-[500]">✔️ Elevate your career with API knowledge</p>
+                  <p className="pb-4 text-lg lg:text-xl ">✔️ Trusted by 7300+ PMs. Lifelong access. 10+ chapters</p>
+                  <p className="pb-4 text-lg lg:text-xl ">✔️ Crack your PM interview technical rounds with ease</p>
+                  <p className="pb-4 text-lg lg:text-xl ">✔️ Transform your product strategy with API skills</p>
+                  <p className="pb-5 text-lg lg:text-xl ">✔️ Elevate your career with API knowledge</p>
                 </div>
               }
               {pricing &&
