@@ -25,7 +25,7 @@ const ModuleDetails = ({ courseNavigationData,frontmatter, content, slug }) => {
               <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
               <hr className="pb-3" />
             </div>
-            <div className="blog__content text-align-justify mb-5">
+            <div className="blog__content text-align-justify mb-5 px-3">
               <ContentLayout content={content} />
             </div>
           </>

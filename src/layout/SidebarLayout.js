@@ -170,7 +170,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8 py-16 lg:mt-4 ml-[20%] mr-[15%]">{children}</div>
+          <div className="px-8 pt-16 lg:mt-4 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
           <div className="flex flex-col text-left fixed top-20 right-0 w-[15%] min-h-[100vh] pl-2">
@@ -200,7 +200,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
       </div>
 
       {/********************** Content Mobile **********************/}
-      <div className="px-3 py-16 md:px-12 block lg:hidden">{children}</div>
+      <div className=" pt-16 md:px-12 block lg:hidden">{children}</div>
 
       {/* Login Modal  */}
       <LoginModal
