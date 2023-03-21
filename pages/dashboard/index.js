@@ -35,7 +35,7 @@ const Dashboard = ({allCourses}) => {
       <DashboardLayout >
         <div className="bg-black">
           <div className='container mx-auto px-5 lg:px-16 big:px-[130px]'>
-            <h2 className='text-xl lg:text-[34px] leading-10 lg:leading-[48px] font-medium lg:font-extrabold text-white pt-9 pb-7 big:pb-16'>Welcome Back , {" "}
+            <h2 className='text-lg lg:text-[26px] big:pb-16  lg:leading-[48px] font-medium lg:font-bold text-white pt-9 pb-7 '>Welcome Back , {" "}
               <span className='lg:hidden pb-1'><br /></span>
               {currentUser?.displayName}
             </h2>
@@ -46,7 +46,7 @@ const Dashboard = ({allCourses}) => {
                 <p
                   key={index}
                   onClick={() => handleActive(index)}
-                  className={`lg:text-base cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
+                  className={`text-sm lg:text-base cursor-pointer pb-2 lg:px-2 border-b-[6px]  ${index === clicked ? "text-white font-semibold " : "border-transparent text-white"
                     }`}
                 >
                   {menu.name}
