@@ -108,6 +108,10 @@ const Navbar = ({ pageName, posts ,course}) => {
                   setCourseOpen(true)
                   setWorkShopsOpen(false)
                 }}
+                // onMouseOut={() => {
+                //   setCourseOpen(false)
+                // }}
+                // onMouseLeave={() => setCourseOpen(false)}
                 className={` ${commonStyle} ${courseOpen ? `${activeLink}` : ""} 
                 ${router.pathname.startsWith("/courses") ? `${activeLink}` : ""}
                  `}

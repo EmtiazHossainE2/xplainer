@@ -30,6 +30,23 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
     }
   }, [open]);
 
+  const { courses: availCourses } = useSelector((state) => state.course);
+  const [isPaid, setCourseUnlock] = useState(false);
+
+  useEffect(() => {
+    const isCourseAvailable = availCourses?.some(
+      (item) => item.permalink === course
+    );
+    const isUserLoggedIn = Boolean(currentUser?.email);
+
+    if (isCourseAvailable && isUserLoggedIn) {
+      setCourseUnlock(true);
+    }
+
+  }, [availCourses, course, currentUser?.email, slug]);
+
+
+
   // Logout 
   const handleLogout = () => {
     dispatch(logout())
@@ -50,7 +67,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           {/*********************** For Desktop ********************* */}
           <div className="hidden lg:block">
             <div className="flex justify-center items-center gap-x-6 ">
-              <Link href='/dashboard' className='text-md font-medium hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
+              <Link href='/dashboard' className='text-sm font-semibold hover:text-[#0070F4] hover:border-b-2 py-3.5 border-b-[#0070F4]'>
                 My Courses
               </Link>
               {currentUser?.email ? (
@@ -123,6 +140,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                 const slug = posts[chapter].slug;
                 const isFreeChapter = posts[chapter].isFreeChapter;
 
+      
                 return (
                   <ul key={index}>
                     <Link
@@ -131,7 +149,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                       <li className="py-2 flex justify-between items-center ">
                         {frontmatter.title}
                       </li>
-                      {!currentUser?.email && isFreeChapter === false && (<FaLock />)}
+                      {!isPaid && isFreeChapter === false && (<FaLock />)}
                     </Link>
 
                     {chapterData?.subChapters && (
@@ -146,7 +164,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                               <li className="py-2 pl-2 ml-2.5 " >
                                 {subChapter.frontmatter.title}
                               </li>
-                              {!currentUser?.email && (<FaLock />)}
+                              {!isPaid && (<FaLock />)}
                             </Link>
                           )
                         })}
@@ -170,7 +188,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="px-8 py-16 lg:mt-4 ml-[20%] mr-[15%]">{children}</div>
+          <div className="px-8 pt-16 lg:mt-4 ml-[20%] mr-[15%]">{children}</div>
 
           {/********************** Right Side  **********************/}
           <div className="flex flex-col text-left fixed top-20 right-0 w-[15%] min-h-[100vh] pl-2">
@@ -200,7 +218,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
       </div>
 
       {/********************** Content Mobile **********************/}
-      <div className="px-3 py-16 md:px-12 block lg:hidden">{children}</div>
+      <div className=" pt-16 md:px-12 block lg:hidden">{children}</div>
 
       {/* Login Modal  */}
       <LoginModal

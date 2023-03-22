@@ -32,8 +32,8 @@ const PricingForPM = () => {
           />
           <TestimonialsCarousel />
           <Authors
-            name1={"Deepak "}
-            name2={"Venky"}
+            name1={"Deepak Kumar"}
+            name2={"Venkatesh Gupta"}
           />
           <Faqs />
           <CtaAlternative />

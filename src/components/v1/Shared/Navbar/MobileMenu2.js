@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { BiLogOut } from 'react-icons/bi'
 const PUBLIC_IMAGE_PATH = BASE_URL + 'images/shared';
 
 const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
@@ -137,8 +138,13 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
                 <div>
                   <hr className='border-t-[1.5px] mb-2' />
                   <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
-                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p>
-                  <p className='text-md font-semibold mb-5' onClick={logOut}><span className=''>Logout</span></p>
+                  {/* <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p> */}
+                  <p className='text-md font-semibold mb-5 ' onClick={logOut}>
+                    <span className='flex items-center gap-2 cursor-pointer'>
+                      <BiLogOut size={20} />
+                      Logout
+                    </span>
+                  </p>
                 </div>
               ) : (
                 //********************************** No user ********************************/  

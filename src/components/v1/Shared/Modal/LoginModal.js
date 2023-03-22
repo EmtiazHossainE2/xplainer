@@ -1,4 +1,4 @@
-import {auth} from "@/src/auth/firebase/Firebase.init";
+import { auth } from "@/src/auth/firebase/Firebase.init";
 import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
@@ -25,19 +25,21 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        // console.log(user)
+        console.log(user)
         toast.success(`Welcome ${user.displayName}`);
         Router.push('/dashboard');
         const body = {
           uid: user?.uid,
-          displayName:user.displayName,
-          email:user?.email,
+          displayName: user.displayName,
+          email: user?.email,
           photoURL: user?.photoURL,
+          creationTime: user?.metadata.creationTime,
+          lastSignInTime: user?.metadata.lastSignInTime
         }
         dispatch(loginSuccess(body))
         setLoginModal(false)
         setCookie("user", JSON.stringify(body), {
-          path : '/',
+          path: '/',
           maxAge: 3600, // Expires after 1hr
           sameSite: true,
         })
@@ -65,7 +67,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
       <div className="flex  flex-col  w-[450px] ">
         <div className="">
           <div className="shadow-[0_10px_20px_5px_rgb(0 0 0 / 5%)] flex rounded-xl bg-white">
-          
+
             {/* ******************************Right Section*******************************/}
             <div className="relative flex w-full flex-col items-center justify-center px-5 pt-12 pb-10 text-center lg:w-[29.375rem] lg:px-10">
               <button
@@ -105,10 +107,11 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
                     <span className="mx-4 flex-shrink text-[#bdbdbd]">OR</span>
                     <div className="flex-grow border-t border-[#bdbdbd]"></div>
                   </div>
-                  <button className="flex w-full items-center justify-center rounded-lg border border-[#e6e5e5]  py-4 text-sm font-bold text-[#171421]">
+                  <button
+                    onClick={() => handleLogin()}
+                    className="flex w-full items-center justify-center rounded-lg border border-[#e6e5e5]  py-4 text-sm font-bold text-[#171421]">
                     <div
                       className="flex items-center gap-1"
-                      onClick={() => handleLogin()}
                     >
                       <Image
                         src="/images/brand/1.svg"

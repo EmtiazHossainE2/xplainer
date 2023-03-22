@@ -1,38 +1,43 @@
-import ContentLayout from "@/src/components/v1/Shared/ContentView/ContentLayout";
-import Footer2 from "@/src/components/v1/Shared/Footer/Footer2";
-import UpgradeToPremium from "@/src/components/v1/Shared/UpgradeToPremium";
-import SidebarLayout from "@/src/layout/SidebarLayout";
+import CourseLearningView from "@/src/components/v1/Shared/ContentView/CourseLearningView";
+import { courseConfig } from "@/src/config/course-config";
 import { getCourseNavigation } from "@/src/utils/helper";
 import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-const ModuleDetails = ({ courseNavigationData, frontmatter, content }) => {
+const ModuleDetails = ({ courseNavigationData, frontmatter, content, slug, chapterData }) => {
   const { currentUser } = useSelector((state) => state.user);
   const course = "pricing-for-pm"
+
+  const { courses: availCourses } = useSelector((state) => state.course);
+  const [isPaid, setCourseUnlock] = useState(false);
+  const { isFreeChapter } = chapterData;
+
+  useEffect(() => {
+    const isCourseAvailable = availCourses?.some(
+      (item) => item.permalink === course
+    );
+    const isUserLoggedIn = Boolean(currentUser?.email);
+
+    if (isCourseAvailable && isUserLoggedIn) {
+      setCourseUnlock(true);
+    }
+
+  }, [availCourses, currentUser?.email, isFreeChapter, slug]);
+
   return (
-    <div>
-      <SidebarLayout posts={courseNavigationData} course={course}>
-        {currentUser?.email ? (
-          <>
-            <div>
-              <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
-              <hr className="pb-3" />
-            </div>
-            <div className="blog__content text-align-justify mb-5">
-              <ContentLayout content={content} />
-            </div>
-            <Footer2 />
-          </>
-        ) : (
-          <>
-            <UpgradeToPremium posts={courseNavigationData} course={course} />
-          </>
-        )}
-      </SidebarLayout>
-    </div>
+    <CourseLearningView
+      course={course}
+      courseNavigationData={courseNavigationData}
+      isPaid={isPaid}
+      frontmatter={frontmatter}
+      content={content}
+      slug={slug}
+      isFreeChapter={isFreeChapter}
+    />
   );
 };
 
@@ -69,12 +74,19 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const result = await serialize(content);
 
+  const isFreeChapter =
+    (courseConfig["pricing-for-pm"] && courseConfig["pricing-for-pm"].includes(slug)) ||
+    false;
+
   return {
     props: {
       frontmatter,
       slug,
       content: result,
       courseNavigationData: courseNavItems,
+      chapterData: {
+        isFreeChapter,
+      },
     },
   };
 };

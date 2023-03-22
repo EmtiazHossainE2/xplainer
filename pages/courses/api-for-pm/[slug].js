@@ -1,71 +1,78 @@
-import ContentLayout from '@/src/components/v1/Shared/ContentView/ContentLayout'
-import Footer2 from '@/src/components/v1/Shared/Footer/Footer2'
-import UpgradeToPremium from '@/src/components/v1/Shared/UpgradeToPremium'
-import { courseConfig } from '@/src/config/course-config'
-import SidebarLayout from '@/src/layout/SidebarLayout'
-import { getCourseNavigation } from '@/src/utils/helper'
-import fs from 'fs'
-import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
-import path from 'path'
-import { useSelector } from 'react-redux'
+import ContentLayout from "@/src/components/v1/Shared/ContentView/ContentLayout";
+import CourseLearningView from "@/src/components/v1/Shared/ContentView/CourseLearningView";
+import Footer2 from "@/src/components/v1/Shared/Footer/Footer2";
+import UpgradeToPremium from "@/src/components/v1/Shared/UpgradeToPremium";
+import { courseConfig } from "@/src/config/course-config";
+import SidebarLayout from "@/src/layout/SidebarLayout";
+import { getCourseNavigation } from "@/src/utils/helper";
+import fs from "fs";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-const ModuleDetails = ({ courseNavigationData,frontmatter, content, slug }) => {
+const course = "api-for-pm";
+
+const ModuleDetails = ({
+  courseNavigationData,
+  frontmatter,
+  content,
+  slug,
+  chapterData,
+}) => {
   const { currentUser } = useSelector((state) => state.user);
-  const course = 'api-for-pm'
+  const { courses: availCourses } = useSelector((state) => state.course);
+  const [isPaid, setCourseUnlock] = useState(false);
+  const { isFreeChapter } = chapterData;
 
-  const isFreeChapter = courseConfig[course] && courseConfig[course].includes(slug);
+  useEffect(() => {
+    const isCourseAvailable = availCourses?.some(
+      (item) => item.permalink === course
+    );
+    const isUserLoggedIn = Boolean(currentUser?.email);
+
+    if (isCourseAvailable && isUserLoggedIn) {
+      setCourseUnlock(true);
+    }
+
+  }, [availCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (
-    <div>
-      <SidebarLayout posts={courseNavigationData} course={course} slug={slug}>
-        {currentUser?.email || isFreeChapter ? (
-          <>
-            <div>
-              <h1 className="post-heading pb-3">{frontmatter?.title}</h1>
-              <hr className="pb-3" />
-            </div>
-            <div className="blog__content text-align-justify mb-5">
-              <ContentLayout content={content} />
-            </div>
-          </>
-        ) : (
-          <>
-            <UpgradeToPremium posts={courseNavigationData} course={course} />
-          </>
-        )}
-         <Footer2 />
-      </SidebarLayout>
-      
-    </div>
-  )
-}
+    <CourseLearningView
+      course={course}
+      courseNavigationData={courseNavigationData}
+      isPaid={isPaid}
+      frontmatter={frontmatter}
+      content={content}
+      slug={slug}
+      isFreeChapter={isFreeChapter}
+    />
+  );
+};
 
-export default ModuleDetails
-
-
+export default ModuleDetails;
 
 export const getStaticPaths = async () => {
-  let files = fs.readdirSync(path.join('_api-for-pm'))
+  let files = fs.readdirSync(path.join("_api-for-pm"));
 
-  const unsupportedFileList = ['assets', '.DS_Store'];
-  files = files.filter(item => !unsupportedFileList.includes(item))
+  const unsupportedFileList = ["assets", ".DS_Store"];
+  files = files.filter((item) => !unsupportedFileList.includes(item));
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace('.md', ''),
+      slug: filename.replace(".md", ""),
     },
-  }))
+  }));
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async ({ params: { slug } }) => {
-
-  const courseName = '_api-for-pm'; 
+  const courseName = "_api-for-pm";
   const courseNavItems = getCourseNavigation({ courseName: courseName });
 
   const markdownWithMeta = fs.readFileSync(
@@ -75,14 +82,19 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
   const result = await serialize(content);
+  const isFreeChapter =
+    (courseConfig["api-for-pm"] && courseConfig[course].includes(slug)) ||
+    false;
 
-  
   return {
     props: {
       frontmatter,
       slug,
-      content : result,
-      courseNavigationData : courseNavItems
+      content: result,
+      courseNavigationData: courseNavItems,
+      chapterData: {
+        isFreeChapter,
+      },
     },
-  }
-}
+  };
+};
