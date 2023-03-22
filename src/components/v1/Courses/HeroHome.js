@@ -54,7 +54,7 @@ const HeroHome = ({
           {/* Review Image  */}
           <div className="basis-1/2 lg:basis-5/12 hidden md:block">
             {apiForPm && <Image src='/images/courses/review.webp' width={350} height={400} alt="api for pm review jpeg" />}
-            {pricing && <Image src='/images/courses/hero-case.png' width={700} height={400} alt="pm pricing jpg" />}
+            {pricing && <Image src='/images/courses/hero-case.webp' width={700} height={400} alt="pm pricing webp" />}
           </div>
 
           {/* Hero content */}
