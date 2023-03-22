@@ -1,18 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import SectionHeading from "../Shared/sectionHeading";
 
 const BlogList = ({ posts, disableHeader }) => {
   // console.log(posts)
   return (
-    <section className="relative">
+    <section className="relative bg-[#f5f5f5]">
+      <SectionHeading heading={"Trending Articles"} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 pb-12  md:pb-20">
           {/* Page header */}
           {!disableHeader && (
             <div className="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
               <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">
-                {" "}
-                All Blogs{" "}
+                All Blogs
               </h1>
             </div>
           )}
@@ -26,7 +27,7 @@ const BlogList = ({ posts, disableHeader }) => {
                 posts.map((post, index) => (
                   <div key={index} className="">
                     <article
-                      className="flex border border-solid border-gray-100 p-2 flex-col h-full"
+                      className="flex border border-solid bg-white  border-gray-100 p-4 rounded-[10px] flex-col h-full"
                       data-aos="zoom-y-out"
                     >
                       <header>
@@ -108,6 +109,13 @@ const BlogList = ({ posts, disableHeader }) => {
                   </div>
                 ))}
             </div>
+          </div>
+          <div className="text-center mt-5">
+            <Link href='/blog' >
+              <button className="bg-[#ebebeb] text-[#475467] font-medium py-2.5 px-7 rounded-xl">
+                See All Articles
+              </button>
+            </Link>
           </div>
         </div>
       </div>

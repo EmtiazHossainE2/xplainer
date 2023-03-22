@@ -34,9 +34,6 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
               X
             </button>
             <div>
-              {/* <div className="flex justify-center items-center pb-5">
-                <Image src='/images/shared/popupLogo.svg' width={48} height={40} alt='popup logo'/>
-              </div> */}
               <h4 className="text-lg text-center md:text-xl lg:text-2xl font-semibold md:font-bold mb-8">
                 Claim up to 50% off on the program!
               </h4>

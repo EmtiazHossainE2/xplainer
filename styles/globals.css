@@ -25,12 +25,20 @@ a {
   text-decoration: none;
 }
 
+.topBannerBg {
+  background: linear-gradient(90.04deg, #5d5be2 2.37%, #dd58c3 88.3%, #ffc530 100%)
+}
+
 .customBtn {
   @apply bg-[#DCECFF] text-[#0070F4] py-[6px] px-5 rounded-[40px]
 }
 
 .customTitle {
-  @apply pt-5 text-center text-2xl lg:text-[34px] leading-10 font-bold
+  @apply pt-5 text-center text-2xl lg:text-[36px] leading-10 font-semibold text-[#101828DE]
+}
+
+.borderStyle {
+  border: 2px solid #ABCEFF;
 }
 
 .h3 {
@@ -81,17 +89,18 @@ a {
 
 /* Courses  */
 .course__box {
-  width: 500px;
+  width: 560px;
   box-shadow: 0px 32px 64px -12px rgba(45, 54, 67, 0.14);
 }
 
 /* Mentors  */
 /* the slides */
 .mentor {
-  padding: 15px;
+  padding: 20px 20px 0;
+  margin-bottom: 48px;
   gap: 12px;
   background: #FFFFFF;
-  border-radius: 10px;
+  box-shadow: 0px 20px 24px -4px rgba(45, 54, 67, 0.04), 0px 8px 11px -4px rgba(45, 54, 67, 0.04);
 }
 
 .swiper {
@@ -162,7 +171,7 @@ a {
 .post-heading {
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 700;
   /* border-left: 2px solid #5281db; */
   /* padding: 0 16px; */
   -webkit-flex: 1;
@@ -177,11 +186,10 @@ a {
   text-align: justify;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .blog__content p {
-  font-size: 18px;
+  font-size: 16px;
   color: #3B454E;
 }
 
@@ -192,7 +200,7 @@ a {
 }
 
 .blog__content p {
-  margin: 12px 0px 22px;
+  margin: 8px 0px 10px;
   line-height: 1.625;
 }
 
@@ -272,8 +280,53 @@ a {
 
 pre code {
   color: rgba(255, 255, 93, 0.905);
-  font-size: medium;
+  font-size: small;
 }
+
+/** Card container */
+
+.card-1-container {
+  background: #fff;
+  padding: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #EEE;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+  border-radius: 6px;
+  background: #eeffed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+
+.left-info .h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.h3-meta {
+  color: grey;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-embed-desktop {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.youtube-embed-mobile {
+  display: none;
+}
+
 
 /* h1, h2, h3, p, ul, li, code, pre a  */
 
@@ -283,8 +336,42 @@ pre code {
   color: #515151;
 }
 
+/* All Courses  */
+.category{
+  background: linear-gradient(270deg, #F7FAFF 0%, rgba(255, 255, 255, 0) 49.83%);
+}
 
 /************************************ Media Query **************************************** */
+
+@media (min-width: 320px) and (max-width: 520px) {
+
+
+  .youtube-embed-desktop {
+    display: none;
+  }
+
+  .youtube-embed-mobile {
+    display: block;
+  }
+
+  .card-1-container {
+    flex-direction: column;
+  }
+
+  .left-info .h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .card-1-container .right-side {
+    margin-top: 20px;
+  }
+
+  .parsedown h1 {
+    font-size: 20px;
+  }
+
+}
 
 @media screen and (max-width: 1280px) {
   .course__box {
@@ -353,6 +440,17 @@ pre code {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .apiForPm img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .apiForPm p {
+    font-size: 10px;
+  }
+}
+
 @media screen and (max-width: 325px) {
   .subCat {
     font-size: 10px;
@@ -360,5 +458,9 @@ pre code {
 
   .discount {
     font-size: 8px;
+  }
+
+  .mobileContent p {
+    font-size: 11px;
   }
 }

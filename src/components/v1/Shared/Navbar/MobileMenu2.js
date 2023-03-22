@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { BiLogOut } from 'react-icons/bi'
 const PUBLIC_IMAGE_PATH = BASE_URL + 'images/shared';
 
-const MobileMenu2 = ({ open, setToggle }) => {
+const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
   const router = useRouter()
   useEffect(() => {
     setToggle(false)
@@ -24,13 +25,11 @@ const MobileMenu2 = ({ open, setToggle }) => {
           setToggle(!open);
         }
       }}
-      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${
-        open ? "bg-black/75" : "bg-transparent pointer-events-none"
-      }`}
+      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${open ? "bg-black/75" : "bg-transparent pointer-events-none"
+        }`}
     >
       {/* <div className="grid h-screen w-[75%] max-w-[350px] lg:w-full bg-white"> */}
-      <div className={`absolute transition-[left] bg-white  h-screen w-[75%] max-w-[375px] pb-20 ${
-          open ? "left-0" : "-left-full"
+      <div className={`absolute transition-[left] bg-white  h-screen w-[75%] max-w-[375px] pb-20 ${open ? "left-0" : "-left-full"
         }`}>
         <div className="flex flex-col justify-start item-center">
           <div className="flex justify-between shadow-sm p-2">
@@ -38,7 +37,7 @@ const MobileMenu2 = ({ open, setToggle }) => {
             <button onClick={() => setToggle(false)}><AiOutlineCloseCircle size={28} /></button>
           </div>
 
-          {/* Nav Items  */}
+          {/***************************** Nav Items  *****************************/}
           <div>
             <div className={`relative flex flex-col gap-5 pt-4`}>
 
@@ -84,7 +83,7 @@ const MobileMenu2 = ({ open, setToggle }) => {
 
                 </div>
               </div>
-              {/* Dropdown  */}
+              {/* ****************************courseOpen****************************** */}
               {courseOpen && (
                 <div onClick={() => setCourseOpen(false)} className="absolute  left-0 top-10 z-10 bg-white border-b border-gray-200 py-2 mt-2  w-full">
 
@@ -102,7 +101,7 @@ const MobileMenu2 = ({ open, setToggle }) => {
                   })}
                 </div>
               )}
-
+              {/* ****************************workShopsOpen****************************** */}
               {workShopsOpen && (
                 <div onClick={() => setWorkShopsOpen(false)} className={`absolute left-0   z-10 bg-white py-2 mt-2 border-b border-gray-200 w-full  ${courseOpen && workShopsOpen ? 'top-52' : 'top-20'}`}>
 
@@ -132,10 +131,33 @@ const MobileMenu2 = ({ open, setToggle }) => {
               </p>
               <p className='text-md font-semibold px-3 mb-5' ><Link href='/blog' className=''>Blog</Link></p>
             </div>
+            {/* ****************************Check login user ****************************** */}
             <div className={`px-3 `}>
-              <Link href='/login' className='bg-[#0070F4] rounded-md py-[10px] px-[51px]'>
-                <button className=' text-white text-md font-semibold'>Login</button>
-              </Link>
+              {/* ****************************If user ****************************** */}
+              {user?.email ? (
+                <div>
+                  <hr className='border-t-[1.5px] mb-2' />
+                  <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>Dashboard</Link></p>
+                  {/* <p className='text-md font-semibold mb-5' ><Link href='/dashboard' className=''>My Courses</Link></p> */}
+                  <p className='text-md font-semibold mb-5 ' onClick={logOut}>
+                    <span className='flex items-center gap-2 cursor-pointer'>
+                      <BiLogOut size={20} />
+                      Logout
+                    </span>
+                  </p>
+                </div>
+              ) : (
+                //********************************** No user ********************************/  
+                <button onClick={() => {
+                  setLoginModal(true)
+                  setToggle(false)
+                }}
+                  className='bg-[#0070F4] rounded-md py-[10px] px-[51px] text-white text-md font-semibold'
+                >
+                  Login
+                </button>
+              )}
+
             </div>
           </div>
 

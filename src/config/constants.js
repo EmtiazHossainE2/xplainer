@@ -1,27 +1,33 @@
 export const topCompanies = [
   {
-    logo : '/1.svg',
+    logo: '/1.svg',
   },
   {
-    logo : '/2.svg',
+    logo: '/2.svg',
   },
   {
-    logo : '/3.svg',
+    logo: '/3.svg',
   },
   {
-    logo : '/4.svg',
+    logo: '/4.svg',
   },
   {
-    logo : '/5.svg',
+    logo: '/5.svg',
   },
   {
-    logo : '/6.svg',
+    logo: '/9.svg',
   },
   {
-    logo : '/7.svg',
+    logo: '/10.svg',
   },
   {
-    logo : '/8.svg',
+    logo: '/6.svg',
+  },
+  {
+    logo: '/7.svg',
+  },
+  {
+    logo: '/8.svg',
   },
 ]
 
@@ -127,7 +133,7 @@ export const allCourses = [
         text: "Crack your technical rounds in product interviews with ease",
       },
       {
-        icon: "icon3.svg",
+        icon: "icon1.svg",
         text: "Be confident while dealing with engineering stakeholders"
       },
       {
@@ -159,7 +165,7 @@ export const allCourses = [
         text: "Case studies from LinkedIn, Bumble, Swiggy, Mailchimp etc.",
       },
       {
-        icon: "icon3.svg",
+        icon: "icon1.svg",
         text: "Learn concepts like subscriptions, freemium, tier pricing etc."
       },
       {
@@ -248,87 +254,415 @@ export const mentors = [
     job2: "Ex - 91 wheels | Flux Auto (YC 18)"
   },
 ]
+export const authors = [
+  {
+    name: "Deepak Kumar",
+    profile: "https://ik.imagekit.io/zwxa4kttt/1661931118137.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357864998",
+    job: "Software Engineer - II",
+    description: "This is an awesome resource. I had been interviewing for past 4 years with no luck. I studied the material for"
+  },
+  {
+    name: "Venkatesh Gupta",
+    profile: "https://ik.imagekit.io/zwxa4kttt/1621098083610.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1677357898740",
+    job: "Product Manager",
+    description: "Xplainerr's course was incredibly helpful in getting me up to speed quickly for product management interviews. Rather..."
+  },
+]
+
+export const offers = [
+  {
+    description: "In-depth understanding of Google Ads, Keyword research & intent mapping to become a better marketer"
+  },
+  {
+    description: "Complete guide and tested hacks to write search ad copies that convert"
+  },
+  {
+    description: "Skills to set up & execute Google Shopping Campaign from scratch to become a better marketer"
+  },
+  {
+    description: "Understanding of multiple types of Google Ads Campaigns to generate high-quality leads"
+  },
+  {
+    description: "Skills & hacks to measure & optimize marketing performance through Google Ads & Analytics"
+  },
+  {
+    description: "Best practices for UTM tags, SKAG, & Structuring Google Ad Account to become a better marketer"
+  },
+  {
+    description: "Increase your service offerings as a freelance marketer"
+  },
+  {
+    description: "Roadmap to shift your career to digital marketing from any industry from scratch"
+  },
+]
+
+export const certificateTexts = [
+  {
+    description: "Receive an instructor signed certificate with the institution’s logo to verify your achievements and increase your job prospects",
+    icon: 'Ci1.svg'
+  },
+  {
+    description: "Add the certificate to your CV or your resume or post it directly on LinkedIn. You can even post it on Instagram and Twitter.",
+    icon: 'Ci2.svg'
+  },
+  {
+    description: "Use your certificate to enhance your professional credibility and stand out among your peers!",
+    icon: 'Ci3.svg'
+  },
+]
 
 export const footerColOne = [
   {
-    slug:'1',
-    text : "Link One",
+    slug: '1',
+    text: "Link One",
   },
   {
-    slug:'2',
-    text : "Link Two",
+    slug: '2',
+    text: "Link Two",
   },
   {
-    slug:'3',
-    text : "Link Three",
+    slug: '3',
+    text: "Link Three",
   },
   {
-    slug:'4',
-    text : "Link Four",
+    slug: '4',
+    text: "Link Four",
   },
   {
-    slug:'5',
-    text : "Link Five",
+    slug: '5',
+    text: "Link Five",
   },
 ]
 export const footerColTwo = [
   {
-    slug:'6',
-    text : "Link Six",
+    slug: '6',
+    text: "Link Six",
   },
   {
-    slug:'7',
-    text : "Link Seven",
+    slug: '7',
+    text: "Link Seven",
   },
   {
-    slug:'8',
-    text : "Link Eight",
+    slug: '8',
+    text: "Link Eight",
   },
   {
-    slug:'9',
-    text : "Link Nine",
+    slug: '9',
+    text: "Link Nine",
   },
   {
-    slug:'10',
-    text : "Link Ten",
+    slug: '10',
+    text: "Link Ten",
   },
 ]
 export const footerColThree = [
   {
-    slug:'11',
-    text : "Link Eleven",
+    slug: '11',
+    text: "Link Eleven",
   },
   {
-    slug:'12',
-    text : "Link Twelve",
+    slug: '12',
+    text: "Link Twelve",
   },
   {
-    slug:'13',
-    text : "Link Thirteen",
+    slug: '13',
+    text: "Link Thirteen",
   },
   {
-    slug:'13',
-    text : "Link Fourteen",
+    slug: '13',
+    text: "Link Fourteen",
   },
   {
-    slug:'15',
-    text : "Link Fifteen",
+    slug: '15',
+    text: "Link Fifteen",
   },
 ]
 
 export const policy = [
   {
-    slug :'',
-    text:"Privacy Policy"
+    slug: '',
+    text: "Privacy Policy"
   },
   {
-    slug :'',
-    text:"Terms of Service "
+    slug: '',
+    text: "Terms of Service "
   },
   {
-    slug :'',
-    text:"Cookies Settings"
+    slug: '',
+    text: "Cookies Settings"
   },
 ]
+
+export const upgradeItem = [
+  {
+    title: "Entire course library",
+    des: "Get full access to our course library, with hours of lessons and example answers."
+  },
+  {
+    title: "Mock interview videos",
+    des: "Watch experts answer real interview questions in hundreds of videos."
+  },
+  {
+    title: "Private Slack access",
+    des: "Join our daily discussions with 10,000 other Exponent members on Slack."
+  },
+  {
+    title: "Live daily practice",
+    des: "With our new peer practice tool, you can practice with other members every day."
+  }
+]
+
+export const myCourses = [
+  {
+    title: 'API for Product Manager',
+    permalink : 'api-for-pm',
+    coverImage: 'myCourse.svg',
+    ratings: "",
+    instructor: "Deepak Kumar",
+    progress: 10
+  },
+  {
+    title: 'Pricing & Monetisation',
+    permalink : 'pricing-for-pm',
+    coverImage: 'myCourse.svg',
+    ratings: "",
+    instructor: "Venkatesh Gupta",
+    progress: 10
+  }
+];
+
+export const courseContent = [
+  {
+    title: 'PM Interviewing Introduction',
+    subModules: [
+      {
+        title: 'Welcome to the Xplainerr PM Course!',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'The Perfect Structure for Every Product Management Interview Question',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How Rubrics Can Help You Ace PM Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'PM Interview Glossary',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+  {
+    title: 'Monitoring Questions',
+    subModules: [
+      {
+        title: 'PM Interviews: Introduction to Analytical & Execution Questions',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How to Answer A/B Test Product Management Questions',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'A Rubric for Analytical Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Pick YouTube's Key Metrics",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Improve Google's Homepage",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+  {
+    title: 'Analytical Questions',
+    subModules: [
+      {
+        title: 'PM Interviews: Introduction to Analytical & Execution Questions',
+        isPaid: true,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'How to Answer A/B Test Product Management Questions',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: 'A Rubric for Analytical Interviews',
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Pick YouTube's Key Metrics",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+      {
+        title: "Improve Google's Homepage",
+        isPaid: false,
+        content: '',
+        slug: ''
+      },
+    ]
+  },
+]
+
+export const allCourse = [
+  {
+    title: 'UX Writing',
+    coverImage: "excel.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '4.0',
+    learners: "3,000",
+    slug: "",
+  },
+  {
+    title: 'Docker Fundamentals',
+    coverImage: "data-science.png",
+    category: "Programming",
+    categorySlug: "programming",
+    ratings: '4.5',
+    learners: "2,000",
+    slug: "",
+  },
+  {
+    title: 'API For Product Manager',
+    coverImage: "excel.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '5.0',
+    learners: "40,000",
+    slug: "",
+  },
+  {
+    title: 'Master ChatGPT',
+    coverImage: "digital-marketing.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '4.0',
+    learners: "25,000",
+    slug: "",
+  },
+  {
+    title: 'Be a Github Pro',
+    coverImage: "c-plus-plus.png",
+    category: "Programming",
+    categorySlug: "programming",
+    ratings: '3.5',
+    learners: "12,000",
+    slug: "",
+  },
+  {
+    title: 'A to Z Of Pricing',
+    coverImage: "digital-marketing.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '5.0',
+    learners: "30,000",
+    slug: "",
+  },
+  {
+    title: 'Postman 101',
+    coverImage: "data-science.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '4.5',
+    learners: "34,000",
+    slug: "",
+  },
+  {
+    title: 'API For Product Manager',
+    coverImage: "digital-marketing.png",
+    category: "Product Management",
+    categorySlug: "product-management",
+    ratings: '5.0',
+    learners: "40,000",
+    slug: "",
+  },
+  {
+    title: 'JavaScript Fundamentals',
+    coverImage: "c-plus-plus.png",
+    category: "Programming",
+    categorySlug: "programming",
+    ratings: '4.0',
+    learners: "3,003",
+    slug: "",
+  },
+]
+
+export const courseCategories = [
+  {
+    name: "Most Popular",
+    slug: "most-popular",
+  },
+  {
+    name: "Product Management",
+    slug: "product-management",
+  },
+  {
+    name: "Programming",
+    slug: "programming",
+  },
+  {
+    name: "Business & Management",
+    slug: "business-Management",
+  },
+  {
+    name: "Core Engineering",
+    slug: "core-engineering",
+  },
+  {
+    name: "Design",
+    slug: "design",
+  },
+  {
+    name: "Creative Arts",
+    slug: "creative-arts",
+  },
+  {
+    name: "Language",
+    slug: "language",
+  },
+  {
+    name: "Career Development",
+    slug: "career-development",
+  },
+  {
+    name: "Architecture",
+    slug: "architecture",
+  },
+  {
+    name: "Online Courses",
+    slug: "online-courses",
+  },
+]
+
 
 export const BASE_URL = 'https://xplainerr.vercel.app/';

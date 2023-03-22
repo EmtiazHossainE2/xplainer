@@ -16,13 +16,11 @@ const Mentors = () => {
 
 
   return (
-    <div className="">
+    <div className="bg-[#F9FAFB] mb-12 lg:mb-0 mt-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="">
 
-          <SectionHeading heading={"Our Mentors"}/>
-          {/* <h2 className="text-center text-3xl lg:text-[34px] font-bold">Our Mentors </h2> */}
-          <p className="text-[#515151] text-center text-[16px] md:text-xl font-medium pt-[2px] pb-8 ">Learn from the industry best</p>
+          <SectionHeading heading={"Our Mentors"} description={"Learn from the industry best"}/>
 
           <Swiper
             slidesPerView={3}

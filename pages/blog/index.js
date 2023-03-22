@@ -20,7 +20,7 @@ const Blog = ({ posts }) => {
           <div className="flex flex-col min-h-screen overflow-hidden">
 
             <div className="grow">
-              <BlogList posts={posts} />
+              <BlogList posts={posts} disableHeader={true} />
             </div>
           </div>
         </PageLayout>
