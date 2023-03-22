@@ -13,8 +13,6 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
   const provider = new GoogleAuthProvider();
   const [cookie, setCookie] = useCookies(["user"])
 
-  console.log('ENV_KEY', process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
-
   const handleLogin = async () => {
 
     dispatch(loginStart())
