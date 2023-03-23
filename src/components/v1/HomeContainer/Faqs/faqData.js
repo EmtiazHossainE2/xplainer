@@ -1,7 +1,7 @@
 export const faqData = [
   {
     question:"How does the Program work?",
-    answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odio velit nihil ipsum ducimus ipsa iusto autem explicabo. Dolore, rerum."
+    answer:"We have micro learning courses for tech, marketing, and design. Free access with the option to upgrade. Bite-sized learning to fit your schedule and enhance your career."
   },
   {
     question:"I made the payment and didn't recieve any email?",
