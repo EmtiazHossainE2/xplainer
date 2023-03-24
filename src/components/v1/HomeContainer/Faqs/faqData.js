@@ -5,7 +5,7 @@ export const faqData = [
   },
   {
     question:"I made the payment and didn't recieve any email?",
-    answer:"Please contact us using the chat support available on bottom right. You can also write to us at support@xplainerr.com. We will resolve your query within 24 working hours."
+    answer:"Please contact us using the chat support available on bottom right. You can also write to us at deepak@xplainerr.com. We will resolve your query within 24 working hours."
   },
   {
     question:"Can I get a refund?",

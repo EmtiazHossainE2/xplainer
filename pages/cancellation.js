@@ -24,7 +24,7 @@ const Cancellation = ({ posts }) => {
 	<br/>
     <p>Once you have subscribed to our services, you will have access to them for the entire duration of your subscription. We are unable to issue any refunds or cancel your subscription before its expiration date.</p>
 	<br/>
-    <p>We apologize for any inconvenience this may cause. If you have any questions or concerns, please contact our support team at <a href="mailto:support@xplainerr.com">support@xplainerr.com</a>.</p>
+    <p>We apologize for any inconvenience this may cause. If you have any questions or concerns, please contact our support team at <a href="mailto:deepak@xplainerr.com">deepak@xplainerr.com</a>.</p>
 	<br/>
     <p>Thank you for your understanding.</p>
 	<br/>

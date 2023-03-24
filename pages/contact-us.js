@@ -22,7 +22,7 @@ const ContactUs = ({ posts }) => {
             <p>Feel free to reach out if you have any queries</p>
             <br />
             <p>
-              <b>Email</b> : support@xplainerr.com
+              <b>Email</b> : deepak@xplainerr.com
             </p>
             <p>
               <b>Linkedin</b> :
