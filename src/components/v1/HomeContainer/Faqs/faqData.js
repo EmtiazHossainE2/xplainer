@@ -17,6 +17,6 @@ export const faqData = [
   },
   {
     question:"How will I access the content",
-    answer:"You can login using your email id, buy course and access the course page."
+    answer:"Login using your gmail and purchase your course. After payment is complete, your course will be reflected on dashboard. If you face any issue, please reach out to us : deepak@xplainerr.com "
   },
 ]
