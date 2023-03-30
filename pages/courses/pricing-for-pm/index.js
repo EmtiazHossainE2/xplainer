@@ -12,9 +12,11 @@ const PricingForPM = () => {
   return (
     <>
       <CommonHead
-        title={'Pricing and Monetization: Unlock Business Success with in-depth strategies to master for Product Managers, Marketers, and Growth Managers'}
+        title={
+          "Pricing and Monetization: Unlock Business Success with in-depth strategies to master for Product Managers, Marketers, and Growth Managers"
+        }
         description={`Unlock the power of pricing and monetization with our in-depth course designed for Product Managers, Marketers, and Growth Managers. Learn the latest strategies, techniques, and tools to drive business success and revenue growth`}
-        favIcon={'/favicon.ico'}
+        favIcon={"/favicon.ico"}
       />
       <main>
         <PageLayout>
@@ -22,8 +24,9 @@ const PricingForPM = () => {
             heading={"A to Z of Pricing and Monetisation"}
             ctaText="Start Learning Pricing"
             pricing={true}
+            coursePrice="price_1MrM9yDEsxnXfJbTYoVy9Bs0"
             handleCTAClick={handleCTAClick}
-            coursePreviewSlug={'pricing-for-pm/introduction'}
+            coursePreviewSlug={"pricing-for-pm/introduction"}
           />
           <FeaturesBlocks
             pricingCardText={pricingCardText}
@@ -31,16 +34,13 @@ const PricingForPM = () => {
             pricing={true}
           />
           <TestimonialsCarousel />
-          <Authors
-            name1={"Deepak Kumar"}
-            name2={"Venkatesh Gupta"}
-          />
+          <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
           <Faqs />
           <CtaAlternative />
         </PageLayout>
       </main>
     </>
-  )
+  );
 }
 
 export default PricingForPM

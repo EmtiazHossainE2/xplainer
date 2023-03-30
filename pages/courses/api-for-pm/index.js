@@ -16,11 +16,13 @@ const ApiForPm = () => {
   return (
     <>
       <CommonHead
-        title={'Master APIs for Product Management: Drive Growth and Improve User Experience'}
+        title={
+          "Master APIs for Product Management: Drive Growth and Improve User Experience"
+        }
         description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
-        favIcon={'/favicon.ico'}
+        favIcon={"/favicon.ico"}
       />
-      <main className=''>
+      <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
           {/* <HeroHome /> */}
@@ -34,15 +36,15 @@ const ApiForPm = () => {
           {/* <Faqs /> */}
           {/* New Api For Pm End  */}
 
-
           {/* Old V1 Api For Pm Start  */}
           <HeroHome
             heading={"API Product Manager course"}
             headingColorText="#1"
             ctaText="Buy now"
             apiForPm={true}
+            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
             handleCTAClick={handleCTAClick}
-            coursePreviewSlug={'api-for-pm/introduction'}
+            coursePreviewSlug={"api-for-pm/introduction"}
           />
           <HeroBanner />
           <FeaturesBlocks
@@ -51,25 +53,23 @@ const ApiForPm = () => {
             apiForPm={true}
           />
           <TestimonialsCarousel />
-          <Authors
-            name1={"Deepak Kumar"}
-            name2={"Venkatesh Gupta"}
-          />
+          <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
           <Faqs />
           {/* Old V1 Api For Pm End */}
-          
 
           {/* Cta For Api For Pm  */}
-          <div className='fixed md:hidden z-10 bottom-[-75px] left-0 w-full mb-[75px]'>
-            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer py-3'>
+          <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
+            <div
+              onClick={handleCTAClick}
+              className="flex cursor-pointer items-center justify-center bg-[#F25959] py-3 text-center text-[26px] font-bold text-white"
+            >
               <button>Buy Now @ 999</button>
             </div>
           </div>
-
         </PageLayout>
       </main>
     </>
-  )
+  );
 }
 
 export default ApiForPm
