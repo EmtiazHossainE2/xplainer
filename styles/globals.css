@@ -169,9 +169,9 @@ a {
 }
 
 .post-heading {
-  font-size: 30px;
+  font-size: 2.25rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 600;
   /* border-left: 2px solid #5281db; */
   /* padding: 0 16px; */
   -webkit-flex: 1;
@@ -179,7 +179,7 @@ a {
   flex: 1;
   margin-top: 0;
   padding-top: 0;
-  color: #000;
+  color: inherit;
 }
 
 .blog__content {
@@ -191,6 +191,7 @@ a {
 .blog__content p {
   font-size: 16px;
   color: #3B454E;
+  line-height: 1.6;
 }
 
 .blog__content pre {
@@ -201,7 +202,6 @@ a {
 
 .blog__content p {
   margin: 8px 0px 10px;
-  line-height: 1.625;
 }
 
 .blog__content strong {
@@ -236,8 +236,9 @@ a {
 }
 
 .blog__content h1 {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -.049375rem;
   line-height: 1.5;
   margin-bottom: 16px;
   margin-top: 32px;
@@ -252,8 +253,8 @@ a {
 
 
 .blog__content h2 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 16px;
   margin-top: 32px;
