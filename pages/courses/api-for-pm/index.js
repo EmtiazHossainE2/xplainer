@@ -39,7 +39,7 @@ const ApiForPm = () => {
           <HeroHome
             heading={"API Product Manager course"}
             headingColorText="#1"
-            ctaText="Buy now"
+            ctaText="Enroll now"
             apiForPm={true}
             handleCTAClick={handleCTAClick}
             coursePreviewSlug={'api-for-pm/introduction'}

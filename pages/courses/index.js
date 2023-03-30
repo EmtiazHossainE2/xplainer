@@ -31,7 +31,7 @@ const AllCourses = () => {
           {/* V1 Old Design  */}
           <div className="flex flex-col min-h-screen overflow-hidden">
             <div className="grow lg:mb-12">
-              <Courses heading={'All Courses'} ctaText={'Buy Now'} />
+              <Courses heading={'All Courses'} ctaText={'View course detail'} />
             </div>
           </div>
 
