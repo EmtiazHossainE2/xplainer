@@ -5,7 +5,9 @@ export const checkout = async ({lineItems}) => {
 
   const getStripe = () => {
     if (!stripePromise) {
-      stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+      stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY, {
+        apiVersion: "2022-11-15",
+      });
     }
     return stripePromise;
   };
@@ -16,7 +18,12 @@ export const checkout = async ({lineItems}) => {
   await stripe.redirectToCheckout({
     mode: "payment",
     lineItems,
-    successUrl: `https://xplainerr.vercel.app/dashboard`,
+    successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
     cancelUrl: window.location.origin,
   });
+
+  
 }
+
+
+// http://localhost:3000/?session_id=cs_test_a1IxzWkyQsbbKHOHKBRo5LqgWK9k1pTNeEMHgjyF5OZpMsGXs6TSre5O50
