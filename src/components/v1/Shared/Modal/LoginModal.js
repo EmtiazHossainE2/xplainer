@@ -26,7 +26,7 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
         const user = result.user;
         console.log(user)
         toast.success(`Welcome ${user.displayName}`);
-        Router.push('/dashboard');
+        // Router.push('/dashboard');
         const body = {
           uid: user?.uid,
           displayName: user.displayName,

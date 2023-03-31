@@ -1,8 +1,8 @@
 
-// import {  CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
-// import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
-// import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
-import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import {  CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
+import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
+// import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import PageLayout from '@/src/layout/PageLayout'
 import { pmInterviewKeyChapters } from '@/src/config/constants'
@@ -25,19 +25,19 @@ const ApiForPm = () => {
       <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
-          {/* <HeroHome /> */}
-          {/* <Brand /> */}
-          {/* <FeaturesBlocks heading={"Things you'll learn"} /> */}
-          {/* <CourseContent/> */}
-          {/* <Authors /> */}
-          {/* <Offer /> */}
-          {/* <TestimonialsCarousel /> */}
-          {/* <Certificate /> */}
-          {/* <Faqs /> */}
+          <HeroHome />
+          <Brand />
+          <FeaturesBlocks heading={"Things you'll learn"} />
+          <CourseContent/>
+          <Authors />
+          <Offer />
+          <TestimonialsCarousel />
+          <Certificate />
+          <Faqs />
           {/* New Api For Pm End  */}
 
           {/* Old V1 Api For Pm Start  */}
-          <HeroHome
+          {/* <HeroHome
             heading={"API Product Manager course"}
             headingColorText="#1"
             ctaText="Buy now"
@@ -54,7 +54,7 @@ const ApiForPm = () => {
           />
           <TestimonialsCarousel />
           <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
-          <Faqs />
+          <Faqs /> */}
           {/* Old V1 Api For Pm End */}
 
           {/* Cta For Api For Pm  */}
