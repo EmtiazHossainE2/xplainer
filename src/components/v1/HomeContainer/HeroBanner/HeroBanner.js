@@ -10,7 +10,7 @@ const HeroBanner = () => {
           <h2 className="text-[#101828DE] text-4xl lg:text-6xl font-bold pb-5 md:py-5">Accelerate your <br /> tech career</h2>
           <p className='text-[#475467] text-lg lg:text-xl '>We provide niche up skilling courses to help your accelerate and succeed in tech career</p>
           <div className="pt-8 lg:pt-12 ">
-            <Link href='/courses' className="bg-[#0070F4] rounded-md lg:rounded-2xl py-3 md:py-5 big:py-6  md:px-[30px] w-full border lg:border-2 border-[#AED3FF]">
+            <Link href='/courses' className="bg-[#0070F4] rounded-md lg:rounded-2xl py-3 md:py-5   md:px-[5px] w-full border lg:border-2 border-[#AED3FF]">
               <button className='w-full lg:w-[222px] text-white font-semibold text-base md:text-xl'>Explore Courses</button>
             </Link>
           </div>

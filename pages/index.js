@@ -1,9 +1,10 @@
 import BlogList from "@/src/components/v1/Blog/BlogList";
 import {
   Brand,
-  Courses, Faqs,
+  Courses,
+  Faqs,
   HeroBanner,
-  Mentors
+  Mentors,
 } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import PageLayout from "@/src/layout/PageLayout";
@@ -27,16 +28,13 @@ const Home = ({ posts }) => {
       <main>
         <PageLayout>
           <HeroBanner />
-          <Brand disableHeader={true}/>
-          <Courses />
+          <Brand disableHeader={true} />
+          <Courses ctaText={"View course detail"}/>
           <Mentors />
-
 
           <BlogList posts={posts} disableHeader="true" />
 
-
           <div className="hidden lg:block">
-            
             <Faqs />
           </div>
           {/* <CTA /> */}
