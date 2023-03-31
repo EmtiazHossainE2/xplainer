@@ -1,13 +1,38 @@
-import Image from "next/image"
-import Link from "next/link"
-import { BsFillCheckCircleFill } from 'react-icons/bs'
+import { checkout } from "@/src/utils/checkout";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { LoginModal } from "../../Shared/Modal";
 
-const HeroHome = () => {
+const HeroHome = ({ coursePrice }) => {
+  const { currentUser } = useSelector((state) => state.user);
+  const [loginModal, setLoginModal] = useState(false);
+  // console.log(currentUser?.email)
+  // console.log(coursePrice);
+
+  const handleClick = () => {
+    console.log("click");
+    if (currentUser?.email) {
+      checkout({
+        lineItems: [
+          {
+            price: coursePrice,
+            quantity: 1,
+          },
+        ],
+      });
+    } else {
+      return setLoginModal(true);
+    }
+  };
+
   return (
-    <div className='container mx-auto py-4 px-5 lg:px-12 big:px-36 large:px-96'>
-      <div className='flex flex-col lg:flex-row justify-between pt-10 lg:pt-[52px] items-center  gap-10 lg:gap-16 '>
+    <div className="container mx-auto py-4 px-5 lg:px-12 big:px-36 large:px-96">
+      <div className="flex flex-col items-center justify-between gap-10 pt-10 lg:flex-row  lg:gap-16 lg:pt-[52px] ">
         {/* Left  */}
-        <div className='basis-1/2 hidden scale-125 md:block lg:flex justify-center items-center'>
+        <div className="hidden basis-1/2 scale-125 items-center justify-center md:block lg:flex">
           <Image
             className="rounded-lg"
             src="/images/courses/man1.svg"
@@ -17,7 +42,7 @@ const HeroHome = () => {
             priority
           />
         </div>
-        <div className='basis-1/2 px-8 lg:hidden scale-125 md:block flex justify-center items-center'>
+        <div className="flex basis-1/2 scale-125 items-center justify-center px-8 md:block lg:hidden">
           <Image
             className="rounded-lg"
             src="/images/courses/videoMan.svg"
@@ -29,58 +54,98 @@ const HeroHome = () => {
         </div>
 
         {/* Right */}
-        <div className='basis-1/2 flex flex-col '>
-          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-[#000] lg:text-5xl lg:font-extrabold ">API For Product  <br /> Managers</h2>
-          <div className="flex gap-8 py-4 px-1 lg:px-3 apiForPm">
-            <div className="flex justify-center items-center gap-2">
-              <Image src='/images/courses/i1.svg' width={20} height={19} alt="icon" />
-              <p className="text-xs lg:text-sm text-[#333]">25k+ students</p>
+        <div className="flex basis-1/2 flex-col ">
+          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-5xl lg:font-extrabold lg:text-[#000] ">
+            API For Product <br /> Managers
+          </h2>
+          <div className="apiForPm flex gap-8 py-4 px-1 lg:px-3">
+            <div className="flex items-center justify-center gap-2">
+              <Image
+                src="/images/courses/i1.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
+              <p className="text-xs text-[#333] lg:text-sm">25k+ students</p>
             </div>
-            <div className="flex justify-center items-center">
-              <Image src='/images/courses/i2.svg' width={20} height={19} alt="icon" />
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/courses/i2.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
               <p className="text-xs lg:text-sm">11 courses</p>
             </div>
-            <div className="flex justify-center items-center">
-              <Image src='/images/courses/i3.svg' width={20} height={19} alt="icon" />
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/courses/i3.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
               <p className="text-xs lg:text-sm">25 hours</p>
             </div>
           </div>
           <div>
-            <p className="text-[#475467] text-sm pb-2 lg:text-[#9CA3AF] lg:py-3.5 lg:text-sm lg:font-medium">Certificate of completion available.</p>
+            <p className="pb-2 text-sm text-[#475467] lg:py-3.5 lg:text-sm lg:font-medium lg:text-[#9CA3AF]">
+              Certificate of completion available.
+            </p>
             {/* For large  */}
-            <p className="hidden lg:block text-[#9CA3AF] text-sm font-medium pb-3.5">Our product management interview course teaches you the <br /> essential skills you need to ace your PM interview, with hours of <br /> example questions, videos, and interview tips.</p>
+            <p className="hidden pb-3.5 text-sm font-medium text-[#9CA3AF] lg:block">
+              Our product management interview course teaches you the <br />{" "}
+              essential skills you need to ace your PM interview, with hours of{" "}
+              <br /> example questions, videos, and interview tips.
+            </p>
 
             {/* For Mobile  */}
-            <div className="flex flex-col space-y-2 lg:hidden mobileContent">
+            <div className="mobileContent flex flex-col space-y-2 lg:hidden">
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
-                <p className="text-sm text-[#475467]">Transform your product strategy with API skill</p>
+                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <p className="text-sm text-[#475467]">
+                  Transform your product strategy with API skill
+                </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
-                <p className="text-sm text-[#475467]"> Elevate your career with API knowledge</p>
+                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <p className="text-sm text-[#475467]">
+                  {" "}
+                  Elevate your career with API knowledge
+                </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-[#5454d4]" />
                 <p className="text-sm text-[#475467]"> Trusted by 7300+ PMs.</p>
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-              <Link href='/courses/api-for-pm/module-1' className="bg-[#0070F4] mt-8 lg:mt-0 lg:px-9 py-4 rounded-md">
-                <button className="w-full lg:w-[196px] text-white font-medium">Get Full Access</button>
-              </Link>
-              <Link href='/courses/api-for-pm/module-1' className="text-center">
-                <p className="text-sm text-[#0070F4] font-medium">Try free preview</p>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
+              <div
+                onClick={handleClick}
+                className="mt-8 rounded-md bg-[#0070F4] py-4 lg:mt-0 lg:px-9"
+              >
+                <button className="w-full font-medium text-white lg:w-[196px]">
+                  Get Full Access
+                </button>
+              </div>
+              <Link href="/courses/api-for-pm/module-1" className="text-center">
+                <p className="text-sm font-medium text-[#0070F4]">
+                  Try free preview
+                </p>
               </Link>
             </div>
           </div>
-
         </div>
-
       </div>
-    </div>
-  )
-}
 
-export default HeroHome
+      {/************************ Login Modal  ************************/}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
+      />
+    </div>
+  );
+};
+
+export default HeroHome;

@@ -1,12 +1,11 @@
+import { checkout } from "@/src/utils/checkout";
 import Image from "next/image";
 import Link from "next/link";
-import topBadge from "/public/images/courses/top-post-badge.svg";
-import topPricingBadge from "/public/images/courses/featured.svg";
-import { useSelector } from "react-redux";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import { LoginModal } from "../Shared/Modal";
-import { checkout } from "@/src/utils/checkout";
+import topPricingBadge from "/public/images/courses/featured.svg";
+import topBadge from "/public/images/courses/top-post-badge.svg";
 
 const HeroHome = ({
   heading,
@@ -20,8 +19,6 @@ const HeroHome = ({
 }) => {
   const { currentUser } = useSelector((state) => state.user);
   const [loginModal, setLoginModal] = useState(false);
-  const [checkoutModal, setCheckoutModal] = useState(false);
-  const router = useRouter();
   // console.log(currentUser?.email)
   console.log(coursePrice);
 

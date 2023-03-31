@@ -1,11 +1,10 @@
 
-import {  CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
 import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
 // import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
 import PageLayout from '@/src/layout/PageLayout'
-import { pmInterviewKeyChapters } from '@/src/config/constants'
 
 const ApiForPm = () => {
 
@@ -25,10 +24,12 @@ const ApiForPm = () => {
       <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
-          <HeroHome />
+          <HeroHome
+            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
+          />
           <Brand />
           <FeaturesBlocks heading={"Things you'll learn"} />
-          <CourseContent/>
+          <CourseContent />
           <Authors />
           <Offer />
           <TestimonialsCarousel />
@@ -57,7 +58,7 @@ const ApiForPm = () => {
           <Faqs /> */}
           {/* Old V1 Api For Pm End */}
 
-          {/* Cta For Api For Pm  */}
+          {/* Cta  Api For Pm  */}
           <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
             <div
               onClick={handleCTAClick}
