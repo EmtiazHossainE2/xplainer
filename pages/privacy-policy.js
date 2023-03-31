@@ -90,7 +90,7 @@ const PrivacyPolicy = ({ posts }) => {
             </ul>
             <p>
               You can exercise these rights by contacting us at{" "}
-              <a href="mailto:privacy@xplainerr.com">support@xplainerr.com</a>.
+              <a href="mailto:privacy@xplainerr.com">deepak@xplainerr.com</a>.
             </p>
 
             <h2 className="py-3 text-2xl font-semibold lg:text-2xl">Cookies</h2>
@@ -115,7 +115,7 @@ const PrivacyPolicy = ({ posts }) => {
             <p>
               If you have any questions or concerns about our privacy policy,
               please contact us at{" "}
-              <a href="mailto:support@xplainerr.com">support@xplainerr.com</a>.
+              <a href="mailto:deepak@xplainerr.com">deepak@xplainerr.com</a>.
             </p>
 
             <h2 className="py-3 text-2xl font-semibold lg:text-2xl">
