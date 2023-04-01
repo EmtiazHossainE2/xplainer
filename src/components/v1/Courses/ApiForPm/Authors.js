@@ -1,7 +1,7 @@
 import { authors } from '@/src/config/constants'
 import Image from 'next/image'
 
-const Authors = () => {
+const Authors = ({course}) => {
 
   return (
     <section className='bg-[#CDDAFB]'>
@@ -16,7 +16,7 @@ const Authors = () => {
 
         {/* Mentors  */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-          {authors.map((author, index) => (
+          {authors[course] && authors[course].map((author, index) => (
             <div key={index} className="flex justify-center gap-3 bg-[#EAECF0] p-5 rounded-lg ">
               <div>
                 <Image src={author.profile} width="84" height="84" className='rounded-full' alt={author.name} />
@@ -24,7 +24,7 @@ const Authors = () => {
               <div>
                 <h3 className='text-lg font-bold text-[#333]'>{author.name}</h3>
                 <p className='text-[#9CA3AF] text-sm pt-1 pb-2 md:pb-4'>{author.job}</p>
-                <p className='text-[#6B7280] text-xs md:text-base font-medium'>{author.description}</p>
+                <p className='text-[#353535] text-sm md:text-base'>{author.description}</p>
               </div>
             </div>
           ))}

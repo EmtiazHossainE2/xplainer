@@ -189,7 +189,7 @@ a {
 }
 
 .blog__content p {
-  font-size: 16px;
+  font-size: 15px;
   /* color: #3B454E; */
   font-weight: 400;
   line-height: 1.6;
@@ -226,22 +226,22 @@ a {
 }
 
 .blog__content ol li {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
   font-weight: 400;
 }
 
 .blog__content ul li {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 2.0;
   font-weight: 400;
 }
 
 .blog__content h1 {
-  font-size: 36px;
+  font-size: 48px;
+    letter-spacing: -.04em;
+    line-height: 1.25;
   font-weight: 600;
-  letter-spacing: -.049375rem;
-  line-height: 1.5;
   margin-bottom: 16px;
   margin-top: 32px;
 }
@@ -255,9 +255,9 @@ a {
 
 
 .blog__content h2 {
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 1.5;
+  ine-height: 2.25rem;
   margin-bottom: 16px;
   margin-top: 32px;
 }

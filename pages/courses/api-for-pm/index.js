@@ -1,40 +1,45 @@
-
-import { CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
-import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
-import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
+import {
+  CourseContent,
+  CtaAlternative,
+  TestimonialsCarousel
+} from "@/src/components/v1/Courses";
+import {
+  Authors, FeaturesBlocks,
+  HeroHome,
+  Offer
+} from "@/src/components/v1/Courses/ApiForPm";
+import { Brand, Faqs } from "@/src/components/v1/HomeContainer";
 // import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
-import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import PageLayout from '@/src/layout/PageLayout'
+import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import PageLayout from "@/src/layout/PageLayout";
 
 const ApiForPm = () => {
-
   const handleCTAClick = () => {
-    window.open('https://dipakkr.gumroad.com/l/api-for-pm')
-  }
+    window.open("https://dipakkr.gumroad.com/l/api-for-pm");
+  };
+
+  const courseSlug = 'api-for-pm';
 
   return (
     <>
       <CommonHead
-        title={
-          "Master APIs for Product Management: Drive Growth and Improve User Experience"
-        }
-        description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
-        favIcon={"/favicon.ico"}
+        title={"Master APIs for Product Management"}
+        description={`The most comprehensive course that demystifies APIs and API products tailored for Product Managers`}
       />
       <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
-          <HeroHome
-            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
-          />
+          <HeroHome coursePrice="price_1Ms0b3SBqetirFH0Nt5qV6aQP" />
           <Brand />
-          <FeaturesBlocks heading={"Things you'll learn"} />
-          <CourseContent />
-          <Authors />
+          <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
           <Offer />
+          <CourseContent />
+          <Authors course={courseSlug} />
+         
           <TestimonialsCarousel />
-          <Certificate />
+          {/* <Certificate /> */}
           <Faqs />
+          <CtaAlternative />
           {/* New Api For Pm End  */}
 
           {/* Old V1 Api For Pm Start  */}
@@ -71,6 +76,6 @@ const ApiForPm = () => {
       </main>
     </>
   );
-}
+};
 
-export default ApiForPm
+export default ApiForPm;

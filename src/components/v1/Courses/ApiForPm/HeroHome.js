@@ -35,7 +35,7 @@ const HeroHome = ({ coursePrice }) => {
         <div className="hidden basis-1/2 scale-125 items-center justify-center md:block lg:flex">
           <Image
             className="rounded-lg"
-            src="/images/courses/man1.svg"
+            src="/images/courses/api.png"
             alt="Hero Banner"
             width={400}
             height={338}
@@ -45,7 +45,7 @@ const HeroHome = ({ coursePrice }) => {
         <div className="flex basis-1/2 scale-125 items-center justify-center px-8 md:block lg:hidden">
           <Image
             className="rounded-lg"
-            src="/images/courses/videoMan.svg"
+          src="/images/courses/api.png"
             alt="Hero Banner"
             width={300}
             height={256}
@@ -55,7 +55,7 @@ const HeroHome = ({ coursePrice }) => {
 
         {/* Right */}
         <div className="flex basis-1/2 flex-col ">
-          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-5xl lg:font-extrabold lg:text-[#000] ">
+          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-5xl md:text-2xl lg:font-extrabold lg:text-[#000] ">
             API For Product <br /> Managers
           </h2>
           <div className="apiForPm flex gap-8 py-4 px-1 lg:px-3">
@@ -125,10 +125,10 @@ const HeroHome = ({ coursePrice }) => {
                 className="mt-8 rounded-md bg-[#0070F4] py-4 lg:mt-0 lg:px-9"
               >
                 <button className="w-full font-medium text-white lg:w-[196px]">
-                  Get Full Access
+                  Enroll now
                 </button>
               </div>
-              <Link href="/courses/api-for-pm/module-1" className="text-center">
+              <Link href="/courses/api-for-pm/introduction" className="text-center">
                 <p className="text-sm font-medium text-[#0070F4]">
                   Try free preview
                 </p>

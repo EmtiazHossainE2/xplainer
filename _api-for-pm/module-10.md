@@ -5,16 +5,9 @@ metaDescription: ""
 ---
 
 
+Let’s first recap what APIs are,  Application programming interface (API) is a term that refers to a set of tools (or a piece of code) that promotes communication between two platforms. (e.g. Uber and Google Maps or Amazon and Stripe)
 
-
-
-# 1. Let’s first recap what APIs are
-
-----
-
-Application programming interface (API) is a term that refers to a set of tools (or a piece of code) that promotes communication between two platforms. (e.g. Uber and Google Maps or Amazon and Stripe)
-
-# How does the API work?
+## How does the API work?
 
 
 Let’s revisit the relationship between a waiter and his customer at a restaurant:
@@ -27,7 +20,7 @@ The waiter is like an API call, bringing information and making a request to the
 
 So if you order a pizza, and the kitchen is out of stock then the request can't be completed and you'll receive the information.
 
-# 2. What’s an SDK?
+## 2. What’s an SDK?
 
 ----
 
@@ -41,7 +34,7 @@ It’s like when you want to eat a pizza, imagine buying ingredients, oven and b
 
 > The term SDK refers to a software development kit. The SDK, sometimes known as a devkit, is a collection of libraries, visual editors, debuggers, and tools for testing and analysis that makes developer life easier. 
 
-# 3. Tools/resources present in SDKs 
+## 3. Tools/resources present in SDKs 
 
 ----
 
@@ -53,7 +46,7 @@ It’s like when you want to eat a pizza, imagine buying ingredients, oven and b
 
 At least one API is frequently provided in the SDK since applications cannot exchange data or collaborate without it.
 
-# 4. Key differences between APIs and SDKs
+## 4. Key differences between APIs and SDKs
 
 ---
 
@@ -69,7 +62,7 @@ Despite the fact that both APIs and SDK are intertwined and overlapped, let us d
 
 > In fact, APIs and SDKs provide developers with solutions, but each one is unique in its own way.
 
-# 5. Is it necessary for you to select between SDK and API? 
+## 5. Is it necessary for you to select between SDK and API? 
 
 ----
 

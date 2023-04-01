@@ -28,11 +28,7 @@ const PricingForPM = () => {
             handleCTAClick={handleCTAClick}
             coursePreviewSlug={"pricing-for-pm/introduction"}
           />
-          <FeaturesBlocks
-            pricingCardText={pricingCardText}
-            heading={"Things you'll learn"}
-            pricing={true}
-          />
+      
           <TestimonialsCarousel />
           <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
           <Faqs />
