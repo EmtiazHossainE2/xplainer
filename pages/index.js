@@ -1,4 +1,4 @@
-import BlogList from "@/src/components/v1/Blog/BlogList";
+import BlogGridView from "@/src/components/v1/Blog/BlogGridView";
 import {
   Brand,
   Courses,
@@ -32,7 +32,8 @@ const Home = ({ posts }) => {
           <Courses ctaText={"View course detail"}/>
           <Mentors />
 
-          <BlogList posts={posts} disableHeader="true" />
+
+          <BlogGridView posts={posts} disableHeader="true" />
 
           <div className="hidden lg:block">
             <Faqs />
