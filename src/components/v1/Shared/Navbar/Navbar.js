@@ -95,7 +95,7 @@ const Navbar = ({ pageName, posts ,course}) => {
         <div className={`relative ${styles.navbar} flex justify-between items-center container mx-auto  px-[63px]`}>
           <div className={`${styles.navbar__links}`}>
             <div className=''>
-              <Link href='/'><h2 className='font-[900] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
+              <Link href='/'><h2 className='font-[700] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
             </div>
           </div>
           <nav className={`relative text-sm  ${styles.navbar__container}`}>

@@ -55,10 +55,10 @@ const HeroHome = ({ coursePrice }) => {
 
         {/* Right */}
         <div className="flex basis-1/2 flex-col ">
-          <h2 className="text-3xl font-medium text-[#101828DE] lg:text-5xl md:text-2xl lg:font-extrabold lg:text-[#000] ">
-            API For Product <br /> Managers
+          <h2 className="text-3xl font-bold text-[#101828DE] lg:text-5xl md:text-2xl lg:font-extrabold lg:text-[#000] ">
+            Learn API For Product <br /> Managers
           </h2>
-          <div className="apiForPm flex gap-8 py-4 px-1 lg:px-3">
+          <div className="apiForPm lg:hidden flex gap-8 py-4 px-1 lg:px-3">
             <div className="flex items-center justify-center gap-2">
               <Image
                 src="/images/courses/i1.svg"
@@ -87,16 +87,15 @@ const HeroHome = ({ coursePrice }) => {
               <p className="text-xs lg:text-sm">10+ hours</p>
             </div>
           </div>
-          <div>
-            <p className="pb-2 text-sm lg:hidden text-[#475467] lg:py-3.5 lg:text-sm lg:font-medium lg:text-[#9CA3AF]">
-              
-            </p>
-            {/* For large  */}
+          
+          <div className="mt-4">
+          
+            {/* For large 
             <p className="hidden pb-3.5 text-sm font-medium text-[#9CA3AF] lg:hidden">
               Our product management interview course teaches you the <br />{" "}
               essential skills you need to ace your PM interview, with hours of{" "}
               <br /> example questions, videos, and interview tips.
-            </p>
+            </p> */}
 
             {/* For Mobile  */}
             <div className="mobileContent flex flex-col space-y-2 mb-4">

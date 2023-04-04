@@ -32,7 +32,7 @@ const ApiForPm = () => {
           <HeroHome coursePrice="price_1Ms0b3SBqetirFH0Nt5qV6aQP" />
           <Brand />
           <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
-          <Offer />
+          {/* <Offer /> */}
           <CourseContent />
           <Authors course={courseSlug} />
          
