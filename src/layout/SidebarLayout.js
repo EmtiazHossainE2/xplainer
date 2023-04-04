@@ -244,6 +244,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 

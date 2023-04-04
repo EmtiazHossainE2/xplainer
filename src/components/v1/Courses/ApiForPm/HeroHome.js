@@ -55,7 +55,7 @@ const HeroHome = ({ coursePrice }) => {
 
         {/* Right */}
         <div className="flex basis-1/2 flex-col ">
-          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-5xl md:text-2xl lg:font-extrabold lg:text-[#000] ">
+          <h2 className="text-3xl font-medium text-[#101828DE] lg:text-5xl md:text-2xl lg:font-extrabold lg:text-[#000] ">
             API For Product <br /> Managers
           </h2>
           <div className="apiForPm flex gap-8 py-4 px-1 lg:px-3">
@@ -66,7 +66,7 @@ const HeroHome = ({ coursePrice }) => {
                 height={19}
                 alt="icon"
               />
-              <p className="text-xs text-[#333] lg:text-sm">25k+ students</p>
+              <p className="text-xs text-[#333] lg:text-sm">7.3k+ learners</p>
             </div>
             <div className="flex items-center justify-center">
               <Image
@@ -75,7 +75,7 @@ const HeroHome = ({ coursePrice }) => {
                 height={19}
                 alt="icon"
               />
-              <p className="text-xs lg:text-sm">11 courses</p>
+              <p className="text-xs lg:text-sm">10+ modules</p>
             </div>
             <div className="flex items-center justify-center">
               <Image
@@ -84,22 +84,22 @@ const HeroHome = ({ coursePrice }) => {
                 height={19}
                 alt="icon"
               />
-              <p className="text-xs lg:text-sm">25 hours</p>
+              <p className="text-xs lg:text-sm">10+ hours</p>
             </div>
           </div>
           <div>
-            <p className="pb-2 text-sm text-[#475467] lg:py-3.5 lg:text-sm lg:font-medium lg:text-[#9CA3AF]">
-              Certificate of completion available.
+            <p className="pb-2 text-sm lg:hidden text-[#475467] lg:py-3.5 lg:text-sm lg:font-medium lg:text-[#9CA3AF]">
+              
             </p>
             {/* For large  */}
-            <p className="hidden pb-3.5 text-sm font-medium text-[#9CA3AF] lg:block">
+            <p className="hidden pb-3.5 text-sm font-medium text-[#9CA3AF] lg:hidden">
               Our product management interview course teaches you the <br />{" "}
               essential skills you need to ace your PM interview, with hours of{" "}
               <br /> example questions, videos, and interview tips.
             </p>
 
             {/* For Mobile  */}
-            <div className="mobileContent flex flex-col space-y-2 lg:hidden">
+            <div className="mobileContent flex flex-col space-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <BsFillCheckCircleFill className="text-[#5454d4]" />
                 <p className="text-sm text-[#475467]">
@@ -115,8 +115,21 @@ const HeroHome = ({ coursePrice }) => {
               </div>
               <div className="flex items-center gap-2">
                 <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <p className="text-sm text-[#475467]">
+                  {" "}
+                  Certificate of completion available.
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <BsFillCheckCircleFill className="text-[#5454d4]" />
                 <p className="text-sm text-[#475467]"> Trusted by 7300+ PMs.</p>
               </div>
+            </div>
+
+            <div className="mt-2 mb-2">
+            <p className="  ext-[#000000]">
+            <span className="text-3xl font-bold">Rs. 999</span> <span className="line-through text-[#7b7b7b]">₹ 1,999 </span> <span className="text-[#7b7b7b]">( 50% off ) </span>
+            </p>
             </div>
 
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
@@ -129,7 +142,10 @@ const HeroHome = ({ coursePrice }) => {
                 </button>
               </div>
               <Link href="/courses/api-for-pm/introduction" className="text-center">
-                <p className="text-sm font-medium text-[#0070F4]">
+                <p className="text-sm lg:hidden border border-gray-300 p-3 rounded-md font-medium text-[#0070F4]">
+                  Try free preview
+                </p>
+                <p className="text-sm hidden font-medium text-[#0070F4]">
                   Try free preview
                 </p>
               </Link>
