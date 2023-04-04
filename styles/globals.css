@@ -190,9 +190,10 @@ a {
 
 .blog__content p {
   font-size: 16px;
-  /* color: #3B454E; */
+  color: #4a4a4a;
   font-weight: 400;
   line-height: 1.6;
+  margin: 8px 0px 10px;
 }
 
 .blog__content pre {
@@ -202,9 +203,6 @@ a {
   background-color: #1e1e1e;
 }
 
-.blog__content p {
-  margin: 8px 0px 10px;
-}
 
 .blog__content strong {
   font-weight: bold;
@@ -255,8 +253,8 @@ a {
 
 
 .blog__content h2 {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 16px;
   margin-top: 32px;
@@ -278,6 +276,7 @@ a {
 .blog__content img {
   max-height: 450px;
   margin: 0 auto;
+  max-width: 100%;
   border: 1px solid #e1e1e1;
 }
 
@@ -422,6 +421,18 @@ pre code {
   .blog__content {
     display: block;
     text-align: start;
+  }
+
+  .blog__content img{
+    max-width: 100%;
+  }
+
+  .post-heading{
+    font-size: 1.75rem;
+  }
+
+  .blog__content h2{
+    font-size: 24px;
   }
 }
 

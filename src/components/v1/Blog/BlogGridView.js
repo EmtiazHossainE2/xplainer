@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SectionHeading from "../Shared/sectionHeading";
 
-const BlogList = ({ posts, disableHeader }) => {
+const BlogGridView = ({ posts, disableHeader }) => {
   // console.log(posts)
   return (
     <section className="relative bg-[#f5f5f5]">
@@ -123,4 +123,4 @@ const BlogList = ({ posts, disableHeader }) => {
   );
 };
 
-export default BlogList;
+export default BlogGridView;
