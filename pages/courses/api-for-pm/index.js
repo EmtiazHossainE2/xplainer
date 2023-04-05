@@ -1,48 +1,87 @@
-
-// import {  CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
-// import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
-// import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
-import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
-import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import PageLayout from '@/src/layout/PageLayout'
-import { pmInterviewKeyChapters } from '@/src/config/constants'
+import {
+  CourseContent,
+  CtaAlternative,
+  TestimonialsCarousel,
+} from "@/src/components/v1/Courses";
+import {
+  Authors,
+  FeaturesBlocks,
+  HeroHome,
+  Offer,
+} from "@/src/components/v1/Courses/ApiForPm";
+import { Brand, Faqs } from "@/src/components/v1/HomeContainer";
+// import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { LoginModal } from "@/src/components/v1/Shared/Modal";
+import PageLayout from "@/src/layout/PageLayout";
+import { checkout } from "@/src/utils/checkout";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ApiForPm = () => {
+  const router = useRouter();
+  const { currentUser } = useSelector((state) => state.user);
+  const [loginModal, setLoginModal] = useState(false);
+
+  // console.log(router.pathname, "api");
+  // const coursePrice = "price_1Ms0b3SBqetirFH0Nt5qV6aQP";
+  const coursePrice = "price_1MrLYXDEsxnXfJbTEtoNl1ba"; // Emtiaz price added for test
+  const courseSlug = "api-for-pm";
 
   const handleCTAClick = () => {
-    window.open('https://dipakkr.gumroad.com/l/api-for-pm')
-  }
+    if (router.pathname === "/courses/api-for-pm") {
+      if (currentUser?.email) {
+        checkout({
+          lineItems: [
+            {
+              price: coursePrice,
+              quantity: 1,
+            },
+          ],
+        });
+      } else {
+        return setLoginModal(true);
+      }
+    }
+  };
 
   return (
     <>
       <CommonHead
-        title={'Master APIs for Product Management: Drive Growth and Improve User Experience'}
-        description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
-        favIcon={'/favicon.ico'}
+        title={"Master APIs for Product Management"}
+        description={`The most comprehensive course that demystifies APIs and API products tailored for Product Managers`}
       />
-      <main className=''>
+      <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
-          {/* <HeroHome /> */}
-          {/* <Brand /> */}
-          {/* <FeaturesBlocks heading={"Things you'll learn"} /> */}
-          {/* <CourseContent/> */}
-          {/* <Authors /> */}
+          <HeroHome
+            course={courseSlug}
+            ctaText="Enroll now"
+            handleCTAClick={handleCTAClick}
+            coursePreviewSlug={"api-for-pm/introduction"}
+          />
+          <Brand />
+          <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
           {/* <Offer /> */}
-          {/* <TestimonialsCarousel /> */}
+          <CourseContent />
+          <Authors course={courseSlug} />
+
+          <TestimonialsCarousel />
           {/* <Certificate /> */}
-          {/* <Faqs /> */}
+          <Faqs />
+          <CtaAlternative />
           {/* New Api For Pm End  */}
 
-
           {/* Old V1 Api For Pm Start  */}
-          <HeroHome
+          {/* <HeroHome
             heading={"API Product Manager course"}
             headingColorText="#1"
             ctaText="Enroll now"
             apiForPm={true}
+            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
             handleCTAClick={handleCTAClick}
-            coursePreviewSlug={'api-for-pm/introduction'}
+            coursePreviewSlug={"api-for-pm/introduction"}
           />
           <HeroBanner />
           <FeaturesBlocks
@@ -51,25 +90,30 @@ const ApiForPm = () => {
             apiForPm={true}
           />
           <TestimonialsCarousel />
-          <Authors
-            name1={"Deepak Kumar"}
-            name2={"Venkatesh Gupta"}
-          />
-          <Faqs />
+          <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
+          <Faqs /> */}
           {/* Old V1 Api For Pm End */}
-          
 
-          {/* Cta For Api For Pm  */}
-          <div className='fixed md:hidden z-10 bottom-[-75px] left-0 w-full mb-[75px]'>
-            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer py-3'>
+          {/* Cta  Api For Pm  */}
+          <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
+            <div
+              onClick={handleCTAClick}
+              className="flex cursor-pointer items-center justify-center bg-[#F25959] py-3 text-center text-[26px] font-bold text-white"
+            >
               <button>Buy Now @ 999</button>
             </div>
           </div>
-
         </PageLayout>
       </main>
-    </>
-  )
-}
 
-export default ApiForPm
+      {/************************ Login Modal  ************************/}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
+      />
+    </>
+  );
+};
+
+export default ApiForPm;

@@ -1,7 +1,11 @@
-import Image from "next/image"
-import Link from "next/link"
-import topBadge from '/public/images/courses/top-post-badge.svg'
-import topPricingBadge from '/public/images/courses/featured.svg'
+import { checkout } from "@/src/utils/checkout";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { LoginModal } from "../Shared/Modal";
+import topPricingBadge from "/public/images/courses/featured.svg";
+import topBadge from "/public/images/courses/top-post-badge.svg";
 
 const HeroHome = ({
   heading,
@@ -9,18 +13,40 @@ const HeroHome = ({
   ctaText,
   apiForPm,
   pricing,
+  coursePrice,
   handleCTAClick,
-  coursePreviewSlug
+  coursePreviewSlug,
 }) => {
+  const { currentUser } = useSelector((state) => state.user);
+  const [loginModal, setLoginModal] = useState(false);
+  // console.log(currentUser?.email)
+  console.log(coursePrice);
+
+
+  const handleClick = () => {
+    console.log("click");
+    if (currentUser?.email) {
+      checkout({
+        lineItems: [
+          {
+            price: coursePrice ,
+            quantity: 1,
+          },
+        ],
+      });
+    } else {
+      return setLoginModal(true);
+    }
+  };
+
   return (
     <div>
-      <div className="relative container mx-auto section__padding">
-        <div className="flex flex-col md:flex-row justify-between 2xl:items-center gap-5 2xl:gap-0 lg:px-12">
-
+      <div className="section__padding container relative mx-auto">
+        <div className="flex flex-col justify-between gap-5 md:flex-row lg:px-12 2xl:items-center 2xl:gap-0">
           {/* Illustration behind hero content */}
-          {apiForPm &&
+          {apiForPm && (
             <div
-              className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -z-10"
+              className="pointer-events-none absolute left-1/2 bottom-0 -z-10 -translate-x-1/2 transform"
               aria-hidden="true"
             >
               <svg
@@ -48,65 +74,123 @@ const HeroHome = ({
                 </g>
               </svg>
             </div>
-          }
-
+          )}
 
           {/* Review Image  */}
-          <div className="basis-1/2 lg:basis-5/12 hidden md:block">
-            {apiForPm && <Image src='/images/courses/review.webp' width={350} height={400} alt="api for pm review jpeg" />}
-            {pricing && <Image src='/images/courses/hero-case.webp' width={700} height={400} alt="pm pricing webp" />}
+          <div className="hidden basis-1/2 md:block lg:basis-5/12">
+            {apiForPm && (
+              <Image
+                src="/images/courses/review.webp"
+                width={350}
+                height={400}
+                alt="api for pm review jpeg"
+              />
+            )}
+            {pricing && (
+              <Image
+                src="/images/courses/hero-case.webp"
+                width={700}
+                height={400}
+                alt="pm pricing webp"
+              />
+            )}
           </div>
 
           {/* Hero content */}
           <div className="basis-1/2 lg:basis-7/12">
             <div>
-              <div className="flex justify-center items-center md:justify-start md:items-starts">
-                {apiForPm &&
-                  <Link href='/'>
-                    <Image src={topBadge} width={250} height={54} alt="API for Product Managers - The A to Z of APIs for product managers | Product Hunt" />
+              <div className="md:items-starts flex items-center justify-center md:justify-start">
+                {apiForPm && (
+                  <Link href="/">
+                    <Image
+                      src={topBadge}
+                      width={250}
+                      height={54}
+                      alt="API for Product Managers - The A to Z of APIs for product managers | Product Hunt"
+                    />
                   </Link>
-                }
-                {pricing &&
-                  <Link href='/'>
-                    <Image src={topPricingBadge} width={250} height={54} alt="Featured | Product Hunt" />
+                )}
+                {pricing && (
+                  <Link href="/">
+                    <Image
+                      src={topPricingBadge}
+                      width={250}
+                      height={54}
+                      alt="Featured | Product Hunt"
+                    />
                   </Link>
-                }
+                )}
               </div>
-              <h1 className="text-4xl font-bold lg:font-extrabold  mt-3 mb-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+              <h1 className="mt-3 mb-4 text-4xl  font-bold lg:font-extrabold">
+                <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
                   {headingColorText}
-                </span> {' '}
+                </span>{" "}
                 {heading}
               </h1>
-              {pricing && <p className="text-blue-600 text-lg pb-3 font-semibold">1 stop destination for product, growth & marketing folks</p>}
+              {pricing && (
+                <p className="pb-3 text-lg font-semibold text-blue-600">
+                  1 stop destination for product, growth & marketing folks
+                </p>
+              )}
 
-              {apiForPm &&
+              {apiForPm && (
                 <div>
-                  <p className="pb-4 text-lg lg:text-xl ">✔️ Trusted by 7300+ PMs. Lifelong access. 10+ chapters</p>
-                  <p className="pb-4 text-lg lg:text-xl ">✔️ Crack your PM interview technical rounds with ease</p>
-                  <p className="pb-4 text-lg lg:text-xl ">✔️ Transform your product strategy with API skills</p>
-                  <p className="pb-5 text-lg lg:text-xl ">✔️ Elevate your career with API knowledge</p>
+                  <p className="pb-4 text-lg lg:text-xl ">
+                    ✔️ Trusted by 7300+ PMs. Lifelong access. 10+ chapters
+                  </p>
+                  <p className="pb-4 text-lg lg:text-xl ">
+                    ✔️ Crack your PM interview technical rounds with ease
+                  </p>
+                  <p className="pb-4 text-lg lg:text-xl ">
+                    ✔️ Transform your product strategy with API skills
+                  </p>
+                  <p className="pb-5 text-lg lg:text-xl ">
+                    ✔️ Elevate your career with API knowledge
+                  </p>
                 </div>
-              }
-              {pricing &&
+              )}
+              {pricing && (
                 <div>
-                  <p className="pb-4 text-lg lg:text-xl font-[500]">✔️ 13 chapters covering pricing strategies, pricing models and pricing pyschology</p>
-                  <p className="pb-4 text-lg lg:text-xl font-[500]">✔️ Case studies from Unacademy, Bumble, LinkedIn, Mailchimp, Swiggy etc.</p>
+                  <p className="pb-4 text-lg font-[500] lg:text-xl">
+                    ✔️ 13 chapters covering pricing strategies, pricing models
+                    and pricing pyschology
+                  </p>
+                  <p className="pb-4 text-lg font-[500] lg:text-xl">
+                    ✔️ Case studies from Unacademy, Bumble, LinkedIn, Mailchimp,
+                    Swiggy etc.
+                  </p>
                 </div>
-              }
+              )}
 
-              <button onClick={handleCTAClick} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0 cursor-pointer">{ctaText}</button>
+              <button
+                // onClick={handleCTAClick}
+                onClick={handleClick}
+                className="btn w-full cursor-pointer bg-blue-600 text-white hover:bg-blue-700 sm:mb-0 sm:w-auto"
+              >
+                {ctaText}
+              </button>
               <div>
-                <p className="pt-3">Interested in a free chapter? <Link href={`${coursePreviewSlug}`} className="text-blue-500">Get it now</Link></p>
+                <p className="pt-3">
+                  Interested in a free chapter?{" "}
+                  <Link href={`${coursePreviewSlug}`} className="text-blue-500">
+                    Get it now
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
           {/* Hero content end*/}
-
         </div>
       </div>
-    </div>
-  )
-}
 
-export default HeroHome
+      {/************************ Login Modal  ************************/}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
+      />
+    </div>
+  );
+};
+
+export default HeroHome;

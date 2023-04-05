@@ -88,21 +88,20 @@ const Navbar = ({ pageName, posts ,course}) => {
       <header className={`border-b border-[#EAECF0] ${isSticky ? 'bg-white shadow-md fixed w-full z-10 top-0 ' : ''}`}>
 
         {/******************* Header Top Banner  ***************************/}
-        {pageName !== 'courseDetail' && <HeaderTopBanner handleBannerClick={handleBannerClick} />}
-
+        {/* {pageName !== '' && <HeaderTopBanner handleBannerClick={handleBannerClick} />} */}
 
 
         {/********************** * For Desktop  ********************* */}
         <div className={`relative ${styles.navbar} flex justify-between items-center container mx-auto  px-[63px]`}>
           <div className={`${styles.navbar__links}`}>
             <div className=''>
-              <Link href='/'><h2 className='font-[900] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
+              <Link href='/'><h2 className='font-[700] text-[#101828DE] text-2xl'>Xplainerr</h2></Link>
             </div>
           </div>
-          <div className={`relative  ${styles.navbar__container}`}>
+          <nav className={`relative text-sm  ${styles.navbar__container}`}>
 
             {/*********************** Courses ***********************/}
-            <div className=' font-semibold px-3 '>
+            <div className='px-3 '>
               <div
                 onMouseOver={() => {
                   setCourseOpen(true)
@@ -130,7 +129,7 @@ const Navbar = ({ pageName, posts ,course}) => {
 
 
             {/*********************** Workshops ***********************/}
-            <div className=' font-semibold px-3 '>
+            <div className='px-3 '>
               <div
                 onMouseOver={() => {
                   setWorkShopsOpen(true)
@@ -165,7 +164,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                     <Image src={apiForPmSvg} alt='api for pm icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>API for Product Manager</h4>
-                      <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
+                      {/* <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p> */}
                     </div>
                   </div>
                 </Link>
@@ -175,7 +174,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                     <Image src={pricing} alt='pricing icon' width={30} height={27} />
                     <div className=''>
                       <h4 className='font-semibold'>A to Z of Pricing & Monetization</h4>
-                      <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
+                      {/* <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p> */}
                     </div>
                   </div>
                 </Link>
@@ -188,7 +187,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                         <h4 className='font-semibold'>  How to do user interviews  </h4>
                         <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                       </div>
-                      <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
+                      {/* <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p> */}
                     </div>
                   </div>
                 </Link>
@@ -204,7 +203,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                   <div className='flex gap-x-3 '>
                     <Image src={noCode} alt='icon' width={30} height={27} />
                     <div className=''>
-                      <h4 className='font-semibold'>No Code </h4>
+                      <h4 className='font-md'>No Code </h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
                       <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                     </div>
@@ -215,7 +214,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                   <div className='flex gap-x-3 '>
                     <Image src={productHunt} alt='product hunt icon' width={30} height={27} />
                     <div className=''>
-                      <h4 className='font-semibold'>Product Hunt Launch</h4>
+                      <h4 className='font-md'>Product Hunt Launch</h4>
                       <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
                       <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                     </div>
@@ -227,7 +226,7 @@ const Navbar = ({ pageName, posts ,course}) => {
                     <Image src={personalBrand} alt='personal brand icon' width={30} height={27} />
                     <div className=''>
                       <div className=''>
-                        <h4 className='font-semibold'>Build Your Personal Brand</h4>
+                        <h4 className='font-md'>Build Your Personal Brand</h4>
                         <p className='text-[12px] text-[#515151]'>Top rated. Beginner friendly.</p>
                         <button className='rounded-sm font-bold text-[12px] px-2  h-[20px] bg-[#E0EBFF] text-[#4B73FF]'>Coming Soon</button>
                       </div>
@@ -239,7 +238,7 @@ const Navbar = ({ pageName, posts ,course}) => {
             )}
             {/************************ Workshop submenu end   ************************/}
             <p
-              className=' font-semibold px-3 '
+              className=' px-3 '
               onMouseOver={() => {
                 setWorkShopsOpen(false)
                 setCourseOpen(false)
@@ -248,10 +247,10 @@ const Navbar = ({ pageName, posts ,course}) => {
               <Link href='/mock-interview' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/mock-interview") ? `${activeLink}` : ""}`}>Mock Interviews</Link>
             </p>
 
-            <p className={` font-semibold px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/blog") ? `${activeLink}` : ""}`}>Blog</Link></p>
+            <p className={`px-5 `} ><Link href='/blog' className={` ${commonStyle} ${commonBorderB} ${router.pathname.startsWith("/blog") ? `${activeLink}` : ""}`}>Blog</Link></p>
 
 
-          </div>
+          </nav>
 
           <div className={`px-3 ${styles.navbar__sign}`}>
             {currentUser?.email ? (
@@ -292,7 +291,7 @@ const Navbar = ({ pageName, posts ,course}) => {
             ) : (
               <div className='space-x-5'>
                 <button onClick={() => setLoginModal(true)} className={`text-[#0070F4] py-4 font-semibold  ${commonBorderB} `}>Login</button>
-                <button className='font-semibold bg-[#0070F4] my-1 text-white py-3 px-[30px] rounded-[10px] border-2 border-[#AED3FF]'>Sign Up</button>
+                <button className=' bg-[#0070F4] my-1 text-white py-2 px-[15px] rounded-[10px] border-2 border-[#AED3FF]'>Sign Up</button>
               </div>
             )}
 

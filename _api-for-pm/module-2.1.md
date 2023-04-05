@@ -5,7 +5,7 @@ metaDescription: "REST, SOAP and GraphQL APIs"
 ---
 
 
-# 1.1 REST APIs
+## 1.1 REST APIs
 
 When you hear or read about APIs, you'll almost always see the term REST associated with it. Remember, REST is just a standard for APIs, and by now almost all APIs conform to the REST standard.
 
@@ -26,15 +26,15 @@ You can learn more about REST APIs in the video below -
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mN3VyJuCjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-# 1.2 SOAP APIs
+### 1.2 SOAP APIs
 
 SOAP is a protocol that uses XML as a format to transfer data. Its main function is to define the structure of the messages and methods of communication. (Sounds complex, duh! Let's look at an example.)
 
-# 1.3 REST vs SOAP APIs
+### 1.3 REST vs SOAP APIs
 
 Let's see request and response of service called sayhello that returns "hello world".
 
-## REST Service
+### REST Service
 
 Request: 
 ``` jsx
@@ -70,7 +70,7 @@ Response:
 > In order to consume HTTP service you don't need any additional framework. Its simple and clean and hence REST is preferred over SOAP for its simplicity.
 
 
-# 1.4 GraphQL APIs
+### 1.4 GraphQL APIs
 
 Before I tell you what GraphQL is, let me tell you in brief how it originated.
 

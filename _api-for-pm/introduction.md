@@ -1,5 +1,5 @@
 ---
-title: "1. Introduction to API"
+title: "Introduction to API"
 metaTitle: "Introduction to API "
 metaDescription: ""
 ---
@@ -19,7 +19,7 @@ And a lot many other things!
 
 ---
 
-# 1. Why do we even need APIs in the first instance?
+## 1. Why do we even need APIs in the first instance?
 
 This is gonna be quite interesting.
 
@@ -40,7 +40,7 @@ But the question is how are they talking to one another? They are talking to one
 
 > **This piece of code through which two systems (applications) talk to one another is called as API. *Exciting, isn't it?***
 
-## 1.1  One more beauty of APIs
+### 1.1  One more beauty of APIs
 
 *Have you noticed it?*
 
@@ -54,7 +54,7 @@ When both of these systems were talking to one another *(I mean your Ecommerce A
 You didn't expose your entire system to Razorpay nor did Razorpay expose your entire system to you. You and Razorpay only passed data that were relevant to both of you. 
 
 
-# 2. What is an API?
+## 2. What is an API?
 
 ---
 
@@ -67,7 +67,7 @@ But, we have learnt a very simple definition *(in the Amazon - Razorpay)* exampl
 
 Let's see one more analogy. Hope this makes API crystal clear.
 
-## 2.1 Dominos analogy
+### 2.1 Dominos analogy
 
 
 ![assets/unit_1_0.png](/images/api-for-pm/unit_1_0.png)
@@ -92,7 +92,7 @@ So, yeah! You and the kitchen are two separate systems and both of you are able 
 
 > Think waiter. Think API. Both are analogous.
 
-# 3. Request + response cycle
+## 3. Request + response cycle
 
 ---
 
@@ -109,7 +109,7 @@ We saw a glimpse of request & response in our Dominos analogy.
 
 In the next modules, we will deep dive into what exactly request and response are and how can we make requests from our web browser.
 
-## 3.1 Types of request
+### 3.1 Types of request
 
 You must be wondering what type of things I can ask from the server?
 
@@ -126,7 +126,7 @@ The four common types of request are ➖ GET, PUT, POST, DELETE
 
 ![assets/unit_1_2.png](/images/api-for-pm/unit_1_2.png)
 
-## 3.2 LinkedIn example
+### 3.2 LinkedIn example
 
 Let's take a few use cases from LinkedIn and understand the analogy *(better)*
 
@@ -140,7 +140,7 @@ Let's take a few use cases from LinkedIn and understand the analogy *(better)*
 
 
 
-# 4. What is JSON?
+## 4. What is JSON?
 
 ---
 
