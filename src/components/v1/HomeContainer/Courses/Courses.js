@@ -18,7 +18,8 @@ const Courses = ({ heading, ctaText }) => {
           </p>
           <div className=" flex flex-col gap-10 lg:flex-row lg:gap-5">
             {allCourses.map((course, index) => (
-              <div
+              <Link
+                href={`/courses/${course?.slug}`}
                 key={index}
                 className=" hover:shadow:xl  m-3 flex flex-initial flex-shrink-0 transform flex-col overflow-hidden rounded bg-white text-black shadow-md transition duration-500 hover:-translate-y-1.5"
               >
@@ -85,7 +86,7 @@ const Courses = ({ heading, ctaText }) => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
