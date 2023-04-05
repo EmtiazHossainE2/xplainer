@@ -4,8 +4,8 @@ metaTitle: "Why should product managers & designers learn UX writing?"
 metaDescription: 'The Importance of UX Writing for Product Managers and Designers: Examples from Google Calendar, Stripe, Netflix, and Uber. Learn what is UX writing for free and how clear and user-friendly language can enhance the user experience and help achieve business goals.'
 cover_image: 'https://img.freepik.com/premium-vector/ux-writing-illustration_32854-341.jpg?w=2000'
 author : 'Venkatesh Gupta '
-author_image: '/images/blog/news-author-02.jpg'
-date: 'February 24, 2023 11:13 PM'
+author_image: '/images/blog/author-venky.jpeg'
+date: 'February 24, 2023'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />

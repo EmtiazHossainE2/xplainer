@@ -4,8 +4,8 @@ metaTitle: "5 key lessons for founders from Sahil Lavangia's Minimalist Entrepre
 metaDescription: 'Sahil Lavangia is an entrepreneur who founded Gumroad, a platform that allows creators to sell their products directly to consumers.'
 cover_image: '/images/blog/blog2.png'
 author : 'Venkatesh Gupta '
-author_image: '/images/blog/news-author-02.jpg'
-date: 'February 25, 2023 12:42 AM'
+author_image: '/images/blog/author-venky.jpeg'
+date: 'February 25, 2023'
 tag: 'product-management'
 ---
 

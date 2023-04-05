@@ -4,8 +4,8 @@ metaTitle: "Introduction to API "
 metaDescription: 'Want to learn how to become a PM? PMs don’t build revolutionary brand new products from scratch every day and if this excites you, trust me, be an entrepreneur.'
 cover_image: 'https://ik.imagekit.io/zwxa4kttt/Screenshot_2023-02-26_at_1.59.35_AM.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677357016254'
 author : 'Venkatesh Gupta'
-author_image: '/images/blog/news-author-02.jpg'
-date: 'February 24, 2023 2:51 AM'
+author_image: '/images/blog/author-venky.jpeg'
+date: 'February 24, 2023'
 ---
 
 ![https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png](https://miro.medium.com/max/1400/1*vaHkvQwZ_wkuwBF9ccrm2A.png)

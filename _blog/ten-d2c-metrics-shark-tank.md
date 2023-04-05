@@ -4,8 +4,8 @@ metaTitle: "10 D2C Metrics Shark Peeyush Bansal Loves | Shark Tank India | D2C m
 metaDescription: 'Peevish Bansal, a successful D2C entrepreneur, swears by these 10 essential D2C  '
 cover_image: 'https://i.ytimg.com/vi/LrA4UwYTJt8/maxresdefault.jpg'
 author : 'Venkatesh Gupta '
-author_image: '/images/blog/news-author-02.jpg'
-date: 'February 25, 2023 12:07 AM'
+author_image: '/images/blog/author-venky.jpeg'
+date: 'February 25, 2023'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />

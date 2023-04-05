@@ -4,8 +4,8 @@ metaTitle: "Design an ATM For Blind "
 metaDescription: 'A sneak peak into Product Manager career written by Venkatesh Gupta after completing 1 year at Internshala.'
 cover_image: 'https://ik.imagekit.io/zwxa4kttt/year-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677356300623'
 author : 'Venkatesh Gupta '
-author_image: '/images/blog/news-author-02.jpg'
-date: 'February 25, 2023 12:50 AM'
+author_image: '/images/blog/author-venky.jpeg'
+date: 'February 25, 2023'
 ---
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
