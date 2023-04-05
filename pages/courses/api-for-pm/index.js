@@ -1,24 +1,50 @@
 import {
   CourseContent,
   CtaAlternative,
-  TestimonialsCarousel
+  TestimonialsCarousel,
 } from "@/src/components/v1/Courses";
 import {
-  Authors, FeaturesBlocks,
+  Authors,
+  FeaturesBlocks,
   HeroHome,
-  Offer
+  Offer,
 } from "@/src/components/v1/Courses/ApiForPm";
 import { Brand, Faqs } from "@/src/components/v1/HomeContainer";
 // import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import PageLayout from "@/src/layout/PageLayout";
+import { checkout } from "@/src/utils/checkout";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ApiForPm = () => {
-  const handleCTAClick = () => {
-    window.open("https://dipakkr.gumroad.com/l/api-for-pm");
-  };
+  const router = useRouter();
+  const { currentUser } = useSelector((state) => state.user);
+  const [loginModal, setLoginModal] = useState(false);
 
-  const courseSlug = 'api-for-pm';
+  // console.log(router.pathname, "api");
+  // const coursePrice = "price_1Ms0b3SBqetirFH0Nt5qV6aQP";
+  const coursePrice = "price_1MrLYXDEsxnXfJbTEtoNl1ba"; // Emtiaz price added for test
+  const courseSlug = "api-for-pm";
+
+  const handleCTAClick = () => {
+    if (router.pathname === "/courses/api-for-pm") {
+      if (currentUser?.email) {
+        checkout({
+          lineItems: [
+            {
+              price: coursePrice,
+              quantity: 1,
+            },
+          ],
+        });
+      } else {
+        return setLoginModal(true);
+      }
+    }
+  };
 
   return (
     <>
@@ -29,13 +55,18 @@ const ApiForPm = () => {
       <main className="">
         <PageLayout>
           {/* New Api For Pm Start  */}
-          <HeroHome coursePrice="price_1Ms0b3SBqetirFH0Nt5qV6aQP" />
+          <HeroHome
+            course={courseSlug}
+            ctaText="Enroll now"
+            handleCTAClick={handleCTAClick}
+            coursePreviewSlug={"api-for-pm/introduction"}
+          />
           <Brand />
           <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
           {/* <Offer /> */}
           <CourseContent />
           <Authors course={courseSlug} />
-         
+
           <TestimonialsCarousel />
           {/* <Certificate /> */}
           <Faqs />
@@ -74,6 +105,13 @@ const ApiForPm = () => {
           </div>
         </PageLayout>
       </main>
+
+      {/************************ Login Modal  ************************/}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
+      />
     </>
   );
 };
