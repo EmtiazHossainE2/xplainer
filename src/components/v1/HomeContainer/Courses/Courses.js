@@ -1,4 +1,4 @@
-import { allCourses } from "@/src/config/constants";
+import { allCourses, IMAGE_KIT_CDN } from "@/src/config/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -25,7 +25,7 @@ const Courses = ({ heading, ctaText }) => {
               >
                 <div>
                   <Image
-                    src={`/images/courses/v3/${course?.coverImage}`}
+                    src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
                     width={310}
                     height={155}
                     alt={course?.title}

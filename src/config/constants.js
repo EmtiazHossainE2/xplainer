@@ -138,7 +138,7 @@ export const apiForPmFaq = [
 export const allCourses = [
   {
     title: "API for Product Manager",
-    coverImage: "5893838839480320.avif",
+    coverImage: "courses/Api__1_.jpg",
     catIcon: "educativeIcon.avif",
     category: "Product Management",
     subCategory: ["Top rated", " Beginner friendly ", "10+ chapters"],
@@ -171,7 +171,7 @@ export const allCourses = [
   },
   {
     title: "Pricing & Monetization",
-    coverImage: "2.avif",
+    coverImage: "courses/pricing-for-pm",
     catIcon: "educativeIcon.avif",
     category: "Product Management",
     subCategory: ["Trending", " Beginner friendly ", "13+ chapters"],
@@ -200,11 +200,13 @@ export const allCourses = [
         icon: "icon4.svg",
         text: "25+ free product management interview questions  ",
       },
+      
     ],
   },
+  
   {
     title: "How to do user interviews",
-    coverImage: "3.avif",
+    coverImage: "courses/pricing-for-pm",
     catIcon: "w.png",
     category: "UX Research",
     subCategory: ["", "", ""],
@@ -726,3 +728,5 @@ export const courseCategories = [
 ];
 
 export const BASE_URL = "https://xplainerr.vercel.app/";
+
+export const IMAGE_KIT_CDN = 'https://ik.imagekit.io/zwxa4kttt/';
