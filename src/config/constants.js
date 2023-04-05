@@ -138,6 +138,8 @@ export const apiForPmFaq = [
 export const allCourses = [
   {
     title: "API for Product Manager",
+    coverImage: "5893838839480320.avif",
+    catIcon: "educativeIcon.avif",
     category: "Product Management",
     subCategory: ["Top rated", " Beginner friendly ", "10+ chapters"],
     slug: "api-for-pm",
@@ -169,6 +171,8 @@ export const allCourses = [
   },
   {
     title: "Pricing & Monetization",
+    coverImage: "2.avif",
+    catIcon: "educativeIcon.avif",
     category: "Product Management",
     subCategory: ["Trending", " Beginner friendly ", "13+ chapters"],
     slug: "pricing-for-pm",
@@ -200,9 +204,11 @@ export const allCourses = [
   },
   {
     title: "How to do user interviews",
+    coverImage: "3.avif",
+    catIcon: "w.png",
     category: "UX Research",
     subCategory: ["", "", ""],
-    slug: "pricing-for-pm",
+    slug: "user-interview",
     description: "Top rated, beginner friendly",
     status: "upcoming",
     icon: "users.svg",
