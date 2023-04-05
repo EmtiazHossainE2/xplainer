@@ -92,7 +92,7 @@ const Courses = ({ heading, ctaText }) => {
 
           {/* View ALl  */}
           <Link href="/courses">
-            <button className="mx-auto mt-9 flex items-center gap-5 rounded-sm bg-[#5553FF] px-4 py-2.5 text-white">
+            <button className="mx-auto mt-9 flex items-center gap-5 rounded-sm bg-[#0070F4] px-4 py-2.5 text-white">
               Browse all courses
               <FiArrowRight size={24} className="font-bold" />
             </button>
