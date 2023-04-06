@@ -737,9 +737,14 @@ export const ALL_COURSES = {
   UX_WRITING_101 : 'ux-writting',
 };
 
+export const ENV = {
+  TEST : 'test',
+  LIVE : 'live'
+};
+
 export const DEFAULT_PRICE_LIST = {
   [ALL_COURSES.API_FOR_PM] : {
-    'test' : 'price_1Ms0b3SBqetirFH0Nt5qV6aQ',
-    'live' : "price_1Ms0GASBqetirFH0vquJb1pA"
+    [ENV.TEST] : 'price_1Ms0b3SBqetirFH0Nt5qV6aQ',
+    [ENV.LIVE] : "price_1Mu0hmSBqetirFH0CIdG9v8A"
   } 
 }
