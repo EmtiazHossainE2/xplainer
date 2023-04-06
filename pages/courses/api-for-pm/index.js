@@ -9,10 +9,14 @@ import {
   HeroHome,
   Offer,
 } from "@/src/components/v1/Courses/ApiForPm";
+
+import {Authors as Authors2} from "@/src/components/v1/Courses";
+
 import { Brand, Faqs } from "@/src/components/v1/HomeContainer";
 // import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
+import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import PageLayout from "@/src/layout/PageLayout";
 import { checkout } from "@/src/utils/checkout";
 import { useRouter } from "next/router";
@@ -24,10 +28,9 @@ const ApiForPm = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [loginModal, setLoginModal] = useState(false);
 
-  // console.log(router.pathname, "api");
-  // const coursePrice = "price_1Ms0b3SBqetirFH0Nt5qV6aQP";
-  const coursePrice = "price_1MrLYXDEsxnXfJbTEtoNl1ba"; // Emtiaz price added for test
-  const courseSlug = "api-for-pm";
+  const coursePrice =
+    DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
+  const courseSlug = ALL_COURSES.API_FOR_PM; // to be loaded from router
 
   const handleCTAClick = () => {
     if (router.pathname === "/courses/api-for-pm") {
@@ -61,38 +64,18 @@ const ApiForPm = () => {
             handleCTAClick={handleCTAClick}
             coursePreviewSlug={"api-for-pm/introduction"}
           />
-          <Brand />
+          
           <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
           {/* <Offer /> */}
           <CourseContent />
-          <Authors course={courseSlug} />
+
+          <Authors2/>
 
           <TestimonialsCarousel />
           {/* <Certificate /> */}
           <Faqs />
           <CtaAlternative />
           {/* New Api For Pm End  */}
-
-          {/* Old V1 Api For Pm Start  */}
-          {/* <HeroHome
-            heading={"API Product Manager course"}
-            headingColorText="#1"
-            ctaText="Enroll now"
-            apiForPm={true}
-            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
-            handleCTAClick={handleCTAClick}
-            coursePreviewSlug={"api-for-pm/introduction"}
-          />
-          <HeroBanner />
-          <FeaturesBlocks
-            featureBlockData={pmInterviewKeyChapters}
-            heading={"What will you learn?"}
-            apiForPm={true}
-          />
-          <TestimonialsCarousel />
-          <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
-          <Faqs /> */}
-          {/* Old V1 Api For Pm End */}
 
           {/* Cta  Api For Pm  */}
           <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">

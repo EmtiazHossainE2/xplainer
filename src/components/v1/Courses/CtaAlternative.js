@@ -12,8 +12,8 @@ const CtaAlternative = () => {
 
               {/* CTA content */}
               <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left lg:w-1/2">
-                <h3 className="h3 text-white">Want a free chapter of API e-book? </h3>
-                <p className="text-white mt-2">What&apos;s stopping you to crack technical rounds of product management interviews with ease?</p>
+                <h3 className="h4 text-white">Want a free chapter of API e-book? </h3>
+                <p className="text-[#e1e1e1] mt-2">What&apos;s stopping you to crack technical rounds of product management interviews with ease?</p>
               </div>
 
               {/* CTA button */}

@@ -7,9 +7,7 @@ const Authors = ({ name1, name2 }) => {
         <div className="">
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-12 text-center ">
-            <h1 className="mt-8 text-3xl font-extrabold leading-tight lg:text-5xl ">
-              Meet the creators{" "}
-            </h1>
+            <h2 className="customTitle">Meet the creators </h2>
           </div>
         </div>
 
