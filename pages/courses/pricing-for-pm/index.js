@@ -1,13 +1,23 @@
-import { Authors, CtaAlternative, Faqs, FeaturesBlocks, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
-import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import { pricingCardText } from '@/src/config/constants'
-import PageLayout from '@/src/layout/PageLayout'
+import {
+  Authors,
+  CourseContent,
+  CtaAlternative,
+  Faqs,
+  HeroHome,
+  TestimonialsCarousel
+} from "@/src/components/v1/Courses";
+import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import PageLayout from "@/src/layout/PageLayout";
+
+import { FeaturesBlocks } from "@/src/components/v1/Courses/ApiForPm";
 
 const PricingForPM = () => {
-
   const handleCTAClick = () => {
-    window.open('https://dipakkr.gumroad.com/l/pricingforpm')
-  }
+    window.open("https://dipakkr.gumroad.com/l/pricingforpm");
+  };
+
+  const courseSlug = "pricing-for-pm";
+  
 
   return (
     <>
@@ -28,7 +38,11 @@ const PricingForPM = () => {
             handleCTAClick={handleCTAClick}
             coursePreviewSlug={"pricing-for-pm/introduction"}
           />
-      
+
+          <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
+
+          <CourseContent />
+
           <TestimonialsCarousel />
           <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
           <Faqs />
@@ -37,6 +51,6 @@ const PricingForPM = () => {
       </main>
     </>
   );
-}
+};
 
-export default PricingForPM
+export default PricingForPM;

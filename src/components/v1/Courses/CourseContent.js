@@ -26,10 +26,10 @@ const CourseContent = () => {
 
 
   return (
-    <div className='bg-[#F5F5F5]'>
+    <div className='bg-[#fafafa]'>
       <div className="container mx-auto py-[60px] lg:py-20 px-3 lg:px-12 big:px-36 large:px-96">
         <h3 className='text-center text-[32px] font-semibold leading-7 pb-8'>Course Content</h3>
-        <div className='w-full lg:w-[693px] container mx-auto'>
+        <div className='w-full lg:w-[793px] container mx-auto'>
           {courseContent.map((content, index) => (
             <Content key={index} content={content} index={index} onTitleClick={toggleView} isOpen={toggleStates[index]} />
           ))}

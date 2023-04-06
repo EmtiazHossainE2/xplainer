@@ -1,8 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import PriceView from "../PriceView";
 
 const HeroHome = ({ course, ctaText, handleCTAClick }) => {
+
+  const priceData = {
+    amount : 999,
+    currency : 'INR',
+    discount : 50
+  };
   
   return (
     <div className="container mx-auto py-4 px-5 lg:px-12 big:px-36 large:px-96">
@@ -105,13 +112,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick }) => {
               </div>
             </div>
 
-            <div className="mt-2 mb-2">
-              <p className="  ext-[#000000]">
-                <span className="text-3xl font-bold">Rs. 999</span>{" "}
-                <span className="text-[#7b7b7b] line-through">₹ 1,999 </span>{" "}
-                <span className="text-[#7b7b7b]">( 50% off ) </span>
-              </p>
-            </div>
+           <PriceView priceData={priceData} />
 
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
               <div

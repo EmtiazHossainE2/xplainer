@@ -21,7 +21,7 @@ const Courses = ({ heading, ctaText }) => {
               <Link
                 href={`/courses/${course?.slug}`}
                 key={index}
-                className=" hover:shadow:xl  m-3 flex flex-initial flex-shrink-0 transform flex-col overflow-hidden rounded bg-white text-black shadow-md transition duration-500 hover:-translate-y-1.5"
+                className=" hover:shadow:xl  m-3 flex flex-initial flex-shrink-0 transform flex-col overflow-hidden  bg-white text-black shadow-md transition duration-500 hover:-translate-y-1.5"
               >
                 <div>
                   <Image
@@ -35,16 +35,8 @@ const Courses = ({ heading, ctaText }) => {
                 <div className="flex flex-col p-2 ">
                   <div className="m-2 flex items-center justify-between">
                     <div className="flex w-full items-center">
-                      <Image
-                        className="flex-shrink-0 rounded-full bg-gray-400  "
-                        width="30"
-                        height="30"
-                        src={`/images/courses/v3/${course?.catIcon}`}
-                        loading="lazy"
-                        alt="Icon"
-                      />
-                      <div className="mr-auto flex overflow-hidden">
-                        <span className="m-2 ml-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm leading-[22px]">
+                      <div className=" flex  bg-[#08313c] text-white rounded-md overflow-hidden">
+                        <span className="p-1  overflow-hidden text-ellipsis whitespace-nowrap text-sm leading-[22px]">
                           {course?.category}
                         </span>
                       </div>

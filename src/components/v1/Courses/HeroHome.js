@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { LoginModal } from "../Shared/Modal";
+import PriceView from "./PriceView";
 import topPricingBadge from "/public/images/courses/featured.svg";
 import topBadge from "/public/images/courses/top-post-badge.svg";
 
@@ -22,14 +23,13 @@ const HeroHome = ({
   // console.log(currentUser?.email)
   console.log(coursePrice);
 
-
   const handleClick = () => {
     console.log("click");
     if (currentUser?.email) {
       checkout({
         lineItems: [
           {
-            price: coursePrice ,
+            price: coursePrice,
             quantity: 1,
           },
         ],
@@ -37,6 +37,12 @@ const HeroHome = ({
     } else {
       return setLoginModal(true);
     }
+  };
+
+  const priceData = {
+    amount: 999,
+    currency: "INR",
+    discount: 50,
   };
 
   return (
@@ -89,8 +95,8 @@ const HeroHome = ({
             {pricing && (
               <Image
                 src="/images/courses/hero-case.webp"
-                width={700}
-                height={400}
+                width={500}
+                height={350}
                 alt="pm pricing webp"
               />
             )}
@@ -149,33 +155,38 @@ const HeroHome = ({
                   </p>
                 </div>
               )}
+
               {pricing && (
                 <div>
-                  <p className="pb-4 text-lg font-[500] lg:text-xl">
+                  <p className="text-md pb-4 font-[400] lg:text-xl">
                     ✔️ 13 chapters covering pricing strategies, pricing models
                     and pricing pyschology
                   </p>
-                  <p className="pb-4 text-lg font-[500] lg:text-xl">
+                  <p className="text-md pb-4 font-[400] lg:text-xl">
                     ✔️ Case studies from Unacademy, Bumble, LinkedIn, Mailchimp,
                     Swiggy etc.
                   </p>
                 </div>
               )}
 
-              <button
-                // onClick={handleCTAClick}
-                onClick={handleClick}
-                className="btn w-full cursor-pointer bg-blue-600 text-white hover:bg-blue-700 sm:mb-0 sm:w-auto"
-              >
-                {ctaText}
-              </button>
-              <div>
-                <p className="pt-3">
-                  Interested in a free chapter?{" "}
-                  <Link href={`${coursePreviewSlug}`} className="text-blue-500">
-                    Get it now
-                  </Link>
-                </p>
+              <PriceView priceData={priceData} />
+
+              <div className="flex flex-col md:flex-row">
+                <button
+                  onClick={handleClick}
+                  className="btn w-full cursor-pointer bg-blue-600 text-white hover:bg-blue-700 sm:mb-0 sm:w-auto"
+                >
+                  {ctaText}
+                </button>
+
+                <div className="mt-2 rounded-md  border border-gray-300 p-3 md:ml-2">
+                  <button
+                    onClick={handleClick}
+                    className=" ml-2 w-full cursor-pointer  text-[#6f6f6f] sm:mb-0 sm:w-auto"
+                  >
+                    Try free preview
+                  </button>
+                </div>
               </div>
             </div>
           </div>
