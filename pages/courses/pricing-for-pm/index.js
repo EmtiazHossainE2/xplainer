@@ -4,7 +4,7 @@ import {
   CtaAlternative,
   Faqs,
   HeroHome,
-  TestimonialsCarousel
+  TestimonialsCarousel,
 } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import PageLayout from "@/src/layout/PageLayout";
@@ -17,7 +17,6 @@ const PricingForPM = () => {
   };
 
   const courseSlug = "pricing-for-pm";
-  
 
   return (
     <>

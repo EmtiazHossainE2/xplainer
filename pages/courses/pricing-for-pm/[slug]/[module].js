@@ -8,7 +8,13 @@ import path from "path";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-const ModuleDetails = ({ courseNavigationData, frontmatter, content, slug, chapterData }) => {
+const ModuleDetails = ({
+  courseNavigationData,
+  frontmatter,
+  content,
+  slug,
+  chapterData,
+}) => {
   const { currentUser } = useSelector((state) => state.user);
   const course = "pricing-for-pm";
 
@@ -25,7 +31,6 @@ const ModuleDetails = ({ courseNavigationData, frontmatter, content, slug, chapt
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
     }
-
   }, [availCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (
@@ -71,18 +76,15 @@ export const getStaticPaths = async () => {
   };
 };
 
-
 export const getStaticProps = async ({ params: { slug, module } }) => {
+  const courseName = "_pricing-for-pm";
+  const courseNavItems = getCourseNavigation({ courseName: courseName });
 
-  const courseName = '_pricing-for-pm';
-  const courseNavItems = getCourseNavigation({ courseName: courseName })
-
-
-  // Step 1 - Check if slug is a folder 
+  // Step 1 - Check if slug is a folder
   const markdownWithMeta = fs.readFileSync(
-    path.join('_pricing-for-pm', slug, module + '.md'),
-    'utf-8'
-  )
+    path.join("_pricing-for-pm", slug, module + ".md"),
+    "utf-8"
+  );
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
 
@@ -91,18 +93,19 @@ export const getStaticProps = async ({ params: { slug, module } }) => {
   const courseSlug = `${slug}/${module}`;
 
   const isFreeChapter =
-    (courseConfig["pricing-for-pm"] && courseConfig["pricing-for-pm"].includes(slug)) ||
+    (courseConfig["pricing-for-pm"] &&
+      courseConfig["pricing-for-pm"].includes(slug)) ||
     false;
 
   return {
     props: {
       frontmatter,
-      slug : courseSlug,
+      slug: courseSlug,
       content: result,
       courseNavigationData: courseNavItems,
       chapterData: {
         isFreeChapter,
       },
     },
-  }
-}
+  };
+};

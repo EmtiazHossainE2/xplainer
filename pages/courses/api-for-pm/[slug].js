@@ -17,7 +17,7 @@ const ModuleDetails = ({
   slug,
   chapterData,
 }) => {
-  const {currentUser, purchasedCourses} = useAuthService();
+  const { currentUser, purchasedCourses } = useAuthService();
   const [isPaid, setCourseUnlock] = useState(false);
   const { isFreeChapter } = chapterData;
 
@@ -30,7 +30,6 @@ const ModuleDetails = ({
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
     }
-
   }, [purchasedCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (

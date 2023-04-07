@@ -11,7 +11,6 @@ import {
 import { Authors as Authors2 } from "@/src/components/v1/Courses";
 
 import { Faqs } from "@/src/components/v1/HomeContainer";
-// import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
@@ -21,10 +20,10 @@ import { checkout } from "@/src/utils/checkout";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const ApiForPm = () => {
+const ApiForPm = (props) => {
+
   const router = useRouter();
   const { currentUser, purchasedCourses } = useAuthService();
-
   const [loginModal, setLoginModal] = useState(false);
 
   const coursePrice =

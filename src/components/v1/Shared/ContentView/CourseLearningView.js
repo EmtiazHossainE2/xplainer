@@ -1,5 +1,5 @@
 const { default: SidebarLayout } = require("@/src/layout/SidebarLayout")
-const { default: Footer2 } = require("../Footer/Footer2")
+const { default: Footer2 } = require("../Footer/Footer")
 const { default: UpgradeToPremium } = require("../UpgradeToPremium")
 const { default: ContentLayout } = require("./ContentLayout")
 
