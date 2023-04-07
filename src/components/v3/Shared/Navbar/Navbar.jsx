@@ -114,7 +114,7 @@ const Navbar = ({ pageName, posts, course }) => {
           isSticky ? "fixed top-0 z-10 w-full bg-white shadow-md " : ""
         }`}
       >
-        <div className="container mx-auto hidden py-[3px] px-[63px] lg:block">
+        <div className="container mx-auto hidden py-[px] px-[63px] lg:block">
           <div className=" flex items-center justify-between gap-12">
             {/****************** Left Side ******************/}
             <div>
@@ -134,7 +134,7 @@ const Navbar = ({ pageName, posts, course }) => {
                     >
                       <Popover.Button
                         ref={triggerRef}
-                        className={`py-2.5 outline-none ${
+                        className={`py-3 outline-none ${
                           open
                             ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
                             : ""
@@ -244,7 +244,7 @@ const Navbar = ({ pageName, posts, course }) => {
                     >
                       <Popover.Button
                         ref={workShopRef}
-                        className={`py-2.5 outline-none ${
+                        className={`py-3 outline-none ${
                           open
                             ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
                             : ""
@@ -338,7 +338,7 @@ const Navbar = ({ pageName, posts, course }) => {
 
               <Link
                 href="/mock-interview"
-                className={`py-2.5 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
+                className={`py-3 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
                   router.pathname.startsWith("/mock-interview")
                     ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
                     : ""
@@ -348,7 +348,7 @@ const Navbar = ({ pageName, posts, course }) => {
               </Link>
               <Link
                 href="/blog"
-                className={`py-2.5 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
+                className={`py-3 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
                   router.pathname.startsWith("/blog")
                     ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
                     : ""
@@ -425,7 +425,7 @@ const Navbar = ({ pageName, posts, course }) => {
                 <div className="space-x-5">
                   <button
                     onClick={() => setLoginModal(true)}
-                    className={`py-2.5 font-semibold text-[#0070F4] hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4] `}
+                    className={`py-3 font-semibold text-[#0070F4] hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4] `}
                   >
                     Login
                   </button>
