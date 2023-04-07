@@ -220,10 +220,10 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
           </div>
 
           {/********************** Content  **********************/}
-          <div className="ml-[20%] mr-[15%] px-8 pt-16 lg:mt-4">{children}</div>
+          <div className="ml-[25%] mr-[5%]  px-8 pt-16 lg:mt-4">{children}</div>
 
           {/********************** Right Side  **********************/}
-          <div className="fixed top-20 right-0 flex min-h-[100vh] w-[15%] flex-col pl-2 text-left">
+          {/* <div className="fixed top-20 right-0 flex min-h-[100vh] w-[15%] flex-col pl-2 text-left">
             <div className="border-l pl-3">
               <p className="pb-3 text-lg">Content</p>
               <div className="flex flex-col gap-3 text-sm">
@@ -243,7 +243,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           
         </div>
       </div>
