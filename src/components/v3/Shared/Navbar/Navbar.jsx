@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useEffect, useRef, useState } from "react";
 import apiForPmSvg from "/public/images/shared/apiForPm.svg";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import noCode from "/public/images/shared/noCode.svg";
 import personalBrand from "/public/images/shared/personalBrand.svg";
 import pricing from "/public/images/shared/pricing.svg";
@@ -117,13 +118,21 @@ const Navbar = ({ pageName, posts, course }) => {
         <div className="container mx-auto hidden py-[px] px-[63px] lg:block">
           <div className=" flex items-center justify-between gap-12">
             {/****************** Left Side ******************/}
-            <div>
-              <Link className="text-2xl font-bold" href="/">
-                Xplainerr
+            <div className="flex items-center justify-center">
+              <Image
+                src="https://ik.imagekit.io/zwxa4kttt/xplainer-logo.png?updatedAt=1680724534619"
+                width={30}
+                height={30}
+                alt="Xplainerr Logo"
+              />
+              <Link href="/">
+                <h2 className="ml-2 text-2xl font-[700] text-[#101828DE]">
+                  Xplainerr
+                </h2>
               </Link>
             </div>
             {/****************** Middle  ******************/}
-            <div className="flex gap-5">
+            <div className="flex gap-5 space-x-2">
               {/****************** Course  ******************/}
               <div>
                 <Popover className="hover:border-none">
@@ -134,7 +143,7 @@ const Navbar = ({ pageName, posts, course }) => {
                     >
                       <Popover.Button
                         ref={triggerRef}
-                        className={`py-3 outline-none ${
+                        className={`flex items-center gap-x-1 py-3 outline-none  ${
                           open
                             ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
                             : ""
@@ -144,7 +153,12 @@ const Navbar = ({ pageName, posts, course }) => {
                             : ""
                         } `}
                       >
-                        Courses
+                        Courses{" "}
+                        {open ? (
+                          <FiChevronUp size={20} />
+                        ) : (
+                          <FiChevronDown size={20} />
+                        )}
                       </Popover.Button>
                       <Transition
                         as={Fragment}
@@ -244,7 +258,7 @@ const Navbar = ({ pageName, posts, course }) => {
                     >
                       <Popover.Button
                         ref={workShopRef}
-                        className={`py-3 outline-none ${
+                        className={`flex items-center gap-x-1 py-3 outline-none ${
                           open
                             ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
                             : ""
@@ -255,6 +269,11 @@ const Navbar = ({ pageName, posts, course }) => {
                         } `}
                       >
                         Workshop
+                        {open ? (
+                          <FiChevronUp size={20} />
+                        ) : (
+                          <FiChevronDown size={20} />
+                        )}
                       </Popover.Button>
                       <Transition
                         as={Fragment}
