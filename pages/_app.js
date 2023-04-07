@@ -10,23 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "src/store";
 
 function MyApp({ Component, pageProps }) {
-
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-
-  //   // handle firebase 
-  //   const unsubscribe = auth.onAuthStateChanged((user) => {
-  //     if(user){
-  //       setUser(user)
-  //     }else{
-  //       setUser(null);
-  //     }
-  //   })
-
-  //   return unsubscribe;
-  // }, []);
-
+  
   useEffect(() => {
     // Init AOS 
     AOS.init({

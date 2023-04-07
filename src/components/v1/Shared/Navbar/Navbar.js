@@ -344,4 +344,4 @@ const Navbar = ({ pageName, posts ,course}) => {
   )
 }
 
-export default Navbar
+export default Navbar;
