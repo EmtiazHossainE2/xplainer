@@ -14,6 +14,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import CourseMobileMenu from "@/src/components/v1/Shared/Navbar/CourseMobileMenu";
 import MobileMenu2 from "@/src/components/v1/Shared/Navbar/MobileMenu2";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@/src/store/features/auth/authSlice";
 
 const timeoutDuration = 0;
 
@@ -26,9 +27,12 @@ const Navbar = ({ pageName, posts, course }) => {
   const timeOutRef = useRef();
   const workShopRef = useRef();
   const workShopOutRef = useRef();
+  const profileRef = useRef();
+  const profileOutRef = useRef();
 
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
+  // console.log(currentUser)
 
   //***************** Course logic *****************
   const handleCourseEnter = (isOpen) => {
@@ -51,6 +55,18 @@ const Navbar = ({ pageName, posts, course }) => {
   const handleWorkShopLeave = (isOpen) => {
     workShopOutRef.current = setTimeout(() => {
       isOpen && workShopRef.current?.click();
+    }, timeoutDuration);
+  };
+
+  //***************** Profile logic *****************
+  const handleProfileEnter = (isOpen) => {
+    clearTimeout(profileOutRef.current);
+    !isOpen && profileRef.current?.click();
+  };
+
+  const handleProfileLeave = (isOpen) => {
+    profileOutRef.current = setTimeout(() => {
+      isOpen && profileRef.current?.click();
     }, timeoutDuration);
   };
 
@@ -323,7 +339,7 @@ const Navbar = ({ pageName, posts, course }) => {
               <Link
                 href="/mock-interview"
                 className={`py-2.5 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
-                  router.pathname.startsWith("/blog")
+                  router.pathname.startsWith("/mock-interview")
                     ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
                     : ""
                 }`}
@@ -344,17 +360,80 @@ const Navbar = ({ pageName, posts, course }) => {
 
             {/* Right  Side*/}
             <div>
-              <div className="space-x-5">
-                <button
-                  onClick={() => setLoginModal(true)}
-                  className={`py-2.5 font-semibold text-[#0070F4] hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4] `}
-                >
-                  Login
-                </button>
-                <button className=" rounded-[10px] border-2 border-[#AED3FF] bg-[#0070F4] py-2 px-[15px] text-white">
-                  Sign Up
-                </button>
-              </div>
+              {currentUser?.email ? (
+                <div>
+                  {/************************ If user   ************************/}
+                  <Popover className="hover:border-none">
+                    {({ open }) => (
+                      <div
+                        onMouseEnter={() => handleProfileEnter(open)}
+                        onMouseLeave={() => handleProfileLeave(open)}
+                      >
+                        <Popover.Button
+                          ref={profileRef}
+                          className={`py-2 outline-none`}
+                        >
+                          {currentUser?.photoURL ? (
+                            <Image
+                              className="rounded-full"
+                              src={currentUser?.photoURL}
+                              width={38}
+                              height={38}
+                              alt="user photo"
+                            />
+                          ) : (
+                            <Image
+                              className="rounded-full"
+                              src="/images/shared/demoProfile.png"
+                              width={38}
+                              height={38}
+                              alt="user photo"
+                            />
+                          )}
+                        </Popover.Button>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-200"
+                          enterFrom="opacity-0 translate-y-1"
+                          enterTo="opacity-100 translate-y-0"
+                          leave="transition ease-in duration-150"
+                          leaveFrom="opacity-100 translate-y-0"
+                          leaveTo="opacity-0 translate-y-1"
+                        >
+                          <Popover.Panel className="absolute right-16 z-50 mt-[2px] rounded-b-lg border bg-white shadow-2xl">
+                            <Link
+                              href="/dashboard"
+                              className="my-2 block py-2 pl-4 pr-20 hover:bg-[#EAFCFF]  hover:text-[#006BC2]"
+                            >
+                              Dashboard
+                            </Link>
+
+                            <span
+                              className={`cursor-pointer ${linkStyle}`}
+                              onClick={handleLogout}
+                            >
+                              {" "}
+                              Log Out
+                            </span>
+                          </Popover.Panel>
+                        </Transition>
+                      </div>
+                    )}
+                  </Popover>
+                </div>
+              ) : (
+                <div className="space-x-5">
+                  <button
+                    onClick={() => setLoginModal(true)}
+                    className={`py-2.5 font-semibold text-[#0070F4] hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4] `}
+                  >
+                    Login
+                  </button>
+                  <button className=" rounded-[10px] border-2 border-[#AED3FF] bg-[#0070F4] py-2 px-[15px] text-white">
+                    Sign Up
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
