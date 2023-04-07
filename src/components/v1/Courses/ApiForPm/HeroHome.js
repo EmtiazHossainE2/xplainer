@@ -4,13 +4,12 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import PriceView from "../PriceView";
 
 const HeroHome = ({ course, ctaText, handleCTAClick }) => {
-
   const priceData = {
-    amount : 999,
-    currency : 'INR',
-    discount : 50
+    amount: 999,
+    currency: "INR",
+    discount: 50,
   };
-  
+
   return (
     <div className="container mx-auto py-4 pb-12 px-5 lg:px-12 big:px-36 large:px-96">
       <div className="flex flex-col items-center justify-between gap-10 pt-10 lg:flex-row  lg:gap-16 lg:pt-[52px] ">
@@ -112,7 +111,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick }) => {
               </div>
             </div>
 
-           <PriceView priceData={priceData} />
+            <PriceView priceData={priceData} />
 
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
               <div
@@ -127,18 +126,17 @@ const HeroHome = ({ course, ctaText, handleCTAClick }) => {
                 href="/courses/api-for-pm/introduction"
                 className="text-center"
               >
-                <p className="rounded-md border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:hidden">
+                <button className="w-full rounded-md border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:hidden">
                   Try free preview
-                </p>
-                <p className="hidden text-sm font-medium text-[#0070F4]">
+                </button>
+                <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:block">
                   Try free preview
-                </p>
+                </button>
               </Link>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 };
