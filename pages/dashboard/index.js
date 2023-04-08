@@ -1,13 +1,12 @@
-import { db } from "@/src/auth/firebase/Firebase.init";
 import { MyCourses, Settings } from "@/src/components/v1/Dashboard";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
 import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { updateCourse } from "@/src/store/features/courses/courseSlice";
-import { child, get, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { fetchCourseDetail, fetchCurrentUserCourses } from "../api/firebase";
 
 const Dashboard = ({ user, allCourses }) => {
   const { currentUser } = useAuthService();
@@ -97,17 +96,13 @@ export const getServerSideProps = async ({ req, res }) => {
     };
   }
 
-  const dbRef = ref(db);
-  const channel = `users/${user.uid}/courses`;
-  const snapshot = await get(child(dbRef, channel));
-  const courseData = snapshot.val();
+  const courseData = await fetchCurrentUserCourses(user);
 
   if (courseData) {
     await Promise.all(
       Object.keys(courseData).map(async (item, index) => {
-        const courseChannel = `courses/${item}`;
-        const snap = await get(child(dbRef, courseChannel));
-        const courseDetail = snap.val();
+        const courseDetail = await fetchCourseDetail(item);
+
         if (courseDetail) {
           unlockedCourses.push(courseDetail);
         }

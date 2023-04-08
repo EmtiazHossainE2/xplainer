@@ -80,3 +80,10 @@ const readFileData = (filename, metaData) => {
 export function parseCookies(req) {
   return cookie.parse(req ? req.headers.cookie || "" : document?.cookie)
 }
+
+export const getClientReferenceId = (userID, courseID) => {
+  if(userID && courseID){
+    return `${userID}-${courseID}`;
+  }
+  return null; 
+}
