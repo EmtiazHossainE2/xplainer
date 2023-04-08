@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import PriceView from "../PriceView";
 
-const HeroHome = ({ course, ctaText, handleCTAClick }) => {
+const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
   const priceData = {
     amount: 999,
     currency: "INR",
