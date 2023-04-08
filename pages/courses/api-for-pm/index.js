@@ -34,7 +34,7 @@ const ApiForPMCoursePage = (props) => {
       return;
     }
 
-    const clientReferenceId = `${currentUser.uid}-${courseID}`;
+    const clientReferenceId = `${currentUser.uid}-${props.courseId}`;
 
     if (router.pathname === "/courses/api-for-pm") {
       if (currentUser?.email) {
