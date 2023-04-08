@@ -29,9 +29,8 @@ const Home = ({ posts }) => {
         <PageLayout>
           <HeroBanner />
           <Brand disableHeader={true} />
-          <Courses ctaText={"View course detail"}/>
+          <Courses ctaText={"View course detail"} />
           <Mentors />
-
 
           <BlogGridView posts={posts} disableHeader="true" />
 

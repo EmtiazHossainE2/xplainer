@@ -1,35 +1,41 @@
+import { fetchCourseDetail, validateSubscription } from "@/pages/api/firebase";
 import {
-  CourseContent,
+  Authors as Authors2, CourseContent,
   CtaAlternative,
-  TestimonialsCarousel,
+  TestimonialsCarousel
 } from "@/src/components/v1/Courses";
-import {
-  Authors,
-  FeaturesBlocks,
-  HeroHome,
-  Offer,
-} from "@/src/components/v1/Courses/ApiForPm";
-import { Brand, Faqs } from "@/src/components/v1/HomeContainer";
-// import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
+import { FeaturesBlocks, HeroHome } from "@/src/components/v1/Courses/ApiForPm";
+import { Faqs } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
+import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
+import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
+import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { checkout } from "@/src/utils/checkout";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
-const ApiForPm = () => {
+const ApiForPMCoursePage = (props) => {
   const router = useRouter();
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, purchasedCourses } = useAuthService();
   const [loginModal, setLoginModal] = useState(false);
+  const { hasCourseAccess } = props;
 
-  // console.log(router.pathname, "api");
-  // const coursePrice = "price_1Ms0b3SBqetirFH0Nt5qV6aQP";
-  const coursePrice = "price_1MrLYXDEsxnXfJbTEtoNl1ba"; // Emtiaz price added for test
-  const courseSlug = "api-for-pm";
+  const coursePrice =
+    DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
+  const courseSlug = ALL_COURSES.API_FOR_PM; // to be loaded from router
+
+  const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
 
   const handleCTAClick = () => {
+    if (hasCourseAccess) {
+      router.push(router.asPath + "/introduction");
+      return;
+    }
+
+    const clientReferenceId = `${currentUser.uid}-${props.courseId}`;
+
     if (router.pathname === "/courses/api-for-pm") {
       if (currentUser?.email) {
         checkout({
@@ -39,6 +45,9 @@ const ApiForPm = () => {
               quantity: 1,
             },
           ],
+          customerEmail: currentUser.email,
+          clientReferenceId: clientReferenceId,
+          courseRoute: router.asPath,
         });
       } else {
         return setLoginModal(true);
@@ -52,59 +61,35 @@ const ApiForPm = () => {
         title={"Master APIs for Product Management"}
         description={`The most comprehensive course that demystifies APIs and API products tailored for Product Managers`}
       />
-      <main className="">
-        <PageLayout>
-          {/* New Api For Pm Start  */}
-          <HeroHome
-            course={courseSlug}
-            ctaText="Enroll now"
-            handleCTAClick={handleCTAClick}
-            coursePreviewSlug={"api-for-pm/introduction"}
-          />
-          <Brand />
-          <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
-          {/* <Offer /> */}
-          <CourseContent />
-          <Authors course={courseSlug} />
+      <PageLayout>
+        <HeroHome
+          course={courseSlug}
+          ctaText={ctaText}
+          handleCTAClick={handleCTAClick}
+          coursePreviewSlug={"api-for-pm/introduction"}
+          hasCourseAccess={hasCourseAccess}
+        />
 
-          <TestimonialsCarousel />
-          {/* <Certificate /> */}
-          <Faqs />
-          <CtaAlternative />
-          {/* New Api For Pm End  */}
+        <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
+        {/* <Offer /> */}
+        <CourseContent />
 
-          {/* Old V1 Api For Pm Start  */}
-          {/* <HeroHome
-            heading={"API Product Manager course"}
-            headingColorText="#1"
-            ctaText="Enroll now"
-            apiForPm={true}
-            coursePrice="price_1MrLYXDEsxnXfJbTEtoNl1ba"
-            handleCTAClick={handleCTAClick}
-            coursePreviewSlug={"api-for-pm/introduction"}
-          />
-          <HeroBanner />
-          <FeaturesBlocks
-            featureBlockData={pmInterviewKeyChapters}
-            heading={"What will you learn?"}
-            apiForPm={true}
-          />
-          <TestimonialsCarousel />
-          <Authors name1={"Deepak Kumar"} name2={"Venkatesh Gupta"} />
-          <Faqs /> */}
-          {/* Old V1 Api For Pm End */}
+        <Authors2 />
 
-          {/* Cta  Api For Pm  */}
-          <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
-            <div
-              onClick={handleCTAClick}
-              className="flex cursor-pointer items-center justify-center bg-[#F25959] py-3 text-center text-[26px] font-bold text-white"
-            >
-              <button>Buy Now @ 999</button>
-            </div>
+        <TestimonialsCarousel />
+        {/* <Certificate /> */}
+        <Faqs />
+        <CtaAlternative />
+
+        <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
+          <div
+            onClick={handleCTAClick}
+            className="flex cursor-pointer items-center justify-center bg-[#F25959] py-3 text-center text-[26px] font-bold text-white"
+          >
+            <button>Buy Now @ 999</button>
           </div>
-        </PageLayout>
-      </main>
+        </div>
+      </PageLayout>
 
       {/************************ Login Modal  ************************/}
       <LoginModal
@@ -116,4 +101,32 @@ const ApiForPm = () => {
   );
 };
 
-export default ApiForPm;
+export default ApiForPMCoursePage;
+
+export const getServerSideProps = async ({ req, res, resolvedUrl }) => {
+  const courseSlug = resolvedUrl
+    .split("/")
+    .filter((i) => i)
+    .pop();
+
+  // fetch current course info
+  const currentCourseData = await fetchCourseDetail(courseSlug);
+
+  const courseId = "Wh3EcKK3kvkg9Eqwr19s";
+
+  const user = getAuthUserFromCookie(req);
+
+  let hasCourseAccess = false;
+  if (user) {
+    const uid = user.uid;
+    hasCourseAccess = await validateSubscription(uid, courseId);
+  }
+
+  return {
+    props: {
+      currentCourseData,
+      hasCourseAccess,
+      courseId,
+    },
+  };
+};

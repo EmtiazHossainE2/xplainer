@@ -730,3 +730,21 @@ export const courseCategories = [
 export const BASE_URL = "https://xplainerr.vercel.app/";
 
 export const IMAGE_KIT_CDN = 'https://ik.imagekit.io/zwxa4kttt/';
+
+export const ALL_COURSES = {
+  API_FOR_PM : "api-for-pm",
+  PRICING_FOR_PM : "pricing-for-pm",
+  UX_WRITING_101 : 'ux-writting',
+};
+
+export const ENV = {
+  TEST : 'test',
+  LIVE : 'live'
+};
+
+export const DEFAULT_PRICE_LIST = {
+  [ALL_COURSES.API_FOR_PM] : {
+    [ENV.TEST] : 'price_1Ms0b3SBqetirFH0Nt5qV6aQ',
+    [ENV.LIVE] : "price_1Mu0ocSBqetirFH0s6YkBmCF"
+  } 
+}

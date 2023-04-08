@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import PriceView from "../PriceView";
 
-const HeroHome = ({ course, ctaText, handleCTAClick }) => {
+const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
   const priceData = {
     amount: 999,
     currency: "INR",
@@ -11,7 +11,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick }) => {
   };
 
   return (
-    <div className="container mx-auto py-4 px-5 lg:px-12 big:px-36 large:px-96">
+    <div className="container mx-auto py-4 pb-12 px-5 lg:px-12 big:px-36 large:px-96">
       <div className="flex flex-col items-center justify-between gap-10 pt-10 lg:flex-row  lg:gap-16 lg:pt-[52px] ">
         {/* Left  */}
         <div className="hidden basis-1/2 scale-125 items-center justify-center md:block lg:flex">
