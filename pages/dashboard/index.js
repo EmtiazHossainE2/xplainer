@@ -113,8 +113,7 @@ export const getServerSideProps = async ({ req, res }) => {
   return {
     props: {
       user: user,
-      allCourses: unlockedCourses,
-      authenticated: true,
+      allCourses: unlockedCourses
     },
   };
 };

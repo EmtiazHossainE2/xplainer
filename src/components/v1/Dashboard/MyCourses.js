@@ -8,14 +8,14 @@ const MyCourses = ({allCourses}) => {
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:mb-56 2xl:mb-72">
         {allCourses &&
           allCourses.map((course, index) => (
-            <div key={index} className=" border border-[#EAECF0] pb-2 rounded-[9px]">
-              <div>
-                <Image src={`/images/myCourse/${course.coverImage}`} className="w-full" alt={course.title} width={271} height={106} />
+            <div key={index} className=" border border-[#EAECF0] pb-2 rounded-md">
+              <div className="image">
+                <Image src={`${course.cover_image}`} className="w-full" alt={course.title} width={271} height={106} />
               </div>
               <div className="px-3.5">
                 <h3 className="text-lg leading-[30px] pt-4 font-bold capitalize">{course.title}</h3>
                 <p className="text-xs text-[#868686] leading-[33px] font-medium capitalize">{course.instructor}</p>
-                <Link href={`courses/${course.permalink}/introduction`} className=" bg-[#ECF5FF] border border-[#0070F4] rounded-[4px] w-full flex justify-center h-[33px] mt-8">
+                <Link href={`courses/${course.slug}/introduction`} className=" bg-[#ECF5FF] border border-[#0070F4] rounded-[4px] w-full flex justify-center h-[33px] mt-8">
                   <button className="text-[#0070F4] text-sm leading-[33px] font-semibold ">Start Course</button>
                 </Link>
 

@@ -1,6 +1,7 @@
-import { fetchCourseDetail, validateSubscription } from "@/pages/api/firebase";
+import { getCoursePageInfo } from "@/pages/api/firebase";
 import {
-  Authors as Authors2, CourseContent,
+  Authors as Authors2,
+  CourseContent,
   CtaAlternative,
   TestimonialsCarousel
 } from "@/src/components/v1/Courses";
@@ -11,20 +12,20 @@ import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
-import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { checkout } from "@/src/utils/checkout";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 const ApiForPMCoursePage = (props) => {
   const router = useRouter();
-  const { currentUser, purchasedCourses } = useAuthService();
+  const { currentUser } = useAuthService();
   const [loginModal, setLoginModal] = useState(false);
-  const { hasCourseAccess } = props;
+  const { hasCourseAccess, currentCourseData } = props;
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
-  const courseSlug = ALL_COURSES.API_FOR_PM; // to be loaded from router
+
+  const { slug: courseSlug, priceId } = currentCourseData;
 
   const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
 
@@ -107,20 +108,14 @@ export const getServerSideProps = async ({ req, res, resolvedUrl }) => {
   const courseSlug = resolvedUrl
     .split("/")
     .filter((i) => i)
-    .pop();
+    .pop()
+    .split("?")[0];
 
-  // fetch current course info
-  const currentCourseData = await fetchCourseDetail(courseSlug);
-
-  const courseId = "Wh3EcKK3kvkg9Eqwr19s";
-
-  const user = getAuthUserFromCookie(req);
-
-  let hasCourseAccess = false;
-  if (user) {
-    const uid = user.uid;
-    hasCourseAccess = await validateSubscription(uid, courseId);
-  }
+  const { hasCourseAccess, currentCourseData, courseId } =
+    await getCoursePageInfo({
+      req,
+      courseSlug,
+    });
 
   return {
     props: {

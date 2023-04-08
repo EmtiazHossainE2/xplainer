@@ -122,17 +122,16 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
                   {ctaText}
                 </button>
               </div>
+              {!hasCourseAccess && 
               <Link
                 href="/courses/api-for-pm/introduction"
                 className="text-center"
               >
-                <button className="w-full rounded-md border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:hidden">
-                  Try free preview
-                </button>
                 <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:block">
                   Try free preview
                 </button>
               </Link>
+              }
             </div>
           </div>
         </div>

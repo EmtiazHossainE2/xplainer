@@ -12,86 +12,23 @@ const HeroHome = ({
   heading,
   headingColorText,
   ctaText,
-  apiForPm,
   pricing,
-  coursePrice,
   handleCTAClick,
-  coursePreviewSlug,
+  hasCourseAccess,
 }) => {
-  const { currentUser } = useSelector((state) => state.user);
   const [loginModal, setLoginModal] = useState(false);
-  // console.log(currentUser?.email)
-  console.log(coursePrice);
-
-  const handleClick = () => {
-    console.log("click");
-    if (currentUser?.email) {
-      checkout({
-        lineItems: [
-          {
-            price: coursePrice,
-            quantity: 1,
-          },
-        ],
-      });
-    } else {
-      return setLoginModal(true);
-    }
-  };
 
   const priceData = {
     amount: 999,
     currency: "INR",
-    discount: 50,
   };
 
   return (
     <div>
       <div className="section__padding container relative mx-auto">
         <div className="flex flex-col justify-between gap-5 md:flex-row lg:px-12 2xl:items-center 2xl:gap-0">
-          {/* Illustration behind hero content */}
-          {apiForPm && (
-            <div
-              className="pointer-events-none absolute left-1/2 bottom-0 -z-10 -translate-x-1/2 transform"
-              aria-hidden="true"
-            >
-              <svg
-                width="1360"
-                height="578"
-                viewBox="0 0 1360 578"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient
-                    x1="50%"
-                    y1="0%"
-                    x2="50%"
-                    y2="100%"
-                    id="illustration-01"
-                  >
-                    <stop stopColor="#FFF" offset="0%" />
-                    <stop stopColor="#EAEAEA" offset="77.402%" />
-                    <stop stopColor="#DFDFDF" offset="100%" />
-                  </linearGradient>
-                </defs>
-                <g fill="url(#illustration-01)" fillRule="evenodd">
-                  <circle cx="1232" cy="128" r="128" />
-                  <circle cx="155" cy="443" r="64" />
-                </g>
-              </svg>
-            </div>
-          )}
-
           {/* Review Image  */}
           <div className="hidden basis-1/2 md:block lg:basis-5/12">
-            {apiForPm && (
-              <Image
-                src="/images/courses/review.webp"
-                width={350}
-                height={400}
-                alt="api for pm review jpeg"
-              />
-            )}
             {pricing && (
               <Image
                 src="/images/courses/hero-case.webp"
@@ -106,16 +43,6 @@ const HeroHome = ({
           <div className="basis-1/2 lg:basis-7/12">
             <div>
               <div className="md:items-starts flex items-center justify-center md:justify-start">
-                {apiForPm && (
-                  <Link href="/">
-                    <Image
-                      src={topBadge}
-                      width={250}
-                      height={54}
-                      alt="API for Product Managers - The A to Z of APIs for product managers | Product Hunt"
-                    />
-                  </Link>
-                )}
                 {pricing && (
                   <Link href="/">
                     <Image
@@ -133,27 +60,11 @@ const HeroHome = ({
                 </span>{" "}
                 {heading}
               </h1>
+
               {pricing && (
                 <p className="pb-3 text-lg font-semibold text-blue-600">
                   1 stop destination for product, growth & marketing folks
                 </p>
-              )}
-
-              {apiForPm && (
-                <div>
-                  <p className="pb-4 text-lg lg:text-xl ">
-                    ✔️ Trusted by 7300+ PMs. Lifelong access. 10+ chapters
-                  </p>
-                  <p className="pb-4 text-lg lg:text-xl ">
-                    ✔️ Crack your PM interview technical rounds with ease
-                  </p>
-                  <p className="pb-4 text-lg lg:text-xl ">
-                    ✔️ Transform your product strategy with API skills
-                  </p>
-                  <p className="pb-5 text-lg lg:text-xl ">
-                    ✔️ Elevate your career with API knowledge
-                  </p>
-                </div>
               )}
 
               {pricing && (
@@ -173,20 +84,22 @@ const HeroHome = ({
 
               <div className="flex flex-col md:flex-row">
                 <button
-                  onClick={handleClick}
+                  onClick={handleCTAClick}
                   className="btn w-full cursor-pointer bg-blue-600 text-white hover:bg-blue-700 sm:mb-0 sm:w-auto"
                 >
                   {ctaText}
                 </button>
 
-                <div className="mt-2 rounded-md  border border-gray-300 p-3 md:ml-2">
-                  <button
-                    onClick={handleClick}
-                    className=" ml-2 w-full cursor-pointer  text-[#6f6f6f] sm:mb-0 sm:w-auto"
-                  >
-                    Try free preview
-                  </button>
-                </div>
+                {!hasCourseAccess && (
+                  <div className="mt-2 rounded-md  border border-gray-300 p-3 md:ml-2">
+                    <button
+                      onClick={handleCTAClick}
+                      className=" ml-2 w-full cursor-pointer  text-[#6f6f6f] sm:mb-0 sm:w-auto"
+                    >
+                      Try free preview
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

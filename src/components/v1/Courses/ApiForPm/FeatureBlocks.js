@@ -3,7 +3,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const FeaturesBlocks = ({ heading, course }) => {
   return (
-    <section className={`relative mt-16 bg-[#081530]`}>
+    <section className={`relative bg-[#081530]`}>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-6 md:py-12">
           {/* Section header */}
