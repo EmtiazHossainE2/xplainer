@@ -1,5 +1,4 @@
 import { db, firestoreDbRef } from "@/src/auth/firebase/Firebase.init";
-import { getClientReferenceId } from "@/src/utils/helper";
 import { child, get, ref } from "firebase/database";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -17,7 +16,7 @@ export const fetchCurrentUserCourses = async (user) => {
 
 export const fetchCourseDetail = async (courseSlug) => {
   try {
-    let courseData = null;
+    let courseData = {};
     const coursesRef = collection(firestoreDbRef, "courses");
     const q = query(coursesRef, where("slug", "==", courseSlug));
     const querySnapshot = await getDocs(q);
@@ -34,10 +33,12 @@ export const fetchCourseDetail = async (courseSlug) => {
 };
 
 export const validateSubscription = async (userId, courseId) => {
-  try {
-    let hasCourseAccess = false;
-    const client_ref_id = getClientReferenceId(userId, courseId);
+  let hasCourseAccess = false;
 
+  if (!userId || !courseId) return false;
+
+  try {
+    const client_ref_id = getClientReferenceId(userId, courseId);
     const paymentRef = collection(firestoreDbRef, "payments");
     const q = query(
       paymentRef,
@@ -58,19 +59,28 @@ export const validateSubscription = async (userId, courseId) => {
 
 //** Course Details Page  */
 
-export const getCoursePageInfo = async ({ user, courseSlug }) => {
-  const currentCourseData = await fetchCourseDetail(courseSlug);
-  const courseId = currentCourseData?.courseID;
+export const getCoursePageInfo = async ({ userId, courseSlug }) => {
+  try {
+    const currentCourseData = await fetchCourseDetail(courseSlug);
+    const courseId = currentCourseData?.courseID;
 
-  let hasCourseAccess = false;
-  if (user) {
-    const uid = user.uid;
-    hasCourseAccess = await validateSubscription(uid, courseId);
+    let hasCourseAccess = false;
+    if (userId) {
+      hasCourseAccess = await validateSubscription(userId, courseId);
+    }
+
+    return {
+      hasCourseAccess,
+      currentCourseData,
+      courseId,
+    };
+  } catch (err) {
+    throw err;
   }
+};
 
-  return {
-    hasCourseAccess,
-    currentCourseData,
-    courseId,
-  };
+export const getClientReferenceId = (userID, courseID) => {
+  if (userID && courseID) {
+    return `${userID}-${courseID}`;
+  }
 };

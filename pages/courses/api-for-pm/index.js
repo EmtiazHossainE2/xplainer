@@ -12,8 +12,9 @@ import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
 import { checkout } from "@/src/utils/checkout";
+import { getCoursePageInfo } from "@/src/utils/firebase";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const courseSlug = ALL_COURSES.API_FOR_PM;
 
@@ -21,9 +22,18 @@ const ApiForPMCoursePage = (props) => {
   const router = useRouter();
   const { currentUser } = useAuthService();
   const [loginModal, setLoginModal] = useState(false);
-  const { hasCourseAccess } = props;
+  const [hasCourseAccess, setHasCourseAccess] = useState(false);
+  const [courseId, setCourseId] = useState(null);
 
-  const courseId = '124'
+  useEffect(() => {
+    const fetchData = async () => {
+      const {hasCourseAccess, courseId, currentCourseData} = await getCoursePageInfo({userId: currentUser.uid, courseSlug});
+      setHasCourseAccess(hasCourseAccess);
+      setCourseId(courseId);
+    };
+
+    fetchData();
+  }, [currentUser.uid, hasCourseAccess]);
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];

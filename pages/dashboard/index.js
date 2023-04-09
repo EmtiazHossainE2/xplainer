@@ -4,9 +4,9 @@ import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
 import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { updateCourse } from "@/src/store/features/courses/courseSlice";
+import { fetchCourseDetail, fetchCurrentUserCourses } from "@/src/utils/firebase";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchCourseDetail, fetchCurrentUserCourses } from "../api/firebase";
 
 const Dashboard = ({ user, allCourses }) => {
   const { currentUser } = useAuthService();
@@ -98,12 +98,12 @@ export const getServerSideProps = async ({ req, res }) => {
 
   const courseData = await fetchCurrentUserCourses(user);
 
+
   if (courseData) {
     await Promise.all(
-      Object.keys(courseData).map(async (item, index) => {
-        const courseDetail = await fetchCourseDetail(item);
-
-        if (courseDetail) {
+      Object.keys(courseData).map(async (slug, index) => {
+        const courseDetail = await fetchCourseDetail(slug);
+        if (courseDetail?.courseID) {
           unlockedCourses.push(courseDetail);
         }
       })
