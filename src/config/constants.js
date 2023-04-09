@@ -200,10 +200,9 @@ export const allCourses = [
         icon: "icon4.svg",
         text: "25+ free product management interview questions  ",
       },
-      
     ],
   },
-  
+
   {
     title: "How to do user interviews",
     coverImage: "courses/pricing-for-pm",
@@ -311,46 +310,27 @@ export const authors = {
 };
 
 export const offers = [
-  
-
-
-
-
-
-
-
-
-
-
-
-
   {
-    description:
-      "Product Management Aspirants",
+    description: "Product Management Aspirants",
   },
   {
-    description : 'Platform Product Managers'
+    description: "Platform Product Managers",
   },
   {
-    description:
-      "Experienced Product Managers wanting to know more about APIs",
+    description: "Experienced Product Managers wanting to know more about APIs",
   },
   {
-    description:
-      "API Product Managers",
+    description: "API Product Managers",
   },
   {
-    description:
-      "Technical product managers",
+    description: "Technical product managers",
   },
   {
-    description:
-      "Business analysts",
+    description: "Business analysts",
   },
   {
-    description:
-      "Startups and Product Teams",
-  }
+    description: "Startups and Product Teams",
+  },
 ];
 
 export const certificateTexts = [
@@ -493,29 +473,33 @@ export const myCourses = [
 
 export const courseContent = [
   {
-    title: "PM Interviewing Introduction",
+    title: "Introduction",
     subModules: [
       {
-        title: "Welcome to the Xplainerr PM Course!",
+        title: "Getting started with pricing & monetisation",
+        isPaid: true,
+        content: "",
+        slug: "",
+      },
+    ],
+  },
+  {
+    title: "Pricing models",
+    subModules: [
+      {
+        title: "1. Freemium subscription",
         isPaid: true,
         content: "",
         slug: "",
       },
       {
-        title:
-          "The Perfect Structure for Every Product Management Interview Question",
+        title: "2. Subscription model ",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "How Rubrics Can Help You Ace PM Interviews",
-        isPaid: false,
-        content: "",
-        slug: "",
-      },
-      {
-        title: "PM Interview Glossary",
+        title: "3. Tiered price model",
         isPaid: false,
         content: "",
         slug: "",
@@ -523,35 +507,34 @@ export const courseContent = [
     ],
   },
   {
-    title: "Monitoring Questions",
+    title: "Pricing Psychology",
     subModules: [
       {
-        title:
-          "PM Interviews: Introduction to Analytical & Execution Questions",
+        title: "1. Decoy Pricing",
         isPaid: true,
         content: "",
         slug: "",
       },
       {
-        title: "How to Answer A/B Test Product Management Questions",
+        title: "2. Transparency",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "A Rubric for Analytical Interviews",
+        title: "3. Price anchoring",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "Pick YouTube's Key Metrics",
+        title: "4. Reframe the price",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "Improve Google's Homepage",
+        title: "5. Scarcity effect",
         isPaid: false,
         content: "",
         slug: "",
@@ -559,35 +542,34 @@ export const courseContent = [
     ],
   },
   {
-    title: "Analytical Questions",
+    title: "Pricing strategies",
     subModules: [
       {
-        title:
-          "PM Interviews: Introduction to Analytical & Execution Questions",
-        isPaid: true,
-        content: "",
-        slug: "",
-      },
-      {
-        title: "How to Answer A/B Test Product Management Questions",
+        title: "1. Cost based pricing",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "A Rubric for Analytical Interviews",
+        title: "2. Value based pricing",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "Pick YouTube's Key Metrics",
+        title: "3. Competitor based pricing",
         isPaid: false,
         content: "",
         slug: "",
       },
       {
-        title: "Improve Google's Homepage",
+        title: "4. Price skimming",
+        isPaid: false,
+        content: "",
+        slug: "",
+      },
+      {
+        title: "5. Penetration pricing",
         isPaid: false,
         content: "",
         slug: "",
@@ -729,26 +711,26 @@ export const courseCategories = [
 
 export const BASE_URL = "https://xplainerr.vercel.app/";
 
-export const IMAGE_KIT_CDN = 'https://ik.imagekit.io/zwxa4kttt/';
+export const IMAGE_KIT_CDN = "https://ik.imagekit.io/zwxa4kttt/";
 
 export const ALL_COURSES = {
-  API_FOR_PM : "api-for-pm",
-  PRICING_FOR_PM : "pricing-for-pm",
-  UX_WRITING_101 : 'ux-writting',
+  API_FOR_PM: "api-for-pm",
+  PRICING_FOR_PM: "pricing-for-pm",
+  UX_WRITING_101: "ux-writting",
 };
 
 export const ENV = {
-  TEST : 'test',
-  LIVE : 'live'
+  TEST: "test",
+  LIVE: "live",
 };
 
 export const DEFAULT_PRICE_LIST = {
-  [ALL_COURSES.API_FOR_PM] : {
-    [ENV.TEST] : 'price_1Ms0b3SBqetirFH0Nt5qV6aQ',
-    [ENV.LIVE] : "price_1Mu0ocSBqetirFH0s6YkBmCF"
+  [ALL_COURSES.API_FOR_PM]: {
+    [ENV.TEST]: "price_1Ms0b3SBqetirFH0Nt5qV6aQ",
+    [ENV.LIVE]: "price_1Mu0ocSBqetirFH0s6YkBmCF",
   },
-  [ALL_COURSES.PRICING_FOR_PM] : {
-    [ENV.TEST] : 'price_1Mtz8QSBqetirFH0Cj3MsCKs',
-    [ENV.LIVE] : 'price_1MuhpWSBqetirFH0ppJyCIN1'
-  }
-}
+  [ALL_COURSES.PRICING_FOR_PM]: {
+    [ENV.TEST]: "price_1Mtz8QSBqetirFH0Cj3MsCKs",
+    [ENV.LIVE]: "price_1MuhpWSBqetirFH0ppJyCIN1",
+  },
+};

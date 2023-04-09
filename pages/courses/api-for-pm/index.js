@@ -84,7 +84,7 @@ const ApiForPMCoursePage = (props) => {
 
         <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
         {/* <Offer /> */}
-        <CourseContent />
+        {/* <CourseContent /> */}
 
         <Authors2 />
 

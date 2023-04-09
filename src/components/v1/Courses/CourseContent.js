@@ -1,9 +1,6 @@
 import { courseContent } from '@/src/config/constants';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { BsChevronUp, BsChevronDown } from 'react-icons/bs'
-import { FaLock } from 'react-icons/fa'
+import { useState } from 'react';
 import Content from './Content';
 
 const CourseContent = () => {
