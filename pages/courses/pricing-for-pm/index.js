@@ -15,13 +15,14 @@ import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import { useRouter } from "next/router";
 import { checkout } from "@/src/utils/checkout";
+import { getAuthUserFromCookie } from "@/src/lib/auth";
 
 const PricingForPM = (props) => {
   const router = useRouter();
   const { currentUser } = useAuthService();
 
-  const {hasCourseAccess, currentCourseData} = props;
-  const courseSlug = currentCourseData.slug;
+  const {hasCourseAccess} = props;
+  const courseSlug = 'pricing-for-pm'
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.PRICING_FOR_PM][process.env.NEXT_PUBLIC_ENV];
@@ -101,15 +102,16 @@ export const getServerSideProps = async ({ req, res, resolvedUrl }) => {
     .pop()
     .split("?")[0];
 
-  const { hasCourseAccess, currentCourseData, courseId } =
+    const user = getAuthUserFromCookie(req);
+
+  const { hasCourseAccess, courseId } =
     await getCoursePageInfo({
-      req,
+      user,
       courseSlug,
     });
 
   return {
     props: {
-      currentCourseData,
       hasCourseAccess,
       courseId,
     },

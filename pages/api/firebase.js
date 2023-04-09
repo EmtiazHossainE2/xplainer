@@ -59,11 +59,10 @@ export const validateSubscription = async (userId, courseId) => {
 
 //** Course Details Page  */
 
-export const getCoursePageInfo = async ({ req, courseSlug }) => {
+export const getCoursePageInfo = async ({ user, courseSlug }) => {
 
     const currentCourseData = await fetchCourseDetail(courseSlug);
   const courseId = currentCourseData?.courseID;
-  const user = getAuthUserFromCookie(req);
 
   let hasCourseAccess = false;
   if (user) {
