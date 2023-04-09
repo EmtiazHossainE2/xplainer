@@ -1,8 +1,7 @@
 import { db, firestoreDbRef } from "@/src/auth/firebase/Firebase.init";
-import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { getClientReferenceId } from "@/src/utils/helper";
 import { child, get, ref } from "firebase/database";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const fetchCurrentUserCourses = async (user) => {
   try {
@@ -60,8 +59,7 @@ export const validateSubscription = async (userId, courseId) => {
 //** Course Details Page  */
 
 export const getCoursePageInfo = async ({ user, courseSlug }) => {
-
-    const currentCourseData = await fetchCourseDetail(courseSlug);
+  const currentCourseData = await fetchCourseDetail(courseSlug);
   const courseId = currentCourseData?.courseID;
 
   let hasCourseAccess = false;

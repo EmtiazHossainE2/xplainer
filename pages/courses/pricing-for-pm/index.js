@@ -4,40 +4,41 @@ import {
   CtaAlternative,
   Faqs,
   HeroHome,
-  TestimonialsCarousel
+  TestimonialsCarousel,
 } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import PageLayout from "@/src/layout/PageLayout";
 
-import { getCoursePageInfo } from "@/pages/api/firebase";
 import { FeaturesBlocks } from "@/src/components/v1/Courses/ApiForPm";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
-import { useRouter } from "next/router";
 import { checkout } from "@/src/utils/checkout";
-import { getAuthUserFromCookie } from "@/src/lib/auth";
+import { useRouter } from "next/router";
+
+const courseSlug = ALL_COURSES.PRICING_FOR_PM;
 
 const PricingForPM = (props) => {
   const router = useRouter();
   const { currentUser } = useAuthService();
 
-  const {hasCourseAccess} = props;
-  const courseSlug = 'pricing-for-pm'
+  const courseId = "124";  
+
+  const { hasCourseAccess } = props;
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.PRICING_FOR_PM][process.env.NEXT_PUBLIC_ENV];
 
-  const ctaText = hasCourseAccess ? "Resume Learning" : "Start Learning Pricing";
-
+  const ctaText = hasCourseAccess
+    ? "Resume Learning"
+    : "Start Learning Pricing";
 
   const handleCTAClick = () => {
-
     if (hasCourseAccess) {
       router.push(router.asPath + "/introduction");
       return;
     }
 
-    const clientReferenceId = `${currentUser.uid}-${props.courseId}`;
+    const clientReferenceId = `${currentUser.uid}-${courseId}`;
 
     if (router.pathname === "/courses/pricing-for-pm") {
       if (currentUser?.email) {
@@ -94,26 +95,3 @@ const PricingForPM = (props) => {
 };
 
 export default PricingForPM;
-
-export const getServerSideProps = async ({ req, res, resolvedUrl }) => {
-  const courseSlug = resolvedUrl
-    .split("/")
-    .filter((i) => i)
-    .pop()
-    .split("?")[0];
-
-    const user = getAuthUserFromCookie(req);
-
-  const { hasCourseAccess, courseId } =
-    await getCoursePageInfo({
-      user,
-      courseSlug,
-    });
-
-  return {
-    props: {
-      hasCourseAccess,
-      courseId,
-    },
-  };
-};

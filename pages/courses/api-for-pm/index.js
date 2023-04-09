@@ -1,9 +1,8 @@
-import { getCoursePageInfo } from "@/pages/api/firebase";
 import {
   Authors as Authors2,
   CourseContent,
   CtaAlternative,
-  TestimonialsCarousel,
+  TestimonialsCarousel
 } from "@/src/components/v1/Courses";
 import { FeaturesBlocks, HeroHome } from "@/src/components/v1/Courses/ApiForPm";
 import { Faqs } from "@/src/components/v1/HomeContainer";
@@ -12,10 +11,11 @@ import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
-import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { checkout } from "@/src/utils/checkout";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
+const courseSlug = ALL_COURSES.API_FOR_PM;
 
 const ApiForPMCoursePage = (props) => {
   const router = useRouter();
@@ -23,10 +23,10 @@ const ApiForPMCoursePage = (props) => {
   const [loginModal, setLoginModal] = useState(false);
   const { hasCourseAccess } = props;
 
+  const courseId = '124'
+
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
-
-  const courseSlug = "api-for-pm";
 
   const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
 
@@ -36,7 +36,7 @@ const ApiForPMCoursePage = (props) => {
       return;
     }
 
-    const clientReferenceId = `${currentUser.uid}-${props.courseId}`;
+    const clientReferenceId = `${currentUser.uid}-${courseId}`;
 
     if (router.pathname === "/courses/api-for-pm") {
       if (currentUser?.email) {
@@ -104,25 +104,3 @@ const ApiForPMCoursePage = (props) => {
 };
 
 export default ApiForPMCoursePage;
-
-export const getServerSideProps = async ({ req, res, resolvedUrl }) => {
-  const courseSlug = resolvedUrl
-    .split("/")
-    .filter((i) => i)
-    .pop()
-    .split("?")[0];
-
-  const user = getAuthUserFromCookie(req);
-
-  const { hasCourseAccess, courseId } = await getCoursePageInfo({
-    user,
-    courseSlug,
-  });
-
-  return {
-    props: {
-      hasCourseAccess,
-      courseId,
-    },
-  };
-};
