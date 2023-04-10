@@ -4,12 +4,13 @@ import {
   CtaAlternative,
   Faqs,
   HeroHome,
-  TestimonialsCarousel,
+  TestimonialsCarousel
 } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import PageLayout from "@/src/layout/PageLayout";
 
 import { FeaturesBlocks } from "@/src/components/v1/Courses/ApiForPm";
+import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import { checkout } from "@/src/utils/checkout";
@@ -24,11 +25,12 @@ const PricingForPM = (props) => {
   const { currentUser } = useAuthService();
   const [hasCourseAccess, setHasCourseAccess] = useState(false);
   const [courseId, setCourseId] = useState(null);
+  const [loginModal, setLoginModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const { hasCourseAccess, courseId } = await getCoursePageInfo({
-        userId: currentUser.uid,
+        userId: currentUser?.uid,
         courseSlug,
       });
       setHasCourseAccess(hasCourseAccess);
@@ -36,7 +38,7 @@ const PricingForPM = (props) => {
     };
 
     fetchData();
-  }, [currentUser.uid, hasCourseAccess]);
+  }, [currentUser?.uid, hasCourseAccess]);
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.PRICING_FOR_PM][process.env.NEXT_PUBLIC_ENV];
@@ -51,7 +53,7 @@ const PricingForPM = (props) => {
       return;
     }
 
-    const clientReferenceId = `${currentUser.uid}-${courseId}`;
+    const clientReferenceId = `${currentUser?.uid}-${courseId}`;
 
     if (router.pathname === "/courses/pricing-for-pm") {
       if (currentUser?.email) {
@@ -102,6 +104,13 @@ const PricingForPM = (props) => {
           <Faqs />
           <CtaAlternative />
         </PageLayout>
+
+        {/************************ Login Modal  ************************/}
+        <LoginModal
+          isVisible={loginModal}
+          setLoginModal={setLoginModal}
+          onClose={() => setLoginModal(false)}
+        />
       </main>
     </>
   );

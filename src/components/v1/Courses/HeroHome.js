@@ -1,12 +1,7 @@
-import { checkout } from "@/src/utils/checkout";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { LoginModal } from "../Shared/Modal";
 import PriceView from "./PriceView";
 import topPricingBadge from "/public/images/courses/featured.svg";
-import topBadge from "/public/images/courses/top-post-badge.svg";
 
 const HeroHome = ({
   heading,
@@ -16,8 +11,6 @@ const HeroHome = ({
   handleCTAClick,
   hasCourseAccess,
 }) => {
-  const [loginModal, setLoginModal] = useState(false);
-
   const priceData = {
     amount: 999,
     currency: "INR",
@@ -106,13 +99,6 @@ const HeroHome = ({
           {/* Hero content end*/}
         </div>
       </div>
-
-      {/************************ Login Modal  ************************/}
-      <LoginModal
-        isVisible={loginModal}
-        setLoginModal={setLoginModal}
-        onClose={() => setLoginModal(false)}
-      />
     </div>
   );
 };
