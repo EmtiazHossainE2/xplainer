@@ -8,7 +8,7 @@ metaDescription: ""
 ---
 
 
-# 4. Price Skimming
+## 4. Price Skimming
 
 [Hitesh Raj Bhagat](https://economictimes.indiatimes.com/blogs/GeektotheFuture/smartphone-prices-the-skimming-pricing-scheme/) in Economic Times brilliantly explains the skimming price strategy employed by mobile phone manufacturers in India.
 

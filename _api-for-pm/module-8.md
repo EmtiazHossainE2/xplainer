@@ -4,7 +4,7 @@ metaTitle: ""
 metaDescription: ""
 ---
 
-# API Security
+## API Security
 
 ---
 
@@ -17,7 +17,7 @@ There are many security best practices applied to web APIs which can help in pre
 3. API Key 
 4. Basic authentication
 
-# 1. OAuth
+## 1. OAuth
 
 ---
 
@@ -71,7 +71,7 @@ Cut short, Oauth is only one authorization but not authentication.
 <YoutubeView id="PfvSD6MmEmQ" />
 
 
-# 2. Rate Limiting of API
+## 2. Rate Limiting of API
 
 ---
 
@@ -81,7 +81,7 @@ A best example of it can be a service, which  offers a free tier and a premium t
 
 That's why is always recommended to make rules for throttling to protect your APIs from spikes and DDOS attacks. 
 
-# 3. API Key
+## 3. API Key
 
 ---
 
@@ -104,7 +104,7 @@ https://www.googleapis.com/youtube/v3/search?q=howtolearn&key={API_KEY}&type=vid
 https://api.github.com/notifications
 ```
 
-# 4. Basic authentication
+## 4. Basic authentication
 
 ---
 

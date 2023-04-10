@@ -6,7 +6,7 @@ metaDescription: ""
 
 
 
-# 1. Decoy pricing
+## 1. Decoy pricing
 
 ### Dan Ariely & the economist case study 🧧
 

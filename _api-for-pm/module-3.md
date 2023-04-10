@@ -6,7 +6,7 @@ metaDescription: ""
 
 
 
-# 1. HTTP Request
+## 1. HTTP Request
 
 ---
 
@@ -49,7 +49,7 @@ Connection: Keep-Alive
 Content-type : application/json
 ```
 
-# 2. HTTP Response
+## 2. HTTP Response
 
 ---
 
@@ -74,7 +74,7 @@ curl -i https://hplussport.com/api/products
 
 
 
-# 3. Endpoints
+## 3. Endpoints
 
 ---
 
@@ -92,7 +92,7 @@ As soon as you tap on the product you are interested to buy; you are redirected 
 - flipkart.com/mobile
 - flipkart.com/ac
 
-# 4. Query Parameters
+## 4. Query Parameters
 
 ---
 

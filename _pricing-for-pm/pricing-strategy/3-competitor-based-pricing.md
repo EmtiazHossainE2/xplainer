@@ -4,7 +4,7 @@ metaTitle: "Competitor based pricing | Pricing for product manager"
 metaDescription: ""
 ---
 
-# 3. Competitor based pricing
+## 3. Competitor based pricing
 
 Competitor-based pricing is simple. If you entering a market that already has multiple players; you can price your product higher/lower than your average competitor's price or just match it.
 

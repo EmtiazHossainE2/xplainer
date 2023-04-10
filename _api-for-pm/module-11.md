@@ -7,7 +7,7 @@ position: "1"
 
 
 
-# 1. Learn about API Economy
+## 1. Learn about API Economy
 
 ---
 
@@ -23,7 +23,7 @@ position: "1"
 
 </div>
 
-# 2. Where to learn more about APIs ?
+## 2. Where to learn more about APIs ?
 
 ---
 
@@ -31,14 +31,14 @@ Learn about Postman and how to make a API request from Postman - [Learn API with
 
 Read more about Swagger - [Swagger Tutorial Link](http://bit.ly/2MW8IBD)
 
-# 3. List of Public APIs
+## 3. List of Public APIs
 
 ---
 
 - [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)
 - [https://any-api.com/](https://any-api.com/)
 
-# 4. API First World Graphic Novel
+## 4. API First World Graphic Novel
 
 ---
 

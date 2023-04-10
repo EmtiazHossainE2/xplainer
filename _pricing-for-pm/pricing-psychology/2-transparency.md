@@ -4,7 +4,7 @@ metaTitle: "Transparency | Pricing for product manager"
 metaDescription: ""
 ---
 
-# 2. Transparency (sucks)!
+## 2. Transparency (sucks)!
 
 You must have booked flight tickets on Paytm! Well, do you remember that they show the **lowest price on the search results page** and then add the convenience fee and other charges later on?
 

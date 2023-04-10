@@ -5,7 +5,7 @@ metaDescription: ""
 ---
 
 
-# 5. Scarcity effect
+## 5. Scarcity effect
 
 Have you ever booked accommodation through booking.com? (You must have!) When you are browsing travel sites you aren’t just browsing; *you are there to book the best deal and secure a spot for your lodging or secure a seat for your urgency!*
 

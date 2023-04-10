@@ -6,7 +6,7 @@ metaDescription: ""
 
 
 
-# 1. What is Postman ?
+## 1. What is Postman ?
 ---
 
 Postman is the world's most famous tool used for building and testing APIs. You can use this tool to create, share, test and document APIs. 
@@ -44,7 +44,7 @@ Similar to import collection, you can share you Postman collection to your team 
 
 ![Screenshot 2021-09-05 at 10.43.37 PM.png](/images/api-for-pm/Screenshot_2021-09-05_at_10.43.37_PM.png)
 
-# 2. Sending your first API request with Postman
+## 2. Sending your first API request with Postman
 
 ---
 
@@ -90,7 +90,7 @@ curl --location --request POST 'https://reqres.in/api/users' \
 }'
 ```
 
-# 3. Making GET Request with Params and Headers
+## 3. Making GET Request with Params and Headers
 
 ---
 

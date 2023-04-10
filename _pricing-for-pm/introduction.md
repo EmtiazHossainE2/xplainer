@@ -4,7 +4,7 @@ metaTitle: "Introduction | Pricing for product manager "
 metaDescription: ""
 ---
 
-# 1. Introduction
+## 1. Introduction
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
 
@@ -28,7 +28,7 @@ So, I have decided to break this series on pricing into 3 parts -
 
 ---
 
-# 1. Pricing strategies for consumer tech companies
+## 1. Pricing strategies for consumer tech companies
 
 I was reading Katherine Paine the other day. Katherine (CMO at News Group) made a very interesting observation on pricing *(that almost blew my mind) - ‘*The moment you make a mistake in pricing, you’re **eating into your reputation** or **your profits**.’
 
@@ -64,7 +64,7 @@ In the [use case podcast](https://turnaround.substack.com/p/pricing-strategies-f
 
 
 
-# 2. What are common pricing strategies?
+## 2. What are common pricing strategies?
 
 Standard textbooks mention 5 common pricing strategies. Knowing these strategies helps you to frame your pricing at a broader level.
 
