@@ -1,4 +1,4 @@
-import { withRouter } from "next/router";
+import { Router, withRouter } from "next/router";
 import { useEffect } from "react";
 import Footer2 from "../components/v1/Shared/Footer/Footer";
 import Navbar from "../components/v3/Shared/Navbar/Navbar";
@@ -15,6 +15,7 @@ const PageLayout = ({ children, router }) => {
     const user = Cookies.get('user');
     if(!user){
       dispatch(logout());
+      router.push('/')
     }
   }, [dispatch]);
 
