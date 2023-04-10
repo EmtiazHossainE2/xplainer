@@ -31,7 +31,7 @@ const HeroBanner = () => {
           </div>
         </div>
         {/* Right Side  */}
-        <div className="rounded-lg border py-8 px-4 lg:p-8 shadow-xl">
+        <div className="rounded-lg border py-8 px-4 lg:p-8 shadow-md lg:shadow-lg">
           {/* For Mobile Title  */}
           <div className="pb-4 lg:hidden">
             <h1 className="text-3xl font-bold ">
