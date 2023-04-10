@@ -7,7 +7,7 @@ metaDescription: ""
 
 ---
 
-# 3. Tiered pricing model
+## 3. Tiered pricing model
 
 All your users aren’t the same! Tiered pricing is a model where you price your product according to the needs your users have.
 

@@ -20,7 +20,7 @@ Snap from the talk I delivered at Delhi Technical University (DTU)
 
 Over the time, I have realized that most of their queries are repetitive and hence I thought to write a blog answering the usual recurrent questions. **These queries are not just limited to undergrads but to anyone who wants to break into a product role!**
 
-# I customarily ask young PM aspirants —
+## I customarily ask young PM aspirants —
 
 More often than not, I have discovered that they talk about *that* classic Venn diagram where a PM sits at the intersection of *technology, customer and business* and recklessly envisage that **PMs are superman *(oh! mini CEO)* who have absolute control over vision, strategy, marketing, design, and overall execution of the product and most of their days they are managing and directing people and building revolutionary products.**
 

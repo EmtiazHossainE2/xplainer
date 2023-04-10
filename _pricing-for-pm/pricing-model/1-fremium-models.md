@@ -6,7 +6,7 @@ metaDescription: ""
 
 ---
 
-# 1. Freemium model
+## 1. Freemium model
 
 You must have used Gaana or Youtube! You can play, listen & watch unlimited music & videos for free but have to pay to use other useful features like downloading the music offline or skipping the ads. This particular pricing model where you give **your core product for free** but charge for other *“additional”* features is called as Freemium Model.
 

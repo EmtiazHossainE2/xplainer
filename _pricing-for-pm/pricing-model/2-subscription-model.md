@@ -3,7 +3,7 @@ title: "2. Subscription model"
 metaTitle: "Subscription model"
 metaDescription: ""
 ---
-# 2. Subscription model
+## 2. Subscription model
 
 As descriptive by name; in the subscription model, you make our users pay & commit for a longer time duration.
 

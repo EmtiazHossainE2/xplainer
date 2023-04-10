@@ -8,7 +8,7 @@ metaDescription: ""
 
 ---
 
-# 5. Penetration pricing
+## 5. Penetration pricing
 
 Entering a saturated market is tough! But what if — *a late-comer wants to enter a saturated market fast?* The answer is simple — offer a ‘substantially’ low price.
 
