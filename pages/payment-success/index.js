@@ -17,22 +17,21 @@ const PaymentSuccess = () => {
             <div>
               <Image
                 src="/images/payment/success.svg"
-                className="w-[130px] lg:w-[195px] "
                 alt="icon"
-                width={195}
-                height={197}
+                width={150}
+                height={150}
               />
             </div>
             <div>
-              <h2 className="pt-8 lg:pt-[67px] text-3xl lg:text-[40px] font-semibold lg:leading-[48px]">
+              <h2 className="pt-8 lg:pt-10 text-3xl lg:text-[40px] font-semibold lg:leading-[48px]">
                 Payment successful !{" "}
               </h2>
-              <p className="pt-4 text-base lg:text-[24px] leading-[29px]">
+              <p className="pt-4 text-base lg:text-2xl">
                 Your payment was successful. Please check your dashboard <br className="hidden lg:block"/>{" "}
                 to access registered courses .{" "}
               </p>
               {/* Large  */}
-              <p className="hidden lg:block py-[45px] text-[#838383]">
+              <p className="hidden lg:block py-10 text-[#838383]">
                 session_id :
                 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
               </p>
