@@ -1,14 +1,17 @@
 import { MyCourses, Settings } from "@/src/components/v1/Dashboard";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import useAuthService from "@/src/hooks/auth/useAuthService";
-import PageLayout from "@/src/layout/PageLayout";
+import ProtectedLayout from "@/src/layout/ProtectedLayout";
 import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { updateCourse } from "@/src/store/features/courses/courseSlice";
-import { fetchCourseDetail, fetchCurrentUserCourses } from "@/src/utils/firebase";
+import {
+  fetchCourseDetail,
+  fetchCurrentUserCourses,
+} from "@/src/utils/firebase";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-const Dashboard = ({ user, allCourses }) => {
+const Dashboard = ({ allCourses }) => {
   const { currentUser } = useAuthService();
 
   const [active, setActive] = useState(0);
@@ -37,7 +40,7 @@ const Dashboard = ({ user, allCourses }) => {
         description={" "}
         favIcon={"/favicon.ico"}
       />
-      <PageLayout>
+      <ProtectedLayout>
         <div className="bg-black">
           <div className="container mx-auto px-5 lg:px-16 big:px-[130px]">
             <h2 className="pt-9 pb-7 text-lg  font-medium text-white lg:text-[26px] lg:font-bold lg:leading-[48px] big:pb-16 ">
@@ -74,7 +77,7 @@ const Dashboard = ({ user, allCourses }) => {
           {/* {active === 1 && <WishList />} */}
           {active === 1 && <Settings currentUser={currentUser} />}
         </div>
-      </PageLayout>
+      </ProtectedLayout>
     </>
   );
 };
@@ -98,7 +101,6 @@ export const getServerSideProps = async ({ req, res }) => {
 
   const courseData = await fetchCurrentUserCourses(user);
 
-
   if (courseData) {
     await Promise.all(
       Object.keys(courseData).map(async (slug, index) => {
@@ -113,7 +115,7 @@ export const getServerSideProps = async ({ req, res }) => {
   return {
     props: {
       user: user,
-      allCourses: unlockedCourses
+      allCourses: unlockedCourses,
     },
   };
 };

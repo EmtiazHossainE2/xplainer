@@ -1,24 +1,23 @@
-import { Router, withRouter } from "next/router";
+import Cookies from "js-cookie";
+import { withRouter } from "next/router";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Footer2 from "../components/v1/Shared/Footer/Footer";
 import Navbar from "../components/v3/Shared/Navbar/Navbar";
-import Cookies from 'js-cookie'
-import { useDispatch } from "react-redux";
 import { logout } from "../store/features/auth/authSlice";
 
-
-const PageLayout = ({ children, router }) => {
-
-  const dispatch =  useDispatch();
+const ProtectedLayout = ({ children, router }) => {
+  const dispatch = useDispatch();
 
   /** Protected Page Layout  */
-  // useEffect(()=> {
-  //   const user = Cookies.get('user');
-  //   if(!user){
-  //     dispatch(logout());
-  //     router.push('/')
-  //   }
-  // }, [dispatch]);
+  
+  useEffect(() => {
+    const user = Cookies.get("user");
+    if (!user) {
+      dispatch(logout());
+      router.push("/");
+    }
+  }, [dispatch]);
 
   return (
     <>
@@ -33,4 +32,4 @@ const PageLayout = ({ children, router }) => {
   );
 };
 
-export default withRouter(PageLayout);
+export default withRouter(ProtectedLayout);
