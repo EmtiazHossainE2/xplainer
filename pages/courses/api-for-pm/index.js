@@ -27,13 +27,13 @@ const ApiForPMCoursePage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const {hasCourseAccess, courseId, currentCourseData} = await getCoursePageInfo({userId: currentUser.uid, courseSlug});
+      const {hasCourseAccess, courseId, currentCourseData} = await getCoursePageInfo({userId: currentUser?.uid, courseSlug});
       setHasCourseAccess(hasCourseAccess);
       setCourseId(courseId);
     };
 
     fetchData();
-  }, [currentUser.uid, hasCourseAccess]);
+  }, [currentUser?.uid, hasCourseAccess]);
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
@@ -46,7 +46,7 @@ const ApiForPMCoursePage = (props) => {
       return;
     }
 
-    const clientReferenceId = `${currentUser.uid}-${courseId}`;
+    const clientReferenceId = `${currentUser?.uid}-${courseId}`;
 
     if (router.pathname === "/courses/api-for-pm") {
       if (currentUser?.email) {

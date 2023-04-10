@@ -15,7 +15,6 @@ const PageLayout = ({ children, router }) => {
     const user = Cookies.get('user');
     if(!user){
       dispatch(logout());
-      router.push('/')
     }
   }, [dispatch]);
 

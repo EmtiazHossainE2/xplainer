@@ -28,7 +28,7 @@ const PricingForPM = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const { hasCourseAccess, courseId } = await getCoursePageInfo({
-        userId: currentUser.uid,
+        userId: currentUser?.uid,
         courseSlug,
       });
       setHasCourseAccess(hasCourseAccess);
@@ -36,7 +36,7 @@ const PricingForPM = (props) => {
     };
 
     fetchData();
-  }, [currentUser.uid, hasCourseAccess]);
+  }, [currentUser?.uid, hasCourseAccess]);
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.PRICING_FOR_PM][process.env.NEXT_PUBLIC_ENV];

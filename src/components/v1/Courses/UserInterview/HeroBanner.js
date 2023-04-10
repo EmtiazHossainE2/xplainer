@@ -2,56 +2,68 @@ import Link from "next/link";
 
 const HeroBanner = () => {
   return (
-    <div className="container mx-auto px-5 pt-12 pb-20 lg:px-40 big:px-60 large:px-80">
-      <div className="flex flex-col items-center justify-between lg:flex-row">
+    <div className="container mx-auto px-5 pt-5 lg:pt-12 pb-20 lg:px-40 big:px-60 large:px-80">
+      <div className="flex flex-col-reverse items-center justify-between lg:flex-row">
         {/* Left Side  */}
         <div className="">
-          <h1 className="text-5xl lg:text-6xl font-bold leading-[60px]">Ace user </h1>
-          <h1 className="bg-gradient-to-r from-[#C7D2FE] to-[#22D3EE] bg-clip-text text-5xl lg:text-6xl font-bold text-transparent">
-            Interview
-          </h1>
-          <p className="pt-7 pb-5 text-xl leading-7 text-[#454545]">
+          <div className="hidden lg:block">
+            <h1 className="text-5xl font-bold leading-[60px] lg:text-6xl">
+              Ace user{" "}
+            </h1>
+            <h1 className="bg-gradient-to-r from-[#C7D2FE] to-[#22D3EE] bg-clip-text text-5xl font-bold text-transparent lg:text-6xl">
+              Interview
+            </h1>
+          </div>
+          <p className="pt-12 lg:pt-7 pb-5 text-lg lg:text-xl leading-7 text-[#454545]">
             Build projects, practice and learn to code{" "}
             <br className="hidden lg:block " /> from scratch - without leaving
             your <br className="hidden lg:block" /> browser.
           </p>
-          <h4 className="text-xl font-bold leading-7 text-[#4f4f4f]">
+          <h4 className="text-base lg:text-xl font-bold leading-7 text-[#4f4f4f]">
             Launching on 30th April, 2023
           </h4>
-          <div className="mt-8 mb-12 lg:mb-0">
+          <div className="mt-8 ">
             <Link href="/">
-              <button className="rounded-md bg-gradient-to-r from-[#6366F1] to-[#0891B2] py-3 px-28  lg:text-xl font-medium text-white">
+              <button className="rounded-md bg-gradient-to-r from-[#6366F1] to-[#0891B2] py-3 px-28  font-medium text-white lg:text-xl">
                 Notify Me
               </button>
             </Link>
           </div>
         </div>
         {/* Right Side  */}
-        <div className="basis-1/2">
+        <div className="rounded-lg border py-8 px-4 lg:p-8 shadow-xl">
+          {/* For Mobile Title  */}
+          <div className="pb-4 lg:hidden">
+            <h1 className="text-3xl font-bold ">
+              Ace user{" "}
+            </h1>
+            <h1 className="bg-gradient-to-r from-[#C7D2FE] to-[#22D3EE] bg-clip-text text-3xl font-bold text-transparent ">
+              Interview
+            </h1>
+          </div>
+
+          {/* Form  */}
           <form>
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-5">
               <div>
-                <label htmlFor="name">Name:</label>
                 <input
                   type="text"
                   name="name"
                   required
                   placeholder="Enter your name"
-                  className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm "
+                  className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="email">Email:</label>
                 <input
                   type="email"
                   name="email"
                   required
-                  placeholder="Enter your Email"
+                  placeholder="Enter your email"
                   className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm "
                 />
               </div>
               <div>
-                <label htmlFor="phone">Phone:</label>
                 <input
                   type="number"
                   name="number"
