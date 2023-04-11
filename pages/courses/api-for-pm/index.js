@@ -2,7 +2,7 @@ import {
   Authors as Authors2,
   CourseContent,
   CtaAlternative,
-  TestimonialsCarousel
+  TestimonialsCarousel,
 } from "@/src/components/v1/Courses";
 import { FeaturesBlocks, HeroHome } from "@/src/components/v1/Courses/ApiForPm";
 import { Faqs } from "@/src/components/v1/HomeContainer";
@@ -27,13 +27,14 @@ const ApiForPMCoursePage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const {hasCourseAccess, courseId, currentCourseData} = await getCoursePageInfo({userId: currentUser?.uid, courseSlug});
+      const { hasCourseAccess, courseId, currentCourseData } =
+        await getCoursePageInfo({ userId: currentUser?.uid, courseSlug });
       setHasCourseAccess(hasCourseAccess);
       setCourseId(courseId);
     };
 
     fetchData();
-  }, [currentUser?.uid, hasCourseAccess]);
+  }, [currentUser, hasCourseAccess]);
 
   const coursePrice =
     DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];

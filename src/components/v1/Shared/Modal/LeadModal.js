@@ -1,8 +1,30 @@
 import { callLeadAPI } from "@/src/api";
-import { useRouter, withRouter } from "next/router";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
+const LeadModal = ({ isVisible, setShowPopup, setCouponModal }) => {
   const router = useRouter();
+
+  // After 30 Sec Lead Popup open
+  useEffect(() => {
+    const shouldShowPopup = !localStorage.getItem("leadPopupClosed");
+    if (shouldShowPopup) {
+      const timeoutId = setTimeout(() => {
+        setShowPopup(true);
+      }, 30000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [setShowPopup]);
+  // After 30 Sec Lead Popup open
+
+
+  const handleClose = () => {
+    localStorage.setItem("leadPopupClosed", true);
+    setShowPopup(false);
+  };
 
   const origin =
     typeof window !== "undefined" && window.location.origin
@@ -10,46 +32,48 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
       : "";
   const currentURL = origin + router.asPath;
 
+  // Lead Form Submit 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     // console.log(email)
     if (email) {
-      callLeadAPI({email, hostName : origin, url : currentURL})
-      setShowModal(false);
-      setCouponModal(true);
+      callLeadAPI({ email, hostName: origin, url: currentURL });
+      localStorage.setItem("leadPopupClosed", true);
       localStorage.setItem("usrData", true);
+      setShowPopup(false);
+      setCouponModal(true);
     }
   };
 
   if (isVisible) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-80  flex pt-[40%] md:pt-0 justify-center md:items-center z-[9999]">
-        <div className="w-[99%] md:w-[50%] lg:w-[30%] 2xl:w-[450px] flex flex-col">
-          <div className="bg-white px-6 py-12  2xl:p-12 rounded-md relative ">
+      <div className="fixed inset-0 z-[9999] flex  justify-center bg-black bg-opacity-80 pt-[40%] md:items-center md:pt-0">
+        <div className="flex w-[99%] flex-col md:w-[50%] lg:w-[30%] 2xl:w-[450px]">
+          <div className="relative rounded-md bg-white  px-6 py-12 2xl:p-12 ">
             <button
-              className="text-black bg-white text-lg font-semibold absolute top-4 right-4 border rounded-full border-[#e6e5e5] px-2 py-.5 mb-2"
-              onClick={() => onClose()}
+              className="py-.5 absolute top-4 right-4 mb-2 rounded-full border border-[#e6e5e5] bg-white px-2 text-lg font-semibold text-black"
+              onClick={handleClose}
             >
               X
             </button>
             <div>
-              <h4 className="text-lg text-center md:text-xl lg:text-2xl font-semibold md:font-bold mb-8">
+              <h4 className="mb-8 text-center text-lg font-semibold md:text-xl md:font-bold lg:text-2xl">
                 Claim up to 50% off on the program!
               </h4>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col">
-                <label className="font-bold mb-[5px] text-sm">Name</label>
+                <label className="mb-[5px] text-sm font-bold">Name</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   // placeholder="Enter your name"
                   required
-                  className="py-3 pl-4 pr-5 mb-4 border border-[#ccc] rounded-lg bg-[#f1f1f1] placeholder:[#505050]"
+                  className="placeholder:[#505050] mb-4 rounded-lg border border-[#ccc] bg-[#f1f1f1] py-3 pl-4 pr-5"
                 />
-                <label className="font-bold mb-[5px] text-sm">
+                <label className="mb-[5px] text-sm font-bold">
                   Email Address
                 </label>
                 <input
@@ -58,9 +82,9 @@ const LeadModal = ({ isVisible, onClose, setShowModal, setCouponModal }) => {
                   id="email"
                   // placeholder="Enter your email"
                   required
-                  className="py-3 pl-4 pr-5 mb-4 border border-[#ccc] rounded-lg bg-[#f1f1f1] placeholder:[#505050] "
+                  className="placeholder:[#505050] mb-4 rounded-lg border border-[#ccc] bg-[#f1f1f1] py-3 pl-4 pr-5 "
                 />
-                <button className="text-white font-semibold py-2 rounded-lg text-lg px-8 mt-4 w-full  bg-gradient-to-r from-[#0070F4] to-[#8253db] bg-[#0070F4]">
+                <button className="mt-4 w-full rounded-lg bg-[#0070F4] bg-gradient-to-r from-[#0070F4] to-[#8253db] py-2  px-8 text-lg font-semibold text-white">
                   {" "}
                   Check Offers{" "}
                 </button>
