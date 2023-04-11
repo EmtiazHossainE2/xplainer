@@ -1,25 +1,39 @@
 import { callLeadAPI } from "@/src/api";
+import useAuthService from "@/src/hooks/auth/useAuthService";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const LeadModal = ({ isVisible, setShowPopup, setCouponModal }) => {
   const router = useRouter();
+  // console.log(router);
 
-  // After 30 Sec Lead Popup open
+  const { currentUser } = useAuthService();
+
+  // After 30 Sec Lead Popup open start
   useEffect(() => {
     const shouldShowPopup = !localStorage.getItem("leadPopupClosed");
-    if (shouldShowPopup) {
-      const timeoutId = setTimeout(() => {
-        setShowPopup(true);
-      }, 30000);
+    if (currentUser?.email) {
+      localStorage.setItem("leadPopupClosed", true);
+    } else {
+      if (
+        router.pathname.startsWith("/") ||
+        router.pathname.startsWith("/courses") ||
+        router.pathname.startsWith("/workshops") ||
+        router.pathname.startsWith("/blog")
+      ) {
+        if (shouldShowPopup) {
+          const timeoutId = setTimeout(() => {
+            setShowPopup(true);
+          }, 30000);
 
-      return () => {
-        clearTimeout(timeoutId);
-      };
+          return () => {
+            clearTimeout(timeoutId);
+          };
+        }
+      }
     }
-  }, [setShowPopup]);
-  // After 30 Sec Lead Popup open
-
+  }, [setShowPopup, currentUser?.email, router.pathname]);
+  // After 30 Sec Lead Popup open end
 
   const handleClose = () => {
     localStorage.setItem("leadPopupClosed", true);
@@ -32,7 +46,7 @@ const LeadModal = ({ isVisible, setShowPopup, setCouponModal }) => {
       : "";
   const currentURL = origin + router.asPath;
 
-  // Lead Form Submit 
+  // Lead Form Submit
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
