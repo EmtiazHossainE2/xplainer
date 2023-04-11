@@ -1,8 +1,13 @@
 import { allCourses, IMAGE_KIT_CDN } from "@/src/config/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
+
+const myLoader = ({ src, width, quality }) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
+};
 
 const Courses = ({ heading, ctaText }) => {
   return (
@@ -25,6 +30,7 @@ const Courses = ({ heading, ctaText }) => {
               >
                 <div>
                   <Image
+                    loader={myLoader}
                     src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
                     width={310}
                     height={155}
@@ -35,8 +41,8 @@ const Courses = ({ heading, ctaText }) => {
                 <div className="flex flex-col p-2 ">
                   <div className="m-2 flex items-center justify-between">
                     <div className="flex w-full items-center">
-                      <div className=" flex  bg-[#08313c] text-white rounded-md overflow-hidden">
-                        <span className="p-1  overflow-hidden text-ellipsis whitespace-nowrap text-sm leading-[22px]">
+                      <div className=" flex  overflow-hidden rounded-md bg-[#08313c] text-white">
+                        <span className="overflow-hidden  text-ellipsis whitespace-nowrap p-1 text-sm leading-[22px]">
                           {course?.category}
                         </span>
                       </div>
