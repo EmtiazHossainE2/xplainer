@@ -47,7 +47,7 @@ const BlogGridView = ({ posts, disableHeader }) => {
                           <ul className="flex flex-wrap text-xs font-medium -m-1">
                             <li className="m-1">
                               <a
-                                className="inline-flex text-center text-xs text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+                                className="inline-flex text-center text-xs text-gray-100 py-1 px-3 rounded-full bg-primary hover:bg-primary_bold transition duration-150 ease-in-out"
                                 href="#0"
                               >
                                 Guides

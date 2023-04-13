@@ -55,7 +55,7 @@ const HeroHome = ({
               </h1>
 
               {pricing && (
-                <p className="pb-3 text-lg font-semibold text-blue-600">
+                <p className="pb-3 text-lg font-semibold text-primary">
                   1 stop destination for product, growth & marketing folks
                 </p>
               )}
@@ -78,7 +78,7 @@ const HeroHome = ({
               <div className="flex flex-col md:flex-row">
                 <button
                   onClick={handleCTAClick}
-                  className="btn w-full cursor-pointer bg-blue-600 text-white hover:bg-blue-700 sm:mb-0 sm:w-auto"
+                  className="btn w-full cursor-pointer bg-primary text-white hover:bg-primary_bold sm:mb-0 sm:w-auto"
                 >
                   {ctaText}
                 </button>

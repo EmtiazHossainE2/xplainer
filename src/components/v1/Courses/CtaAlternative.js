@@ -18,7 +18,7 @@ const CtaAlternative = () => {
 
               {/* CTA button */}
               <div>
-                <button  className="btn text-white bg-blue-600 hover:bg-blue-700"> Get free chapter </button>
+                <button  className="btn text-white bg-primary hover:bg-primary_bold"> Get free chapter </button>
               </div>
 
             </div>

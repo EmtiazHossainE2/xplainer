@@ -12,7 +12,7 @@ const DynamicCertificate = () => {
   useEffect(() => {
     if (
       allCourses &&
-      allCourses.map((course) => course.slug === router.query.slug)
+      allCourses.some((course) => course.slug === router.query.slug)
     ) {
       const courseDetail = allCourses.find(
         (course) => course.slug === router.query.slug

@@ -5,9 +5,6 @@ import { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
 
-const myLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
 
 const Courses = ({ heading, ctaText }) => {
   return (
@@ -30,7 +27,6 @@ const Courses = ({ heading, ctaText }) => {
               >
                 <div>
                   <Image
-                    loader={myLoader}
                     src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
                     width={310}
                     height={155}
@@ -78,7 +74,7 @@ const Courses = ({ heading, ctaText }) => {
                         <span className="navigation-text pr-2">Preview</span>
                         <AiOutlineArrowRight
                           size={20}
-                          className="text-[#7472db]"
+                          className="text-primary"
                         />
                       </button>
                     </Link>
@@ -90,7 +86,7 @@ const Courses = ({ heading, ctaText }) => {
 
           {/* View ALl  */}
           <Link href="/courses">
-            <button className="mx-auto mt-9 flex items-center gap-5 rounded-sm bg-[#0070F4] px-4 py-2.5 text-white">
+            <button className="mx-auto mt-9 flex items-center gap-5 rounded-md bg-primary hover:bg-primary_bold  px-4 py-2.5 text-white">
               Browse all courses
               <FiArrowRight size={24} className="font-bold" />
             </button>

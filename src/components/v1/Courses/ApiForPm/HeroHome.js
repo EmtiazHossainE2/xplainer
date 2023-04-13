@@ -86,27 +86,27 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
             {/* For Mobile  */}
             <div className="mobileContent mb-4 flex flex-col space-y-2">
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-primary" />
                 <p className="text-sm text-[#475467]">
                   Transform your product strategy with API skill
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-primary" />
                 <p className="text-sm text-[#475467]">
                   {" "}
                   Elevate your career with API knowledge
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-primary" />
                 <p className="text-sm text-[#475467]">
                   {" "}
                   Certificate of completion available.
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-primary" />
                 <p className="text-sm text-[#475467]"> Trusted by 7300+ PMs.</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
               <div
                 onClick={handleCTAClick}
-                className="mt-8 rounded-md bg-[#0070F4] py-4 lg:mt-0 lg:px-9"
+                className="mt-8 rounded-md bg-primary hover:bg-primary_bold py-4 lg:mt-0 lg:px-9"
               >
                 <button className="w-full font-medium text-white lg:w-[196px]">
                   {ctaText}
@@ -127,7 +127,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
                 href="/courses/api-for-pm/introduction"
                 className="text-center"
               >
-                <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-[#0070F4] lg:block">
+                <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-primary lg:block">
                   Try free preview
                 </button>
               </Link>
