@@ -17,7 +17,6 @@ const GetCertificate = ({ genCertificate }) => {
           {course}
         </h3>
         <p className="absolute top-[79.3%] left-[26.6%] text-[6px] ">
-          {/* {`${day}/${month}/${year}`} */}
           {getDate}
         </p>
         <Image
