@@ -23,7 +23,8 @@ export const checkout = async ({
   await stripe.redirectToCheckout({
     mode: "payment",
     lineItems,
-    successUrl: `${window.location.origin}/${courseRoute}?session_id={CHECKOUT_SESSION_ID}`,
+    // successUrl: `${window.location.origin}/${courseRoute}?session_id={CHECKOUT_SESSION_ID}`,
+    successUrl: `${window.location.origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
     cancelUrl: window.location.origin,
     customerEmail,
     clientReferenceId,
