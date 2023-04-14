@@ -1,33 +1,33 @@
 export const topCompanies = [
   {
-    logo: '/1.svg',
+    logo: '1.svg',
   },
   {
-    logo: '/2.svg',
+    logo: '2.svg',
   },
   {
-    logo: '/3.svg',
+    logo: '3.svg',
   },
   {
-    logo: '/4.svg',
+    logo: '4.svg',
   },
   {
-    logo: '/5.svg',
+    logo: '5.svg',
   },
   {
-    logo: '/9.svg',
+    logo: '9.svg',
   },
   {
-    logo: '/10.svg',
+    logo: '10.svg',
   },
   {
-    logo: '/6.svg',
+    logo: '6.svg',
   },
   {
-    logo: '/7.svg',
+    logo: '7.svg',
   },
   {
-    logo: '/8.svg',
+    logo: '8.svg',
   },
 ]
 
