@@ -138,6 +138,7 @@ export const apiForPmFaq = [
 export const allCourses = [
   {
     title: "API for Product Manager",
+    instructor: "Deepak Kumar",
     coverImage: "courses/Api__1_.jpg",
     catIcon: "educativeIcon.avif",
     category: "Product Management",
@@ -171,6 +172,7 @@ export const allCourses = [
   },
   {
     title: "Pricing & Monetization",
+    instructor: "Deepak Kumar",
     coverImage: "courses/pricing-for-pm",
     catIcon: "educativeIcon.avif",
     category: "Product Management",
@@ -205,6 +207,7 @@ export const allCourses = [
 
   {
     title: "How to do user interviews",
+    instructor: "Deepak Kumar",
     coverImage: "courses/pricing-for-pm",
     catIcon: "w.png",
     category: "UX Research",

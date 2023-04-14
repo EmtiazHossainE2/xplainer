@@ -40,7 +40,7 @@ const Content = ({ content, index, onTitleClick, isOpen = true }) => {
                 <p>{subModule.title}</p>
               </div>
             </div>
-            <div className="text-[#0070F4] ">
+            <div className="text-primary ">
               {subModule.isPaid === true ? <p>Free</p> : <FaLock />}
             </div>
           </Link>

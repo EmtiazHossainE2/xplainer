@@ -38,7 +38,7 @@ const Footer2 = () => {
                     <ul key={index} className="flex flex-col gap-y-3" role="list">
                       <li>
                         <span className="font-normal text-sm">
-                          <Link key={index} href={`${item.slug}`} className="transition-colors text-[#A3A9B9] hover:text-blue-600">{item.text}</Link>
+                          <Link key={index} href={`${item.slug}`} className="transition-colors text-[#A3A9B9] hover:text-primary_bold">{item.text}</Link>
                         </span>
                       </li>
                     </ul>
@@ -47,7 +47,7 @@ const Footer2 = () => {
                     <li>
                       <span className="text-sm font-normal">
                         <Link
-                          className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                           href="/1"
                         >
                           Get Started
@@ -57,7 +57,7 @@ const Footer2 = () => {
                     <li>
                       <span className="text-sm font-normal">
                         <Link
-                          className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                           href="/#"
                         >
                           Product Management
@@ -67,7 +67,7 @@ const Footer2 = () => {
                     <li>
                       <span className="text-sm font-normal">
                         <Link
-                          className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                           href="/#"
                         >
                           Workshops
@@ -77,7 +77,7 @@ const Footer2 = () => {
                     <li>
                       <span className="text-sm font-normal">
                         <Link
-                          className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                           href="/#"
                         >
                           Mock Interviews
@@ -95,7 +95,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href={`/courses/${allCourses[0].slug}`}
                           >
                             {" "}
@@ -106,7 +106,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href={`/courses/${allCourses[1].slug}`}
                           >
                             {" "}
@@ -117,7 +117,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href={`/courses/${allCourses[2].slug}`}
                           >
                             {" "}
@@ -139,7 +139,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/blog/one-year-as-a-product-manager-reflections-and-key-learnings"
                           >
                             {" "}
@@ -150,7 +150,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/blogs/ten-d2c-metrics-shark-tank"
                           >
                             10 D2C metrics to track{" "}
@@ -160,7 +160,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/blog/why-should-product-managers&designers-learn-ux-writing"
                           >
                             UX Writting for PMs
@@ -170,7 +170,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/blog/so-you-want-to-be-product-manager"
                           >
                             So you want to be a PM?{" "}
@@ -189,7 +189,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/terms-of-service"
                           >
                             Terms of service
@@ -199,7 +199,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/contact-us"
                           >
                             Contact Us
@@ -209,7 +209,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/privacy-policy"
                           >
                             Privacy & policy
@@ -219,7 +219,7 @@ const Footer2 = () => {
                       <li>
                         <span className="text-sm font-normal">
                           <Link
-                            className="text-[#A3A9B9] transition-colors hover:text-blue-600"
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
                             href="/cancellation"
                           >
                             Cancellations
@@ -233,9 +233,9 @@ const Footer2 = () => {
                     <div className="flex flex-col gap-y-4">
                       <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">Legal</h3>
                       <ul className="flex flex-col gap-y-3" role="list">
-                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-blue-600" href="/legal/privacy-policy">Privacy Policy</Link></span>
+                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-primary_bold" href="/legal/privacy-policy">Privacy Policy</Link></span>
                         </li>
-                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-blue-600" href="/legal/terms">Terms of Service</Link></span></li>
+                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-primary_bold" href="/legal/terms">Terms of Service</Link></span></li>
                       </ul>
                     </div>
                   </div> */}

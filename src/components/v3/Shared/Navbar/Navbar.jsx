@@ -106,7 +106,7 @@ const Navbar = ({ pageName, posts, course }) => {
   };
 
   const linkStyle =
-    "block pl-4 pr-5 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]";
+    "block pl-4 pr-5 py-2 hover:bg-[#EAFCFF]  hover:text-primary";
 
   return (
     <>
@@ -144,12 +144,10 @@ const Navbar = ({ pageName, posts, course }) => {
                       <Popover.Button
                         ref={triggerRef}
                         className={`flex items-center gap-x-1 py-3 outline-none  ${
-                          open
-                            ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
-                            : ""
+                          open ? " text-primary_bold" : ""
                         }  ${
                           router.asPath.startsWith("/courses")
-                            ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
+                            ? `border-b-2 border-primary  text-primary`
                             : ""
                         } `}
                       >
@@ -259,12 +257,10 @@ const Navbar = ({ pageName, posts, course }) => {
                       <Popover.Button
                         ref={workShopRef}
                         className={`flex items-center gap-x-1 py-3 outline-none ${
-                          open
-                            ? "border-b-2 border-[#0070F4]  text-[#0070F4]"
-                            : ""
+                          open ? "text-primary_bold" : ""
                         }  ${
                           router.asPath.startsWith("/workshops")
-                            ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
+                            ? `border-b-2 border-primary  text-primary`
                             : ""
                         } `}
                       >
@@ -357,9 +353,9 @@ const Navbar = ({ pageName, posts, course }) => {
 
               <Link
                 href="/mock-interview"
-                className={`py-3 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
+                className={`py-3    hover:text-primary_bold ${
                   router.pathname.startsWith("/mock-interview")
-                    ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
+                    ? `border-b-2 border-primary  text-primary`
                     : ""
                 }`}
               >
@@ -367,9 +363,9 @@ const Navbar = ({ pageName, posts, course }) => {
               </Link>
               <Link
                 href="/blog"
-                className={`py-3 hover:border-b-2 hover:border-[#0070F4]  hover:text-[#0070F4] ${
+                className={`py-3   hover:text-primary_bold ${
                   router.pathname.startsWith("/blog")
-                    ? `border-b-2 border-[#0070F4]  text-[#0070F4]`
+                    ? `border-b-2 border-primary  text-primary`
                     : ""
                 }`}
               >
@@ -444,11 +440,11 @@ const Navbar = ({ pageName, posts, course }) => {
                 <div className="space-x-5">
                   <button
                     onClick={() => setLoginModal(true)}
-                    className={`py-3 font-semibold text-[#0070F4] hover:border-b-2 hover:border-[#0070F4] hover:text-[#0070F4] `}
+                    className={`py-3 font-semibold text-primary hover:text-primary_bold `}
                   >
                     Login
                   </button>
-                  <button className=" rounded-[10px] border-2 border-[#AED3FF] bg-[#0070F4] py-2 px-[15px] text-white">
+                  <button className=" rounded-[10px] bg-primary py-2 px-[15px] text-white hover:bg-primary_bold">
                     Sign Up
                   </button>
                 </div>

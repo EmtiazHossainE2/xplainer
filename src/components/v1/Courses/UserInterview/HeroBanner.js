@@ -76,7 +76,7 @@ const HeroBanner = () => {
               <div>
                 <button
                   type="submit"
-                  className="mt-2 flex h-[40px] w-full justify-center rounded-md border border-transparent bg-[#0070F4] px-4 py-2 text-sm font-medium text-white hover:bg-blue-600"
+                  className="mt-2 flex h-[40px] w-full justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary_bold"
                 >
                   Register Now
                 </button>

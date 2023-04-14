@@ -1,4 +1,5 @@
 import { MyCourses, Settings } from "@/src/components/v1/Dashboard";
+import Certificates from "@/src/components/v1/Dashboard/Certificates";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import ProtectedLayout from "@/src/layout/ProtectedLayout";
@@ -25,7 +26,8 @@ const Dashboard = ({ allCourses }) => {
 
   const menus = [
     { id: 0, name: "All Courses" },
-    { id: 1, name: "Settings" },
+    { id: 1, name: "Certificate" },
+    { id: 2, name: "Settings" },
   ];
 
   const handleActive = (index) => {
@@ -72,10 +74,10 @@ const Dashboard = ({ allCourses }) => {
         </div>
 
         {/* Child  */}
-        <div className="container mx-auto px-5 pt-16 lg:px-16 big:px-[130px] big:pt-20">
+        <div className="container mx-auto px-5 py-16 lg:px-16 big:px-[130px] ">
           {active === 0 && <MyCourses allCourses={allCourses} />}
-          {/* {active === 1 && <WishList />} */}
-          {active === 1 && <Settings currentUser={currentUser} />}
+          {active === 1 && <Certificates currentUser={currentUser} />}
+          {active === 2 && <Settings currentUser={currentUser} />}
         </div>
       </ProtectedLayout>
     </>

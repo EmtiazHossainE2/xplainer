@@ -27,8 +27,8 @@ const Faqs = () => {
               <div className="">
                 {
                   (activeIndex === index)
-                    ? <BsChevronUp className=' text-[#1C68FF] font-extrabold' size={20} />
-                    : <BsChevronDown className=' text-[#1C68FF] font-extrabold' size={20} />
+                    ? <BsChevronUp className=' text-primary font-extrabold' size={20} />
+                    : <BsChevronDown className=' text-primary font-extrabold' size={20} />
                 }
               </div>
             </div>

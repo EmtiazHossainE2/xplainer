@@ -1,8 +1,10 @@
 import { allCourses, IMAGE_KIT_CDN } from "@/src/config/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
+
 
 const Courses = ({ heading, ctaText }) => {
   return (
@@ -35,8 +37,8 @@ const Courses = ({ heading, ctaText }) => {
                 <div className="flex flex-col p-2 ">
                   <div className="m-2 flex items-center justify-between">
                     <div className="flex w-full items-center">
-                      <div className=" flex  bg-[#08313c] text-white rounded-md overflow-hidden">
-                        <span className="p-1  overflow-hidden text-ellipsis whitespace-nowrap text-sm leading-[22px]">
+                      <div className=" flex  overflow-hidden rounded-md bg-[#08313c] text-white">
+                        <span className="overflow-hidden  text-ellipsis whitespace-nowrap p-1 text-sm leading-[22px]">
                           {course?.category}
                         </span>
                       </div>
@@ -72,7 +74,7 @@ const Courses = ({ heading, ctaText }) => {
                         <span className="navigation-text pr-2">Preview</span>
                         <AiOutlineArrowRight
                           size={20}
-                          className="text-[#7472db]"
+                          className="text-primary"
                         />
                       </button>
                     </Link>
@@ -84,7 +86,7 @@ const Courses = ({ heading, ctaText }) => {
 
           {/* View ALl  */}
           <Link href="/courses">
-            <button className="mx-auto mt-9 flex items-center gap-5 rounded-sm bg-[#0070F4] px-4 py-2.5 text-white">
+            <button className="mx-auto mt-9 flex items-center gap-5 rounded-md bg-primary hover:bg-primary_bold  px-4 py-2.5 text-white">
               Browse all courses
               <FiArrowRight size={24} className="font-bold" />
             </button>

@@ -4,7 +4,7 @@ import Link from "next/link"
 const MyCourses = ({allCourses}) => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:mb-56 2xl:mb-72">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:mb-56 ">
         {allCourses &&
           allCourses.map((course, index) => (
             <div key={index} className=" border border-[#EAECF0] pb-2 rounded-md">
