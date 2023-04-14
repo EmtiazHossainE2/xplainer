@@ -665,4 +665,4 @@ export const courseCategories = [
 ]
 
 
-export const BASE_URL = 'https://xplainerr.com/';
+export const BASE_URL = 'https://www.xplainerr.com/';
