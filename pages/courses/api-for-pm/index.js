@@ -1,8 +1,7 @@
 import {
   Authors as Authors2,
-  CourseContent,
   CtaAlternative,
-  TestimonialsCarousel,
+  TestimonialsCarousel
 } from "@/src/components/v1/Courses";
 import { FeaturesBlocks, HeroHome } from "@/src/components/v1/Courses/ApiForPm";
 import { Faqs } from "@/src/components/v1/HomeContainer";

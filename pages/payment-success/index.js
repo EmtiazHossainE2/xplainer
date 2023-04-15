@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 
 const PaymentSuccess = () => {
   const router = useRouter()
-  const { session_id } = router.query;
+  const { session_id = '' } = router.query;
+
   return (
     <>
       <CommonHead
