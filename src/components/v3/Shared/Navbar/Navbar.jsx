@@ -386,11 +386,13 @@ const Navbar = ({ pageName, posts, course }) => {
                       >
                         <Popover.Button
                           ref={profileRef}
-                          className={`py-2 outline-none`}
+                          className={`rounded-full py-2  outline-none`}
                         >
                           {currentUser?.photoURL ? (
                             <Image
-                              className="rounded-full"
+                              className={`hover:ring-3 rounded-full ring hover:ring-primary  hover:ring-offset-1 ${
+                                open ? "ring-3 ring-primary ring-offset-1" : ""
+                              } `}
                               src={currentUser?.photoURL}
                               width={38}
                               height={38}
@@ -398,7 +400,9 @@ const Navbar = ({ pageName, posts, course }) => {
                             />
                           ) : (
                             <Image
-                              className="rounded-full"
+                              className={`hover:ring-3 rounded-full ring hover:ring-primary  hover:ring-offset-1 ${
+                                open ? "ring-3 ring-primary ring-offset-1" : ""
+                              } `}
                               src="/images/shared/demoProfile.png"
                               width={38}
                               height={38}
@@ -444,7 +448,7 @@ const Navbar = ({ pageName, posts, course }) => {
                   >
                     Login
                   </button>
-                  <button className=" rounded-[10px] bg-primary py-2 px-[15px] text-white hover:bg-primary_bold">
+                  <button className=" rounded-md bg-primary py-2 px-[15px] text-sm font-semibold text-white hover:bg-primary_bold">
                     Sign Up
                   </button>
                 </div>
