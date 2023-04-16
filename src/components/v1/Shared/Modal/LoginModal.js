@@ -4,6 +4,7 @@ import {
   loginStart,
   loginSuccess
 } from "@/src/store/features/auth/authSlice";
+import { setUserData } from "@/src/utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import { useCookies } from "react-cookie";
@@ -36,9 +37,11 @@ const LoginModal = ({ isVisible, setLoginModal, onClose }) => {
       setLoginModal(false);
       setCookie("user", JSON.stringify(body), {
         path: "/",
-        maxAge: 1000000, // Expires after 1hr
+        maxAge: 1000000,
         sameSite: true,
       });
+      // update the firestore 
+      setUserData(body);
     } catch (err) {
       // Handle Errors here.
       console.log(err);
