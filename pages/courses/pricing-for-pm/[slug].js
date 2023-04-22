@@ -37,7 +37,7 @@ const ModuleDetails = ({
     <CourseLearningView
       course={course}
       courseNavigationData={courseNavigationData}
-      isPaid={isPaid}
+      hasAccess={isPaid}
       frontmatter={frontmatter}
       content={content}
       slug={slug}

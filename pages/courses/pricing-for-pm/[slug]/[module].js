@@ -31,13 +31,14 @@ const ModuleDetails = ({
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
     }
+    
   }, [availCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (
     <CourseLearningView
       course={course}
       courseNavigationData={courseNavigationData}
-      isPaid={isPaid}
+      hasAccess={isPaid}
       frontmatter={frontmatter}
       content={content}
       slug={slug}
