@@ -111,7 +111,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
               </div>
             </div>
 
-            <PriceView priceData={priceData} />
+            {hasCourseAccess === false &&  <PriceView priceData={priceData} /> }
 
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
               <div

@@ -35,7 +35,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
 
   useEffect(() => {
     const isCourseAvailable = availCourses?.some(
-      (item) => item.permalink === course
+      (item) => item.slug === course
     );
     const isUserLoggedIn = Boolean(currentUser?.email);
 

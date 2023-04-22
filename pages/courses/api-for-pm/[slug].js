@@ -18,14 +18,16 @@ const ModuleDetails = ({
   chapterData,
 }) => {
   const { currentUser, purchasedCourses } = useAuthService();
-  const [isPaid, setCourseUnlock] = useState(false);
+  const [hasAccess, setCourseUnlock] = useState(false);
   const { isFreeChapter } = chapterData;
 
   useEffect(() => {
     const isCourseAvailable = purchasedCourses?.some(
-      (item) => item.permalink === course
+      (item) => item.slug === course
     );
     const isUserLoggedIn = Boolean(currentUser?.email);
+
+    console.log(isCourseAvailable, purchasedCourses, 'DATA');
 
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
@@ -36,7 +38,7 @@ const ModuleDetails = ({
     <CourseLearningView
       course={course}
       courseNavigationData={courseNavigationData}
-      isPaid={isPaid}
+      hasAccess={hasAccess}
       frontmatter={frontmatter}
       content={content}
       slug={slug}
