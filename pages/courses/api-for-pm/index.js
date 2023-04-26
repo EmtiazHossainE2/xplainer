@@ -10,6 +10,7 @@ import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
 import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
+import { store } from "@/src/store";
 import { checkout } from "@/src/utils/checkout";
 import { getCoursePageInfo } from "@/src/utils/firebase";
 import { useRouter } from "next/router";
@@ -18,25 +19,14 @@ import { useEffect, useState } from "react";
 const courseSlug = ALL_COURSES.API_FOR_PM;
 
 const ApiForPMCoursePage = (props) => {
+
+  const { hasCourseAccess, courseId, currentCourseData } = props;
+
   const router = useRouter();
   const { currentUser } = useAuthService();
   const [loginModal, setLoginModal] = useState(false);
-  const [hasCourseAccess, setHasCourseAccess] = useState(false);
-  const [courseId, setCourseId] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { hasCourseAccess, courseId, currentCourseData } =
-        await getCoursePageInfo({ userId: currentUser?.uid, courseSlug });
-      setHasCourseAccess(hasCourseAccess);
-      setCourseId(courseId);
-    };
-
-    fetchData();
-  }, [currentUser, hasCourseAccess]);
-
-  const coursePrice =
-    DEFAULT_PRICE_LIST[ALL_COURSES.API_FOR_PM][process.env.NEXT_PUBLIC_ENV];
+  const coursePrice = currentCourseData?.priceId;
 
   const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
 
@@ -114,3 +104,30 @@ const ApiForPMCoursePage = (props) => {
 };
 
 export default ApiForPMCoursePage;
+
+export const getStaticProps = async () => {
+
+  const fetchData = async () => {
+
+    const state = store.getState()
+    let currentUser = state?.user?.currentUser;  
+
+    console.log(state);
+
+    const { hasCourseAccess, courseId, currentCourseData } = await getCoursePageInfo({ userId: currentUser?.uid, courseSlug });
+    return { hasCourseAccess, courseId, currentCourseData };
+  };
+
+  const { hasCourseAccess, courseId, currentCourseData } = await fetchData();
+
+  
+
+  return {
+    props: {
+      hasCourseAccess : true,
+      courseId,
+      currentCourseData
+    }
+  }
+  
+}
