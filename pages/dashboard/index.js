@@ -5,10 +5,7 @@ import useAuthService from "@/src/hooks/auth/useAuthService";
 import ProtectedLayout from "@/src/layout/ProtectedLayout";
 import { getAuthUserFromCookie } from "@/src/lib/auth";
 import { updateCourse } from "@/src/store/features/courses/courseSlice";
-import {
-  fetchCourseDetail,
-  getAllCoursesByUserId
-} from "@/src/utils/firebase";
+import { fetchCourseDetail, getAllCoursesByUserId } from "@/src/utils/firebase";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -76,7 +73,9 @@ const Dashboard = ({ allCourses }) => {
         {/* Child  */}
         <div className="container mx-auto px-5 py-16 lg:px-16 big:px-[130px] ">
           {active === 0 && <MyCourses allCourses={allCourses} />}
-          {active === 1 && <Certificates currentUser={currentUser} />}
+          {active === 1 && (
+            <Certificates currentUser={currentUser} allCourses={allCourses} />
+          )}
           {active === 2 && <Settings currentUser={currentUser} />}
         </div>
       </ProtectedLayout>
@@ -108,7 +107,7 @@ export const getServerSideProps = async ({ req, res }) => {
       allCourseData.map(async (course, index) => {
         const courseId = course.course_id;
         //courseID
-        const courseDetail = await fetchCourseDetail({courseId});
+        const courseDetail = await fetchCourseDetail({ courseId });
         if (courseDetail?.courseID) {
           unlockedCourses.push(courseDetail);
         }
