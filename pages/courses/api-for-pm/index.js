@@ -1,5 +1,6 @@
 import {
   Authors as Authors2,
+  CourseContent,
   CtaAlternative,
   TestimonialsCarousel
 } from "@/src/components/v1/Courses";
@@ -74,7 +75,7 @@ const ApiForPMCoursePage = (props) => {
 
         <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
         {/* <Offer /> */}
-        {/* <CourseContent /> */}
+        <CourseContent />
 
         <Authors2 />
 

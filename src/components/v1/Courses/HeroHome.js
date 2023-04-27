@@ -73,25 +73,26 @@ const HeroHome = ({
                 </div>
               )}
 
-              <PriceView priceData={priceData} />
+              {hasCourseAccess === false && <PriceView priceData={priceData} />}
 
-              <div className="flex flex-col md:flex-row">
-                <button
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
+                <div
                   onClick={handleCTAClick}
-                  className="btn w-full cursor-pointer bg-primary text-white hover:bg-primary_bold sm:mb-0 sm:w-auto"
+                  className="mt-8 rounded-md bg-primary py-4 hover:bg-primary_bold lg:mt-0 lg:px-9"
                 >
-                  {ctaText}
-                </button>
-
+                  <button className="w-full font-medium text-white lg:w-[196px]">
+                    {ctaText}
+                  </button>
+                </div>
                 {!hasCourseAccess && (
-                  <div className="mt-2 rounded-md  border border-gray-300 p-3 md:ml-2">
-                    <button
-                      onClick={handleCTAClick}
-                      className=" ml-2 w-full cursor-pointer  text-[#6f6f6f] sm:mb-0 sm:w-auto"
-                    >
+                  <Link
+                    href="/courses/pricing-for-pm/introduction"
+                    className="text-center"
+                  >
+                    <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-primary lg:block">
                       Try free preview
                     </button>
-                  </div>
+                  </Link>
                 )}
               </div>
             </div>

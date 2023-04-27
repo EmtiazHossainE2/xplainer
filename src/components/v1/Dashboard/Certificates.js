@@ -1,50 +1,49 @@
-import { IMAGE_KIT_CDN, allCourses } from "@/src/config/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
 
-const Certificates = () => {
+const Certificates = ({ allCourses }) => {
   return (
     <div>
-      <div className=" flex flex-col gap-10 lg:flex-row lg:gap-5">
-        {allCourses.map((course, index) => (
-          <div
-            key={index}
-            className=" hover:shadow:xl  m-3 flex flex-initial flex-shrink-0 transform flex-col overflow-hidden  bg-white text-black shadow-md transition duration-500 hover:-translate-y-1.5"
-          >
-            <div>
-              <Image
-                src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
-                width={310}
-                height={155}
-                alt={course?.title}
-              />
-            </div>
-
-            <div className="flex flex-col p-2 ">
-              <div className="m-2 flex items-center justify-between">
-                <div className="flex w-full items-center">
-                  <div className=" flex  overflow-hidden rounded-md bg-[#08313c] text-white">
-                    <span className="overflow-hidden  text-ellipsis whitespace-nowrap p-1 text-sm leading-[22px]">
-                      {course?.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex flex-row items-center space-x-2"></div>
+      <div className="grid grid-cols-1 gap-8  md:grid-cols-2 lg:mb-56 lg:grid-cols-3 xl:grid-cols-4 ">
+        {allCourses &&
+          allCourses.map((course, index) => (
+            <div
+              key={index}
+              className="relative rounded-md border border-[#EAECF0] pb-2"
+            >
+              <div className="image">
+                <Image
+                  src={`${course.cover_image}`}
+                  className="w-full"
+                  alt={course.title}
+                  width={271}
+                  height={106}
+                />
               </div>
-              <p className="m-1 mb-5 text-xl font-bold leading-[28px] lg:mt-3 lg:mb-8">
-                {course?.title}
-              </p>
-              <Link href={`/dashboard/certificate/${course?.slug}`}>
-                <button className="ml-auto mb-2 mr-2 flex w-full items-center justify-center rounded-sm border border-[#9c9b9b] p-3 text-center font-bold tracking-wide transition duration-200 hover:border-black">
-                  <span className="navigation-text pr-2">Get Certificate</span>
-                  <AiOutlineArrowRight size={20} className="text-[#7472db]" />
-                </button>
-              </Link>
+              <div className="px-3.5 ">
+                <h3 className="pt-4 pb-12 text-lg font-bold capitalize leading-[30px]">
+                  {course.title}
+                </h3>
+                <p className="text-xs font-medium capitalize leading-[33px] text-[#868686]">
+                  {/* {course.instructor} */}
+                </p>
+                <Link
+                  href={`/dashboard/certificate/${course?.slug}`}
+                  className="absolute bottom-2 left-2 flex h-[33px] w-[95%] justify-center rounded-[4px] border border-[#0070F4] bg-[#ECF5FF]"
+                >
+                  <button className="text-sm font-semibold leading-[33px] text-[#0070F4] ">
+                    Get Certificate
+                  </button>
+                </Link>
+              </div>
             </div>
+          ))}
+
+        {allCourses && allCourses.length === 0 && (
+          <div className="flex min-h-[50vh] items-center justify-center pb-16">
+            <h2 className="text-2xl  font-medium"> No courses found </h2>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
