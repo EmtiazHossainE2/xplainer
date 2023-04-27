@@ -30,9 +30,9 @@ const CourseContent = () => {
           {courseContent.map((content, index) => (
             <Content key={index} content={content} index={index} onTitleClick={toggleView} isOpen={toggleStates[index]} />
           ))}
-          <div className='text-center text-sm text-primary leading-[21px] pt-8 font-semibold'>
+          {/* <div className='text-center text-sm text-primary leading-[21px] pt-8 font-semibold'>
             <Link href='/'><p>Show all 10 lessons</p></Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
