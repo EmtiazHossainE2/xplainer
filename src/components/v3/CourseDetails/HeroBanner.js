@@ -1,14 +1,14 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const HeroBanner = ({ courseTitle, description, author }) => {
+const HeroBanner = ({ course }) => {
   return (
     <div className="bg-[#2F2F2F]">
       <div className="mx-auto max-w-7xl px-16 py-7 text-white">
         <div className="flex gap-8">
           <div className="basis-8/12">
-            <h2 className="text-4xl font-bold">{courseTitle}</h2>
-            <p className="py-3 text-lg">{description}</p>
+            <h2 className="text-4xl font-bold">{course?.title}</h2>
+            <p className="py-3 text-lg">{course?.metaTitle}</p>
             <div>
               <div className="flex items-center gap-3">
                 <button className="rounded-sm bg-[#ECEB98] py-1 px-3 text-xs font-bold text-[#3D3C0A] ">
@@ -31,7 +31,10 @@ const HeroBanner = ({ courseTitle, description, author }) => {
               </div>
             </div>
             <p className="pt-2 text-sm">
-              Created by <span className="text-[#CEC0FC]">{author}</span>
+              Created by{" "}
+              <span className="text-[#CEC0FC]">
+                {course.instructorInfo.name}
+              </span>
             </p>
           </div>
           <div className="basis-4/12"></div>

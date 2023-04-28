@@ -1,16 +1,19 @@
 import Image from "next/image";
 import React from "react";
-import { BsStopwatch } from "react-icons/bs";
+import {  BsStopwatch } from "react-icons/bs";
+import { GoCheck } from "react-icons/go";
 
-const PurchaseSection = ({ bannerImg, courseTitle ,priceData}) => {
+const PurchaseSection = ({
+  course,
+}) => {
   return (
-    <div className="fixed z-20 mt-[-230px] mr-20  border bg-white shadow-xl">
+    <div className="fixed z-20 mt-[-200px] mr-20  border bg-white shadow-xl">
       <div>
-        <Image src={bannerImg} width={350} height={195} alt={courseTitle} />
+        <Image src={course.image} width={350} height={195} alt={course.title} />
       </div>
       <div className="p-3">
         <p className="flex items-center gap-2">
-          <span className="text-3xl font-bold">Rs. {priceData.amount}</span>
+          <span className="text-3xl font-bold">Rs. {course.price}</span>
           <span className="text-[#6a6f73] line-through">1999</span>
           <span className="text-[#6a6f73]">50% off</span>
         </p>
@@ -19,11 +22,23 @@ const PurchaseSection = ({ bannerImg, courseTitle ,priceData}) => {
           <BsStopwatch /> <span>16 hours left at this price!</span>
         </p>
         <div>
-          <button className="my-2 w-full border border-black px-3 py-1 font-medium ">
+          <button className="my-3 w-full rounded-sm bg-primary px-3 py-2 font-medium text-white ">
             Buy Now
           </button>
         </div>
         <p className="text-center text-xs">30-Day Money-Back Guarantee</p>
+        <div>
+          <p className="py-2 text-sm">This course includes:</p>
+          {course?.courseIncludes.map((inc, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-1 space-y-1 text-sm"
+            >
+              <GoCheck />
+              <span>{inc?.item}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

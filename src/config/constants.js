@@ -732,6 +732,24 @@ export const learningItems = [
   { title: "Learn professional developer best practices." },
 ];
 
+export const courseIncludes = [
+  {
+    title: "7 coding exercises",
+  },
+  {
+    title: "75 articles",
+  },
+  {
+    title: "81 downloadable resources",
+  },
+  {
+    title: "Full lifetime access",
+  },
+  {
+    title: "Certificate of completion",
+  },
+];
+
 export const BASE_URL = "https://xplainerr.vercel.app/";
 
 export const IMAGE_KIT_CDN = "https://ik.imagekit.io/zwxa4kttt/";
