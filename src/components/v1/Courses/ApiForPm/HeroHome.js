@@ -11,7 +11,7 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
   };
 
   return (
-    <div className="container mx-auto py-4 pb-12 px-5 lg:px-12 big:px-36 large:px-96">
+    <div className="container mx-auto py-4 px-5 pb-12 lg:px-12 big:px-36 large:px-96">
       <div className="flex flex-col items-center justify-between gap-10 pt-10 lg:flex-row  lg:gap-16 lg:pt-[52px] ">
         {/* Left  */}
         <div className="hidden basis-1/2 scale-125 items-center justify-center md:block lg:flex">
@@ -111,27 +111,27 @@ const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
               </div>
             </div>
 
-            {hasCourseAccess === false &&  <PriceView priceData={priceData} /> }
+            {hasCourseAccess === false && <PriceView priceData={priceData} />}
 
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
               <div
                 onClick={handleCTAClick}
-                className="mt-8 rounded-md bg-primary hover:bg-primary_bold py-4 lg:mt-0 lg:px-9"
+                className="mt-8 rounded-md bg-primary py-4 hover:bg-primary_bold lg:mt-0 lg:px-9"
               >
                 <button className="w-full font-medium text-white lg:w-[196px]">
                   {ctaText}
                 </button>
               </div>
-              {!hasCourseAccess && 
-              <Link
-                href="/courses/api-for-pm/introduction"
-                className="text-center"
-              >
-                <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-primary lg:block">
-                  Try free preview
-                </button>
-              </Link>
-              }
+              {!hasCourseAccess && (
+                <Link
+                  href="/courses/api-for-pm/introduction"
+                  className="text-center"
+                >
+                  <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-primary lg:block">
+                    Try free preview
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
