@@ -27,7 +27,7 @@ const Content = ({ content, index, onTitleClick, isOpen = true , course }) => {
             key={index}
             className="md:text-md flex items-center justify-between rounded-md border border-[#E5E7EB] bg-[#F5F5F5] p-6 py-2.5 pl-6 pr-3 text-sm font-medium  text-[#333333]"
           >
-            <div className="flex justify-between p-2">
+            <div className="flex justify-between py-2">
               <div className="flex gap-2">
                 <Image
                   src="/images/shared/playBtn.svg"

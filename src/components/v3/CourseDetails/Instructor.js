@@ -25,9 +25,9 @@ const Instructor = ({ instructor }) => {
           height={150}
           className="rounded-full"
         />
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col text-sm md:text-base space-y-2">
           <p className="flex items-center gap-2">
-            <AiTwotoneStar className="text-amber-500" size={20}/>
+            <AiTwotoneStar className="text-amber-500 " />
             {instructor.summary.ratings}
           </p>
           <p className="flex items-center gap-2">

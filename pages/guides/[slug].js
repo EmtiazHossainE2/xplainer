@@ -29,12 +29,15 @@ const CourseDetails = () => {
               <div className="" key={index}>
                 {/* Hero Section  */}
                 <HeroBanner course={course} />
+                <div className="lg:hidden">
+                  <PurchaseSection course={course} />
+                </div>
 
                 {/* Main Content  */}
-                <div className="mx-auto max-w-7xl px-16">
+                <div className="mx-auto max-w-7xl px-5 lg:px-16">
                   <div className="flex gap-8">
                     {/*******************************  Left Side  **************************** */}
-                    <div className="left my-12 basis-8/12">
+                    <div className="left my-12 lg:basis-8/12">
                       {/* Learning Opportunity */}
                       <Opportunity learningItems={course.willLearn} />
                       {/* Top companies offer this course to their employees */}
@@ -50,7 +53,7 @@ const CourseDetails = () => {
                     </div>
 
                     {/************************ Right Side PurchaseSection **************************/}
-                    <div className="right basis-4/12">
+                    <div className="right hidden lg:block lg:basis-4/12">
                       <PurchaseSection course={course} />
                     </div>
                   </div>

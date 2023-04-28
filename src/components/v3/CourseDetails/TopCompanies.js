@@ -4,10 +4,10 @@ import React from 'react'
 const TopCompanies = ({ topCompanies }) => {
   return (
     <div className="border p-5">
-      <h2 className="text-xl font-bold text-[#1C1D1F]">
+      <h2 className="text-base pb-5 lg:pb-1 lg:text-xl font-bold text-[#1C1D1F]">
         Top companies offer this course to their employees
       </h2>
-      <div className="flex justify-between gap-3">
+      <div className="flex flex-wrap justify-between gap-3">
         {topCompanies.map((logo, index) => (
           <Image
             key={index}

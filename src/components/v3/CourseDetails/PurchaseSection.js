@@ -7,7 +7,7 @@ const PurchaseSection = ({
   course,
 }) => {
   return (
-    <div className="fixed z-20 mt-[-200px] mr-20  border bg-white shadow-xl">
+    <div className="lg:fixed z-20 mx-5 lg:mx-0 my-2 lg:mt-[-200px] lg:mr-20  border bg-white lg:shadow-xl">
       <div>
         <Image src={course.image} width={350} height={195} alt={course.title} />
       </div>
