@@ -1,82 +1,257 @@
-import { footerColOne, footerColThree, footerColTwo } from "@/src/config/constants"
-import Link from "next/link"
-import { BsInstagram } from 'react-icons/bs'
-import { ImFacebook, ImLinkedin2, ImTwitter } from 'react-icons/im'
-import MobileFooter from "./MobileFooter"
+import { allCourses } from "@/src/config/constants";
+import Link from "next/link";
 
-const Footer = () => {
-  const getYear = new Date().getFullYear()
+const Footer2 = () => {
+  const getFullYear = new Date().getFullYear();
   return (
-    <div className="bg-[#F5F5F7]">
-      <div className="hidden lg:block xl:container xl:mx-auto section__padding">
-        {/*********************** Footer Top For Large Device  ***************/}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-5">
-          {/* Left  */}
-          <div className="basis-7/12 flex gap-10 ">
-            <h3 className="text-3xl font-bold">Xplainerr</h3>
-            <div className="flex flex-col footer gap-y-1">
-              <h3 className="text-lg font-semibold mt-1">Column One</h3>
-              {footerColOne.map((item, index) => (
-                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
-              ))}
+    <>
+      <footer
+        aria-labelledby="footer-heading"
+        className=" border-t border-slate-200 bg-gray-900"
+      >
+        {/* <h2 className="sr-only" id="footer-heading">
+          Footer
+        </h2> */}
+        <div className="mx-auto max-w-7xl px-4 pt-12 pb-8 sm:px-6 lg:px-8 lg:pt-24 ">
+          <div className="xl:grid xl:grid-cols-4 xl:gap-8">
+            <div className="space-y-4 xl:col-span-1">
+              <div>
+                <Link
+                  href="/"
+                  className=" inline-block text-xl font-bold text-white"
+                >
+                  Xplainerr
+                </Link>
+              </div>
+              <p className="text-sm text-[#A3A9B9]">
+                We provide niche up skilling courses to help your accelerate and
+                succeed in tech career
+              </p>
             </div>
-            <div className="flex flex-col footer gap-y-1">
-              <h3 className="text-lg font-semibold mt-1">Column Two</h3>
-              {footerColTwo.map((item, index) => (
-                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
-              ))}
-            </div>
-            <div className="flex flex-col footer gap-y-1">
-              <h3 className="text-lg font-semibold mt-1">Column Three</h3>
-              {footerColThree.map((item, index) => (
-                <Link key={index} href={`${item.slug}`}>{item.text}</Link>
-              ))}
+            <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-3 xl:mt-0">
+              <div className="sm:grid-cols-2 md:col-span-2 md:grid md:gap-8">
+                <div className="flex flex-col gap-y-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">
+                    Practice
+                  </h3>
+                  {/* {footerColOne.map((item, index) => (
+                    <ul key={index} className="flex flex-col gap-y-3" role="list">
+                      <li>
+                        <span className="font-normal text-sm">
+                          <Link key={index} href={`${item.slug}`} className="transition-colors text-[#A3A9B9] hover:text-primary_bold">{item.text}</Link>
+                        </span>
+                      </li>
+                    </ul>
+                  ))} */}
+                  <ul className="flex flex-col gap-y-3" role="list">
+                    <li>
+                      <span className="text-sm font-normal">
+                        <Link
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                          href="/1"
+                        >
+                          Get Started
+                        </Link>
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-sm font-normal">
+                        <Link
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                          href="/#"
+                        >
+                          Product Management
+                        </Link>
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-sm font-normal">
+                        <Link
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                          href="/#"
+                        >
+                          Workshops
+                        </Link>
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-sm font-normal">
+                        <Link
+                          className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                          href="/#"
+                        >
+                          Mock Interviews
+                        </Link>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <div className="flex flex-col gap-y-4">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">
+                      Courses
+                    </h3>
+                    <ul className="flex flex-col gap-y-3" role="list">
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href={`/courses/${allCourses[0].slug}`}
+                          >
+                            {" "}
+                            {allCourses[0].title}{" "}
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href={`/courses/${allCourses[1].slug}`}
+                          >
+                            {" "}
+                            {allCourses[1].title}{" "}
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href={`/courses/${allCourses[2].slug}`}
+                          >
+                            {" "}
+                            {allCourses[2].title}{" "}
+                          </Link>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="sm:grid-cols-2 md:col-span-2 md:grid md:gap-8">
+                <div>
+                  <div className="flex flex-col gap-y-4">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">
+                      Trending Blogs
+                    </h3>
+                    <ul className="flex flex-col gap-y-3" role="list">
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/blog/one-year-as-a-product-manager-reflections-and-key-learnings"
+                          >
+                            {" "}
+                            One year journey as PM{" "}
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/blogs/ten-d2c-metrics-shark-tank"
+                          >
+                            10 D2C metrics to track{" "}
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/blog/why-should-product-managers&designers-learn-ux-writing"
+                          >
+                            UX Writting for PMs
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/blog/so-you-want-to-be-product-manager"
+                          >
+                            So you want to be a PM?{" "}
+                          </Link>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <div className="flex flex-col gap-y-4">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">
+                      Company
+                    </h3>
+                    <ul className="flex flex-col gap-y-3" role="list">
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/terms-of-service"
+                          >
+                            Terms of service
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/contact-us"
+                          >
+                            Contact Us
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/privacy-policy"
+                          >
+                            Privacy & policy
+                          </Link>
+                        </span>
+                      </li>
+                      <li>
+                        <span className="text-sm font-normal">
+                          <Link
+                            className="text-[#A3A9B9] transition-colors hover:text-primary_bold"
+                            href="/cancellation"
+                          >
+                            Cancellations
+                          </Link>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* <div className="mt-12 md:mt-8">
+                    <div className="flex flex-col gap-y-4">
+                      <h3 className="text-sm font-semibold uppercase tracking-wider text-[#EAECF0]">Legal</h3>
+                      <ul className="flex flex-col gap-y-3" role="list">
+                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-primary_bold" href="/legal/privacy-policy">Privacy Policy</Link></span>
+                        </li>
+                        <li><span className="font-normal text-sm"><Link className="transition-colors text-[#A3A9B9] hover:text-primary_bold" href="/legal/terms">Terms of Service</Link></span></li>
+                      </ul>
+                    </div>
+                  </div> */}
+                </div>
+              </div>
             </div>
           </div>
-          {/* Right  */}
-          <div className="basis-5/12 flex flex-col justify-center">
-            <h4 className="text-lg font-semibold pt-10 2xl:pt-1">Subscribe</h4>
-            <p className="py-2 text-black">Join our newsletter to stay up to date on features and releases.</p>
-            <div className="py-2 flex gap-x-8">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                className="basis-9/12 py-3 pl-4 pr-8 rounded-[45px] bg-[#FFFFFF] placeholder:[#505050] "
-
-              />
-              <button className="basis-3/12 bg-[#0070F4] text-white py-3 px-6 rounded-[54px]">Subscribe</button>
-            </div>
-            <p className="text-sm">By subscribing you agree to with our <Link href='/'>Privacy Policy</Link> and provide consent to receive updates from our company.</p>
+          <div className="mt-12 mb-12 border-t border-gray-700 pt-4 md:mb-0 md:pt-8">
+            <p className="text-base text-[#94A3B8] xl:text-center">
+              © {getFullYear} Xplainerr, All rights reserved.
+            </p>
           </div>
         </div>
+      </footer>
+    </>
+  );
+};
 
-        {/*************** Footer Bottom For Large Device **********************/}
-        <div className="flex justify-between items-center gap-5 pt-20">
-          <div className="flex gap-5 ">
-            <p className="border-black ">{getYear} Xplainerr. All right reserved.</p>
-            <Link href='/' className="border-black border-b">Privacy Policy</Link>
-            <Link href='/' className="border-black border-b">Terms of Service</Link>
-            <Link href='/' className="border-black border-b">Cookies Settings</Link>
-          </div>
-          {/* Social Icon  */}
-          <div className="flex justify-between gap-5 items-center">
-            <Link href='/'><ImFacebook size={24} className='text-[#0070F4] bg-[#D7E9FF] p-1 rounded-md' /></Link>
-            <Link href='/'><BsInstagram size={24} className='text-[#0070F4] bg-[#D7E9FF] p-1 rounded-md' /></Link>
-            <Link href='/'><ImLinkedin2 size={24} className='text-[#0070F4] bg-[#D7E9FF] p-1 rounded-md' /></Link>
-            <Link href='/'><ImTwitter size={24} className='text-[#0070F4] bg-[#D7E9FF] p-1 rounded-md' /></Link>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Mobile Footer  */}
-      <div className="block lg:hidden py-10 container mx-auto section__padding">
-        <MobileFooter />
-      </div>
-    </div>
-  )
-}
-
-export default Footer
+export default Footer2;

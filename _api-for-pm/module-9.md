@@ -5,7 +5,7 @@ metaDescription: ""
 ---
 
 
-# 1. Web-hooks and girlfriend analogy
+## 1. Web-hooks and girlfriend analogy
 
 ---
 
@@ -21,7 +21,7 @@ Your girlfriend would call you when the event is complete i.e. she has reached h
 
 ![Webhook Example](/images/api-for-pm/webhook_1.gif)
 
-# 2. What are web-hooks?
+## 2. What are web-hooks?
 
 ---
 
@@ -51,7 +51,7 @@ Now there are two ways you can do that -
 
 
 
-# 3. Web-hooks vs API
+## 3. Web-hooks vs API
 
 ---
 
@@ -60,7 +60,7 @@ Now there are two ways you can do that -
 - If you need to know whether a payment link is paid or not, using APIs, you need to keep polling every few seconds until someone pays.
 - However, if you are using Webhooks, you can configure a webhook event say - **payment_link.paid** to receive notifications when a customer makes the payment using the link.
 
-# 4. Common use case of web-hooks in payments
+## 4. Common use case of web-hooks in payments
 
 ---
 
@@ -70,7 +70,7 @@ You would want to hit Razorpay API every second to know the status of the paymen
 
 Webhooks come to the rescue here. Once you set up the webhooks with Razorpay for the event say - **payment_link.paid**; Razorpay would notify your system whenever it receives the response from the bank’s server.
 
-# 5. How do web-hooks work?
+## 5. How do web-hooks work?
 
 ---
 

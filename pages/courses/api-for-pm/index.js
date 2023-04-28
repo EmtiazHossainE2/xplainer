@@ -1,75 +1,134 @@
+import {
+  Authors as Authors2,
+  CourseContent,
+  CtaAlternative,
+  TestimonialsCarousel
+} from "@/src/components/v1/Courses";
+import { FeaturesBlocks, HeroHome } from "@/src/components/v1/Courses/ApiForPm";
+import { Faqs } from "@/src/components/v1/HomeContainer";
+import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { LoginModal } from "@/src/components/v1/Shared/Modal";
+import { ALL_COURSES, DEFAULT_PRICE_LIST } from "@/src/config/constants";
+import useAuthService from "@/src/hooks/auth/useAuthService";
+import PageLayout from "@/src/layout/PageLayout";
+import { store } from "@/src/store";
+import { checkout } from "@/src/utils/checkout";
+import { getCoursePageInfo } from "@/src/utils/firebase";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-// import {  CourseContent, TestimonialsCarousel } from '@/src/components/v1/Courses'
-// import { Authors, Certificate, FeaturesBlocks, HeroHome, Offer } from '@/src/components/v1/Courses/ApiForPm'
-// import { Brand, Faqs } from '@/src/components/v1/HomeContainer'
-import { Authors, Faqs, FeaturesBlocks, HeroBanner, HeroHome, TestimonialsCarousel } from '@/src/components/v1/Courses'
-import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import PageLayout from '@/src/layout/PageLayout'
-import { pmInterviewKeyChapters } from '@/src/config/constants'
+const courseSlug = ALL_COURSES.API_FOR_PM;
 
-const ApiForPm = () => {
+const ApiForPMCoursePage = (props) => {
+
+  const { hasCourseAccess, courseId, currentCourseData } = props;
+
+  const router = useRouter();
+  const { currentUser } = useAuthService();
+  const [loginModal, setLoginModal] = useState(false);
+
+  const coursePrice = currentCourseData?.priceId;
+
+  const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
 
   const handleCTAClick = () => {
-    window.open('https://dipakkr.gumroad.com/l/api-for-pm')
-  }
+    if (hasCourseAccess) {
+      router.push(router.asPath + "/introduction");
+      return;
+    }
+
+    const clientReferenceId = `${currentUser?.uid}-${courseId}`;
+
+    if (router.pathname === "/courses/api-for-pm") {
+      if (currentUser?.email) {
+        checkout({
+          lineItems: [
+            {
+              price: coursePrice,
+              quantity: 1,
+            },
+          ],
+          customerEmail: currentUser.email,
+          clientReferenceId: clientReferenceId,
+          courseRoute: router.asPath,
+        });
+      } else {
+        return setLoginModal(true);
+      }
+    }
+  };
 
   return (
     <>
       <CommonHead
-        title={'Master APIs for Product Management: Drive Growth and Improve User Experience'}
-        description={`The API for Product Managers course teaches product managers about APIs and how to use them to build successful products. With practical exercises and real-world examples, you'll learn how to optimize product performance, improve user experience, and work more effectively with developers.`}
-        favIcon={'/favicon.ico'}
+        title={"Master APIs for Product Management"}
+        description={`The most comprehensive course that demystifies APIs and API products tailored for Product Managers`}
       />
-      <main className=''>
-        <PageLayout>
-          {/* New Api For Pm Start  */}
-          {/* <HeroHome /> */}
-          {/* <Brand /> */}
-          {/* <FeaturesBlocks heading={"Things you'll learn"} /> */}
-          {/* <CourseContent/> */}
-          {/* <Authors /> */}
-          {/* <Offer /> */}
-          {/* <TestimonialsCarousel /> */}
-          {/* <Certificate /> */}
-          {/* <Faqs /> */}
-          {/* New Api For Pm End  */}
+      <PageLayout>
+        <HeroHome
+          course={courseSlug}
+          ctaText={ctaText}
+          handleCTAClick={handleCTAClick}
+          coursePreviewSlug={"api-for-pm/introduction"}
+          hasCourseAccess={hasCourseAccess}
+        />
 
+        <FeaturesBlocks heading={"Things you'll learn"} course={courseSlug} />
+        {/* <Offer /> */}
+        <CourseContent />
 
-          {/* Old V1 Api For Pm Start  */}
-          <HeroHome
-            heading={"API Product Manager course"}
-            headingColorText="#1"
-            ctaText="Enroll now"
-            apiForPm={true}
-            handleCTAClick={handleCTAClick}
-            coursePreviewSlug={'api-for-pm/introduction'}
-          />
-          <HeroBanner />
-          <FeaturesBlocks
-            featureBlockData={pmInterviewKeyChapters}
-            heading={"What will you learn?"}
-            apiForPm={true}
-          />
-          <TestimonialsCarousel />
-          <Authors
-            name1={"Deepak Kumar"}
-            name2={"Venkatesh Gupta"}
-          />
-          <Faqs />
-          {/* Old V1 Api For Pm End */}
-          
+        <Authors2 />
 
-          {/* Cta For Api For Pm  */}
-          <div className='fixed md:hidden z-10 bottom-[-75px] left-0 w-full mb-[75px]'>
-            <div onClick={handleCTAClick} className='bg-[#F25959] text-center text-[26px] font-bold text-white flex justify-center items-center cursor-pointer py-3'>
-              <button>Buy Now @ 999</button>
-            </div>
+        <TestimonialsCarousel />
+        {/* <Certificate /> */}
+        <Faqs />
+        <CtaAlternative />
+
+        <div className="fixed bottom-[-75px] left-0 z-10 mb-[75px] w-full md:hidden">
+          <div
+            onClick={handleCTAClick}
+            className="flex cursor-pointer items-center justify-center bg-[#F25959] py-3 text-center text-[26px] font-bold text-white"
+          >
+            <button>Buy Now @ 999</button>
           </div>
+        </div>
+      </PageLayout>
 
-        </PageLayout>
-      </main>
+      {/************************ Login Modal  ************************/}
+      <LoginModal
+        isVisible={loginModal}
+        setLoginModal={setLoginModal}
+        onClose={() => setLoginModal(false)}
+      />
     </>
-  )
-}
+  );
+};
 
-export default ApiForPm
+export default ApiForPMCoursePage;
+
+export const getStaticProps = async () => {
+
+  const fetchData = async () => {
+
+    const state = store.getState()
+    let currentUser = state?.user?.currentUser;  
+
+    console.log(state);
+
+    const { hasCourseAccess, courseId, currentCourseData } = await getCoursePageInfo({ userId: currentUser?.uid, courseSlug });
+    return { hasCourseAccess, courseId, currentCourseData };
+  };
+
+  const { hasCourseAccess, courseId, currentCourseData } = await fetchData();
+
+  
+
+  return {
+    props: {
+      hasCourseAccess : true,
+      courseId,
+      currentCourseData
+    }
+  }
+  
+}

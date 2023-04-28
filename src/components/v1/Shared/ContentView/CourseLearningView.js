@@ -1,11 +1,10 @@
 const { default: SidebarLayout } = require("@/src/layout/SidebarLayout")
-const { default: Footer2 } = require("../Footer/Footer2")
+const { default: Footer2 } = require("../Footer/Footer")
 const { default: UpgradeToPremium } = require("../UpgradeToPremium")
 const { default: ContentLayout } = require("./ContentLayout")
+const CourseLearningView = ({courseNavigationData, course, slug, hasAccess, isFreeChapter, frontmatter, content}) => {
 
-const CourseLearningView = ({courseNavigationData, course, slug, isPaid, isFreeChapter, frontmatter, content}) => {
-
-    const shouldUnlock = isPaid || isFreeChapter;
+    const shouldUnlock = hasAccess || isFreeChapter;
 
     return (
         <div>

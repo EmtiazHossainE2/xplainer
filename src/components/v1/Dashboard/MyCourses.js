@@ -1,22 +1,40 @@
-import { myCourses } from "@/src/config/constants"
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-const MyCourses = ({allCourses}) => {
+const MyCourses = ({ allCourses }) => {
+  // console.log(allCourses,'p')
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:mb-56 2xl:mb-72">
+      <div className="grid grid-cols-1 gap-8  md:grid-cols-2 lg:mb-56 lg:grid-cols-3 xl:grid-cols-4 ">
         {allCourses &&
           allCourses.map((course, index) => (
-            <div key={index} className=" border border-[#EAECF0] pb-2 rounded-[9px]">
-              <div>
-                <Image src={`/images/myCourse/${course.coverImage}`} className="w-full" alt={course.title} width={271} height={106} />
+            <div
+              key={index}
+              className="relative rounded-md border border-[#EAECF0] pb-2"
+            >
+              <div className="image">
+                <Image
+                  src={`${course.cover_image}`}
+                  className="w-full"
+                  alt={course.title}
+                  width={271}
+                  height={106}
+                />
               </div>
               <div className="px-3.5">
-                <h3 className="text-lg leading-[30px] pt-4 font-bold capitalize">{course.title}</h3>
-                <p className="text-xs text-[#868686] leading-[33px] font-medium capitalize">{course.instructor}</p>
-                <Link href={`courses/${course.permalink}/introduction`} className=" bg-[#ECF5FF] border border-[#0070F4] rounded-[4px] w-full flex justify-center h-[33px] mt-8">
-                  <button className="text-[#0070F4] text-sm leading-[33px] font-semibold ">Start Course</button>
+                <h3 className="pt-4 pb-12 text-lg font-bold capitalize leading-[30px]">
+                  {course.title}
+                </h3>
+                <p className="text-xs font-medium capitalize leading-[33px] text-[#868686]">
+                  {course.instructor}
+                </p>
+                <Link
+                  href={`courses/${course.slug}/introduction`}
+                  className="absolute bottom-2 left-2 flex h-[33px] w-[95%] justify-center rounded-[4px] border border-[#0070F4] bg-[#ECF5FF]"
+                >
+                  <button className="  text-sm font-semibold leading-[33px] text-[#0070F4] ">
+                    Start Course
+                  </button>
                 </Link>
 
                 {/* <div className="flex justify-between gap-3 items-center">
@@ -29,20 +47,17 @@ const MyCourses = ({allCourses}) => {
                   <p className="text-[11px] text-[#0070F4] font-semibold leading-[33px]">{course.progress} %</p>
                 </div> */}
               </div>
-
             </div>
-          ))
-        }
+          ))}
 
         {allCourses && allCourses.length === 0 && (
-           <div className="flex justify-center items-center pb-16 min-h-[50vh]">
-            <h2 className="text-2xl  font-medium"> No courses found   </h2>
-         </div>
+          <div className="flex min-h-[50vh] items-center justify-center pb-16">
+            <h2 className="text-2xl  font-medium"> No courses found </h2>
+          </div>
         )}
-
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default MyCourses
+export default MyCourses;

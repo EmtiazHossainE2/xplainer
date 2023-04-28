@@ -10,7 +10,7 @@ date: 'February 24, 2023'
 
 <NativeAds title="Fear pricing and monetisation strategies in product interviews?" description="Find pricing case studies of 10+ unicorns at one place!" offer="👉 Use Promo code - API10 and get 50% off" />
 
-# ✍🏻 What is UX writing?
+## ✍🏻 What is UX writing?
 
 ---
 
@@ -28,7 +28,7 @@ On the other hand, if the copy for the 'search' bar on the Spotify app says "Sea
 
 In summary, UX writing plays an important role in creating a positive user experience by providing clear and effective messaging that guides users through the product.
 
-# 👉🏻 Why should Product Manager & Designers learn about UX writing?
+## 👉🏻 Why should Product Manager & Designers learn about UX writing?
 
 ---
 
@@ -46,7 +46,7 @@ In Gmail, when a user tries to send an email without a subject line, a message a
 
 In conclusion, product managers and designers should learn about UX writing to improve the usability and user experience of their products. Effective UX copy can make a significant impact on user engagement and satisfaction, ultimately leading to greater success for the product.
 
-# 🥳 Core UX writing principles
+## 🥳 Core UX writing principles
 
 ---
 
@@ -94,7 +94,7 @@ Provide contextual information to guide the user and help them understand what t
 
 In summary, good UX writing is clear, concise, consistent, empathetic, and provides context to the user. It helps users achieve their goals with minimal effort and frustration, leading to a positive user experience.
 
-# 🌎 Case studies
+## 🌎 Case studies
 
 ---
 
@@ -132,7 +132,7 @@ Let’s see some examples of what a good vs bad UX writing is.
 
 **Explanation**: The bad example is too abrupt and doesn't provide any guidance on what the user can do next. The good example is more user-friendly and provides options for the user to try again later or select a different pickup location.
 
-# 🚁 Micro-copy for error message, buttons and
+## 🚁 Micro-copy for error message, buttons and
 
 ---
 

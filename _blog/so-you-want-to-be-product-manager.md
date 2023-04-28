@@ -2,7 +2,7 @@
 title: 'So you want to be a Product Manager?'
 metaTitle: "Introduction to API "
 metaDescription: 'Want to learn how to become a PM? PMs don’t build revolutionary brand new products from scratch every day and if this excites you, trust me, be an entrepreneur.'
-cover_image: 'https://ik.imagekit.io/zwxa4kttt/Screenshot_2023-02-26_at_1.59.35_AM.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677357016254'
+cover_image: 'https://ik.imagekit.io/zwxa4kttt/venky-pm-session?updatedAt=1680726121308'
 author : 'Venkatesh Gupta'
 author_image: '/images/blog/author-venky.jpeg'
 date: 'February 24, 2023'
@@ -20,7 +20,7 @@ Snap from the talk I delivered at Delhi Technical University (DTU)
 
 Over the time, I have realized that most of their queries are repetitive and hence I thought to write a blog answering the usual recurrent questions. **These queries are not just limited to undergrads but to anyone who wants to break into a product role!**
 
-# I customarily ask young PM aspirants —
+## I customarily ask young PM aspirants —
 
 More often than not, I have discovered that they talk about *that* classic Venn diagram where a PM sits at the intersection of *technology, customer and business* and recklessly envisage that **PMs are superman *(oh! mini CEO)* who have absolute control over vision, strategy, marketing, design, and overall execution of the product and most of their days they are managing and directing people and building revolutionary products.**
 

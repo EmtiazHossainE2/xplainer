@@ -1,6 +1,5 @@
 import CommonHead from "@/src/components/v1/Shared/CommonHead"
 import PageLayout from "@/src/layout/PageLayout"
-import Image from "next/image"
 import Link from "next/link"
 
 const Error = () => {

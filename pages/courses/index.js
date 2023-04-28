@@ -1,22 +1,20 @@
-import AllCourse from '@/src/components/v1/Courses/AllCourse/AllCourse'
-import { Courses } from '@/src/components/v1/HomeContainer'
-import CommonHead from '@/src/components/v1/Shared/CommonHead'
-import PageLayout from '@/src/layout/PageLayout'
-import Image from 'next/image'
-import { withRouter } from 'next/router'
+import { Courses } from "@/src/components/v1/HomeContainer";
+import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import PageLayout from "@/src/layout/PageLayout";
+import { withRouter } from "next/router";
 
 const AllCourses = () => {
   return (
     <>
       <CommonHead
-        title={'Xplainerr - Courses'}
-        description={'description'}
-        favIcon={'/favicon.ico'}
+        title={"Xplainerr - Courses"}
+        description={"description"}
+        favIcon={"/favicon.ico"}
       />
       <main>
         <PageLayout>
           {/* V2 New Design  */}
-          
+
           {/* <div className=''>
             <div className="container mx-auto px-5 lg:px-12 big:px-28 large:px-96">
               <div className='flex justify-center pt-[70px] pb-16'>
@@ -29,16 +27,15 @@ const AllCourses = () => {
           </div> */}
 
           {/* V1 Old Design  */}
-          <div className="flex flex-col min-h-screen overflow-hidden">
+          <div className="flex min-h-screen flex-col overflow-hidden">
             <div className="grow lg:mb-12">
-              <Courses heading={'All Courses'} ctaText={'View course detail'} />
+              <Courses heading={"All Courses"} ctaText={"View course detail"} />
             </div>
           </div>
-
         </PageLayout>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default withRouter(AllCourses)
+export default withRouter(AllCourses);

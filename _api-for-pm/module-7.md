@@ -6,7 +6,7 @@ metaDescription: "Learn API error handling. What does 2xx, 3xx, 4xx and 5xx erro
 
 
 
-# Error handling
+## Error handling
 
 Throughout this course, we've been discussing only requests. What if we made the wrong request?
 

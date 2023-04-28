@@ -8,9 +8,15 @@ import path from "path";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-const ModuleDetails = ({ courseNavigationData, frontmatter, content, slug, chapterData }) => {
+const ModuleDetails = ({
+  courseNavigationData,
+  frontmatter,
+  content,
+  slug,
+  chapterData,
+}) => {
   const { currentUser } = useSelector((state) => state.user);
-  const course = "pricing-for-pm"
+  const course = "pricing-for-pm";
 
   const { courses: availCourses } = useSelector((state) => state.course);
   const [isPaid, setCourseUnlock] = useState(false);
@@ -18,21 +24,20 @@ const ModuleDetails = ({ courseNavigationData, frontmatter, content, slug, chapt
 
   useEffect(() => {
     const isCourseAvailable = availCourses?.some(
-      (item) => item.permalink === course
+      (item) => item.slug === course
     );
     const isUserLoggedIn = Boolean(currentUser?.email);
 
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
     }
-
   }, [availCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (
     <CourseLearningView
       course={course}
       courseNavigationData={courseNavigationData}
-      isPaid={isPaid}
+      hasAccess={isPaid}
       frontmatter={frontmatter}
       content={content}
       slug={slug}
@@ -75,7 +80,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const result = await serialize(content);
 
   const isFreeChapter =
-    (courseConfig["pricing-for-pm"] && courseConfig["pricing-for-pm"].includes(slug)) ||
+    (courseConfig["pricing-for-pm"] &&
+      courseConfig["pricing-for-pm"].includes(slug)) ||
     false;
 
   return {

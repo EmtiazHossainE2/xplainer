@@ -1,26 +1,33 @@
-import Image from "next/image"
-import Link from "next/link"
-import { BsFillCheckCircleFill } from 'react-icons/bs'
+import Image from "next/image";
+import Link from "next/link";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import PriceView from "../PriceView";
 
-const HeroHome = () => {
+const HeroHome = ({ course, ctaText, handleCTAClick, hasCourseAccess }) => {
+  const priceData = {
+    amount: 999,
+    currency: "INR",
+    discount: 50,
+  };
+
   return (
-    <div className='container mx-auto py-4 px-5 lg:px-12 big:px-36 large:px-96'>
-      <div className='flex flex-col lg:flex-row justify-between pt-10 lg:pt-[52px] items-center  gap-10 lg:gap-16 '>
+    <div className="container mx-auto py-4 pb-12 px-5 lg:px-12 big:px-36 large:px-96">
+      <div className="flex flex-col items-center justify-between gap-10 pt-10 lg:flex-row  lg:gap-16 lg:pt-[52px] ">
         {/* Left  */}
-        <div className='basis-1/2 hidden scale-125 md:block lg:flex justify-center items-center'>
+        <div className="hidden basis-1/2 scale-125 items-center justify-center md:block lg:flex">
           <Image
             className="rounded-lg"
-            src="/images/courses/man1.svg"
+            src="/images/courses/api.png"
             alt="Hero Banner"
             width={400}
             height={338}
             priority
           />
         </div>
-        <div className='basis-1/2 px-8 lg:hidden scale-125 md:block flex justify-center items-center'>
+        <div className="flex basis-1/2 scale-125 items-center justify-center px-8 md:block lg:hidden">
           <Image
             className="rounded-lg"
-            src="/images/courses/videoMan.svg"
+            src="/images/courses/api.png"
             alt="Hero Banner"
             width={300}
             height={256}
@@ -29,58 +36,108 @@ const HeroHome = () => {
         </div>
 
         {/* Right */}
-        <div className='basis-1/2 flex flex-col '>
-          <h2 className="text-4xl font-medium text-[#101828DE] lg:text-[#000] lg:text-5xl lg:font-extrabold ">API For Product  <br /> Managers</h2>
-          <div className="flex gap-8 py-4 px-1 lg:px-3 apiForPm">
-            <div className="flex justify-center items-center gap-2">
-              <Image src='/images/courses/i1.svg' width={20} height={19} alt="icon" />
-              <p className="text-xs lg:text-sm text-[#333]">25k+ students</p>
+        <div className="flex basis-1/2 flex-col ">
+          {/* Title  */}
+          <h2 className="text-3xl font-bold text-[#101828DE] md:text-2xl lg:text-5xl lg:font-extrabold lg:text-[#000] ">
+            {course === "api-for-pm" && (
+              <>
+                Learn API For Product <br /> Managers
+              </>
+            )}
+          </h2>
+          <div className="apiForPm flex gap-8 py-4 px-1 lg:hidden lg:px-3">
+            <div className="flex items-center justify-center gap-2">
+              <Image
+                src="/images/courses/i1.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
+              <p className="text-xs text-[#333] lg:text-sm">7.3k+ learners</p>
             </div>
-            <div className="flex justify-center items-center">
-              <Image src='/images/courses/i2.svg' width={20} height={19} alt="icon" />
-              <p className="text-xs lg:text-sm">11 courses</p>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/courses/i2.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
+              <p className="text-xs lg:text-sm">10+ modules</p>
             </div>
-            <div className="flex justify-center items-center">
-              <Image src='/images/courses/i3.svg' width={20} height={19} alt="icon" />
-              <p className="text-xs lg:text-sm">25 hours</p>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/courses/i3.svg"
+                width={20}
+                height={19}
+                alt="icon"
+              />
+              <p className="text-xs lg:text-sm">10+ hours</p>
             </div>
           </div>
-          <div>
-            <p className="text-[#475467] text-sm pb-2 lg:text-[#9CA3AF] lg:py-3.5 lg:text-sm lg:font-medium">Certificate of completion available.</p>
-            {/* For large  */}
-            <p className="hidden lg:block text-[#9CA3AF] text-sm font-medium pb-3.5">Our product management interview course teaches you the <br /> essential skills you need to ace your PM interview, with hours of <br /> example questions, videos, and interview tips.</p>
+
+          <div className="mt-4">
+            {/* For large 
+            <p className="hidden pb-3.5 text-sm font-medium text-[#9CA3AF] lg:hidden">
+              Our product management interview course teaches you the <br />{" "}
+              essential skills you need to ace your PM interview, with hours of{" "}
+              <br /> example questions, videos, and interview tips.
+            </p> */}
 
             {/* For Mobile  */}
-            <div className="flex flex-col space-y-2 lg:hidden mobileContent">
+            <div className="mobileContent mb-4 flex flex-col space-y-2">
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
-                <p className="text-sm text-[#475467]">Transform your product strategy with API skill</p>
+                <BsFillCheckCircleFill className="text-primary" />
+                <p className="text-sm text-[#475467]">
+                  Transform your product strategy with API skill
+                </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
-                <p className="text-sm text-[#475467]"> Elevate your career with API knowledge</p>
+                <BsFillCheckCircleFill className="text-primary" />
+                <p className="text-sm text-[#475467]">
+                  {" "}
+                  Elevate your career with API knowledge
+                </p>
               </div>
               <div className="flex items-center gap-2">
-                <BsFillCheckCircleFill  className="text-[#5454d4]" />
+                <BsFillCheckCircleFill className="text-primary" />
+                <p className="text-sm text-[#475467]">
+                  {" "}
+                  Certificate of completion available.
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <BsFillCheckCircleFill className="text-primary" />
                 <p className="text-sm text-[#475467]"> Trusted by 7300+ PMs.</p>
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-              <Link href='/courses/api-for-pm/module-1' className="bg-[#0070F4] mt-8 lg:mt-0 lg:px-9 py-4 rounded-md">
-                <button className="w-full lg:w-[196px] text-white font-medium">Get Full Access</button>
+            {hasCourseAccess === false &&  <PriceView priceData={priceData} /> }
+
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
+              <div
+                onClick={handleCTAClick}
+                className="mt-8 rounded-md bg-primary hover:bg-primary_bold py-4 lg:mt-0 lg:px-9"
+              >
+                <button className="w-full font-medium text-white lg:w-[196px]">
+                  {ctaText}
+                </button>
+              </div>
+              {!hasCourseAccess && 
+              <Link
+                href="/courses/api-for-pm/introduction"
+                className="text-center"
+              >
+                <button className="hidden rounded-md  border border-gray-300 p-3 text-sm font-medium text-primary lg:block">
+                  Try free preview
+                </button>
               </Link>
-              <Link href='/courses/api-for-pm/module-1' className="text-center">
-                <p className="text-sm text-[#0070F4] font-medium">Try free preview</p>
-              </Link>
+              }
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroHome
+export default HeroHome;

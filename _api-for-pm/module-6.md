@@ -12,7 +12,7 @@ Well, it's time to test your skills! 💩
 
 ![images/image.gif](/images/api-for-pm/image.gif)
 
-# 1. Search Videos on YouTube
+## 1. Search Videos on YouTube
 
 ---
 
@@ -40,7 +40,7 @@ Now, you have the API reference guide. Let's read the API documentation and find
 
 If you face any issue while creating YouTube data API key, check this out. 
 
-# 2. Get Current Weather Data
+## 2. Get Current Weather Data
 
 ---
 
@@ -56,7 +56,7 @@ Documentation :  [https://openweathermap.org/current](https://openweathermap.org
 
 > You need to register on the platform, generate an API key and use it in the endpoint. If you try hitting the URL without API_KEY, it will return some error message in JSON.
 
-# 3. Location from ZIP code
+## 3. Location from ZIP code
 
 ---
 

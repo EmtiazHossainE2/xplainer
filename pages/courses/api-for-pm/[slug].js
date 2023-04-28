@@ -1,16 +1,12 @@
-import ContentLayout from "@/src/components/v1/Shared/ContentView/ContentLayout";
 import CourseLearningView from "@/src/components/v1/Shared/ContentView/CourseLearningView";
-import Footer2 from "@/src/components/v1/Shared/Footer/Footer2";
-import UpgradeToPremium from "@/src/components/v1/Shared/UpgradeToPremium";
 import { courseConfig } from "@/src/config/course-config";
-import SidebarLayout from "@/src/layout/SidebarLayout";
+import useAuthService from "@/src/hooks/auth/useAuthService";
 import { getCourseNavigation } from "@/src/utils/helper";
 import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 const course = "api-for-pm";
 
@@ -21,28 +17,28 @@ const ModuleDetails = ({
   slug,
   chapterData,
 }) => {
-  const { currentUser } = useSelector((state) => state.user);
-  const { courses: availCourses } = useSelector((state) => state.course);
-  const [isPaid, setCourseUnlock] = useState(false);
+  const { currentUser, purchasedCourses } = useAuthService();
+  const [hasAccess, setCourseUnlock] = useState(false);
   const { isFreeChapter } = chapterData;
 
   useEffect(() => {
-    const isCourseAvailable = availCourses?.some(
-      (item) => item.permalink === course
+    const isCourseAvailable = purchasedCourses?.some(
+      (item) => item.slug === course
     );
     const isUserLoggedIn = Boolean(currentUser?.email);
+
+    console.log(isCourseAvailable, purchasedCourses, 'DATA');
 
     if (isCourseAvailable && isUserLoggedIn) {
       setCourseUnlock(true);
     }
-
-  }, [availCourses, currentUser?.email, isFreeChapter, slug]);
+  }, [purchasedCourses, currentUser?.email, isFreeChapter, slug]);
 
   return (
     <CourseLearningView
       course={course}
       courseNavigationData={courseNavigationData}
-      isPaid={isPaid}
+      hasAccess={hasAccess}
       frontmatter={frontmatter}
       content={content}
       slug={slug}

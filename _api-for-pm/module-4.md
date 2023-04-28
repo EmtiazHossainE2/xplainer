@@ -7,7 +7,7 @@ metaDescription: ""
 
 
 
-# 1. How to work with an API?
+## 1. How to work with an API?
 
 ---
 
@@ -21,7 +21,7 @@ To get started with any API, you need to do the following ➖
 - Test the API through Postman or by curl request.
 - Implement via code
 
-# 2. Exploring an API documentation
+## 2. Exploring an API documentation
 
 ---
 
@@ -44,7 +44,7 @@ What would be the first step? The first step would be to read the APIs documenta
 
 ![lets-get-going-598f87.jpeg](/images/api-for-pm/lets-get-going-598f87.jpeg)
 
-# 3. Working with the Github API 
+## 3. Working with the Github API 
   
 ---
 
@@ -68,7 +68,7 @@ Let's get started according to our checklist.
 curl -i https://api.github.com/users/dipakkr
 ```
 
-# 4. Sample API documentation
+## 4. Sample API documentation
 
 ---
 Here are a few examples of the best API documentation you can read and play around with. 
