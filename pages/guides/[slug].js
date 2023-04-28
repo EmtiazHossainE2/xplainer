@@ -40,14 +40,19 @@ const CourseDetails = () => {
                     <div className="left my-12 lg:basis-8/12">
                       {/* Learning Opportunity */}
                       <Opportunity learningItems={course.willLearn} />
+
                       {/* Top companies offer this course to their employees */}
                       <TopCompanies topCompanies={course?.topCompanies} />
+
                       {/* Course Content  */}
                       <CourseContent course={`courseDetail`} />
+
                       {/* Requirements */}
                       <Requirements requirements={course.requirements} />
+
                       {/* CourseDescription */}
                       <CourseDescription description={course.description} />
+                      
                       {/* Instructor */}
                       <Instructor instructor={course?.instructorInfo} />
                     </div>

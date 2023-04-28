@@ -8,8 +8,13 @@ import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "src/store";
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+
+  
   
   useEffect(() => {
     // Init AOS 
@@ -19,6 +24,29 @@ function MyApp({ Component, pageProps }) {
       offset: 50,
     });
   }, [])
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleStart = (url) => {
+      console.log(`Loading: ${url}`)
+      NProgress.start()
+    }
+
+    const handleStop = () => {
+      NProgress.done()
+    }
+
+    router.events.on('routeChangeStart', handleStart)
+    router.events.on('routeChangeComplete', handleStop)
+    router.events.on('routeChangeError', handleStop)
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart)
+      router.events.off('routeChangeComplete', handleStop)
+      router.events.off('routeChangeError', handleStop)
+    }
+  }, [router])
 
   return (
     <>

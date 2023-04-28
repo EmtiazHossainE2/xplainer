@@ -750,7 +750,6 @@ export const courseIncludes = [
   },
 ];
 
-export const BASE_URL = "https://xplainerr.vercel.app/";
 
 export const IMAGE_KIT_CDN = "https://ik.imagekit.io/zwxa4kttt/";
 
@@ -775,3 +774,6 @@ export const DEFAULT_PRICE_LIST = {
     [ENV.LIVE]: "price_1MuhpWSBqetirFH0ppJyCIN1",
   },
 };
+
+export const BASE_URL = 'https://www.xplainerr.com/';
+
