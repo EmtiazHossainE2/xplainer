@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { BsChevronUp, BsChevronDown } from "react-icons/bs";
-import { FaLock } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 const Content = ({ content, index, onTitleClick, isOpen = true }) => {
   // const [childState,setChildState] = useState(true)
@@ -29,20 +27,18 @@ const Content = ({ content, index, onTitleClick, isOpen = true }) => {
           >
             <div className="flex justify-between p-2">
               <div className="flex gap-2">
-                {subModule.isPaid && (
-                  <Image
+                <Image
                     src="/images/shared/playBtn.svg"
                     width={19}
                     height={19}
                     alt="play icon"
                   />
-                )}
                 <p>{subModule.title}</p>
               </div>
             </div>
-            <div className="text-primary ">
+            {/* <div className="text-primary ">
               {subModule.isPaid === true ? <p>Free</p> : <FaLock />}
-            </div>
+            </div> */}
           </Link>
         ))}
       </div>
