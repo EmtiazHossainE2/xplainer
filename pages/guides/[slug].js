@@ -11,6 +11,7 @@ import {
 } from "@/src/components/v3/CourseDetails";
 import { courses } from "@/src/config/courseConstant";
 import PageLayout from "@/src/layout/PageLayout";
+import Image from "next/image";
 
 const CourseDetails = () => {
   return (
@@ -27,6 +28,15 @@ const CourseDetails = () => {
           <main>
             <PageLayout>
               <div className="" key={index}>
+                {/* For mobile course banner image  */}
+                <div className="lg:hidden px-5 pt-3">
+                  <Image
+                    src={course.image}
+                    width={350}
+                    height={195}
+                    alt={course.title}
+                  />
+                </div>
                 {/* Hero Section  */}
                 <HeroBanner course={course} />
                 <div className="lg:hidden">
@@ -37,7 +47,7 @@ const CourseDetails = () => {
                 <div className="mx-auto max-w-7xl px-5 lg:px-16">
                   <div className="flex gap-8">
                     {/*******************************  Left Side  **************************** */}
-                    <div className="left my-12 lg:basis-8/12">
+                    <div className="left my-8 lg:my-12 lg:basis-8/12">
                       {/* Learning Opportunity */}
                       <Opportunity learningItems={course.willLearn} />
 
@@ -52,7 +62,7 @@ const CourseDetails = () => {
 
                       {/* CourseDescription */}
                       <CourseDescription description={course.description} />
-                      
+
                       {/* Instructor */}
                       <Instructor instructor={course?.instructorInfo} />
                     </div>

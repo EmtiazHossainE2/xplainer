@@ -5,11 +5,11 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 const Content = ({ content, index, onTitleClick, isOpen = true , course }) => {
   // const [childState,setChildState] = useState(true)
   return (
-    <div key={index} className="mb-3 rounded-md px-2 pt-2">
+    <div key={index} className="mb-3 rounded-md pt-2 lg:px-2">
       {/* *************************** Module *************************** */}
       <div
-        className={`text-l flex cursor-pointer items-center justify-between rounded-md border border-[#E5E7EB] bg-[#E5E7EB] py-2.5 pl-6 pr-3 font-semibold text-[#333333]  ${
-          course === "courseDetail" ? "" : "md:text-2xl"
+        className={`text-l flex cursor-pointer items-center justify-between  border border-[#E5E7EB] bg-[#E5E7EB] py-2.5 pl-3 pr-3 font-semibold text-[#333333] lg:pl-6  ${
+          course === "courseDetail" ? "" : "text-base md:text-2xl"
         }`}
         onClick={() => onTitleClick(index)}
       >
@@ -20,14 +20,14 @@ const Content = ({ content, index, onTitleClick, isOpen = true , course }) => {
       </div>
 
       {/* *************************** Submodule *************************** */}
-      <div className={` rounded text-gray-600 ${isOpen ? "block" : "hidden"}`}>
+      <div className={`border  text-gray-600 ${isOpen ? "block" : "hidden"}`}>
         {content.subModules.map((subModule, index) => (
           <Link
             href={subModule.slug}
             key={index}
-            className="md:text-md flex items-center justify-between rounded-md border border-[#E5E7EB] bg-[#F5F5F5] p-6 py-2.5 pl-6 pr-3 text-sm font-medium  text-[#333333]"
+            className="md:text-md flex items-center justify-between rounded-md  border-[#E5E7EB] bg-[#F5F5F5]  py-1 pl-3 pr-3 text-xs font-medium text-[#333333] md:text-sm lg:py-1.5  lg:pl-6"
           >
-            <div className="flex justify-between py-2">
+            <div className="flex justify-between py-1">
               <div className="flex gap-2">
                 <Image
                   src="/images/shared/playBtn.svg"

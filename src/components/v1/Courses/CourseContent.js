@@ -23,13 +23,13 @@ const CourseContent = ({ course }) => {
       <div
         className={`container mx-auto   ${
           course === "courseDetail"
-            ? "py-10"
+            ? "pt-10"
             : "px-3 py-[60px] lg:py-20 lg:px-12 big:px-36 large:px-96"
         }`}
       >
         <h3
-          className={`pb-8   font-semibold leading-7  ${
-            course === "courseDetail" ? "text-3xl" : "text-center text-[32px]"
+          className={`pb-5 lg:pb-8 font-semibold leading-7  ${
+            course === "courseDetail" ? "text-2xl" : "text-center text-[32px]"
           }`}
         >
           Course Content
