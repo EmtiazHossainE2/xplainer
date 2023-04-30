@@ -1,0 +1,52 @@
+import Image from 'next/image';
+import React from 'react'
+import { AiTwotoneStar } from "react-icons/ai";
+import { MdReviews } from "react-icons/md";
+import { GrGroup } from "react-icons/gr";
+import { SiCoursera } from "react-icons/si";
+
+const Instructor = ({ instructor }) => {
+  return (
+    <div>
+      <h2 className="pt-5 pb-3 text-xl font-semibold lg:text-2xl">
+        Instructor
+      </h2>
+      <h3 className="font-medium text-[#5624D0]">
+        {instructor.name}
+      </h3>
+      <h3 className="pb-3 text-sm font-medium text-[#6A6F73]">
+        {instructor.designation}
+      </h3>
+      <div className="flex items-center gap-5 py-4">
+        <Image
+          src={instructor.image}
+          alt={instructor.name}
+          width={150}
+          height={150}
+          className="rounded-full"
+        />
+        <div className="flex flex-col text-sm md:text-base space-y-2">
+          <p className="flex items-center gap-2">
+            <AiTwotoneStar className="text-amber-500 " />
+            {instructor.summary.ratings}
+          </p>
+          <p className="flex items-center gap-2">
+            <MdReviews />
+            {instructor.summary.reviews}
+          </p>
+          <p className="flex items-center gap-2">
+            <GrGroup />
+            {instructor.summary.students}
+          </p>
+          <p className="flex items-center gap-2">
+            <SiCoursera />
+            {instructor.summary.courses}
+          </p>
+        </div>
+      </div>
+      <p>{instructor.description}</p>
+    </div>
+  );
+};
+
+export default Instructor

@@ -21,15 +21,27 @@ const courseSlug = ALL_COURSES.API_FOR_PM;
 
 const ApiForPMCoursePage = (props) => {
 
-  const { hasCourseAccess, courseId, currentCourseData } = props;
+  const {  courseId, currentCourseData } = props;
 
   const router = useRouter();
   const { currentUser } = useAuthService();
   const [loginModal, setLoginModal] = useState(false);
+  const [hasCourseAccess, setHasCourseAccess] = useState(false);
 
   const coursePrice = currentCourseData?.priceId;
 
   const ctaText = hasCourseAccess ? "Resume learning" : "Enroll now";
+  useEffect(() => {
+    const fetchData = async () => {
+      const { hasCourseAccess } = await getCoursePageInfo({
+        userId: currentUser?.uid,
+        courseSlug,
+      });
+      setHasCourseAccess(hasCourseAccess);
+    };
+
+    fetchData();
+  }, [currentUser?.uid, hasCourseAccess]);
 
   const handleCTAClick = () => {
     if (hasCourseAccess) {
@@ -125,7 +137,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      hasCourseAccess : true,
+      // hasCourseAccess : false,
       courseId,
       currentCourseData
     }

@@ -712,6 +712,45 @@ export const courseCategories = [
   },
 ];
 
+export const learningItems = [
+  {
+    title:
+      "Build 16 web development projects for your portfolio, ready to apply for junior developer jobs.",
+  },
+  {
+    title:
+      "Learn the latest technologies, including Javascript, React, Node and even Web3 development.",
+  },
+  { title: "After the course you will be able to build ANY website you want." },
+  {
+    title:
+      "Build fully-fledged websites and web apps for your startup or business.",
+  },
+  { title: "Work as a freelance web developer." },
+  { title: "Master frontend development with React" },
+  { title: "Master backend development with Node" },
+  { title: "Learn professional developer best practices." },
+];
+
+export const courseIncludes = [
+  {
+    title: "7 coding exercises",
+  },
+  {
+    title: "75 articles",
+  },
+  {
+    title: "81 downloadable resources",
+  },
+  {
+    title: "Full lifetime access",
+  },
+  {
+    title: "Certificate of completion",
+  },
+];
+
+
 export const IMAGE_KIT_CDN = "https://ik.imagekit.io/zwxa4kttt/";
 
 export const ALL_COURSES = {
