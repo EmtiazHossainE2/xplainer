@@ -771,7 +771,7 @@ export const DEFAULT_PRICE_LIST = {
   },
   [ALL_COURSES.PRICING_FOR_PM]: {
     [ENV.TEST]: "price_1Mtz8QSBqetirFH0Cj3MsCKs",
-    [ENV.LIVE]: "price_1MuhpWSBqetirFH0ppJyCIN1",
+    [ENV.LIVE]: "price_1MuhpWSBqetirFH0hqhtdA0u",
   },
 };
 

@@ -1,12 +1,12 @@
 export const courses = [
   {
-    slug: "web-development-bootcamp",
-    title: "The Complete 2023 Web Development Bootcamp",
+    slug: "api-for-pm",
+    title: "API For Product Managers",
     metaTitle:
       "Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript,Node, React, MongoDB, Web3 and DApps",
-    ratings: 4.7,
-    userRatings: 280645,
-    students: 948000,
+    ratings: 4.6,
+    userRatings: 230,
+    students: 7500,
     image: "/images/courses/v3/react.svg",
     price: 999,
 

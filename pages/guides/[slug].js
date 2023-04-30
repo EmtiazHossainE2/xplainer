@@ -11,9 +11,26 @@ import {
 } from "@/src/components/v3/CourseDetails";
 import { courses } from "@/src/config/courseConstant";
 import PageLayout from "@/src/layout/PageLayout";
+import { checkout } from "@/src/utils/checkout";
 import Image from "next/image";
 
 const CourseDetails = () => {
+
+  const handlePurchaseCTA = () => {
+    console.log('fsd')
+    checkout({
+      lineItems: [
+        {
+          price:'price_1Ms0b3SBqetirFH0Nt5qV6aQ', // make it dynamic
+          quantity: 1,
+        },
+      ],
+      customerEmail: 'deepak@gmail.com',
+      clientReferenceId: 'deepak-123',
+      courseRoute: '/courses/api-for-pm',
+    });
+  }
+
   return (
     <>
       {courses.map((course, index) => (
@@ -40,7 +57,7 @@ const CourseDetails = () => {
                 {/* Hero Section  */}
                 <HeroBanner course={course} />
                 <div className="lg:hidden">
-                  <PurchaseSection course={course} />
+                  <PurchaseSection course={course} handleBuyNowClick={handlePurchaseCTA} />
                 </div>
 
                 {/* Main Content  */}
