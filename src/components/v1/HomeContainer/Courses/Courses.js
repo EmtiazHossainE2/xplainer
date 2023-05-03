@@ -6,7 +6,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
 
 
-const Courses = ({ heading, ctaText }) => {
+const Courses = ({ heading, ctaText, courses }) => {
   return (
     <div className="bg-[#FDFDFD]">
       <div className="container mx-auto px-5 pt-20">
@@ -19,7 +19,7 @@ const Courses = ({ heading, ctaText }) => {
             Get better at your job every single day!
           </p>
           <div className=" flex flex-col gap-10 lg:flex-row lg:gap-5">
-            {allCourses.map((course, index) => (
+            {courses?.map((course, index) => (
               <Link
                 href={`/courses/${course?.slug}`}
                 key={index}
@@ -27,7 +27,8 @@ const Courses = ({ heading, ctaText }) => {
               >
                 <div>
                   <Image
-                    src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
+                    // src={`${IMAGE_KIT_CDN}/${course.coverImage}`}
+                    src={`${course?.cover_image}`}
                     width={310}
                     height={155}
                     alt={course?.title}
@@ -86,7 +87,7 @@ const Courses = ({ heading, ctaText }) => {
 
           {/* View ALl  */}
           <Link href="/courses">
-            <button className="mx-auto mt-9 flex items-center gap-5 rounded-md bg-primary hover:bg-primary_bold  px-4 py-2.5 text-white">
+            <button className="mx-auto mt-9 flex items-center gap-5 rounded-md bg-primary px-4  py-2.5 text-white hover:bg-primary_bold">
               Browse all courses
               <FiArrowRight size={24} className="font-bold" />
             </button>

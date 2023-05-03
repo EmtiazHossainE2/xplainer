@@ -7,7 +7,7 @@ const Requirements = ({ requirements }) => {
       {requirements.map((req, index) => (
         <div key={index} className="flex items-center space-y-1 text-sm">
           <RxDotFilled className="basis-1/12 lg:basis-[5%]" />
-          <span className="basis-11/12 lg:basis-[95%]"> {req.item}</span>
+          <span className="basis-11/12 lg:basis-[95%]"> {req?.item}</span>
         </div>
       ))}
     </div>
