@@ -1,5 +1,6 @@
 import { CourseContent } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import {
   CourseDescription,
   HeroBanner,
@@ -10,12 +11,66 @@ import {
   TopCompanies,
 } from "@/src/components/v3/CourseDetails";
 import { BACKEND_API } from "@/src/config/backend";
-import { courses } from "@/src/config/courseConstant";
+import useAuthService from "@/src/hooks/auth/useAuthService";
 import PageLayout from "@/src/layout/PageLayout";
+import { checkout } from "@/src/utils/checkout";
+import { getCoursePageInfo } from "@/src/utils/firebase";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const CourseDetails = ({ course }) => {
   // console.log("course", course);
+  const router = useRouter();
+  const { currentUser } = useAuthService();
+  const [hasCourseAccess, setHasCourseAccess] = useState(false);
+  const [courseId, setCourseId] = useState(null);
+  const [loginModal, setLoginModal] = useState(false);
+  const courseSlug = course?.slug
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { hasCourseAccess, courseId } = await getCoursePageInfo({
+        userId: currentUser?.uid,
+        courseSlug,
+      });
+      setHasCourseAccess(hasCourseAccess);
+      setCourseId(courseId);
+    };
+
+    fetchData();
+  }, [currentUser?.uid, hasCourseAccess, courseSlug]);
+
+  const ctaText = hasCourseAccess
+    ? "Resume Learning"
+    : "Buy Now ";
+  
+  const handlePurchaseCTA = () => {
+    if (hasCourseAccess) {
+      router.push(router.asPath + "/introduction");
+      return;
+    }
+
+    const clientReferenceId = `${currentUser?.uid}-${courseId}`;
+
+    if (router.pathname) {
+      if (currentUser?.email) {
+        checkout({
+          lineItems: [
+            {
+              price: course?.priceId,
+              quantity: 1,
+            },
+          ],
+          customerEmail: currentUser.email,
+          clientReferenceId: clientReferenceId,
+          courseRoute: router.asPath,
+        });
+      } else {
+        return setLoginModal(true);
+      }
+    }
+  };
 
   return (
     <>
@@ -40,7 +95,12 @@ const CourseDetails = ({ course }) => {
               {/* Hero Section  */}
               <HeroBanner course={course} />
               <div className="lg:hidden">
-                <PurchaseSection course={course} />
+                <PurchaseSection
+                  course={course}
+                  handleBuyNowClick={handlePurchaseCTA}
+                  ctaText={ctaText}
+                  hasCourseAccess={hasCourseAccess}
+                />
               </div>
 
               {/* Main Content  */}
@@ -69,12 +129,24 @@ const CourseDetails = ({ course }) => {
 
                   {/************************ Right Side PurchaseSection **************************/}
                   <div className="right hidden lg:block lg:basis-4/12">
-                    <PurchaseSection course={course} />
+                    <PurchaseSection
+                      course={course}
+                      handleBuyNowClick={handlePurchaseCTA}
+                      ctaText={ctaText}
+                      hasCourseAccess={hasCourseAccess}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </PageLayout>
+
+          {/************************ Login Modal  ************************/}
+          <LoginModal
+            isVisible={loginModal}
+            setLoginModal={setLoginModal}
+            onClose={() => setLoginModal(false)}
+          />
         </main>
       </div>
     </>
