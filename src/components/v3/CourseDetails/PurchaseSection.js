@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
-import { BsStopwatch } from "react-icons/bs";
 import { GoCheck } from "react-icons/go";
 
 const PurchaseSection = ({
