@@ -1,9 +1,11 @@
 import { Courses } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { BACKEND_API } from "@/src/config/backend";
 import PageLayout from "@/src/layout/PageLayout";
 import { withRouter } from "next/router";
 
-const AllCourses = () => {
+const AllCourses = ({ courses }) => {
+  console.log("first ", courses);
   return (
     <>
       <CommonHead
@@ -29,7 +31,11 @@ const AllCourses = () => {
           {/* V1 Old Design  */}
           <div className="flex min-h-screen flex-col overflow-hidden">
             <div className="grow lg:mb-12">
-              <Courses heading={"All Courses"} ctaText={"View course detail"} />
+              <Courses
+                heading={"All Courses"}
+                ctaText={"View course detail"}
+                courses={courses}
+              />
             </div>
           </div>
         </PageLayout>
@@ -39,3 +45,16 @@ const AllCourses = () => {
 };
 
 export default withRouter(AllCourses);
+
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `${BACKEND_API}/courses`
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      courses: data.result,
+    },
+  };
+};
