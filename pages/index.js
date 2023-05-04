@@ -7,13 +7,14 @@ import {
   Mentors,
 } from "@/src/components/v1/HomeContainer";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import { BACKEND_API } from "@/src/config/backend";
 import PageLayout from "@/src/layout/PageLayout";
 import { sortByDate } from "@/src/utils/date";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-const Home = ({ posts }) => {
+const Home = ({ posts, courses }) => {
   return (
     <>
       <CommonHead
@@ -29,7 +30,7 @@ const Home = ({ posts }) => {
         <PageLayout>
           <HeroBanner />
           <Brand disableHeader={true} />
-          <Courses ctaText={"View course detail"} />
+          <Courses ctaText={"View course detail"} courses={courses} />
           <Mentors />
 
           <BlogGridView posts={posts} disableHeader="true" />
@@ -63,9 +64,16 @@ export const getStaticProps = async () => {
     };
   });
 
+  // Course 
+  const res = await fetch(`${BACKEND_API}/courses`);
+  const data = await res.json();
+
   return {
     props: {
       posts: posts.sort(sortByDate),
+      courses: data.result,
     },
   };
 };
+
+
