@@ -2,7 +2,7 @@ import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const HeroBanner = ({ course }) => {
-  console.log(course)
+  // console.log(course)
   return (
     <div className="lg:bg-[#2F2F2F]">
       <div className="mx-auto max-w-7xl px-5 py-4 lg:py-7 lg:px-16 lg:text-white">
