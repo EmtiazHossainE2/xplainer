@@ -6,6 +6,8 @@ import TopCompanies from "./TopCompanies";
 import Requirements from "./Requirements";
 import CourseDescription from "./CourseDescription";
 import Instructor from "./Instructor";
+import Faqs from "./Faqs";
+import Reviews from "./Reviews";
 
 export {
   HeroBanner,
@@ -16,4 +18,6 @@ export {
   Requirements,
   CourseDescription,
   Instructor,
+  Faqs,
+  Reviews
 };

@@ -4,7 +4,7 @@ const TopCompanies = ({ topCompanies }) => {
   return (
     <div className="border p-5">
       <h2 className="pb-5 text-base font-bold text-[#1C1D1F] lg:pb-1 lg:text-xl">
-        Top companies offer this course to their employees
+        Learners from top companies
       </h2>
       <div className="flex flex-wrap justify-between  gap-3">
         {topCompanies.map((logo, index) => (

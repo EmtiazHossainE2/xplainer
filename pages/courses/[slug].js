@@ -1,13 +1,17 @@
-import { CourseContent } from "@/src/components/v1/Courses";
+import {
+  CourseContent
+} from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import {
   CourseDescription,
+  Faqs,
   HeroBanner,
   Instructor,
   Opportunity,
   PurchaseSection,
   Requirements,
+  Reviews,
   TopCompanies,
 } from "@/src/components/v3/CourseDetails";
 import { BACKEND_API } from "@/src/config/backend";
@@ -26,7 +30,7 @@ const CourseDetails = ({ course }) => {
   const [hasCourseAccess, setHasCourseAccess] = useState(false);
   const [courseId, setCourseId] = useState(null);
   const [loginModal, setLoginModal] = useState(false);
-  const courseSlug = course?.slug
+  const courseSlug = course?.slug;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,10 +45,15 @@ const CourseDetails = ({ course }) => {
     fetchData();
   }, [currentUser?.uid, hasCourseAccess, courseSlug]);
 
-  const ctaText = hasCourseAccess
-    ? "Resume Learning"
-    : "Buy Now ";
-  
+  const ctaText = hasCourseAccess ? "Resume Learning" : "Buy Now ";
+
+  // Price Check
+  const isProduction = process.env.NODE_ENV === "production";
+  const coursePrice = isProduction
+    ? course?.priceData.live.priceId
+    : course?.priceData.test.priceId;
+  console.log(coursePrice, "coursePrice");
+
   const handlePurchaseCTA = () => {
     if (hasCourseAccess) {
       router.push(router.asPath + "/introduction");
@@ -58,7 +67,8 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              price: course?.priceId,
+              // price: coursePrice,
+              price: coursePrice,
               quantity: 1,
             },
           ],
@@ -125,6 +135,12 @@ const CourseDetails = ({ course }) => {
 
                     {/* Instructor */}
                     <Instructor course={course} />
+
+                    {/* Faq  */}
+                    <Faqs course={course} />
+
+                    {/* Review  */}
+                    <Reviews/>
                   </div>
 
                   {/************************ Right Side PurchaseSection **************************/}
@@ -159,6 +175,7 @@ export default CourseDetails;
 export const getStaticPaths = async () => {
   const res = await fetch(`${BACKEND_API}/courses`);
   const courses = await res.json();
+  // console.log(courses)
 
   const paths = courses?.result?.map((course) => {
     return {
@@ -174,7 +191,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(`${BACKEND_API}/courses/${params.slug}`);
   const singleCourse = await res.json();
-const course = singleCourse.result
+  const course = singleCourse.result;
 
   return { props: { course } };
 };
