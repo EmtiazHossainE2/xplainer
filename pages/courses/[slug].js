@@ -48,11 +48,11 @@ const CourseDetails = ({ course }) => {
   const ctaText = hasCourseAccess ? "Resume Learning" : "Buy Now ";
 
   // Price Check
-  const isProduction = process.env.NODE_ENV === "production";
-  const coursePrice = isProduction
-    ? course?.priceData.live.priceId
-    : course?.priceData.test.priceId;
-  console.log(coursePrice, "coursePrice");
+  // const isProduction = process.env.NODE_ENV === "production";
+  // const coursePrice = isProduction
+  //   ? course?.priceData.live.priceId
+  //   : course?.priceData.test.priceId;
+  // console.log(coursePrice, "coursePrice");
 
   const handlePurchaseCTA = () => {
     if (hasCourseAccess) {
@@ -68,7 +68,7 @@ const CourseDetails = ({ course }) => {
           lineItems: [
             {
               // price: coursePrice,
-              price: coursePrice,
+              price: course?.priceData.live.priceId,
               quantity: 1,
             },
           ],
