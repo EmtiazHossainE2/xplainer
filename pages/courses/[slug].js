@@ -55,6 +55,7 @@ const CourseDetails = ({ course }) => {
   // console.log(coursePrice, "coursePrice");
 
   const handlePurchaseCTA = () => {
+    console.log('Cliced on Buy Now');
     if (hasCourseAccess) {
       router.push(router.asPath + "/introduction");
       return;
