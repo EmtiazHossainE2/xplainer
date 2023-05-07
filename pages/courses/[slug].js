@@ -40,6 +40,7 @@ const CourseDetails = ({ course }) => {
       });
       setHasCourseAccess(hasCourseAccess);
       setCourseId(courseId);
+      console.log(courseId, hasCourseAccess, "courseId" );
     };
 
     fetchData();
@@ -55,6 +56,7 @@ const CourseDetails = ({ course }) => {
   // console.log(coursePrice, "coursePrice");
 
   const handlePurchaseCTA = () => {
+    console.log("Handle Purchase CTA");
     if (hasCourseAccess) {
       router.push(router.asPath + "/introduction");
       return;
