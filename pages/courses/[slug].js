@@ -24,7 +24,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  // console.log("course", course);
+  console.log("course", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
   const [hasCourseAccess, setHasCourseAccess] = useState(false);
@@ -40,6 +40,8 @@ const CourseDetails = ({ course }) => {
       });
       setHasCourseAccess(hasCourseAccess);
       setCourseId(courseId);
+
+      console.log(courseId, hasCourseAccess,  "courseId")
     };
 
     fetchData();
@@ -55,6 +57,7 @@ const CourseDetails = ({ course }) => {
   // console.log(coursePrice, "coursePrice");
 
   const handlePurchaseCTA = () => {
+    console.log('Cliced on Buy Now');
     if (hasCourseAccess) {
       router.push(router.asPath + "/introduction");
       return;
