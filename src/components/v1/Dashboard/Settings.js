@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 const Settings = ({ currentUser }) => {
-  console.log(currentUser)
+  // console.log(currentUser)
   return (
     <div className="pb-20">
       <div className="bg-[#FAFAFA] border border-[#C2C2C2] rounded-xl flex flex-col lg:flex-row gap-5 items-center py-3 lg:p-5">

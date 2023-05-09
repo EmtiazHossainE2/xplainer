@@ -26,25 +26,10 @@ const CourseDetails = ({ course }) => {
   const router = useRouter();
   const { currentUser } = useAuthService();
   const courseSlug = course?.slug;
-  // const [hasCourseAccess, setHasCourseAccess] = useState(false);
-  // const [courseId, setCourseId] = useState(null);
   const { hasCourseAccess, courseId } = useCourseAccess(courseSlug);
   // console.log("first", hasCourseAccess);
   const [loginModal, setLoginModal] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const { hasCourseAccess, courseId } = await getCoursePageInfo({
-  //       userId: currentUser?.uid,
-  //       courseSlug,
-  //     });
-  //     setHasCourseAccess(hasCourseAccess);
-  //     setCourseId(courseId);
-  //     // console.log(courseId, hasCourseAccess, "courseId");
-  //   };
-
-  //   fetchData();
-  // }, [currentUser?.uid, hasCourseAccess, courseSlug]);
 
   const ctaText = hasCourseAccess ? "Resume Learning" : "Buy Now ";
 
