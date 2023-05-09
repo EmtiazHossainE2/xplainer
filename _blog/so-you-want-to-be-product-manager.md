@@ -132,6 +132,9 @@ I strongly recommend budding PMs to read and write a lot **as a product manage
 - [Hooked](https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/B00HZY1N0K/ref=sr_1_1?dchild=1&keywords=hooked&qid=1584184997&s=books&sr=1-1)
 - [Design For How People Think](https://www.amazon.com/Design-How-People-Think-Products/dp/1491985453/ref=redir_mobile_desktop?ie=UTF8&aaxitk=kNs2SiMkfxK3y0GaoUf3PQ&hsa_cr_id=8650967330301&ref_=sb_s_sparkle)
 
+**Learn AI** 
+- Learn AI for Product Mangers - [Link](https://www.toptal.com/product-managers/digital/ai-overview)
+
 ### Is MBA mandatory to be a PM? Can I be a PM if I am not from a premier college?
 
 Do you mean something like this?
