@@ -1,3 +1,4 @@
+import useCourseAccess from "@/src/hooks/auth/useCourseAccess";
 import { logout } from "@/src/store/features/auth/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -16,6 +17,9 @@ const CourseMobileMenu = ({
 }) => {
   const router = useRouter();
   const dispatch = useDispatch()
+  const { hasCourseAccess } = useCourseAccess(course);
+  console.log(hasCourseAccess, "access");
+
   useEffect(() => {
     setToggle(false);
   }, [router, setToggle]);
@@ -36,16 +40,18 @@ const CourseMobileMenu = ({
           setToggle(!open);
         }
       }}
-      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${open ? "bg-black/75" : "bg-transparent pointer-events-none"
-        }`}
+      className={`overlay fixed  top-0 left-0 z-20 h-screen w-full transition-all duration-500  ${
+        open ? "bg-black/75" : "pointer-events-none bg-transparent"
+      }`}
     >
       <div
-        className={`absolute transition-[left] bg-white text-black h-screen w-[75%] max-w-[375px] pb-20 ${open ? "left-0 overflow-y-auto" : "-left-full"
-          }`}
+        className={`absolute h-screen w-[75%] max-w-[375px] bg-white pb-20 text-black transition-[left] ${
+          open ? "left-0 overflow-y-auto" : "-left-full"
+        }`}
       >
-        <div className="flex flex-col justify-start item-center">
-          <div className="flex justify-between shadow-sm p-2">
-            <h3 className="font-bold text-xl">Xplainerr</h3>
+        <div className="item-center flex flex-col justify-start">
+          <div className="flex justify-between p-2 shadow-sm">
+            <h3 className="text-xl font-bold">Xplainerr</h3>
             <button onClick={() => setToggle(false)}>
               <AiOutlineCloseCircle size={28} />
             </button>
@@ -55,87 +61,100 @@ const CourseMobileMenu = ({
           <div>
             {/********************************** Free Chapter  ***************************************/}
             {posts &&
-              Object.keys(posts).slice(0, 1).map((chapter, index) => {
-                const frontmatter = posts[chapter].frontmatter;
-                const slug = posts[chapter].slug;
+              Object.keys(posts)
+                .slice(0, 1)
+                .map((chapter, index) => {
+                  const frontmatter = posts[chapter].frontmatter;
+                  const slug = posts[chapter].slug;
 
-                return (
-                  <ul key={index}>
-                    <Link
-                      href={`/courses/${course}/${slug}`}
-                      className={courseLink}>
-                      <li className="py-2 flex justify-between items-center ">
-                        {frontmatter.title}
-                      </li>
-                    </Link>
-                  </ul>
-                );
-              })}
+                  return (
+                    <ul key={index}>
+                      <Link
+                        href={`/learning-center/${course}/${slug}`}
+                        className={courseLink}
+                      >
+                        <li className="flex items-center justify-between py-2 ">
+                          {frontmatter.title}
+                        </li>
+                      </Link>
+                    </ul>
+                  );
+                })}
 
             {/********************************** Paid Chapter  **********************************/}
             {posts &&
-              Object.keys(posts).slice(1).map((chapter, index) => {
-                const chapterData = posts[chapter];
-                const frontmatter = posts[chapter].frontmatter;
-                const slug = posts[chapter].slug;
+              Object.keys(posts)
+                .slice(1)
+                .map((chapter, index) => {
+                  const chapterData = posts[chapter];
+                  const frontmatter = posts[chapter].frontmatter;
+                  const slug = posts[chapter].slug;
 
-                return (
-                  <ul key={index}>
-                    <Link
-                      href={`/courses/${course}/${slug}`}
-                      className={courseLink}>
-                      <li className="py-2 flex justify-between items-center ">
-                        {frontmatter.title}
-                      </li>
-                      {!currentUser?.email && (<FaLock />)}
-                    </Link>
+                  return (
+                    <ul key={index}>
+                      <Link
+                        href={`/learning-center/${course}/${slug}`}
+                        className={courseLink}
+                      >
+                        <li className="flex items-center justify-between py-2 ">
+                          {frontmatter.title}
+                        </li>
+                        {!hasCourseAccess && <FaLock />}
+                      </Link>
 
-                    {chapterData?.subChapters && (
-                      <ul key={index}>
-                        {chapterData?.subChapters.map((subChapter, index) => {
-                          return (
-                            <Link
-                              key={`subchapter-${index}`}
-                              href={`/courses/${course}/${slug}/${subChapter.slug}`}
-                              className=" text-sm flex justify-between items-center text-[#3B454E] hover:bg-blue-400 px-3"
-                            >
-                              <li className="py-2 pl-1 ml-2 " >
-                                {subChapter.frontmatter.title}
-                              </li>
-                              {!currentUser?.email && (<FaLock />)}
-                            </Link>
-                          )
-                        })}
-
-                      </ul>
-                    )}
-
-                  </ul>
-                );
-              })}
+                      {chapterData?.subChapters && (
+                        <ul key={index}>
+                          {chapterData?.subChapters.map((subChapter, index) => {
+                            return (
+                              <Link
+                                key={`subchapter-${index}`}
+                                href={`/learning-center/${course}/${slug}/${subChapter.slug}`}
+                                className=" flex items-center justify-between px-3 text-sm text-[#3B454E] hover:bg-blue-400"
+                              >
+                                <li className="ml-2 py-2 pl-1 ">
+                                  {subChapter.frontmatter.title}
+                                </li>
+                                {!hasCourseAccess && <FaLock />}
+                              </Link>
+                            );
+                          })}
+                        </ul>
+                      )}
+                    </ul>
+                  );
+                })}
             <hr className="mt-2" />
-            <div className="flex gap-5 items-center px-3 mt-5">
+            <div className="mt-5 flex items-center gap-5 px-3">
               {currentUser?.email ? (
-                <h4
-                  onClick={handleLogout}
-                  className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
-                >
-                  Log out
-                </h4>
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
+                  >
+                    Dashboard
+                  </Link>
+                  <h4
+                    onClick={handleLogout}
+                    className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
+                  >
+                    Log out
+                  </h4>
+                </>
               ) : (
                 <h4
                   onClick={() => setLoginModal(true)}
-                  className="cursor-pointer font-semibold hover:border-b-2 px-4 py-1.5 bg-[#195bea] text-white rounded-md "
+                  className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
                 >
                   Login
                 </h4>
               )}
-              {!currentUser?.email &&
-                <Link href="/buy-now">
-                  <button className="px-3 py-1.5 bg-[#B80C07] text-white rounded-md ">
+              {!currentUser?.email && (
+                <Link href={`/courses/${course}`}>
+                  <button className="rounded-md bg-[#B80C07] px-3 py-1.5 text-white ">
                     Buy Now
                   </button>
-                </Link>}
+                </Link>
+              )}
             </div>
           </div>
         </div>

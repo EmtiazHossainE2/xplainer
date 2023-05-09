@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["img.freepik.com", "i.ytimg.com", "lh3.googleusercontent.com"],
+    domains: [
+      "img.freepik.com",
+      "i.ytimg.com",
+      "lh3.googleusercontent.com",
+      "firebasestorage.googleapis.com",
+    ],
   },
   images: {
     remotePatterns: [
@@ -26,6 +31,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.giphy.com",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
     ],
     env: {
       NEXT_PUBLIC_FIREBASE_API_KEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -37,8 +46,7 @@ const nextConfig = {
         process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
       NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER:
         process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER,
-      NEXT_PUBLIC_FIREBASE_APP_ID:
-        process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+      NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
       NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID:
         process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
     },

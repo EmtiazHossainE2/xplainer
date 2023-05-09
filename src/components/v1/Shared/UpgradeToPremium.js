@@ -1,7 +1,5 @@
-import { upgradeItem } from '@/src/config/constants'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import { AiOutlineCheck } from 'react-icons/ai'
+import { useState } from 'react'
 import { FaLock } from 'react-icons/fa'
 import { LoginModal } from './Modal'
 
@@ -15,7 +13,6 @@ const UpgradeToPremium = ({ posts, course }) => {
           {" "}
           Upgrade to continue learning
         </h2>
-        {/* <span className="text-center text-base text-gray-400 w-full md:w-2/3">As an Exponent member, you’ll get access to the rest of this course, and so much more.</span> */}
 
         <div className="flex flex-row flex-wrap justify-center">
           <Link href={`/courses/${course}`}>
@@ -27,19 +24,7 @@ const UpgradeToPremium = ({ posts, course }) => {
           </Link>
         </div>
 
-        {/* <div className="py-10 md:px-10  grid grid-cols-1 md:grid-cols-2 gap-5">
-          {upgradeItem?.map((item, index) => (
-            <div key={index} className='flex justify-center '>
-              <AiOutlineCheck size={40} className='text-blue-500 font-bold' />
-              <div>
-                <p className="ml-5 text-lg leading-6 font-medium text-gray-800">{item.title}</p>
-                <dd className="mt-2 ml-5 text-base text-gray-500">{item.des}
-                </dd>
-              </div>
-            </div>
-          ))}
-        </div> */}
-
+        
         {posts &&
           Object.keys(posts)
             .slice(0, 1)
@@ -53,7 +38,7 @@ const UpgradeToPremium = ({ posts, course }) => {
                   Not sure yet ?
                   <Link
                     className="font-semibold text-gray-600"
-                    href={`/courses/${course}/${slug}`}
+                    href={`/learning-center/${course}/${slug}`}
                   >
                     Try the free lesson
                   </Link>

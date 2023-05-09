@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { BsArrowLeft } from 'react-icons/bs';
 import { FaLock } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
-import Navbar from '../components/v1/Shared/Navbar/Navbar';
 import topBadge from "/public/images/courses/top-post-badge.svg";
-import { BsArrowLeft } from 'react-icons/bs'
+import { useRouter } from 'next/router';
 
 const SidebarLayout = ({ posts, course, children, slug }) => {
   const [open, setToggle] = useState(false);
@@ -17,6 +17,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
   const [profileOpen, setProfileOpen] = useState(false)
   const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch()
+  const router = useRouter()
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -158,14 +159,14 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
       <div className="relative hidden lg:block">
         <div className="flex">
           {/********************* Left Side  **********************/}
-          <div className="fixed pt-[60px] left-0 mb-12 flex h-screen w-[20%] flex-col overflow-y-auto bg-gray-100 pl-2 pr-1 text-left shadow-2xl ">
+          <div className="fixed left-0 mb-12 flex h-screen w-[20%] flex-col overflow-y-auto bg-gray-100 pt-[60px] pl-2 pr-1 text-left shadow-2xl ">
             <div>
-              <Link href="/dashboard">
+              <p onClick={() => router.back()}>
                 <button className="flex w-full items-center  gap-3 bg-[#DADADA] px-2 py-3 font-medium">
                   <BsArrowLeft size={24} />
                   Back to course
                 </button>
-              </Link>
+              </p>
             </div>
 
             {/********************************** Paid Chapter  **********************************/}
@@ -179,7 +180,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                 return (
                   <ul key={index}>
                     <Link
-                      href={`/courses/${course}/${slug}`}
+                      href={`/learning-center/${course}/${slug}`}
                       className={courseLink}
                     >
                       <li className="flex items-center justify-between py-2 ">
@@ -194,8 +195,8 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                           return (
                             <Link
                               key={`subchapter-${index}`}
-                              href={`/courses/${course}/${slug}/${subChapter.slug}`}
-                              className=" flex items-center justify-between px-1 text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200/40 2xl:px-3"
+                              href={`/learning-center/${course}/${slug}/${subChapter.slug}`}
+                              className=" flex items-center justify-between px-1 text-sm text-gray-600 hover:bg-gray-200/40 hover:text-gray-800 2xl:px-3"
                             >
                               <li className="ml-2.5 py-2 pl-2 ">
                                 {subChapter.frontmatter.title}
@@ -244,7 +245,6 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
               </div>
             </div>
           </div> */}
-          
         </div>
       </div>
 
