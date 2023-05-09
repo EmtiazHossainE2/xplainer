@@ -17,10 +17,12 @@ const ComingSoon = () => {
             {" "}
             Coming Soon . . .{" "}
           </h2>
-          <h2 className="mt-6 cursor-pointer text-xl font-bold text-blue-600">
-            {" "}
-            Back to <Link href={"/"}> Home </Link>
-          </h2>
+          <Link href={"/"}>
+            <h2 className="mt-6 cursor-pointer text-xl font-bold text-blue-600">
+              {" "}
+              Back to Home{" "}
+            </h2>
+          </Link>
         </div>
       </PageLayout>
     </>
