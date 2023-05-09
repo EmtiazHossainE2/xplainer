@@ -22,14 +22,14 @@ const MyCourses = ({ allCourses }) => {
                 />
               </div>
               <div className="px-3.5">
-                <h3 className="pt-4 pb-12 text-lg font-bold capitalize leading-[30px]">
+                <h3 className="pt-4 text-lg font-bold capitalize leading-[30px]">
                   {course.title}
                 </h3>
-                <p className="text-xs font-medium capitalize leading-[33px] text-[#868686]">
-                  {course.instructor}
+                <p className="text-xs pb-8 font-medium capitalize leading-[33px] text-[#868686]">
+                  {course?.instructor}
                 </p>
                 <Link
-                  href={`courses/${course.slug}/introduction`}
+                  href={`learning-center/${course.slug}/introduction`}
                   className="absolute bottom-2 left-2 flex h-[33px] w-[95%] justify-center rounded-[4px] border border-[#0070F4] bg-[#ECF5FF]"
                 >
                   <button className="  text-sm font-semibold leading-[33px] text-[#0070F4] ">

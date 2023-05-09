@@ -3,13 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { BsArrowLeft } from 'react-icons/bs';
 import { FaLock } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import LoginModal from "../components/v1/Shared/Modal/LoginModal";
 import CourseMobileMenu from "../components/v1/Shared/Navbar/CourseMobileMenu";
-import Navbar from '../components/v1/Shared/Navbar/Navbar';
 import topBadge from "/public/images/courses/top-post-badge.svg";
-import { BsArrowLeft } from 'react-icons/bs'
 
 const SidebarLayout = ({ posts, course, children, slug }) => {
   const [open, setToggle] = useState(false);
@@ -179,7 +178,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                 return (
                   <ul key={index}>
                     <Link
-                      href={`/courses/${course}/${slug}`}
+                      href={`/learning-center/${course}/${slug}`}
                       className={courseLink}
                     >
                       <li className="flex items-center justify-between py-2 ">
@@ -194,7 +193,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                           return (
                             <Link
                               key={`subchapter-${index}`}
-                              href={`/courses/${course}/${slug}/${subChapter.slug}`}
+                              href={`/learning-center/${course}/${slug}/${subChapter.slug}`}
                               className=" flex items-center justify-between px-1 text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200/40 2xl:px-3"
                             >
                               <li className="ml-2.5 py-2 pl-2 ">
