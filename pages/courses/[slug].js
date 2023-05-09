@@ -56,7 +56,6 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              price: priceId,
               price: course?.priceData.live.priceId,
               quantity: 1,
             },

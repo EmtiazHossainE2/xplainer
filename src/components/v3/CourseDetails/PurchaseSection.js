@@ -52,7 +52,7 @@ const PurchaseSection = ({
               {ctaText}
             </button>
           </div>
-          <p className="text-center text-xs">30-Days Money-Back Guarantee</p>
+          {/* <p className="text-center text-xs">30-Days Money-Back Guarantee</p> */}
         </div>
         <div>
           <p className="py-2 text-sm">This course includes:</p>

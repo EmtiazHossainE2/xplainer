@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 import { AiTwotoneStar } from "react-icons/ai";
 import { MdReviews } from "react-icons/md";
 import { GrGroup } from "react-icons/gr";
 import { SiCoursera } from "react-icons/si";
 
-const Instructor = ({ course  }) => {
+const Instructor = ({ course }) => {
   return (
     <div>
       {course?.instructors?.map((instructor, index) => (
@@ -25,24 +25,38 @@ const Instructor = ({ course  }) => {
               height={150}
               className="rounded-full"
             />
-            <div className="flex flex-col space-y-2 text-sm md:text-base">
-              <p className="flex items-center gap-2">
-                <AiTwotoneStar className="text-amber-500 " />
-                {instructor.summary.ratings}
-              </p>
-              <p className="flex items-center gap-2">
-                <MdReviews />
-                {instructor.summary.reviews}
-              </p>
-              <p className="flex items-center gap-2">
-                <GrGroup />
-                {instructor.summary.students}
-              </p>
-              <p className="flex items-center gap-2">
-                <SiCoursera />
-                {instructor.summary.courses}
-              </p>
-            </div>
+
+            {instructor.summary && (
+              <div className="flex flex-col space-y-2 text-sm md:text-base">
+                {instructor.summary.ratings && (
+                  <p className="flex items-center gap-2">
+                    <AiTwotoneStar className="text-amber-500 " />
+                    {instructor.summary.ratings}
+                  </p>
+                )}
+
+                {instructor.summary.reviews && (
+                  <p className="flex items-center gap-2">
+                    <MdReviews />
+                    {instructor.summary.reviews}
+                  </p>
+                )}
+
+                {instructor.summary.students && (
+                  <p className="flex items-center gap-2">
+                    <GrGroup />
+                    {instructor.summary.students}
+                  </p>
+                )}
+
+                {instructor.summary.courses && (
+                  <p className="flex items-center gap-2">
+                    <SiCoursera />
+                    {instructor.summary.courses}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
           <p>{instructor.description}</p>
         </div>
@@ -51,4 +65,4 @@ const Instructor = ({ course  }) => {
   );
 };
 
-export default Instructor
+export default Instructor;
