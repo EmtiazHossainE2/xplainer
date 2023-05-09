@@ -6,7 +6,7 @@ const TopCompanies = ({ topCompanies }) => {
       <h2 className="pb-5 text-center text-base font-bold text-[#1C1D1F] lg:pb-1 lg:text-start lg:text-xl">
         Learners from top companies
       </h2>
-      <div className="flex flex-wrap justify-center gap-3  lg:justify-between">
+      <div className="flex flex-wrap justify-center  gap-3  lg:justify-between items-center">
         {topCompanies.map((logo, index) => (
           <div key={index}>
             <Image
