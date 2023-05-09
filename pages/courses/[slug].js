@@ -1,6 +1,4 @@
-import {
-  CourseContent
-} from "@/src/components/v1/Courses";
+import { CourseContent } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import {
@@ -16,35 +14,37 @@ import {
 } from "@/src/components/v3/CourseDetails";
 import { BACKEND_API } from "@/src/config/backend";
 import useAuthService from "@/src/hooks/auth/useAuthService";
+import useCourseAccess from "@/src/hooks/auth/useCourseAccess";
 import PageLayout from "@/src/layout/PageLayout";
 import { checkout } from "@/src/utils/checkout";
-import { getCoursePageInfo } from "@/src/utils/firebase";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  console.log("course", course);
+  // console.log("course", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
-  const [hasCourseAccess, setHasCourseAccess] = useState(false);
-  const [courseId, setCourseId] = useState(null);
-  const [loginModal, setLoginModal] = useState(false);
   const courseSlug = course?.slug;
+  // const [hasCourseAccess, setHasCourseAccess] = useState(false);
+  // const [courseId, setCourseId] = useState(null);
+  const { hasCourseAccess, courseId } = useCourseAccess(courseSlug);
+  // console.log("first", hasCourseAccess);
+  const [loginModal, setLoginModal] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { hasCourseAccess, courseId } = await getCoursePageInfo({
-        userId: currentUser?.uid,
-        courseSlug,
-      });
-      setHasCourseAccess(hasCourseAccess);
-      setCourseId(courseId);
-      console.log(courseId, hasCourseAccess, "courseId" );
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const { hasCourseAccess, courseId } = await getCoursePageInfo({
+  //       userId: currentUser?.uid,
+  //       courseSlug,
+  //     });
+  //     setHasCourseAccess(hasCourseAccess);
+  //     setCourseId(courseId);
+  //     // console.log(courseId, hasCourseAccess, "courseId");
+  //   };
 
-    fetchData();
-  }, [currentUser?.uid, hasCourseAccess, courseSlug]);
+  //   fetchData();
+  // }, [currentUser?.uid, hasCourseAccess, courseSlug]);
 
   const ctaText = hasCourseAccess ? "Resume Learning" : "Buy Now ";
 
@@ -54,13 +54,13 @@ const CourseDetails = ({ course }) => {
   //   ? course?.priceData.live.priceId
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
-  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test 
-  // const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
+  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
+  const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
 
   const handlePurchaseCTA = () => {
     console.log("Handle Purchase CTA");
     if (hasCourseAccess) {
-      router.push(router.asPath + "/introduction");
+      router.push(`/learning-center/${router.query.slug}/introduction`);
       return;
     }
 
@@ -71,8 +71,8 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              // price: priceId,
-              price: course?.priceData.live.priceId,
+              price: priceId,
+              // price: course?.priceData.live.priceId,
               quantity: 1,
             },
           ],
@@ -144,7 +144,7 @@ const CourseDetails = ({ course }) => {
                     <Faqs course={course} />
 
                     {/* Review  */}
-                    <Reviews/>
+                    <Reviews />
                   </div>
 
                   {/************************ Right Side PurchaseSection **************************/}
