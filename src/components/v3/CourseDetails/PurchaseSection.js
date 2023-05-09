@@ -11,6 +11,7 @@ const PurchaseSection = ({
 }) => {
   // console.log(ctaText)
   const router = useRouter();
+  console.log(router.query)
   return (
     <div className="z-20 mx-5 my-2 border bg-white lg:fixed lg:mx-0  lg:mt-[-200px] lg:mr-20 lg:shadow-xl">
       <div className="hidden lg:block">
@@ -34,7 +35,7 @@ const PurchaseSection = ({
           <div>
             {!hasCourseAccess && (
               <Link
-                href={`${router.asPath}/introduction`}
+                href={`/learning-center/${router.query.slug}/introduction`}
                 className="text-center"
               >
                 <button className="w-full mt-3 rounded-md  border border-gray-300 px-3 py-2 text-sm font-medium text-primary ">
