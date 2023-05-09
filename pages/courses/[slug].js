@@ -40,7 +40,7 @@ const CourseDetails = ({ course }) => {
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
   // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
-  const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
+  // const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
 
   const handlePurchaseCTA = () => {
     console.log("Handle Purchase CTA");
@@ -57,7 +57,7 @@ const CourseDetails = ({ course }) => {
           lineItems: [
             {
               price: priceId,
-              // price: course?.priceData.live.priceId,
+              price: course?.priceData.live.priceId,
               quantity: 1,
             },
           ],
