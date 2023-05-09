@@ -1,7 +1,6 @@
-import {
-  CourseContent
-} from "@/src/components/v1/Courses";
+import { CourseContent } from "@/src/components/v1/Courses";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import ComingSoon from "@/src/components/v1/Shared/CustomComponent/ComingSoon";
 import { LoginModal } from "@/src/components/v1/Shared/Modal";
 import {
   CourseDescription,
@@ -16,35 +15,21 @@ import {
 } from "@/src/components/v3/CourseDetails";
 import { BACKEND_API } from "@/src/config/backend";
 import useAuthService from "@/src/hooks/auth/useAuthService";
+import useCourseAccess from "@/src/hooks/auth/useCourseAccess";
 import PageLayout from "@/src/layout/PageLayout";
 import { checkout } from "@/src/utils/checkout";
-import { getCoursePageInfo } from "@/src/utils/firebase";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  console.log("course", course);
+  // console.log("course", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
-  const [hasCourseAccess, setHasCourseAccess] = useState(false);
-  const [courseId, setCourseId] = useState(null);
-  const [loginModal, setLoginModal] = useState(false);
   const courseSlug = course?.slug;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const { hasCourseAccess, courseId } = await getCoursePageInfo({
-        userId: currentUser?.uid,
-        courseSlug,
-      });
-      setHasCourseAccess(hasCourseAccess);
-      setCourseId(courseId);
-      console.log(courseId, hasCourseAccess, "courseId" );
-    };
-
-    fetchData();
-  }, [currentUser?.uid, hasCourseAccess, courseSlug]);
+  const { hasCourseAccess, courseId } = useCourseAccess(courseSlug);
+  // console.log("first", hasCourseAccess);
+  const [loginModal, setLoginModal] = useState(false);
 
   const ctaText = hasCourseAccess ? "Resume Learning" : "Buy Now ";
 
@@ -54,13 +39,13 @@ const CourseDetails = ({ course }) => {
   //   ? course?.priceData.live.priceId
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
-  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test 
+  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
   // const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
 
   const handlePurchaseCTA = () => {
     console.log("Handle Purchase CTA");
     if (hasCourseAccess) {
-      router.push(router.asPath + "/introduction");
+      router.push(`/learning-center/${router.query.slug}/introduction`);
       return;
     }
 
@@ -71,7 +56,7 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              // price: priceId,
+              price: priceId,
               price: course?.priceData.live.priceId,
               quantity: 1,
             },
@@ -88,87 +73,93 @@ const CourseDetails = ({ course }) => {
 
   return (
     <>
-      <div>
-        <CommonHead
-          title={course?.title}
-          description={course?.metaTitle}
-          favIcon={"/favicon.ico"}
-        />
-        <main>
-          <PageLayout>
-            <div className="">
-              {/* For mobile course banner image  */}
-              <div className="px-5 pt-3 lg:hidden">
-                <Image
-                  src={course?.cover_image}
-                  width={350}
-                  height={195}
-                  alt={course?.title}
-                />
-              </div>
-              {/* Hero Section  */}
-              <HeroBanner course={course} />
-              <div className="lg:hidden">
-                <PurchaseSection
-                  course={course}
-                  handleBuyNowClick={handlePurchaseCTA}
-                  ctaText={ctaText}
-                  hasCourseAccess={hasCourseAccess}
-                />
-              </div>
+      {course?.isPublished ? (
+        <div>
+          <CommonHead
+            title={course?.title}
+            description={course?.metaTitle}
+            favIcon={"/favicon.ico"}
+          />
+          <main>
+            <PageLayout>
+              <div className="">
+                {/* For mobile course banner image  */}
+                <div className="px-5 pt-3 lg:hidden">
+                  <Image
+                    src={course?.cover_image}
+                    width={350}
+                    height={195}
+                    alt={course?.title}
+                  />
+                </div>
+                {/* Hero Section  */}
+                <HeroBanner course={course} />
+                <div className="lg:hidden">
+                  <PurchaseSection
+                    course={course}
+                    handleBuyNowClick={handlePurchaseCTA}
+                    ctaText={ctaText}
+                    hasCourseAccess={hasCourseAccess}
+                  />
+                </div>
 
-              {/* Main Content  */}
-              <div className="mx-auto max-w-7xl px-5 lg:px-16">
-                <div className="flex gap-8">
-                  {/*******************************  Left Side  **************************** */}
-                  <div className="left my-8 lg:my-12 lg:basis-8/12">
-                    {/* Learning Opportunity */}
-                    <Opportunity learningItems={course?.keyPoint} />
+                {/* Main Content  */}
+                <div className="mx-auto max-w-7xl px-5 lg:px-16">
+                  <div className="flex gap-8">
+                    {/*******************************  Left Side  **************************** */}
+                    <div className="left my-8 lg:my-12 lg:basis-8/12">
+                      {/* Learning Opportunity */}
+                      <Opportunity learningItems={course?.keyPoint} />
 
-                    {/* Top companies offer this course to their employees */}
-                    <TopCompanies topCompanies={course?.alumniOrgs} />
+                      {/* Top companies offer this course to their employees */}
+                      <TopCompanies topCompanies={course?.alumniOrgs} />
 
-                    {/* Course Content  */}
-                    <CourseContent course={`courseDetail`} />
+                      {/* Course Content  */}
+                      <CourseContent course={`courseDetail`} />
 
-                    {/* Requirements */}
-                    <Requirements requirements={course.requiredSkills} />
+                      {/* Requirements */}
+                      <Requirements requirements={course.requiredSkills} />
 
-                    {/* CourseDescription */}
-                    <CourseDescription description={course.courseDescription} />
+                      {/* CourseDescription */}
+                      <CourseDescription
+                        description={course.courseDescription}
+                      />
 
-                    {/* Instructor */}
-                    <Instructor course={course} />
+                      {/* Instructor */}
+                      <Instructor course={course} />
 
-                    {/* Faq  */}
-                    <Faqs course={course} />
+                      {/* Faq  */}
+                      <Faqs course={course} />
 
-                    {/* Review  */}
-                    <Reviews/>
-                  </div>
+                      {/* Review  */}
+                      <Reviews />
+                    </div>
 
-                  {/************************ Right Side PurchaseSection **************************/}
-                  <div className="right hidden lg:block lg:basis-4/12">
-                    <PurchaseSection
-                      course={course}
-                      handleBuyNowClick={handlePurchaseCTA}
-                      ctaText={ctaText}
-                      hasCourseAccess={hasCourseAccess}
-                    />
+                    {/************************ Right Side PurchaseSection **************************/}
+                    <div className="right hidden lg:block lg:basis-4/12">
+                      <PurchaseSection
+                        course={course}
+                        handleBuyNowClick={handlePurchaseCTA}
+                        ctaText={ctaText}
+                        hasCourseAccess={hasCourseAccess}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </PageLayout>
+            </PageLayout>
 
-          {/************************ Login Modal  ************************/}
-          <LoginModal
-            isVisible={loginModal}
-            setLoginModal={setLoginModal}
-            onClose={() => setLoginModal(false)}
-          />
-        </main>
-      </div>
+            {/************************ Login Modal  ************************/}
+            <LoginModal
+              isVisible={loginModal}
+              setLoginModal={setLoginModal}
+              onClose={() => setLoginModal(false)}
+            />
+          </main>
+        </div>
+      ) : (
+        <ComingSoon />
+      )}
     </>
   );
 };

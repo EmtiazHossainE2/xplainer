@@ -378,7 +378,7 @@ const Navbar = ({ pageName, posts, course }) => {
               {currentUser?.email ? (
                 <div>
                   {/************************ If user   ************************/}
-                  <Popover className="hover:border-none">
+                  <Popover className="hover:border-none z-50">
                     {({ open }) => (
                       <div
                         onMouseEnter={() => handleProfileEnter(open)}
