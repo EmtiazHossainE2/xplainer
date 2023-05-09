@@ -12,7 +12,7 @@ const Error = () => {
       />
       <PageLayout>
         <div className="flex flex-col justify-center items-center h-[80vh]">
-          <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold"> Coming Soon . . . </h2>
+          <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold"> 404 ! Not Found  </h2>
           <h2 className="text-xl text-blue-600 cursor-pointer font-bold mt-6">  Back to <Link href={'/'}> Home </Link></h2>
 
         </div>
