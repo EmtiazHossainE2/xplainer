@@ -13,7 +13,7 @@ const PurchaseSection = ({
   const router = useRouter();
   console.log(router.query)
   return (
-    <div className="z-20 mx-5 my-2 border bg-white lg:fixed lg:mx-0  lg:mt-[-200px] lg:mr-20 lg:shadow-xl">
+    <div className=" mx-5 my-2 border bg-white lg:fixed lg:mx-0  lg:mt-[-200px] lg:mr-20 lg:shadow-xl">
       <div className="hidden lg:block">
         <Image
           src={course?.cover_image}
@@ -52,7 +52,7 @@ const PurchaseSection = ({
               {ctaText}
             </button>
           </div>
-          <p className="text-center text-xs">30-Days Money-Back Guarantee</p>
+          {/* <p className="text-center text-xs">30-Days Money-Back Guarantee</p> */}
         </div>
         <div>
           <p className="py-2 text-sm">This course includes:</p>
