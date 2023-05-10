@@ -16,14 +16,15 @@ const CommonHead = ({ title, favIcon, description }) => {
         <meta name="description" content={description} />
 
         {/* Open Graph */}
+        {/* Test  */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourpage.com/" />
+        <meta property="og:url" content="https://www.xplainerr.com" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
           itemProp="image"
-          content="https://yourimagepath.jpg"
+          content="https://ik.imagekit.io/zwxa4kttt/courses/Api__1_.jpg"
         />
 
         {/* Twitter */}
