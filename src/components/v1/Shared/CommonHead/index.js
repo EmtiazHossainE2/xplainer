@@ -18,7 +18,7 @@ const CommonHead = ({ title, favIcon, description }) => {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourpage.com/" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content="Xplainerr - accelerate your tech carrerr"/>        
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
