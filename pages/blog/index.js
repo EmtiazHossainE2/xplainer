@@ -12,8 +12,10 @@ const Blog = ({ posts }) => {
     <>
       <CommonHead
         title={"Xplainerr - Blog"}
-        description={"description"}
-        favIcon={"/favicon.ico"}
+        description={"Read free articles on tech, design, marketing, product management, and more at xplainerr blog"}
+        ogTitle={"Xplainerr - Blog"}
+        ogImage={"https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg"}
+        ogUrl={"https://xplainerr.com/blog"}
       />
       <main>
         <PageLayout>

@@ -70,6 +70,10 @@ const CourseDetails = ({ course }) => {
     }
   };
 
+  console.log(course?.title, "title");
+  console.log(course?.metaTitle, "metaTitle");
+  console.log(course?.cover_image, "cover_image");
+
   return (
     <>
       {course?.isPublished ? (
@@ -78,6 +82,9 @@ const CourseDetails = ({ course }) => {
             title={course?.title}
             description={course?.metaTitle}
             favIcon={"/favicon.ico"}
+            ogImage={course?.cover_image}
+            ogTitle={`${course?.title} - Xplainerr`}
+            ogUrl={`https://xplainerr.com/courses/${course?.slug}`}
           />
           <main>
             <PageLayout>
