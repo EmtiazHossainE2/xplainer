@@ -15,7 +15,9 @@ const PostDetails = ({ frontmatter, content }) => {
       <CommonHead
         title={`${frontmatter?.title} - Blog | Xplainerr.com`}
         description={"description"}
-        favIcon={"/favicon.ico"}
+        ogTitle={`${frontmatter?.title} - Blog | Xplainerr.com`}
+        ogImage={"https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg"}
+        ogUrl={`https://xplainerr.com/blog/${frontmatter?.slug}`}
       />
       <main>
         <PageLayout>
@@ -27,7 +29,7 @@ const PostDetails = ({ frontmatter, content }) => {
               <hr />
               <div className="pb-4 pt-4 italic text-gray-500">
                 {" "}
-                Posted on {frontmatter?.date}{" "}
+                Updated {frontmatter?.date}{" "}
               </div>
 
               {/* <div className="flex items-center gap-2 pt-5 ">

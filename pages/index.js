@@ -25,6 +25,8 @@ const Home = ({ posts, courses }) => {
           "Upskill and prepare for your interviews by learning all the concepts which are highly useful in your daily professional job. "
         }
         favIcon={"/favicon.ico"}
+        ogTitle={'Xplainerr - Accelerate your tech, design, marketing career with microlearning courses'}
+        ogUrl={`https://xplainerr.com`}
       />
       <main>
         <PageLayout>
