@@ -23,7 +23,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  // console.log("course", course);
+  console.log("course", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
   const courseSlug = course?.slug;
@@ -39,7 +39,7 @@ const CourseDetails = ({ course }) => {
   //   ? course?.priceData.live.priceId
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
-  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
+  const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
   // const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
 
   const handlePurchaseCTA = () => {
@@ -56,7 +56,8 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              price: course?.priceData.live.priceId,
+              price: priceId,
+              // price: course?.priceData.live.priceId,
               quantity: 1,
             },
           ],
@@ -70,9 +71,9 @@ const CourseDetails = ({ course }) => {
     }
   };
 
-  console.log(course?.title, "title");
-  console.log(course?.metaTitle, "metaTitle");
-  console.log(course?.cover_image, "cover_image");
+  // console.log(course?.title, "title");
+  // console.log(course?.metaTitle, "metaTitle");
+  // console.log(course?.cover_image, "cover_image");
 
   return (
     <>
@@ -115,7 +116,7 @@ const CourseDetails = ({ course }) => {
                     {/*******************************  Left Side  **************************** */}
                     <div className="left my-8 lg:my-12 lg:basis-8/12">
                       {/* Learning Opportunity */}
-                      <Opportunity learningItems={course?.keyPoint} />
+                      <Opportunity keyPoints={course?.keyPoints} />
 
                       {/* Top companies offer this course to their employees */}
                       <TopCompanies topCompanies={course?.alumniOrgs} />
@@ -124,7 +125,7 @@ const CourseDetails = ({ course }) => {
                       <CourseContent course={`courseDetail`} />
 
                       {/* Requirements */}
-                      <Requirements requirements={course.requiredSkills} />
+                      <Requirements requiredSkills={course.requiredSkills} />
 
                       {/* CourseDescription */}
                       <CourseDescription
@@ -174,9 +175,9 @@ export default CourseDetails;
 
 // Get Single Course
 export const getStaticPaths = async () => {
-  const res = await fetch(`${BACKEND_API}/courses`);
+  const res = await fetch(`${BACKEND_API}/courses/published`);
   const courses = await res.json();
-  // console.log(courses)
+  console.log(courses)
 
   const paths = courses?.result?.map((course) => {
     return {
@@ -190,7 +191,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(`${BACKEND_API}/courses/${params.slug}`);
+  const res = await fetch(`${BACKEND_API}/courses/published/${params.slug}`);
   const singleCourse = await res.json();
   const course = singleCourse.result;
 

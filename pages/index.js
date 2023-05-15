@@ -67,7 +67,7 @@ export const getStaticProps = async () => {
   });
 
   // Course 
-  const res = await fetch(`${BACKEND_API}/courses`);
+  const res = await fetch(`${BACKEND_API}/courses/published`);
   const data = await res.json();
 
   return {

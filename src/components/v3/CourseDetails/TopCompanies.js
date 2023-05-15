@@ -11,7 +11,7 @@ const TopCompanies = ({ topCompanies }) => {
           <div key={index}>
             <Image
               //****************  logo will be dynamic  *****************/
-              src={`/images/brand/${logo.logo}`}
+              src={`/images/brand/${logo}`}
               width={80}
               height={80}
               alt="logo"
@@ -19,7 +19,7 @@ const TopCompanies = ({ topCompanies }) => {
             />
             <Image
               //****************  logo will be dynamic  *****************/
-              src={`/images/brand/${logo.logo}`}
+              src={`/images/brand/${logo}`}
               width={60}
               height={60}
               alt="logo"
