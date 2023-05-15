@@ -3,7 +3,19 @@ import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 
-const CommonHead = ({ title, favIcon, description }) => {
+const defaultOgTitle = "Xplainerr";
+const defaultOgDescription = "Xplainerr - Accelerate your tech, design, marketing career with microlearning courses";
+const defaultOgURL = "https://xplainerr.com";
+const defaultOgImage = "https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg";
+
+const CommonHead = ({ title, description, ogTitle, ogImage, ogUrl }) => {
+
+  const ogTitleValue = ogTitle ? ogTitle : defaultOgTitle;
+  const ogDescriptionValue = description ? description : defaultOgDescription;
+  const ogUrlValue = ogUrl ? ogUrl : defaultOgURL;
+  const ogImageValue = ogImage ? ogImage : defaultOgImage;
+
+
   return (
     <>
       <Head>
@@ -18,14 +30,16 @@ const CommonHead = ({ title, favIcon, description }) => {
         {/* Open Graph */}
         {/* Test  */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.xplainerr.com" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:url" content={ogUrlValue} />
+        <meta property="og:title" content={ogTitleValue} />        
+        <meta property="og:description" content={ogDescriptionValue} />
         <meta
           property="og:image"
           itemProp="image"
-          content="https://ik.imagekit.io/zwxa4kttt/courses/Api__1_.jpg"
+          content={ogImageValue}
         />
+
+      <meta name="keywords" content="xplainerr, product managment, learn api, learn pricing, learn chatGPT, learn system design"/>
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -37,7 +51,9 @@ const CommonHead = ({ title, favIcon, description }) => {
         {/* For Facebook Insights  */}
         <meta property="fb:app_id" content="XXXXXXX" />
 
-        <meta name="twitter:site" content="@twitter-username" />
+        <meta name="twitter:site" content="@HQdeepak" />
+
+        
       </Head>
 
       <Script
