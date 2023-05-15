@@ -30,7 +30,7 @@ const CommonHead = ({ title, description, ogTitle, ogImage, ogUrl }) => {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={ogUrlValue} />
-        <meta property="og:title" content={ogTitleValue}> </meta>        
+        <meta property="og:title" content={ogTitleValue}/>   
         <meta property="og:description" content={ogDescriptionValue} />
         <meta
           property="og:image"
