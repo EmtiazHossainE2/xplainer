@@ -177,7 +177,7 @@ export default CourseDetails;
 export const getStaticPaths = async () => {
   const res = await fetch(`${BACKEND_API}/courses/published`);
   const courses = await res.json();
-  console.log(courses)
+  // console.log(courses)
 
   const paths = courses?.result?.map((course) => {
     return {

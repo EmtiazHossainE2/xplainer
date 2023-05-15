@@ -31,13 +31,14 @@ const CommonHead = ({ title, description, ogTitle, ogImage, ogUrl }) => {
         {/* Test  */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={ogUrlValue} />
-        <meta property="og:title" content={ogTitleValue} />        
+        <meta property="og:title" content={ogTitleValue}/>   
         <meta property="og:description" content={ogDescriptionValue} />
         <meta
           property="og:image"
           itemProp="image"
           content={ogImageValue}
         />
+        
 
       <meta name="keywords" content="xplainerr, product managment, learn api, learn pricing, learn chatGPT, learn system design"/>
 

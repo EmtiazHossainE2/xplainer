@@ -8,45 +8,43 @@ import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "src/store";
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-
-  
-  
   useEffect(() => {
-    // Init AOS 
+    // Init AOS
     AOS.init({
       easing: "ease-out-cubic",
       once: true,
       offset: 50,
     });
-  }, [])
+  }, []);
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const handleStart = (url) => {
       // console.log(`Loading: ${url}`)
-      NProgress.start()
-    }
+      NProgress.start();
+    };
 
     const handleStop = () => {
-      NProgress.done()
-    }
+      NProgress.done();
+    };
 
-    router.events.on('routeChangeStart', handleStart)
-    router.events.on('routeChangeComplete', handleStop)
-    router.events.on('routeChangeError', handleStop)
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleStop);
+    router.events.on("routeChangeError", handleStop);
 
     return () => {
-      router.events.off('routeChangeStart', handleStart)
-      router.events.off('routeChangeComplete', handleStop)
-      router.events.off('routeChangeError', handleStop)
-    }
-  }, [router])
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleStop);
+      router.events.off("routeChangeError", handleStop);
+    };
+  }, [router]);
 
   return (
     <>
@@ -58,10 +56,9 @@ function MyApp({ Component, pageProps }) {
 
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Component {...pageProps}  />
+          <Component {...pageProps} />
           <Toaster />
         </PersistGate>
-        
       </Provider>
     </>
   );
