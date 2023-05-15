@@ -12,18 +12,21 @@ import PageLayout from "@/src/layout/PageLayout";
 import { sortByDate } from "@/src/utils/date";
 import fs from "fs";
 import matter from "gray-matter";
+import Head from "next/head";
 import path from "path";
 
 const Home = ({ posts, courses, seoMetaData }) => {
   return (
     <>
-      <CommonHead
-        title={seoMetaData.title}
-        description={seoMetaData.description}
-        favIcon={"/favicon.ico"}
-        ogTitle={seoMetaData.ogTitle}
-        ogUrl={seoMetaData.ogUrl}
-      />
+    <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="favicon.ico" />
+
+        {/* Primary Meta Tags */}
+        <title>{seoMetaData.title}</title>
+        <meta name="title" content={seoMetaData.title} />
+        <meta name="description" content={seoMetaData.description} />
+      </Head>
       <main>
         <PageLayout>
           <HeroBanner />
@@ -45,7 +48,7 @@ const Home = ({ posts, courses, seoMetaData }) => {
 
 export default Home;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const files = fs.readdirSync(path.join("_blog"));
 
   const posts = files.map((filename) => {
