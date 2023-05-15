@@ -11,8 +11,6 @@ const PageLayout = ({ children, router }) => {
 
   return (
     <>
-      <CommonHead />
-
       <Navbar router={router} />
 
       {children}

@@ -56,14 +56,6 @@ function MyApp({ Component, pageProps }) {
 
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Head>
-            <title>Xplainerr - Xplainerr - Accelerate your tech, design, marketing career with microlearning courses </title>
-            <meta
-              name="viewport"
-              content="initial-scale=1.0, width=device-width"
-            />
-          </Head>
-
           <Component {...pageProps} />
           <Toaster />
         </PersistGate>

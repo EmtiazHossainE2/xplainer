@@ -18,17 +18,18 @@ import path from "path";
 const Home = ({ posts, courses, seoMetaData }) => {
   return (
     <>
-    <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="favicon.ico" />
+    
 
-        {/* Primary Meta Tags */}
-        <title>{seoMetaData.title}</title>
-        <meta name="title" content={seoMetaData.title} />
-        <meta name="description" content={seoMetaData.description} />
-      </Head>
       <main>
         <PageLayout>
+
+        <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{'Xplainerr - title'}</title>
+
+      </Head>
+
+
           <HeroBanner />
           <Brand disableHeader={true} />
           <Courses ctaText={"View course detail"} courses={courses} />
