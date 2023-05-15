@@ -45,7 +45,7 @@ const Home = ({ posts, courses, seoMetaData }) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const files = fs.readdirSync(path.join("_blog"));
 
   const posts = files.map((filename) => {
