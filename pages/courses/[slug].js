@@ -191,7 +191,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const res = await fetch(`${BACKEND_API}/courses/published/${params.slug}`);
+  const res = await fetch(`${BACKEND_API}/courses/${params.slug}`);
   const singleCourse = await res.json();
   const course = singleCourse.result;
 
