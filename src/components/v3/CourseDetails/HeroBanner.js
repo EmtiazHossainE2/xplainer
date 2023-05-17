@@ -1,8 +1,9 @@
-import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import Ratings from "../Shared/Navbar/Ratings";
 
 const HeroBanner = ({ course }) => {
-  // console.log(course)
+
+  
   return (
     <div className="lg:bg-[#2F2F2F]">
       <div className="mx-auto max-w-7xl px-5 py-4 lg:py-7 lg:px-16 lg:text-white">
@@ -15,16 +16,14 @@ const HeroBanner = ({ course }) => {
                 <button className="hidden rounded-sm bg-[#ECEB98] py-1.5 px-3 text-xs font-bold text-[#3D3C0A] lg:block ">
                   Best Seller
                 </button>
-                <div className="flex items-center justify-center gap-1 text-[#f7a01d]">
-                  <span className="font-semibold">
+                <div className="flex items-center justify-center gap-1 text-[#FFD700]">
+                  <span className="font-semibold ">
                     {course?.reviewData?.ratings}
                   </span>
-                  <span className="flex">
-                    <FaStar size={14} />
-                    <FaStar size={14} />
-                    <FaStar size={14} />
-                    <FaStar size={14} />
-                    <FaStarHalfAlt size={14} />
+                  <span className="flex items-center">
+                    {course?.reviewData?.ratings && (
+                      <Ratings ratings={course?.reviewData?.ratings}></Ratings>
+                    )}
                   </span>
                 </div>
                 <span className="hidden text-sm lg:block lg:text-[#CEC0FC]">
@@ -35,14 +34,22 @@ const HeroBanner = ({ course }) => {
                 </span>
               </div>
             </div>
-            <p className="pt-2 text-sm">
-              Created by{" "}
-              <span className="lg:text-[#CEC0FC]">
-                {course?.instructors?.map((instructor, index) => (
-                  <span key={index}>{instructor?.name}</span>
-                ))}
-              </span>
-            </p>
+            <div className="flex flex-col gap-5 md:flex-row ">
+              <p className="pt-2 text-sm">
+                Created by{" "}
+                <span className="lg:text-[#CEC0FC]">
+                  {course?.instructors?.map((instructor, index) => (
+                    <span key={index}>{instructor?.name}</span>
+                  ))}
+                </span>
+              </p>
+              <p className="pt-2 text-sm">
+                Last update :{" "}
+                <span className="lg:text-[#CEC0FC]">
+                  {course?.updatedAt?.slice(0, 10)}
+                </span>
+              </p>
+            </div>
           </div>
           <div className="lg:basis-4/12"></div>
         </div>

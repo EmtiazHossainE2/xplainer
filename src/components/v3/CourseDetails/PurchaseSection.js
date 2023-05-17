@@ -11,7 +11,7 @@ const PurchaseSection = ({
 }) => {
   // console.log(ctaText)
   const router = useRouter();
-  console.log(router.query)
+  // console.log(router.query)
   return (
     <div className=" mx-5 my-2 border bg-white lg:fixed lg:mx-0  lg:mt-[-200px] lg:mr-20 lg:shadow-xl">
       <div className="hidden lg:block">
@@ -25,7 +25,7 @@ const PurchaseSection = ({
       <div className="flex flex-col-reverse gap-5 p-3 lg:flex-col lg:gap-2">
         <div>
           <p className="flex items-center gap-2">
-            <span className="text-3xl font-bold">
+            <span className="text-3xl font-bold uppercase">
               {" "}
               {course?.priceData?.currency}. {course?.priceData?.amount}
             </span>
@@ -38,7 +38,7 @@ const PurchaseSection = ({
                 href={`/learning-center/${router.query.slug}/introduction`}
                 className="text-center"
               >
-                <button className="w-full mt-3 rounded-md  border border-gray-300 px-3 py-2 text-sm font-medium text-primary ">
+                <button className="mt-3 w-full rounded-md  border border-gray-300 px-3 py-2 text-sm font-medium text-primary ">
                   Try free preview
                 </button>
               </Link>
@@ -56,13 +56,13 @@ const PurchaseSection = ({
         </div>
         <div>
           <p className="py-2 text-sm">This course includes:</p>
-          {course?.courseHighlights.map((include, index) => (
+          {course?.courseHighlights.map((item, index) => (
             <div
               key={index}
               className="flex items-center gap-1 space-y-1 text-sm"
             >
               <GoCheck />
-              <span>{include?.item}</span>
+              <span>{item}</span>
             </div>
           ))}
         </div>

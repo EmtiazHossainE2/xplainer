@@ -1,7 +1,5 @@
-import { allCourses, IMAGE_KIT_CDN } from "@/src/config/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
 

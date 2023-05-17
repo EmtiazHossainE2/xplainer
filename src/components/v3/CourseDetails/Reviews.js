@@ -7,7 +7,7 @@ import { BsFillStarFill } from "react-icons/bs";
 
 const Reviews = () => {
   const router = useRouter();
-  console.log(router.query.slug);
+  // console.log(router.query.slug);
   const params = router.query.slug;
   const [singleCourseReview, setSingleCourseReview] = useState([]);
   useEffect(() => {
@@ -22,7 +22,7 @@ const Reviews = () => {
     };
     getReviewData();
   }, [params]);
-  console.log("first", singleCourseReview);
+  // console.log("first", singleCourseReview);
 
   return (
     <div>
