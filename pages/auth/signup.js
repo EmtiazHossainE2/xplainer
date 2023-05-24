@@ -67,9 +67,9 @@ const Signup = () => {
       />
       <main>
         <PageLayout>
-          <div className="min-h-screen">
+          <div className="m-2 min-h-screen">
             <div className=" mb-8 sm:container sm:mx-auto sm:pt-8">
-              <div className="mx-auto w-full rounded-lg border-gray-200 bg-white px-10 py-6 pt-8 sm:max-w-lg sm:border sm:shadow-lg">
+              <div className="lg: mx-auto w-full max-w-lg rounded-lg border border-gray-400 bg-white px-10 py-6 pt-8 shadow-lg">
                 <div className="">
                   <h1 className="mb-5 text-center text-2xl font-bold text-black">
                     Sign up for Xplainerr
