@@ -210,7 +210,7 @@ const Login = () => {
                       className="font-semibold text-indigo-500"
                       href="/auth/reset"
                     >
-                      Reset it here .
+                      Reset here .
                     </Link>
                   </p>
                 </div>
