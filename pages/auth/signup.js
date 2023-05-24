@@ -2,25 +2,22 @@ import { auth } from "@/src/auth/firebase/Firebase.init";
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import GoogleLogin from "@/src/components/v1/Shared/GoogleLogin/GoogleLogin";
 import PageLayout from "@/src/layout/PageLayout";
-import { checkVerify } from "@/src/store/features/auth/authSlice";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  updateProfile,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { useDispatch } from "react-redux";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const dispatch = useDispatch();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -40,9 +37,13 @@ const Signup = () => {
       console.log("User signed up:", user);
       sendVerificationEmail();
       router.push("/auth/verify-email");
-      dispatch(checkVerify());
       await signOut(auth);
     } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("This email already used ! Try another one");
+      } else {
+        toast.error("An error occurred. Please try again later.");
+      }
       console.log(error);
     }
   };
