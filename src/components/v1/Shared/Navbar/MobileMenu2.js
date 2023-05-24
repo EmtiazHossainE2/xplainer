@@ -204,7 +204,7 @@ const MobileMenu2 = ({ open, setToggle, setLoginModal, user, logOut }) => {
                   //   setLoginModal(true)
                   //   setToggle(false)
                   // }}
-                  onClick={() => router.push("/login")}
+                  onClick={() => router.push("/auth/login")}
                   className="text-md rounded-md bg-[#0070F4] py-[10px] px-[51px] font-semibold text-white"
                 >
                   Login

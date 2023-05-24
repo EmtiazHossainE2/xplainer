@@ -141,22 +141,13 @@ const CourseMobileMenu = ({
                   </h4>
                 </>
               ) : (
-                <>
-                  <h4
+                <h4
                     // onClick={() => setLoginModal(true)}
-                    onClick={() => router.push("/login")}
+                    onClick={() => router.push("/auth/login")}
                     className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
                   >
                     Login
                   </h4>
-                  <h4
-                    // onClick={() => setLoginModal(true)}
-                    onClick={() => router.push("/signup")}
-                    className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
-                  >
-                    Signup
-                  </h4>
-                </>
               )}
               {!currentUser?.email && (
                 <Link href={`/courses/${course}`}>

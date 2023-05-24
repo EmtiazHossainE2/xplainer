@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 
 const GoogleLogin = () => {
-  const { isLoading } = useSelector((state) => state.user);
+  // const { isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
   const [cookie, setCookie] = useCookies(["user"]);
@@ -22,6 +22,7 @@ const GoogleLogin = () => {
       const result = await signInWithPopup(auth, provider);
       // console.log(result.user);
       const user = result.user;
+      // console.log(user,'google')
       toast.success(`Welcome ${user.displayName}`);
       const body = {
         uid: user?.uid,
@@ -30,7 +31,9 @@ const GoogleLogin = () => {
         photoURL: user?.photoURL,
         creationTime: user?.metadata.creationTime,
         lastSignInTime: user?.metadata.lastSignInTime,
+        emailVerified: user?.emailVerified,
       };
+      // console.log(body,'body')
       dispatch(loginSuccess(body));
       router.push("/dashboard");
       setCookie("user", JSON.stringify(body), {
@@ -47,14 +50,7 @@ const GoogleLogin = () => {
     }
   };
 
-  //loading
-  if (isLoading) {
-    return (
-      <p className="flex h-screen  items-center justify-center text-2xl font-bold">
-        Loading...
-      </p>
-    );
-  }
+  
 
   return (
     <button className="socialBtn" onClick={() => handleGoogleLogin()}>
