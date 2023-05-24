@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import useAuthService from "./useAuthService";
 
 const useCourseAccess = (courseSlug) => {
-  console.log(courseSlug, "use");
+  // console.log(courseSlug, "use");
   const [hasCourseAccess, setHasCourseAccess] = useState(false);
   const [courseId, setCourseId] = useState(null);
 

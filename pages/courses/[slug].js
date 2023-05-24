@@ -23,7 +23,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  // console.log("course", course);
+  console.log("course", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
   const courseSlug = course?.slug;
@@ -56,6 +56,7 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
+              // price: priceId,
               price: course?.priceData.live.priceId,
               quantity: 1,
             },
@@ -70,9 +71,9 @@ const CourseDetails = ({ course }) => {
     }
   };
 
-  console.log(course?.title, "title");
-  console.log(course?.metaTitle, "metaTitle");
-  console.log(course?.cover_image, "cover_image");
+  // console.log(course?.title, "title");
+  // console.log(course?.metaTitle, "metaTitle");
+  // console.log(course?.cover_image, "cover_image");
 
   return (
     <>
@@ -115,7 +116,7 @@ const CourseDetails = ({ course }) => {
                     {/*******************************  Left Side  **************************** */}
                     <div className="left my-8 lg:my-12 lg:basis-8/12">
                       {/* Learning Opportunity */}
-                      <Opportunity learningItems={course?.keyPoint} />
+                      <Opportunity keyPoints={course?.keyPoints} />
 
                       {/* Top companies offer this course to their employees */}
                       <TopCompanies topCompanies={course?.alumniOrgs} />
@@ -124,7 +125,7 @@ const CourseDetails = ({ course }) => {
                       <CourseContent course={`courseDetail`} />
 
                       {/* Requirements */}
-                      <Requirements requirements={course.requiredSkills} />
+                      <Requirements requiredSkills={course.requiredSkills} />
 
                       {/* CourseDescription */}
                       <CourseDescription
