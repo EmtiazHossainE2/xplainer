@@ -81,9 +81,9 @@ const Login = () => {
       />
       <main>
         <PageLayout>
-          <div className="min-h-screen">
+          <div className="min-h-screen m-2">
             <div className=" mb-8 sm:container sm:mx-auto sm:pt-8">
-              <div className="mx-auto w-full rounded-lg border-gray-200 bg-white px-10 py-6 pt-8 sm:max-w-lg sm:border sm:shadow-lg">
+              <div className="mx-auto w-full rounded-lg border-gray-400 lg:border-gray-200 bg-white px-10 py-6 pt-8 max-w-lg border shadow-lg ">
                 <div className="">
                   <h1 className="mb-5 text-center text-2xl font-bold text-black">
                     Log in to Xplainerr

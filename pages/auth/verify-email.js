@@ -1,4 +1,3 @@
-
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
 import PageLayout from "@/src/layout/PageLayout";
 import Link from "next/link";
@@ -13,11 +12,11 @@ const VerifyEmail = () => {
       />
       <main>
         <PageLayout>
-          <div className="flex h-screen  flex-col items-center justify-center">
+          <div className="m-2 flex h-screen flex-col items-center justify-center">
             <div className=" mb-8 sm:container sm:mx-auto sm:pt-8">
-              <div className="mx-auto w-full rounded-lg border-gray-200 bg-white px-10 py-6 pt-8 sm:max-w-lg sm:border sm:shadow-lg">
+              <div className="lg: mx-auto w-full max-w-lg rounded-lg border border-gray-400 bg-white px-10 py-6 pt-8 shadow-lg">
                 <div className="min-h-[100px] md:text-center">
-                  <h1 className="mb-5 md:text-center text-lg lg:text-xl font-medium lg:font-bold text-black">
+                  <h1 className="mb-5 text-lg font-medium text-black md:text-center lg:text-xl lg:font-bold">
                     Please check your email to verify !
                   </h1>
                   <h2>
