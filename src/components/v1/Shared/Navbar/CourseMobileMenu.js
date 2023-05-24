@@ -129,24 +129,34 @@ const CourseMobileMenu = ({
                 <>
                   <Link
                     href="/dashboard"
-                    className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
+                    className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
                   >
                     Dashboard
                   </Link>
                   <h4
                     onClick={handleLogout}
-                    className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
+                    className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
                   >
                     Log out
                   </h4>
                 </>
               ) : (
-                <h4
-                  onClick={() => setLoginModal(true)}
-                  className="cursor-pointer rounded-md bg-primary hover:bg-primary_bold px-4 py-1.5 font-semibold text-white hover:border-b-2 "
-                >
-                  Login
-                </h4>
+                <>
+                  <h4
+                    // onClick={() => setLoginModal(true)}
+                    onClick={() => router.push("/login")}
+                    className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
+                  >
+                    Login
+                  </h4>
+                  <h4
+                    // onClick={() => setLoginModal(true)}
+                    onClick={() => router.push("/signup")}
+                    className="cursor-pointer rounded-md bg-primary px-4 py-1.5 font-semibold text-white hover:border-b-2 hover:bg-primary_bold "
+                  >
+                    Signup
+                  </h4>
+                </>
               )}
               {!currentUser?.email && (
                 <Link href={`/courses/${course}`}>

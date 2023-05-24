@@ -378,7 +378,7 @@ const Navbar = ({ pageName, posts, course }) => {
               {currentUser?.email ? (
                 <div>
                   {/************************ If user   ************************/}
-                  <Popover className="hover:border-none z-50">
+                  <Popover className="z-50 hover:border-none">
                     {({ open }) => (
                       <div
                         onMouseEnter={() => handleProfileEnter(open)}
@@ -443,12 +443,16 @@ const Navbar = ({ pageName, posts, course }) => {
               ) : (
                 <div className="space-x-5">
                   <button
-                    onClick={() => setLoginModal(true)}
+                    // onClick={() => setLoginModal(true)}
+                    onClick={() => router.push("/login")}
                     className={`py-3 font-semibold text-primary hover:text-primary_bold `}
                   >
                     Login
                   </button>
-                  <button className=" rounded-md bg-primary py-2 px-[15px] text-sm font-semibold text-white hover:bg-primary_bold">
+                  <button
+                    onClick={() => router.push("/signup")}
+                    className=" rounded-md bg-primary py-2 px-[15px] text-sm font-semibold text-white hover:bg-primary_bold"
+                  >
                     Sign Up
                   </button>
                 </div>

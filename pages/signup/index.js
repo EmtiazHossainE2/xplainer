@@ -1,11 +1,10 @@
 import CommonHead from '@/src/components/v1/Shared/CommonHead'
+import GoogleLogin from '@/src/components/v1/Shared/GoogleLogin/GoogleLogin'
 import PageLayout from '@/src/layout/PageLayout'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const Signup = () => {
-
-  const socialBtnStyle = "inline-flex items-center justify-center border leading-4 font-medium rounded-md  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 border-gray-300 shadow-sm text-gray-700 bg-white hover:bg-gray-50 px-5 py-3 text-base"
+  
 
   return (
     <>
@@ -17,40 +16,39 @@ const Signup = () => {
       <main>
         <PageLayout>
           <div className="min-h-screen">
-            <div className=" sm:container sm:pt-8 sm:mx-auto mb-8">
-              <div className="bg-white mx-auto sm:border border-gray-200 sm:shadow-lg px-10 py-6 pt-8 w-full sm:max-w-lg rounded-lg">
+            <div className=" mb-8 sm:container sm:mx-auto sm:pt-8">
+              <div className="mx-auto w-full rounded-lg border-gray-200 bg-white px-10 py-6 pt-8 sm:max-w-lg sm:border sm:shadow-lg">
                 <div className="">
-                  <h1 className="text-2xl text-center font-bold text-black mb-5">Sign up for Xplainerr</h1>
+                  <h1 className="mb-5 text-center text-2xl font-bold text-black">
+                    Sign up for Xplainerr
+                  </h1>
                 </div>
                 <div>
                   {/****************************  Social Signup *************************** */}
                   <div className="flex flex-col space-y-2">
                     {/***************************** Google  *****************************/}
-                    <button className={`${socialBtnStyle}`} >
-                      <Image src="/images/social/google.svg" alt="Google Logo" className="mr-2 " width={20} height={20} />
-                      <span>Log in with Google</span>
-                    </button>
+                    
+                    <GoogleLogin/>
 
                     {/***************************** Facebook  *****************************/}
-                    <button className={`${socialBtnStyle}`} >
+                    {/* <button className='socialBtn' >
                       <Image src="/images/social/facebook.svg" alt="Facebook Logo" className="mr-2 " width={20} height={20} />
                       <span>Log in with Facebook</span>
-                    </button>
+                    </button> */}
 
                     {/***************************** Linkedin  *****************************/}
-                    <button className={`${socialBtnStyle}`} >
+                    {/* <button className='socialBtn' >
                       <Image src="/images/social/linkedin.svg" alt="LinkedIn Logo" className="mr-2 " width={20} height={20} />
                       <span>Log in with LinkedIn</span>
-                    </button>
+                    </button> */}
 
                     {/***************************** University  *****************************/}
-                    <button className={`${socialBtnStyle}`}>Log in with university</button>
-
+                    {/* <button className='socialBtn'>Log in with university</button> */}
                   </div>
                   {/***************************** Or  *****************************/}
-                  <div className="relative flex py-5 items-center">
+                  <div className="relative flex items-center py-5">
                     <div className="flex-grow border-t border-[#bdbdbd]"></div>
-                    <span className="flex-shrink mx-4 text-[#cecdcd]">Or</span>
+                    <span className="mx-4 flex-shrink text-[#cecdcd]">Or</span>
                     <div className="flex-grow border-t border-[#bdbdbd]"></div>
                   </div>
 
@@ -58,24 +56,37 @@ const Signup = () => {
                   <form className="mb-4 flex flex-col">
                     <div className="">
                       {/*****************************  Email   */}
-                      <div className="w-full flex flex-col mb-4">
-                        <label for="email" className="text-base text-gray-800">Email address<span className="text-red-600" aria-label="Required"> *</span></label>
+                      <div className="mb-4 flex w-full flex-col">
+                        <label htmlFor="email" className="text-base text-gray-800">
+                          Email address
+                          <span className="text-red-600" aria-label="Required">
+                            {" "}
+                            *
+                          </span>
+                        </label>
                         <input
-                          className="mt-1 rounded-lg shadow-sm border border-gray-300 focus:border-gray-400 px-3 py-2 w-full focus:outline-none"
+                          className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-400 focus:outline-none"
                           name="email"
                           label="Email address"
                           type="email"
                           placeholder="Your email address"
                           required
                         />
-
                       </div>
                       {/*****************************  Password    */}
-                      <div className="w-full flex flex-col mb-4">
-                        <label for="password" className="text-base text-gray-800">Password<span className="text-red-600" aria-label="Required"> *</span>
+                      <div className="mb-4 flex w-full flex-col">
+                        <label
+                          htmlFor="password"
+                          className="text-base text-gray-800"
+                        >
+                          Password
+                          <span className="text-red-600" aria-label="Required">
+                            {" "}
+                            *
+                          </span>
                         </label>
                         <input
-                          className="mt-1 rounded-lg shadow-sm border border-gray-300 focus:border-gray-400 px-3 py-2 w-full focus:outline-none"
+                          className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-gray-400 focus:outline-none"
                           name="password"
                           label="Password"
                           type="password"
@@ -85,27 +96,47 @@ const Signup = () => {
                       </div>
                       {/*****************************  Signup    */}
                       <div className="">
-                        <button type="submit" className="inline-flex items-center justify-center  border  leading-4 font-medium rounded-md focus:outline-none focus:ring-2  focus:ring-offset-2focus:ring-indigo-500 border-transparent shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-base my-3 w-full">Get Started</button>
+                        <button
+                          type="submit"
+                          className="focus:ring-offset-2focus:ring-indigo-500 my-3 inline-flex  w-full  items-center justify-center rounded-md border border-transparent  bg-indigo-600 px-5 py-3 text-base font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2"
+                        >
+                          Get Started
+                        </button>
                       </div>
                     </div>
                   </form>
                 </div>
 
                 {/****************************** Other ***************** */}
-                <div className="text-center text-gray-600 font-medium space-y-1">
-                  <p className='text-sm '>Already use Xplainerr ? <Link className="text-indigo-500 font-semibold" href="/login">Login here</Link>.</p>
+                <div className="space-y-1 text-center font-medium text-gray-600">
+                  <p className="text-sm ">
+                    Already use Xplainerr ?{" "}
+                    <Link
+                      className="font-semibold text-indigo-500"
+                      href="/login"
+                    >
+                      Login here
+                    </Link>
+                    .
+                  </p>
 
-                  <p className='text-sm '>By creating an account, you agree to our <Link className="text-indigo-500 font-semibold" href="/">terms and service</Link>
+                  <p className="text-sm ">
+                    By creating an account, you agree to our{" "}
+                    <Link
+                      className="font-semibold text-indigo-500"
+                      href="/terms-of-service"
+                    >
+                      terms and service
+                    </Link>
                   </p>
                 </div>
-
               </div>
             </div>
           </div>
         </PageLayout>
       </main>
     </>
-  )
+  );
 }
 
 export default Signup

@@ -1,11 +1,11 @@
 import CommonHead from "@/src/components/v1/Shared/CommonHead";
+import GoogleLogin from "@/src/components/v1/Shared/GoogleLogin/GoogleLogin";
 import PageLayout from "@/src/layout/PageLayout";
 import Image from "next/image";
 import Link from "next/link";
 
 const Login = () => {
-  const socialBtnStyle =
-    "inline-flex items-center justify-center border leading-4 font-medium rounded-md  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 border-gray-300 shadow-sm text-gray-700 bg-white hover:bg-gray-50 px-5 py-3 text-base";
+  
 
   return (
     <>
@@ -28,19 +28,10 @@ const Login = () => {
                   {/****************************  Social Login *************************** */}
                   <div className="flex flex-col space-y-2">
                     {/***************************** Google  *****************************/}
-                    <button className={`${socialBtnStyle}`}>
-                      <Image
-                        src="/images/social/google.svg"
-                        alt="Google Logo"
-                        className="mr-2 "
-                        width={20}
-                        height={20}
-                      />
-                      <span>Log in with Google</span>
-                    </button>
+                    <GoogleLogin />
 
                     {/***************************** Facebook  *****************************/}
-                    <button className={`${socialBtnStyle}`}>
+                    {/* <button className='socialBtn'>
                       <Image
                         src="/images/social/facebook.svg"
                         alt="Facebook Logo"
@@ -49,10 +40,10 @@ const Login = () => {
                         height={20}
                       />
                       <span>Log in with Facebook</span>
-                    </button>
+                    </button> */}
 
                     {/***************************** Linkedin  *****************************/}
-                    <button className={`${socialBtnStyle}`}>
+                    {/* <button className='socialBtn'>
                       <Image
                         src="/images/social/linkedin.svg"
                         alt="LinkedIn Logo"
@@ -61,12 +52,12 @@ const Login = () => {
                         height={20}
                       />
                       <span>Log in with LinkedIn</span>
-                    </button>
+                    </button> */}
 
                     {/***************************** University  *****************************/}
-                    <button className={`${socialBtnStyle}`}>
+                    {/* <button className='socialBtn'>
                       Log in with university
-                    </button>
+                    </button> */}
                   </div>
                   {/***************************** Or  *****************************/}
                   <div className="relative flex items-center py-5">
@@ -80,7 +71,7 @@ const Login = () => {
                     <div className="">
                       {/*****************************  Email   */}
                       <div className="mb-4 flex w-full flex-col">
-                        <label for="email" className="text-base text-gray-800">
+                        <label htmlFor="email" className="text-base text-gray-800">
                           Email address
                           <span className="text-red-600" aria-label="Required">
                             {" "}
@@ -99,7 +90,7 @@ const Login = () => {
                       {/*****************************  Password    */}
                       <div className="mb-4 flex w-full flex-col">
                         <label
-                          for="password"
+                          htmlFor="password"
                           className="text-base text-gray-800"
                         >
                           Password
