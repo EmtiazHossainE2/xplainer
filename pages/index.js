@@ -18,17 +18,19 @@ import path from "path";
 const Home = ({ posts, courses, seoMetaData }) => {
   return (
     <>
-    
-
       <main>
         <PageLayout>
-
-        <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{'Xplainerr - title'}</title>
-
-      </Head>
-
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <title>
+              {
+                "Xplainerr | Upskilling & Interview Prep for AI, PM, Engineering, and Design "
+              }
+            </title>
+          </Head>
 
           <HeroBanner />
           <Brand disableHeader={true} />
