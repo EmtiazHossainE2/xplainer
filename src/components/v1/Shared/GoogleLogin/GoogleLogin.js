@@ -1,28 +1,28 @@
 import { auth } from "@/src/auth/firebase/Firebase.init";
-import { loginFailed, loginStart, loginSuccess } from "@/src/store/features/auth/authSlice";
+import {
+  loginFailed,
+  loginStart,
+  loginSuccess,
+} from "@/src/store/features/auth/authSlice";
 import { setUserData } from "@/src/utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
 import { toast } from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const GoogleLogin = () => {
-  // const { isLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
   const [cookie, setCookie] = useCookies(["user"]);
   const router = useRouter();
 
   const handleGoogleLogin = async () => {
-    dispatch(loginStart());
-
     try {
+      dispatch(loginStart());
       const result = await signInWithPopup(auth, provider);
-      // console.log(result.user);
       const user = result.user;
-      // console.log(user,'google')
       toast.success(`Welcome ${user.displayName}`);
       const body = {
         uid: user?.uid,
@@ -33,7 +33,7 @@ const GoogleLogin = () => {
         lastSignInTime: user?.metadata.lastSignInTime,
         emailVerified: user?.emailVerified,
       };
-      // console.log(body,'body')
+
       dispatch(loginSuccess(body));
       router.push("/dashboard");
       setCookie("user", JSON.stringify(body), {
@@ -41,16 +41,17 @@ const GoogleLogin = () => {
         maxAge: 1000000,
         sameSite: true,
       });
-      // update the firestore
       setUserData(body);
     } catch (err) {
-      // Handle Errors here.
-      console.log(err);
-      dispatch(loginFailed());
+      if (err.code === "auth/popup-closed-by-user") {
+        toast.error("Login cancelled !");
+        dispatch(loginFailed());
+      } else {
+        console.log(err);
+        dispatch(loginFailed());
+      }
     }
   };
-
-  
 
   return (
     <button className="socialBtn" onClick={() => handleGoogleLogin()}>
@@ -64,6 +65,6 @@ const GoogleLogin = () => {
       <span>Log in with Google</span>
     </button>
   );
-}
+};
 
-export default GoogleLogin
+export default GoogleLogin;
