@@ -45,7 +45,7 @@ const CourseDetails = ({ course }) => {
   const handlePurchaseCTA = () => {
     console.log("Handle Purchase CTA");
     if (hasCourseAccess) {
-      router.push(`/learning-center/${router.query.slug}/introduction`);
+      router.push(`/learning-hub/${router.query.slug}/introduction`);
       return;
     }
 

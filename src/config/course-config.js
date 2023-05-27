@@ -3,3 +3,4 @@ export const courseConfig = {
     'pricing-for-pm' : ['/', 'introduction', 'pricing-model/1-fremium-models']
 };
 
+export const publishedCoursesSlug = ['api-for-pm', 'pricing-for-pm'];
