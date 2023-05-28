@@ -38,7 +38,7 @@ const UpgradeToPremium = ({ posts, course }) => {
                   Not sure yet ?
                   <Link
                     className="font-semibold text-gray-600"
-                    href={`/learning-center/${course}/${slug}`}
+                    href={`/learning-hub/${course}/${slug}`}
                   >
                     Try the free lesson
                   </Link>

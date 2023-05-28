@@ -70,7 +70,7 @@ const CourseMobileMenu = ({
                   return (
                     <ul key={index}>
                       <Link
-                        href={`/learning-center/${course}/${slug}`}
+                        href={`/learning-hub/${course}/${slug}`}
                         className={courseLink}
                       >
                         <li className="flex items-center justify-between py-2 ">
@@ -93,7 +93,7 @@ const CourseMobileMenu = ({
                   return (
                     <ul key={index}>
                       <Link
-                        href={`/learning-center/${course}/${slug}`}
+                        href={`/learning-hub/${course}/${slug}`}
                         className={courseLink}
                       >
                         <li className="flex items-center justify-between py-2 ">
@@ -108,7 +108,7 @@ const CourseMobileMenu = ({
                             return (
                               <Link
                                 key={`subchapter-${index}`}
-                                href={`/learning-center/${course}/${slug}/${subChapter.slug}`}
+                                href={`/learning-hub/${course}/${slug}/${subChapter.slug}`}
                                 className=" flex items-center justify-between px-3 text-sm text-[#3B454E] hover:bg-blue-400"
                               >
                                 <li className="ml-2 py-2 pl-1 ">
