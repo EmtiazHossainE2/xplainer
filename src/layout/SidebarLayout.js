@@ -59,7 +59,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
   const linkStyle =
     "block pl-4 pr-8 py-2 hover:bg-[#EAFCFF]  hover:text-[#006BC2]";
   const courseLink =
-    "flex justify-between items-center text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200/40 px-1 2xl:px-3";
+    "flex justify-between items-center text-sm font-medium hover:bg-primary hover:text-white px-1 2xl:px-3";
 
   return (
     <>
@@ -190,24 +190,28 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                   const frontmatter = chapterData.frontmatter;
                   const slug = chapterData.slug;
                   const isFreeChapter = chapterData.isFreeChapter;
-                  console.log(frontmatter.title, "frontmatter");
+                  const chapterActive = router?.query?.slug === slug;
 
                   return (
                     <ul key={index}>
                       <Link
                         href={`/learning-hub/${course}/${slug}`}
-                        className={courseLink}
+                        className={`${courseLink} ${
+                          chapterActive && !router?.query?.module
+                            ? "bg-primary text-white"
+                            : ""
+                        }`}
                       >
-                        <li className="flex items-center justify-between py-2 ">
+                        <li className="flex items-center justify-between py-2">
                           {frontmatter.title}
                         </li>
                         {!isPaid && isFreeChapter === false && <FaLock />}
                       </Link>
 
                       {chapterData.subChapters && (
-                        <ul key={index}>
+                        <ul>
                           {chapterData.subChapters
-                            .slice() 
+                            .slice()
                             .sort((a, b) => {
                               const aNumber = parseFloat(
                                 a.frontmatter.title.split(".")[0]
@@ -217,14 +221,26 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                               );
                               return aNumber - bNumber;
                             })
-                            .map((subChapter, index) => {
+                            .map((subChapter, subIndex) => {
+                              // console.log(
+                              //   "first",
+                              //   router?.query?.module,
+                              //   subChapter.slug
+                              // );
+                              const isSubChapterActive =
+                                router?.query?.module === subChapter.slug;
+
                               return (
                                 <Link
-                                  key={`subchapter-${index}`}
+                                  key={`subchapter-${subIndex}`}
                                   href={`/learning-hub/${course}/${slug}/${subChapter.slug}`}
-                                  className=" flex items-center justify-between px-1 text-sm text-gray-600 hover:bg-gray-200/40 hover:text-gray-800 2xl:px-3"
+                                  className={`flex items-center justify-between px-1 text-sm font-medium text-[#3B454E] hover:bg-primary hover:text-white 2xl:px-3 ${
+                                    isSubChapterActive
+                                      ? "bg-primary text-white"
+                                      : ""
+                                  }`}
                                 >
-                                  <li className="ml-2.5 py-2 pl-2 ">
+                                  <li className="ml-2.5 py-2 pl-2">
                                     {subChapter.frontmatter.title}
                                   </li>
                                   {!isPaid && <FaLock />}
