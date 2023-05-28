@@ -1,18 +1,9 @@
-import { ALL_COURSES } from "@/src/config/constants";
 import Ratings from "../Shared/Navbar/Ratings";
-
-
-const headerColorCode = {
-  [ALL_COURSES.API_FOR_PM] : '#263793',
-  [ALL_COURSES.PRICING_FOR_PM] : '#2F2F2F',
-}
-
-//lg:bg-[#263793]
 
 const HeroBanner = ({ course }) => {
 
   return (
-    <div className={`lg:bg-[${headerColorCode[course.slug]}]`}>
+    <div className={`lg:bg-[#263793]`}>
       <div className="mx-auto max-w-7xl px-5 py-4 lg:py-7 lg:px-16 lg:text-white">
         <div className="flex gap-8">
           <div className="lg:basis-8/12">
