@@ -44,10 +44,10 @@ const CommonHead = ({ title, description, ogTitle, ogImage, ogUrl }) => {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://yourpage.com/" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content="https://yourimagepath.jpg" />
+        <meta property="twitter:url" content={ogUrl} />
+        <meta property="twitter:title" content={ogTitleValue} />
+        <meta property="twitter:description" content={ogDescriptionValue} />
+        <meta property="twitter:image" content={ogImageValue} />
 
         {/* For Facebook Insights  */}
         <meta property="fb:app_id" content="XXXXXXX" />
