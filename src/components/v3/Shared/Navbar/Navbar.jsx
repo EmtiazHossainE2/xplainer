@@ -120,10 +120,10 @@ const Navbar = ({ pageName, posts, course }) => {
             {/****************** Left Side ******************/}
             <div className="flex items-center justify-center">
               <Image
-                src="https://ik.imagekit.io/zwxa4kttt/xplainer-logo.png?updatedAt=1680724534619"
+                src="https://ik.imagekit.io/zwxa4kttt/xplainer-logo.png"
                 width={30}
                 height={30}
-                alt="Xplainerr Logo"
+                alt="Company Logo"
               />
               <Link href="/">
                 <h2 className="ml-2 text-2xl font-[700] text-[#101828DE]">

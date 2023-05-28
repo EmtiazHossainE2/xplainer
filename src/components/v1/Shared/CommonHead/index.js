@@ -4,7 +4,7 @@ import Script from "next/script";
 import React from "react";
 
 const defaultOgTitle = "Xplainerr";
-const defaultOgDescription = "Xplainerr - Accelerate your tech, design, marketing career with microlearning courses";
+const defaultOgDescription = "Accelerate your tech career - Learn & Practice for interviews | Xplainerr ";
 const defaultOgURL = "https://xplainerr.com";
 const defaultOgImage = "https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg";
 
@@ -44,10 +44,10 @@ const CommonHead = ({ title, description, ogTitle, ogImage, ogUrl }) => {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://yourpage.com/" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content="https://yourimagepath.jpg" />
+        <meta property="twitter:url" content={ogUrl} />
+        <meta property="twitter:title" content={ogTitleValue} />
+        <meta property="twitter:description" content={ogDescriptionValue} />
+        <meta property="twitter:image" content={ogImageValue} />
 
         {/* For Facebook Insights  */}
         <meta property="fb:app_id" content="XXXXXXX" />
