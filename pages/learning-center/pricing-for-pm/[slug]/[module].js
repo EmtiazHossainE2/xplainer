@@ -71,6 +71,8 @@ export const getStaticPaths = async () => {
     paths.map((item) => allPaths.push(item));
   });
 
+  console.log("allPaths", allPaths);
+
   return {
     paths: allPaths,
     fallback: false,

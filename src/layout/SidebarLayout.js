@@ -180,7 +180,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                 return (
                   <ul key={index}>
                     <Link
-                      href={`/learning-center/${course}/${slug}`}
+                      href={`/learning-hub/${course}/${slug}`}
                       className={courseLink}
                     >
                       <li className="flex items-center justify-between py-2 ">
@@ -195,7 +195,7 @@ const SidebarLayout = ({ posts, course, children, slug }) => {
                           return (
                             <Link
                               key={`subchapter-${index}`}
-                              href={`/learning-center/${course}/${slug}/${subChapter.slug}`}
+                              href={`/learning-hub/${course}/${slug}/${subChapter.slug}`}
                               className=" flex items-center justify-between px-1 text-sm text-gray-600 hover:bg-gray-200/40 hover:text-gray-800 2xl:px-3"
                             >
                               <li className="ml-2.5 py-2 pl-2 ">

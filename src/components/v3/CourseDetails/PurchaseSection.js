@@ -35,7 +35,7 @@ const PurchaseSection = ({
           <div>
             {!hasCourseAccess && (
               <Link
-                href={`/learning-center/${router.query.slug}/introduction`}
+                href={`/learning-hub/${router.query.slug}/introduction`}
                 className="text-center"
               >
                 <button className="mt-3 w-full rounded-md  border border-gray-300 px-3 py-2 text-sm font-medium text-primary ">

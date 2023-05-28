@@ -1,11 +1,9 @@
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Ratings from "../Shared/Navbar/Ratings";
 
 const HeroBanner = ({ course }) => {
 
-  
   return (
-    <div className="lg:bg-[#2F2F2F]">
+    <div className={`lg:bg-[#263793]`}>
       <div className="mx-auto max-w-7xl px-5 py-4 lg:py-7 lg:px-16 lg:text-white">
         <div className="flex gap-8">
           <div className="lg:basis-8/12">

@@ -6,7 +6,7 @@ const Error = () => {
   return (
     <>
       <CommonHead
-        title={"XPlainerr | Coming Soon"}
+        title={"Xplainerr | Coming Soon"}
         description={"description"}
         favIcon={"/favicon.ico"}
       />

@@ -29,7 +29,7 @@ const MyCourses = ({ allCourses }) => {
                   {course?.instructor}
                 </p>
                 <Link
-                  href={`learning-center/${course.slug}/introduction`}
+                  href={`learning-hub/${course.slug}/introduction`}
                   className="absolute bottom-2 left-2 flex h-[33px] w-[95%] justify-center rounded-[4px] border border-[#0070F4] bg-[#ECF5FF]"
                 >
                   <button className="  text-sm font-semibold leading-[33px] text-[#0070F4] ">

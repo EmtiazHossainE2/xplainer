@@ -25,11 +25,7 @@ const Home = ({ posts, courses, seoMetaData }) => {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
-            <title>
-              {
-                "Xplainerr | Upskilling & Interview Prep for AI, PM, Engineering, and Design "
-              }
-            </title>
+            <title> Xplainerr | Upskilling & Interview Prep for AI, PM, Engineering, and Design </title>
           </Head>
 
           <HeroBanner />
