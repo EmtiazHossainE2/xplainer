@@ -4,7 +4,7 @@ import Script from "next/script";
 import React from "react";
 
 const defaultOgTitle = "Xplainerr";
-const defaultOgDescription = "Xplainerr - Accelerate your tech, design, marketing career with microlearning courses";
+const defaultOgDescription = "Accelerate your tech career - Learn & Practice for interviews | Xplainerr ";
 const defaultOgURL = "https://xplainerr.com";
 const defaultOgImage = "https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg";
 

@@ -23,7 +23,7 @@ const seoMetaData = {
   ogDesciption:
     "Boost your tech, design, and marketing career with Xplainerr's microlearning courses. Gain valuable skills and accelerate your professional growth through our concise and focused online lessons",
   ogUrl: "https://xplainerr.com",
-  ogImage: "https://ik.imagekit.io/zwxa4kttt/xplainer-logo.png",
+  ogImage: "https://ik.imagekit.io/zwxa4kttt/home/xplainerr-home.jpg",
 };
 
 function MyApp({ Component, pageProps }) {
