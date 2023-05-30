@@ -23,7 +23,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 const CourseDetails = ({ course }) => {
-  console.log("course", course);
+  console.log("course detail", course);
   const router = useRouter();
   const { currentUser } = useAuthService();
   const courseSlug = course?.slug;
@@ -57,7 +57,7 @@ const CourseDetails = ({ course }) => {
           lineItems: [
             {
               // price: priceId,
-              price: course?.priceData.live.priceId,
+              price: course?.priceData?.livePrice,
               quantity: 1,
             },
           ],
@@ -194,6 +194,7 @@ export const getStaticProps = async ({ params }) => {
   const res = await fetch(`${BACKEND_API}/courses/${params.slug}`);
   const singleCourse = await res.json();
   const course = singleCourse.result;
+  // console.log(course , 'single')
 
   return { props: { course } };
 };
