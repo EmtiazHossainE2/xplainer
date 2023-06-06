@@ -40,7 +40,7 @@ const CourseDetails = ({ course }) => {
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
   // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
-  // const priceId = "price_1N2fzKSBqetirFH0Exkv2XVw";
+  const priceId = "price_1N2fzKSBqetirFH0Exkv2XVw";
 
   const handlePurchaseCTA = () => {
     console.log("Handle Purchase CTA");
@@ -56,8 +56,8 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              price: "price_1Ms0b3SBqetirFH0Nt5qV6aQ",
-              // price: course?.priceData?.livePrice,
+              // price: "price_1Mtz8QSBqetirFH0Cj3MsCKs",
+              price: course?.priceData?.livePrice,
               quantity: 1,
             },
           ],
