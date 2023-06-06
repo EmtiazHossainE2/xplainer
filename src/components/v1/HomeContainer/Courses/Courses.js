@@ -37,7 +37,7 @@ const Courses = ({ heading, ctaText, courses }) => {
                   <div className="m-2 flex items-center justify-between">
                     <div className="flex w-full items-center">
                       <div className=" flex  overflow-hidden rounded-md bg-[#08313c] text-white">
-                        <span className="overflow-hidden  text-ellipsis whitespace-nowrap p-1 text-sm leading-[22px]">
+                        <span className="overflow-hidden capitalize text-ellipsis whitespace-nowrap px-1 text-xs leading-[22px]">
                           {course?.category}
                         </span>
                       </div>

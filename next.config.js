@@ -8,6 +8,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "firebasestorage.googleapis.com",
       "dev-to-uploads.s3.amazonaws.com",
+      "i.ibb.co",
     ],
   },
   images: {
@@ -39,6 +40,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "dev-to-uploads.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
       },
     ],
     env: {
