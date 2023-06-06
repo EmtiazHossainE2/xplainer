@@ -39,7 +39,7 @@ const CourseDetails = ({ course }) => {
   //   ? course?.priceData.live.priceId
   //   : course?.priceData.test.priceId;
   // console.log(coursePrice, "coursePrice");
-  // const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
+  const priceId = "price_1Ms0b3SBqetirFH0Nt5qV6aQ"; //API_FOR_PM Test
   // const priceId = "price_1Mtz8QSBqetirFH0Cj3MsCKs";
 
   const handlePurchaseCTA = () => {
@@ -56,8 +56,8 @@ const CourseDetails = ({ course }) => {
         checkout({
           lineItems: [
             {
-              // price: priceId,
-              price: course?.priceData?.livePrice,
+              price: priceId,
+              // price: course?.priceData?.livePrice,
               quantity: 1,
             },
           ],

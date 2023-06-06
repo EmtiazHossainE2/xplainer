@@ -7,6 +7,7 @@ const nextConfig = {
       "i.ytimg.com",
       "lh3.googleusercontent.com",
       "firebasestorage.googleapis.com",
+      "dev-to-uploads.s3.amazonaws.com",
     ],
   },
   images: {
@@ -34,6 +35,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dev-to-uploads.s3.amazonaws.com",
       },
     ],
     env: {
